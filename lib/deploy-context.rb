@@ -34,7 +34,7 @@ module Context
     end
 
     def test_context_successful?
-      deploy_context_installed = `chef exec gem list deploy-context --local -i --version #{GVB.version}`
+      deploy_context_installed = `chef exec gem list deploy-context --local -i --version #{GVB.version}`.trim
       case deploy_context_installed
       when 'true'
         true
@@ -42,7 +42,7 @@ module Context
         puts "Test context has failed"
         false
       else
-        puts "Test context is unknown with #{deploy_context_installed}}"
+        puts "Test context is unknown with #{deploy_context_installed}"
         false
       end
     end
