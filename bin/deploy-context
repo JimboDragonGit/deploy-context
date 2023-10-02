@@ -3,7 +3,7 @@
 require 'deploy-context'
 require 'deploy-context/deploy'
 
-deployer = Context::DeployContext.new(__dir__)
+deployer = Context::DeployContext.new(Dir.pwd)
 
 if ARGV[0].nil?
   deployer.cycle
