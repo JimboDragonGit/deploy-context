@@ -7,11 +7,14 @@ require 'rdoc/task'
 
 Rake::RDocTask.new do |rd|
 	rd.main = "README.md"
-	rd.title = 'git-version-bump'
+	rd.title = 'deploy-context'
 	rd.rdoc_files.include("README.md", "lib/**/*.rb")
 end
 
-task :release do
-	sh "git push --follow-tags"
-	sh "git release"
+task :default do
+  require_relative 'lib/deploy-context'
+  require_relative 'lib/deploy-context/deploy'
+  
+  deployer = Context::DeployContext.new(__dir__)
+  deployer.cycle
 end
