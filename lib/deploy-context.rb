@@ -20,7 +20,7 @@ module Context
 
     def cycle
       clean
-      patch_reset
+      patch_bump
       build
       commit
       release
