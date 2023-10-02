@@ -22,13 +22,18 @@ module Context
       build
       commit
       release
-      install
       minor_bump if test_context_successful?
     end
 
     def test_context_successful?
-      puts "Test context has failed"
-      false
+      install_output = install
+      puts "install_output = #{install_output.class}\n#{install_output.methods}"
+      if install_output
+        true
+      else
+        puts "Test context has failed"
+        false
+      end
     end
 
     def build
