@@ -23,7 +23,11 @@ module Context
       commit
       release
       install
-      minor_bump
+      minor_bump if test_context_successful?
+    end
+
+    def test_context_successful?
+      false
     end
 
     def build
