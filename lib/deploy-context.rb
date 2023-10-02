@@ -22,15 +22,15 @@ module Context
       build
       commit
       release
+      install
       minor_bump if test_context_successful?
     end
 
     def test_context_successful?
-      install_output = install
-      puts "install_output = #{install_output.class}\n#{install_output.methods}"
-      if install_output
+      case `chef gem list deploy-context --local -i --version #{GVB.version}`
+      when 'true'
         true
-      else
+      when 'false'
         puts "Test context has failed"
         false
       end
