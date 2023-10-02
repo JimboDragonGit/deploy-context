@@ -26,5 +26,9 @@ module Context
     def ruby_clean(context)
       clean_folder(context, 'pkg')
     end
+
+    def ruby_remove_gem(context)
+      clean_folder(context, 'pkg')
+    end
   end
 end
