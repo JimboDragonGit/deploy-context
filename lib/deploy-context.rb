@@ -20,7 +20,6 @@ module Context
 
     def cycle
       clean
-      # patch_reset if new_release_avaialble?
       patch_bump
       build
       commit

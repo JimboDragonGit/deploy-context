@@ -16,6 +16,8 @@ else
     while true do
       deployer.cycle
     end
+  when 'reset'
+    deployer.patch_reset
   else
     puts "Unkonown setting #{ARGV[0]}"
   end
