@@ -48,5 +48,10 @@ module Context
       clean_folder(self, 'contexts')
       ruby_clean(self)
     end
+
+    def bump
+      clean_folder(self, 'contexts')
+      ruby_clean(self)
+    end
   end
 end
