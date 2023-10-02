@@ -20,7 +20,7 @@ module Context
 
     def cycle
       clean
-      patch_bump
+      patch_reset
       build
       commit
       release
@@ -70,6 +70,12 @@ module Context
     end
 
     def patch_bump
+      git_bump(self, 'patch')
+    end
+
+    def patch_reset
+      git ['tag', "v#{GVB.major_version}.#{GVB.minor_version + 1}"]
+      git_commit(self)
       git_bump(self, 'patch')
     end
 
