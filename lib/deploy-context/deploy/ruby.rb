@@ -9,7 +9,7 @@ module Context
 
     def ruby_release(context)
       Dir.chdir context.context_folder
-      gem ["push #{context.context_name}-0.1.0.gem"]
+      gem ["push #{context.context_name}-#{GVB.version}.gem"]
     end
 
     def ruby_install(context)
