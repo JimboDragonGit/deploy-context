@@ -16,8 +16,8 @@ else
     while true do
       deployer.cycle
     end
-  when 'reset'
-    deployer.patch_reset
+  when 'bump'
+    deployer.minor_bump
   else
     puts "Unkonown setting #{ARGV[0]}"
   end
