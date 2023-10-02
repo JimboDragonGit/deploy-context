@@ -5,10 +5,17 @@ module Context
     include DeployHelper
 
     attr_reader :context_name
+    attr_reader :context_folder
 
-    def initialize(context_name)
+    def initialize(context_name, deploycontext_folder)
       @context_name = context_name
-      FileUtils.mkdir_p(contexts_container) unless ::Dir.exist?(contexts_container)
+      @context_folder = deploycontext_folder
+
+      check_folder context_folder
+    end
+
+    def check_folder(folder)
+      FileUtils.mkdir_p(context_folder) unless ::Dir.exist?(context_folder)
     end
   end
 end

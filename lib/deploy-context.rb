@@ -12,14 +12,12 @@ module Context
     include GitDeployerHelper
     include RubyDeployerHelper
 
-    attr_reader :build_folder
-
     def initialize(deploycontext_folder)
-      @build_folder = deploycontext_folder
-      super('deploy-context')
+      super('deploy-context', deploycontext_folder)
     end
 
     def cycle
+      clean
       build
       commit
       release
@@ -28,6 +26,8 @@ module Context
 
     def build
       git_build(self)
+      check_folder get_context_folder(self, 'build')
+      check_folder get_context_folder(self, 'contexts')
       ruby_build(self)
     end
 
@@ -42,6 +42,11 @@ module Context
 
     def install
       ruby_install(self)
+    end
+
+    def clean
+      clean_folder(self, 'contexts')
+      ruby_clean(self)
     end
   end
 end
