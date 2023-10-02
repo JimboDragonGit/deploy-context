@@ -11,6 +11,8 @@ Rake::RDocTask.new do |rd|
 	rd.rdoc_files.include("README.md", "lib/**/*.rb")
 end
 
+require 'git-version-bump/rake-tasks'
+
 task :default do
   require_relative 'lib/deploy-context'
   require_relative 'lib/deploy-context/deploy'
