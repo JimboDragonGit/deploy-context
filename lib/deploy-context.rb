@@ -27,6 +27,7 @@ module Context
     end
 
     def test_context_successful?
+      puts "Test context has failed"
       false
     end
 
