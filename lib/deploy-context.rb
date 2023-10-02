@@ -3,14 +3,16 @@ require 'fileutils'
 require 'git-version-bump'
 
 require_relative 'deploy-context/deploy'
-require_relative 'deploy-context/deploy/ruby'
 require_relative 'deploy-context/deploy/git'
+require_relative 'deploy-context/deploy/ruby'
+require_relative 'deploy-context/deploy/cucumber'
 
 module Context
   class DeployContext < Deploy
     include DeployHelper
     include GitDeployerHelper
     include RubyDeployerHelper
+    include CucumberDeployerHelper
 
     def initialize(deploycontext_folder)
       super('deploy-context', deploycontext_folder)
@@ -45,6 +47,7 @@ module Context
       git_build(self)
       check_folder get_context_folder(self, 'build')
       check_folder get_context_folder(self, 'contexts')
+      cucumber_build(self)
       ruby_build(self)
     end
 
@@ -67,15 +70,15 @@ module Context
     end
 
     def patch_bump
-      ruby_bump(self, 'patch')
+      git_bump(self, 'patch')
     end
 
     def minor_bump
-      ruby_bump(self, 'minor')
+      git_bump(self, 'minor')
     end
 
     def major_bump
-      ruby_bump(self, 'major')
+      git_bump(self, 'major')
     end
   end
 end

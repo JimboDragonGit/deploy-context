@@ -27,5 +27,9 @@ module Context
     def rake(commands)
       chef_exec(['rake'] + commands)
     end
+    
+    def cucumber(commands = [])
+      chef_exec(['cucumber'] + commands)
+    end
   end
 end

@@ -16,5 +16,10 @@ module Context
       Dir.chdir context.context_folder
       git ['push', '--follow-tags']
     end
+
+    def git_bump(context, level)
+      Dir.chdir context.context_folder
+      git ['version-bump', level]
+    end
   end
 end

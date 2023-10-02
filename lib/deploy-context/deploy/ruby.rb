@@ -31,10 +31,5 @@ module Context
     def ruby_remove_gem(context)
       clean_folder(context, 'pkg')
     end
-
-    def ruby_bump(context, level)
-      Dir.chdir context.context_folder
-      git ['version-bump', level]
-    end
   end
 end
