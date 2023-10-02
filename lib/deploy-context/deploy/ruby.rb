@@ -13,7 +13,8 @@ module Context
     end
 
     def ruby_install(context)
-      gem ['install', context.context_name]
+      rake ['release']
+      # gem ['install', context.context_name]
     end
 
     def clean_folder(context, folder)

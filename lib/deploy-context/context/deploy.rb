@@ -23,5 +23,9 @@ module Context
     def gem(commands)
       chef_exec(['gem'] + commands)
     end
+    
+    def rake(commands)
+      chef_exec(['rake'] + commands)
+    end
   end
 end
