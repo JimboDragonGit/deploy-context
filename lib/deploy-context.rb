@@ -18,6 +18,7 @@ module Context
 
     def cycle
       clean
+      patch_bump
       build
       commit
       release
@@ -49,9 +50,8 @@ module Context
       ruby_clean(self)
     end
 
-    def bump
-      clean_folder(self, 'contexts')
-      ruby_clean(self)
+    def patch_bump
+      ruby_bump(self, 'patch')
     end
   end
 end
