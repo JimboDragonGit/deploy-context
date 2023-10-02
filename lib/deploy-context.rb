@@ -23,7 +23,12 @@ module Context
       commit
       release
       install
-      minor_bump if test_context_successful?
+      if test_context_successful?
+        minor_bump
+      else
+        puts "newer version not installed"
+        exit 1
+      end
     end
 
     def test_context_successful?
