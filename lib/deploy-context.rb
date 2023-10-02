@@ -19,7 +19,6 @@ module Context
     end
 
     def cycle
-      patch_reset(self)
       ruby_cycle(self)
     end
 
