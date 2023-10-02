@@ -36,6 +36,7 @@ module Context
       context.clean
       context.build
       context.commit
+      context.patch_bump
       context.release
       puts "Waiting a little before installing"
       sleep(5)
