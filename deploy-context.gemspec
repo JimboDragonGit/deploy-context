@@ -3,13 +3,16 @@ require 'git-version-bump'
 
 ::Gem::Specification.new do |s|
   s.name          = 'deploy-context'
-  s.version       = '0.1.0'
   s.license       = 'MIT'
   s.authors       = ['Jimmy Provencher']
   s.email         = ['jimbo_dragon@hotmail.com']
   s.homepage      = 'https://github.com/JimboDragonGit/deploy-context'
   s.summary       = 'A auto chef bootstrapper and wrapper cookbook to deploy code and context'
   s.description   = 'Using Chef cookbook style and force any script using it to switch to chef even if it is not install. It will install it tho ;)'
+
+
+  s.version = GVB.version
+  s.date    = GVB.date
 
   # all_files       = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   # s.files         = all_files.grep(%r!^(exe|libraries|rubocop)/|^.rubocop.yml$!)
