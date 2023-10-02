@@ -18,11 +18,12 @@ module Context
 
     def cycle
       clean
-      minor_bump
+      patch_bump
       build
       commit
       release
       install
+      minor_bump
     end
 
     def build
@@ -56,6 +57,10 @@ module Context
 
     def minor_bump
       ruby_bump(self, 'minor')
+    end
+
+    def major_bump
+      ruby_bump(self, 'major')
     end
   end
 end
