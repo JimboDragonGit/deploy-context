@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require_relative 'deploy-context'
+
+deployer = Context::Deploy.new('deploy-context')
+deployer.ruby_build_0(deployer)
