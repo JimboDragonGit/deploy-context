@@ -74,7 +74,7 @@ module Context
     end
 
     def patch_reset
-      git ['tag', "v#{GVB.major_version}.#{GVB.minor_version + 1}"]
+      git_bump(self, 'minor')
       git_commit(self)
       git_bump(self, 'patch')
     end
