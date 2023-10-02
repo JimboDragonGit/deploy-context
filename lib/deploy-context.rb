@@ -20,12 +20,14 @@ module Context
 
     def cycle
       clean
-      patch_reset
+      # patch_reset if new_release_avaialble?
+      patch_bump
       build
       commit
       release
       install
       if test_context_successful?
+        puts "newer version installed successfully for #{context_name} and version #{GVB.version}"
         minor_bump
       else
         puts "newer version not installed for #{context_name} and version #{GVB.version}"
@@ -80,7 +82,6 @@ module Context
     def patch_reset
       git_bump(self, 'minor')
       git_commit(self)
-      git_bump(self, 'patch')
     end
 
     def minor_bump
