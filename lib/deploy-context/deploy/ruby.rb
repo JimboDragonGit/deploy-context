@@ -9,12 +9,13 @@ module Context
 
     def ruby_release(context)
       Dir.chdir context.context_folder
-      gem ["push #{context.context_name}-#{GVB.version}.gem"]
+      # gem ["push #{context.context_name}-#{GVB.version}.gem"]
+      rake ['release']
     end
 
     def ruby_install(context)
-      rake ['release']
-      # gem ['install', context.context_name]
+      Dir.chdir context.context_folder
+      gem ['install', context.context_name]
     end
 
     def clean_folder(context, folder)
@@ -32,6 +33,7 @@ module Context
     end
 
     def ruby_bump(context, level)
+      Dir.chdir context.context_folder
       git ['version-bump', level]
     end
   end
