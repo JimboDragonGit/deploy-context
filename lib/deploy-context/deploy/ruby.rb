@@ -43,7 +43,7 @@ module Context
       context.install
       if context.test_context_successful?
         puts "newer version installed successfully for #{context_name} and version #{GVB.version}"
-        minor_bump
+        patch_reset(context)
       else
         puts "newer version not installed for #{context_name} and version #{GVB.version}"
         exit 1
