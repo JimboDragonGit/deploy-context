@@ -19,6 +19,13 @@ require 'git-version-bump'
   # s.executables   = %w(selfbootstrap)
   # s.bindir        = 'exe'
 
+
+	s.extra_rdoc_files = ["README.md"]
+	s.files = `git ls-files`.split("\n")
+  s.executables   = [
+    'deploy-context'
+  ]
+
   # s.cert_chain  = [File.expand_path('../jimbodragon/certs/public/jimbodragon.pem')]
   # s.signing_key = File.expand_path('../jimbodragon/certs/private/jimbodragon-gem-private_key.pem') if $PROGRAM_NAME =~ /gem\z/
 

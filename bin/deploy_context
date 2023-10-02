@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/deploy-context'
+
+Context::Deploy.new('deploy-context').build
