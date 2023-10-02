@@ -34,7 +34,6 @@ module Context
 
     def ruby_cycle(context)
       context.clean
-      context.patch_bump
       context.build
       context.commit
       context.release
@@ -43,7 +42,8 @@ module Context
       context.install
       if context.test_context_successful?
         puts "newer version installed successfully for #{context_name} and version #{GVB.version}"
-        patch_reset(context)
+        context.patch_bump
+        # patch_reset(context)
       else
         puts "newer version not installed for #{context_name} and version #{GVB.version}"
         exit 1
