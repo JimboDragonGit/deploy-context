@@ -4,7 +4,7 @@ module Context
       git_build(context)
       Dir.chdir context.context_folder
       puts "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created"
-      gem ["build #{context.context_name}.gemspec"]
+      rake ['build']
     end
 
     def ruby_release(context)
