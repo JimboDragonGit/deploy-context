@@ -21,5 +21,10 @@ module Context
       Dir.chdir context.context_folder
       git ['version-bump', level]
     end
+
+    def patch_reset(context)
+      git_bump(context, 'minor')
+      git_commit(context)
+    end
   end
 end

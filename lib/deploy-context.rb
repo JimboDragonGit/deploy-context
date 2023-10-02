@@ -19,19 +19,8 @@ module Context
     end
 
     def cycle
-      clean
-      patch_bump
-      build
-      commit
-      release
-      install
-      if test_context_successful?
-        puts "newer version installed successfully for #{context_name} and version #{GVB.version}"
-        minor_bump
-      else
-        puts "newer version not installed for #{context_name} and version #{GVB.version}"
-        exit 1
-      end
+      patch_reset(self)
+      ruby_cycle(self)
     end
 
     def test_context_successful?
@@ -76,11 +65,6 @@ module Context
 
     def patch_bump
       git_bump(self, 'patch')
-    end
-
-    def patch_reset
-      git_bump(self, 'minor')
-      git_commit(self)
     end
 
     def minor_bump

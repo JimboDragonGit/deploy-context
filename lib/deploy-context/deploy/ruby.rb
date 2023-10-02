@@ -31,5 +31,21 @@ module Context
     def ruby_remove_gem(context)
       clean_folder(context, 'pkg')
     end
+
+    def ruby_cycle(context)
+      context.clean
+      context.patch_bump
+      context.build
+      context.commit
+      context.release
+      context.install
+      if context.test_context_successful?
+        puts "newer version installed successfully for #{context_name} and version #{GVB.version}"
+        minor_bump
+      else
+        puts "newer version not installed for #{context_name} and version #{GVB.version}"
+        exit 1
+      end
+    end
   end
 end
