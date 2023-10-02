@@ -38,8 +38,8 @@ module Context
       context.commit
       context.patch_bump
       context.release
-      puts "Waiting a little before installing"
-      sleep(5)
+      puts "Waiting a minue before installing"
+      sleep(60)
       context.install
       if context.test_context_successful?
         puts "newer version installed successfully for #{context_name} and version #{GVB.version}"
