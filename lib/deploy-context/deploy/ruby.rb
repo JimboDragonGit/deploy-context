@@ -37,8 +37,8 @@ module Context
       context.build
       context.commit
       context.patch_bump
-      context.release
-      puts "Waiting a minue before installing"
+      context.release(true)
+      puts "Waiting a minute before installing"
       sleep(60)
       context.install
       if context.test_context_successful?

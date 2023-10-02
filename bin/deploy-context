@@ -18,6 +18,8 @@ else
     end
   when 'bump'
     deployer.minor_bump
+  when 'release'
+    deployer.major_bump
   else
     puts "Unkonown setting #{ARGV[0]}"
   end
