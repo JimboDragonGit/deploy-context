@@ -34,7 +34,7 @@ module Context
     end
 
     def test_context_successful?
-      case `chef gem list deploy-context --local -i --version #{GVB.version}`
+      case `chef exec gem list deploy-context --local -i --version #{GVB.version}`
       when 'true'
         true
       when 'false'
