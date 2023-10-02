@@ -28,7 +28,7 @@ module Context
       if test_context_successful?
         minor_bump
       else
-        puts "newer version not installed"
+        puts "newer version not installed for #{context_name} and version #{GVB.version}"
         exit 1
       end
     end
