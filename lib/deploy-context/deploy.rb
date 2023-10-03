@@ -21,7 +21,7 @@ module Context
     end
 
     def version
-      Dir.chdir(deploycontext_folder)
+      Dir.chdir(context_folder)
       GVB.version
     end
   end
