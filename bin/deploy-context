@@ -2,6 +2,6 @@
 
 require 'deploy-context'
 
-deployer = Context::DeployContext.new(Dir.pwd)
+DEPLOYER = Context::DeployContext.new(Dir.pwd)
 
 require 'deploy-context/context/binary'

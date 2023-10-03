@@ -2,6 +2,10 @@
 
 require_relative '../../deploy-context'
 
+def deployer
+  DEPLOYER
+end
+
 if ARGV[0].nil?
   deployer.cycle
 else
