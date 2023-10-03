@@ -32,6 +32,11 @@ module Context
       clean_folder(context, 'pkg')
     end
 
+    def ruby_check_if_available_public(context)
+      puts "Waiting a minute before installing"
+      sleep(60)
+    end
+
     def ruby_cycle(context)
       context.clean
       context.build
@@ -39,8 +44,6 @@ module Context
       context.patch_bump
       context.release
       context.wait_release_available
-      puts "Waiting a minute before installing"
-      sleep(60)
       context.install
       if context.test_context_successful?
         puts "newer version installed successfully for #{context_name} and version #{GVB.version}"
