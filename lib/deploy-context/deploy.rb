@@ -22,7 +22,7 @@ module Context
 
     def version
       Dir.chdir(context_folder)
-      GVB.version
+      Gem::Version.new(GVB.version)
     end
   end
 end

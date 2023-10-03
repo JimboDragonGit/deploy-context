@@ -19,6 +19,5 @@ task :default do
 
   
   deployer = Context::DeployContext.new(__dir__)
-  deployer.patch_bump
   deployer.cycle
 end
