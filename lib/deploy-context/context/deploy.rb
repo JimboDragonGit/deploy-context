@@ -51,6 +51,7 @@ module Context
         when 'bump'
           puts "\nBump minor version\n"
           context.patch_bump
+          context.commit
           false
         when 'release'
           puts "\nBump major version\n"
