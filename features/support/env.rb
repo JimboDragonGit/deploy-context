@@ -1,6 +1,6 @@
 require 'deploy-context'
 
-DEPLOYER = Context::DeployContext.new(ENV['DEPLOY_CONTEXT_FOLDER'])
+DEPLOYER = Context::DeployContext.new(File.join(ENV['HOME'], 'deploy-context'))
 
 def deployer
   DEPLOYER
