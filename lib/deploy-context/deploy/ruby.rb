@@ -42,7 +42,7 @@ module Context
 
     def gem_installed?(context)
       installed_version = Gem::Specification.find_by_name(context.context_name).version
-      puts "Compare #{context.context_name} installed_version #{installed_version.class} with #{context.version.class}"
+      puts "Compare #{context.context_name} installed_version #{installed_version} with #{context.version}"
       installed_version == context.version
     end
 
