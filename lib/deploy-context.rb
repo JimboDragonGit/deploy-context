@@ -9,7 +9,6 @@ require_relative 'deploy-context/deploy/cucumber'
 
 module Context
   class DeployContext < Deploy
-    include DeployHelper
     include GitDeployerHelper
     include RubyDeployerHelper
     include CucumberDeployerHelper

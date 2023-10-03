@@ -1,19 +1,19 @@
-Étantdonné('le projet {string}') do |project_name|
+Étantdonnéque('le projet {word} à la bonne version') do |project_name|
   if project_name == deployer.context_name
     Dir.chdir deployer.context_folder
   else
-    Dir.chdir deployer.get_context_folder(project_name)
+    Dir.chdir File.join(deployer.contexts_container(deployer), project_name)
   end
 end
 
-Alors('démarrer un simple cycle de {string}') do |project_name|
+Alors('démarrer un simple cycle de {word}') do |project_name|
   system([project_name, 'once'].join(' '))
 end
 
-Alors('bumper la version de {string}') do |project_name|
+Alors('bumper la version de {word}') do |project_name|
   system([project_name, 'bump'].join(' '))
 end
 
-Alors('déployer le projet {string}') do |project_name|
+Alors('déployer le projet {word}') do |project_name|
   system([project_name, 'release'].join(' '))
 end
