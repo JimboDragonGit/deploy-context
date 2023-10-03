@@ -17,3 +17,7 @@ end
 Alors('déployer le projet {word}') do |project_name|
   system([project_name, 'release'].join(' '))
 end
+
+Alors('tester le projet {word}') do |project_name|
+  system([project_name, 'test'].join(' '))
+end

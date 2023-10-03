@@ -43,7 +43,6 @@ module Context
         context.clean
         context.build
         context.commit
-        # context.patch_bump
         context.release
         context.wait_until_release_available
         context.install

@@ -19,6 +19,7 @@ module Context
 
     def cycle
       ruby_cycle(self)
+      cucumber_test(self)
     end
 
     def test_context_successful?
@@ -27,7 +28,7 @@ module Context
       puts "deploy_context_installed = #{deploy_context_installed}"
       case deploy_context_installed
       when 'true'
-        cucumber_test(self)
+        true
       when 'false'
         puts "Test context has failed"
         false

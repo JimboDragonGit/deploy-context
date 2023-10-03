@@ -21,6 +21,8 @@ else
     deployer.minor_bump
   when 'release'
     deployer.major_bump
+  when 'test'
+    deployer.cucumber_test(deployer)
   else
     puts "Unkonown setting #{ARGV[0]}"
   end
