@@ -13,6 +13,11 @@ module Context
     include RubyDeployerHelper
     include CucumberDeployerHelper
 
+    def self.deployer
+      DEPLOYER = Context::DeployContext.new(Dir.pwd) if DEPLOYER.nil?
+      DEPLOYER
+    end
+
     def initialize(deploycontext_folder)
       super('deploy-context', deploycontext_folder)
     end

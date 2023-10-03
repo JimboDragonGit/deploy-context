@@ -1,7 +1,2 @@
 #!/usr/bin/env ruby
-
-require 'deploy-context'
-
-DEPLOYER = Context::DeployContext.new(Dir.pwd)
-
 require 'deploy-context/context/binary'
