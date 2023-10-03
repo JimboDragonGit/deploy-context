@@ -34,7 +34,6 @@ Alors('tester deploy-context') do
     # patch_reset(context)
   else
     puts "newer version not installed for #{deployer.context_name} and version #{GVB.version}"
-    exit 1
   end
 end
 

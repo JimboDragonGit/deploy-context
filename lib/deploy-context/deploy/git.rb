@@ -3,7 +3,11 @@ module Context
     def git_build(context)
       Dir.chdir File.dirname(context.context_folder)
       puts "Building ruby from folder #{context.context_folder}"
-      git ["clone git@github.com:JimboDragonGit/#{context.context_name}.git"] unless ::Dir.exist?(context.context_folder)
+      if ::Dir.exist?(context.context_folder)
+        git ['pull']
+      else
+        git ["clone git@github.com:JimboDragonGit/#{context.context_name}.git"] unless ::Dir.exist?(context.context_folder)
+      end
     end
 
     def git_commit(context)
