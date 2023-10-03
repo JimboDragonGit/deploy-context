@@ -30,7 +30,7 @@ module Context
     end
 
     def test_context_successful?
-      puts "Check if #{context} is install #{version}"
+      puts "Check if #{context_name} is install #{version}"
       if gem_installed?(self)
         puts "Test context was successfully install on version #{version}"
         true
