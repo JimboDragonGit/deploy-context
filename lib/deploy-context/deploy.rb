@@ -19,5 +19,10 @@ module Context
     def check_folder(folder)
       FileUtils.mkdir_p(context_folder) unless present_localy?
     end
+
+    def version
+      Dir.chdir(deploycontext_folder)
+      GVB.version
+    end
   end
 end

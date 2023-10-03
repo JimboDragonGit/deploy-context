@@ -23,10 +23,12 @@ module Context
     end
 
     def test_context_successful?
+      puts "Check if deploy-context is install #{GVB.major_version}.#{GVB.minor_version}"
       deploy_context_installed = `chef exec gem list deploy-context --local -i --version #{GVB.major_version}.#{GVB.minor_version}`.strip
+      puts "deploy_context_installed = #{deploy_context_installed}"
       case deploy_context_installed
       when 'true'
-        true
+        cucumber_build(self)
       when 'false'
         puts "Test context has failed"
         false
@@ -39,7 +41,6 @@ module Context
     def build
       ruby_build(self)
       check_folder get_context_folder(self, 'contexts')
-      cucumber_build(self)
     end
 
     def commit
