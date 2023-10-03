@@ -73,7 +73,7 @@ module Context
       if state_action
         puts "Action #{action} executed correctly in context #{context}"
       else
-        abort!("Failed to execute action #{action} in context #{context}")
+        abort("Failed to execute action #{action} in context #{context}")
       end
     end
   end
