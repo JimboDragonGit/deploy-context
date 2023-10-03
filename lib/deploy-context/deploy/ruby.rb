@@ -12,6 +12,7 @@ module Context
     def ruby_release(context)
       Dir.chdir context.context_folder
       # gem ["push #{context.context_name}-#{GVB.version}.gem"]
+      context.patch_bump if gem_installed?(context)
       rake ['release']
     end
 
