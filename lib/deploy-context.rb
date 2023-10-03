@@ -36,7 +36,7 @@ module Context
       end
     end
 
-    def build_folder
+    def build
       ruby_build(self)
       check_folder get_context_folder(self, 'contexts')
       cucumber_build(self)
