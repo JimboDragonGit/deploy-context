@@ -2,4 +2,6 @@
 
 require_relative '../../deploy-context'
 
-Context::DeployContext.deployer.execute_action(deployer, ARGV[0])
+puts "Parameter pass #{ARGV[0]}"
+deployer = Context::DeployContext.deployer
+deployer.execute_action(deployer, ARGV[0])
