@@ -23,17 +23,10 @@ module Context
 
     def test_context_successful?
       puts "Check if deploy-context is install #{version}"
-      deploy_context_installed = gem_installed?(self)
-      puts "deploy_context_installed = #{deploy_context_installed}"
-      case deploy_context_installed
-      when 'true'
-        gem_installed?(self)
-      when 'false'
-        puts "Test context has failed"
-        false
+      if gem_installed?(self)
+        puts "Test context was successfully install on version #{version}"
       else
-        puts "Test context is unknown with #{deploy_context_installed}"
-        false
+        abort "Test context has failed to install #{version}"
       end
     end
 
