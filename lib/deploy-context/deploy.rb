@@ -9,7 +9,7 @@ module Context
 
     def initialize(context_name, deploycontext_folder)
       @context_name = context_name
-      @context_folder = deploycontext_folder.include?(context_name) ? deploycontext_folder : context_name
+      @context_folder = deploycontext_folder.include?(context_name) ? deploycontext_folder : File.join(deploycontext_folder, context_name)
     end
 
     def present_localy?
