@@ -10,8 +10,6 @@ module Context
     def initialize(context_name, deploycontext_folder)
       @context_name = context_name
       @context_folder = deploycontext_folder
-
-      check_folder context_folder
     end
 
     def present_localy?
@@ -19,7 +17,7 @@ module Context
     end
 
     def check_folder(folder)
-      FileUtils.mkdir_p(context_folder) unless ::Dir.exist?(context_folder)
+      FileUtils.mkdir_p(context_folder) unless Dir.exist?(context_folder)
     end
   end
 end
