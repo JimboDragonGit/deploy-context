@@ -13,11 +13,18 @@ end
 
 require 'git-version-bump/rake-tasks'
 
-task :default do
-  require_relative 'lib/deploy-context'
-  require_relative 'lib/deploy-context/deploy'
+require_relative 'lib/deploy-context'
 
-  
-  deployer = Context::DeployContext.new(__dir__)
-  deployer.cycle
+deployer = Context::DeployContext.deployer
+
+task :default do
+  deployer.execute_action(deployer, 'once')
+end
+
+task :bump do
+  deployer.execute_action(deployer, 'bump')
+end
+
+task :test do
+  deployer.execute_action(deployer, 'test')
 end
