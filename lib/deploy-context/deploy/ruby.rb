@@ -34,7 +34,8 @@ module Context
 
     def ruby_check_if_available_public(context)
       puts "Waiting a minute before installing"
-      sleep(60)
+      `chef gem list #{context.context_name}`
+      # sleep(60)
     end
 
     def ruby_cycle(context)
