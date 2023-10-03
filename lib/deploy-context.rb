@@ -23,11 +23,11 @@ module Context
 
     def test_context_successful?
       puts "Check if deploy-context is install #{version}"
-      deploy_context_installed = `chef exec gem list deploy-context --local -i --version #{version}`.strip
+      deploy_context_installed = gem_installed?(self)
       puts "deploy_context_installed = #{deploy_context_installed}"
       case deploy_context_installed
       when 'true'
-        true
+        gem_installed?(self)
       when 'false'
         puts "Test context has failed"
         false

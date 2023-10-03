@@ -1,3 +1,5 @@
+require 'rubygems'
+
 module Context
   module RubyDeployerHelper
     def ruby_build(context)
@@ -36,6 +38,10 @@ module Context
       puts "Waiting a minute before installing"
       `chef gem list #{context.context_name}`
       # sleep(60)
+    end
+
+    def gem_installed?(context)
+      Gem::Specification.find_by_name(context.context_name).version == context.version
     end
 
     def ruby_cycle(context)
