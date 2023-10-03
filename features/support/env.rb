@@ -1,0 +1,1 @@
+ENV['DEPLOY_CONTEXT_FOLDER'] = File.join(ENV['HOME'], 'deploy_context')
