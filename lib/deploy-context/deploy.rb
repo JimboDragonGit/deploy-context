@@ -29,9 +29,9 @@ module Context
     end
 
     def version
-      puts "Getting version info for #{context_folder} and version should be #{GVB.version}"
-      Dir.chdir(context_folder)
-      Gem::Version.new(GVB.version)
+      git_build(self)
+      puts "Getting version info for #{context_folder} and version should be #{GitVersionBump.version}"
+      Gem::Version.new(GitVersionBump.version)
     end
 
     def cycle
@@ -41,10 +41,10 @@ module Context
     def test_context_successful?
       puts "Check if #{context_name} is install #{version}"
       if gem_installed?(self)
-        puts "Test context was successfully install on version #{version}"
+        puts "Test context #{context_name} was successfully install on version #{version}"
         true
       else
-        abort "Test context has failed to install #{version}"
+        abort "Test context #{context_name} has failed to install #{version}"
       end
     end
 
@@ -72,15 +72,15 @@ module Context
     end
 
     def patch_bump
-      git_bump(self, 'patch')
+      GitVersionBump.tag_version "#{GitVersionBump.major_version}.#{GitVersionBump.minor_version}.#{GitVersionBump.patch_version+1}"
     end
 
     def minor_bump
-      git_bump(self, 'minor')
+      GitVersionBump.tag_version "#{GitVersionBump.major_version}.#{GitVersionBump.minor_version+1}.0"
     end
 
     def major_bump
-      git_bump(self, 'major')
+      GitVersionBump.tag_version "#{GitVersionBump.major_version + 1}.0.0"
     end
 
     def wait_until_release_available
