@@ -62,6 +62,7 @@ module Context
           false
         when 'reset'
           puts "\nReset versionning\n"
+          system('rake')
           # context.cucumber_test(deployer)
           false
         else
