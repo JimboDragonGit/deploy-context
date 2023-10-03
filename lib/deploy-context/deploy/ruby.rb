@@ -4,13 +4,12 @@ module Context
   module RubyDeployerHelper
     def ruby_build(context)
       git_build(context)
-      Dir.chdir context.context_folder
       puts "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created"
       check_folder get_context_folder(context, 'build')
     end
 
     def ruby_release(context)
-      Dir.chdir context.context_folder
+      git_build(context)
       # gem ["push #{context.context_name}-#{GVB.version}.gem"]
       # context.patch_bump if gem_installed?(context)
       rake ['release']
@@ -18,7 +17,6 @@ module Context
     end
 
     def ruby_install(context)
-      Dir.chdir context.context_folder
       gem ['install', context.context_name]
     end
 
@@ -37,14 +35,14 @@ module Context
     end
 
     def ruby_check_if_available_public(context)
-      puts "Waiting a minute before installing"
+      puts "Waiting a minute before installing #{context.context_name} in folder #{context.context_folder}"
       `chef gem list #{context.context_name}`
       # sleep(60)
     end
 
     def gem_installed?(context)
       installed_version = Gem::Specification.find_by_name(context.context_name).version
-      puts "Compare #{context.context_name} installed_version #{installed_version} with #{context.version}"
+      puts "Compare #{context.context_name} installed_version #{installed_version} with #{context.version} in folder #{context.context_folder}"
       installed = installed_version == context.version
       puts "installed = #{installed}"
       installed

@@ -9,11 +9,19 @@ module Context
 
     def initialize(context_name, deploycontext_folder)
       @context_name = context_name
-      @context_folder = deploycontext_folder.include?(context_name) ? deploycontext_folder : File.join(deploycontext_folder, context_name)
+      @context_folder = move_folder(deploycontext_folder)
     end
 
     def present_localy?
       Dir.exist?(context_folder)
+    end
+
+    def actual_working_directory?
+      Dir.pwd == context_folder
+    end
+
+    def move_folder(folder)
+      @context_folder = folder.include?(context_name) ? folder : File.join(folder, context_name)
     end
 
     def check_folder(folder)
