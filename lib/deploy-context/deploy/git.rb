@@ -41,5 +41,11 @@ module Context
       # git ['log', "v#{context.version}"]
       git ['ls-remote origin', "v#{context.version}"]
     end
+
+    def git_dirty_state?(context)
+      Dir.chdir(context.context_folder)
+      # git ['log', "v#{context.version}"]
+      `git status --porcelain`.split('\n').count > 0
+    end
   end
 end

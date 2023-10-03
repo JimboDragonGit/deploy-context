@@ -12,9 +12,9 @@ module Context
     def ruby_release(context)
       Dir.chdir context.context_folder
       # gem ["push #{context.context_name}-#{GVB.version}.gem"]
-      context.patch_bump if gem_installed?(context)
+      # context.patch_bump if gem_installed?(context)
       rake ['release']
-      context.commit
+      # context.commit
     end
 
     def ruby_install(context)
@@ -53,8 +53,12 @@ module Context
     def ruby_cycle(context)
       if context.new_update_available?
         context.clean
+        if git_dirty_state?(context)
+          context.patch_bump
+          context.commit
+        end
         context.build
-        context.commit
+        # context.commit
         context.release
         context.wait_until_release_available
         context.install
