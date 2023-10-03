@@ -28,7 +28,7 @@ module Context
       puts "deploy_context_installed = #{deploy_context_installed}"
       case deploy_context_installed
       when 'true'
-        cucumber_build(self)
+        cucumber_test(self)
       when 'false'
         puts "Test context has failed"
         false

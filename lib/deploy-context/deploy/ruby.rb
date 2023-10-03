@@ -43,7 +43,7 @@ module Context
       context.commit
       context.patch_bump
       context.release
-      context.wait_release_available
+      context.wait_until_release_available
       context.install
       if context.test_context_successful?
         puts "newer version installed successfully for #{context_name} and version #{GVB.version}"
