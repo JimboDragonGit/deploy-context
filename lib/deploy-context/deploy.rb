@@ -14,6 +14,10 @@ module Context
       check_folder context_folder
     end
 
+    def present_localy?
+      Dir.exist?(context_folder)
+    end
+
     def check_folder(folder)
       FileUtils.mkdir_p(context_folder) unless ::Dir.exist?(context_folder)
     end

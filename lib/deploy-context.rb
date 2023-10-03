@@ -36,12 +36,10 @@ module Context
       end
     end
 
-    def build
-      git_build(self)
-      check_folder get_context_folder(self, 'build')
+    def build_folder
+      ruby_build(self)
       check_folder get_context_folder(self, 'contexts')
       cucumber_build(self)
-      ruby_build(self)
     end
 
     def commit

@@ -4,7 +4,7 @@ module Context
       git_build(context)
       Dir.chdir context.context_folder
       puts "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created"
-      # rake ['build']
+      check_folder get_context_folder(context, 'build')
     end
 
     def ruby_release(context)
@@ -37,7 +37,8 @@ module Context
       context.build
       context.commit
       context.patch_bump
-      context.release(true)
+      context.release
+      context.wait_release_available
       puts "Waiting a minute before installing"
       sleep(60)
       context.install
