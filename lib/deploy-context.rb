@@ -19,7 +19,6 @@ module Context
 
     def cycle
       ruby_cycle(self)
-      cucumber_test(self)
     end
 
     def test_context_successful?
