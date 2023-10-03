@@ -18,5 +18,6 @@ task :default do
   require_relative 'lib/deploy-context/deploy'
   
   deployer = Context::DeployContext.new(__dir__)
+  deployer.minor_bump
   deployer.cycle
 end
