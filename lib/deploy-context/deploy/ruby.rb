@@ -14,6 +14,7 @@ module Context
       # gem ["push #{context.context_name}-#{GVB.version}.gem"]
       context.patch_bump if gem_installed?(context)
       rake ['release']
+      context.commit
     end
 
     def ruby_install(context)
