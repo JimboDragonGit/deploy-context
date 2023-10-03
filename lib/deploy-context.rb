@@ -25,6 +25,7 @@ module Context
       puts "Check if deploy-context is install #{version}"
       if gem_installed?(self)
         puts "Test context was successfully install on version #{version}"
+        true
       else
         abort "Test context has failed to install #{version}"
       end
