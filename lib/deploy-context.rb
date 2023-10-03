@@ -83,5 +83,9 @@ module Context
     def new_update_available?
       git_update_available?(self)
     end
+
+    def ready_for_major_update?
+      false
+    end
   end
 end

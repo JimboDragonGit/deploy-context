@@ -16,6 +16,7 @@ require 'git-version-bump/rake-tasks'
 task :default do
   require_relative 'lib/deploy-context'
   require_relative 'lib/deploy-context/deploy'
+
   
   deployer = Context::DeployContext.new(__dir__)
   deployer.patch_bump
