@@ -50,9 +50,13 @@ module Context
           false
         when 'bump'
           puts "\nBump minor version\n"
-          context.minor_bump
+          context.patch_bump
           false
         when 'release'
+          puts "\nBump major version\n"
+          context.minor_bump
+          false
+        when 'upgrade'
           puts "\nBump major version\n"
           context.major_bump
           false
