@@ -38,8 +38,8 @@ module Context
 
     def git_update_available?(context)
       git_build(context)
-      git ['log', "v#{context.version}"]
-      # git ['ls-remote origin', "v#{context.version}"]
+      # git ['log', "v#{context.version}"]
+      git ['ls-remote origin', "v#{context.version}"]
     end
   end
 end

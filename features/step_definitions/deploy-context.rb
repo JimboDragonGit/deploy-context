@@ -1,46 +1,19 @@
-Étantdonnéque('deploy-context est présent localement') do
-  deployer.present_localy?
-end
-
-Étantdonnéque('deploy-context est présent au public') do
-  deployer.wait_until_release_available
-end
-
-Étantdonnéque('deploy-context est tester avec succès') do
-end
-
-Alors('compiler deploy-context') do
-  deployer.build
-end
-
-Alors('publié deploy-context') do
-  deployer.commit
-  deployer.patch_bump
-  deployer.release
-end
-
-Alors('attendre que deploy-context soit disponible au public') do
-  deployer.wait_until_release_available
-end
-
-Alors('installer deploy-context') do
-  deployer.install
-end
-
-Alors('tester deploy-context') do
-  if deployer.test_context_successful?
-    puts "newer version installed successfully for #{deployer.context_name} and version #{GVB.version}"
-    deployer.patch_bump
-    # patch_reset(context)
+Étantdonné('le projet {string}') do |project_name|
+  if project_name == deployer.context_name
+    Dir.chdir deployer.context_folder
   else
-    puts "newer version not installed for #{deployer.context_name} and version #{GVB.version}"
+    Dir.chdir deployer.get_context_folder(project_name)
   end
 end
 
-Étantdonnéque('deploy-context est absent localement') do
-  deployer.clean if deployer.present_localy?
+Alors('démarrer un simple cycle de {string}') do |project_name|
+  system([project_name, 'once'].join(' '))
 end
 
-Alors('cloner le projet git@github.com:JimboDragonGit\/deploy-context.git') do
-  deployer.clean if deployer.present_localy?
+Alors('bumper la version de {string}') do |project_name|
+  system([project_name, 'bump'].join(' '))
+end
+
+Alors('déployer le projet {string}') do |project_name|
+  system([project_name, 'release'].join(' '))
 end

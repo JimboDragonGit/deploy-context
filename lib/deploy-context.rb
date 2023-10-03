@@ -82,6 +82,7 @@ module Context
     end
 
     def new_update_available?
+      git_update_available?(self)
     end
   end
 end
