@@ -1,7 +1,9 @@
 Étantdonnéque('deploy-context est présent localement') do
+  deployer.present_localy?
 end
 
 Étantdonnéque('deploy-context est présent au public') do
+  deployer.wait_until_release_available
 end
 
 Étantdonnéque('deploy-context est tester avec succès') do
@@ -18,9 +20,7 @@ Alors('publié deploy-context') do
 end
 
 Alors('attendre que deploy-context soit disponible au public') do
-  deployer.wait_release_available
-  puts "Waiting a minute before installing"
-  sleep(60)
+  deployer.wait_until_release_available
 end
 
 Alors('installer deploy-context') do

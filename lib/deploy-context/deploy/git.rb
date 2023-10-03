@@ -35,5 +35,11 @@ module Context
       git_bump(context, 'minor')
       git_commit(context)
     end
+
+    def git_update_available?(context)
+      git_build(context)
+      git ['log', "v#{context.version}"]
+      # git ['ls-remote origin', "v#{context.version}"]
+    end
   end
 end

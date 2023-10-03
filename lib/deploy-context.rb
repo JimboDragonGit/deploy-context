@@ -74,7 +74,14 @@ module Context
     end
 
     def wait_until_release_available
-      wait_until_release_available unless ruby_check_if_available_public(self)
+      wait_until_release_available unless is_present_publicaly?
+    end
+
+    def is_present_publicaly?
+      ruby_check_if_available_public(self)
+    end
+
+    def new_update_available?
     end
   end
 end
