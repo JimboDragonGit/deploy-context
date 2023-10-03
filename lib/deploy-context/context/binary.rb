@@ -30,6 +30,6 @@ else
     puts "\nExecute tests\n"
     deployer.cucumber_test(deployer)
   else
-    puts "Unkonown setting #{ARGV[0]}"
+    puts "Unknown setting #{ARGV[0]}"
   end
 end
