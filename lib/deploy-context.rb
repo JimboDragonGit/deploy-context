@@ -14,8 +14,8 @@ module Context
     include CucumberDeployerHelper
 
     def self.deployer
-      DEPLOYER = Context::DeployContext.new(Dir.pwd) if DEPLOYER.nil?
-      DEPLOYER
+      @deployer = Context::DeployContext.new(Dir.pwd) if @deployer.nil?
+      @deployer
     end
 
     def initialize(deploycontext_folder)
