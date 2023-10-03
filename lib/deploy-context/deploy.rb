@@ -21,6 +21,7 @@ module Context
     end
 
     def version
+      puts "Getting version info for #{context_folder}"
       Dir.chdir(context_folder)
       Gem::Version.new(GVB.version)
     end

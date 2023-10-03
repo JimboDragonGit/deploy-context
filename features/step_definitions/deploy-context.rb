@@ -1,7 +1,3 @@
-def context_exec(command)
-  system(command.join(' '))
-end
-
 # Étantdonnéque('le projet {word} à une dernière version de disponible dans git') do |project_name|
 #   context_exec [project_name, 'once']
   
