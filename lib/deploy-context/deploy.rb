@@ -17,7 +17,7 @@ module Context
     end
 
     def check_folder(folder)
-      FileUtils.mkdir_p(context_folder) unless Dir.exist?(context_folder)
+      FileUtils.mkdir_p(context_folder) unless present_localy?
     end
   end
 end
