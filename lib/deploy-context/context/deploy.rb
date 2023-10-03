@@ -31,5 +31,36 @@ module Context
     def cucumber(commands = [])
       chef_exec(['cucumber'] + commands)
     end
+
+    def execute_action(context, action)
+      if action.nil?
+        context.cycle
+      else
+        case action
+        when 'once'
+          puts "\nExecute only once\n"
+          context.cycle
+        when 'always'
+          puts "\nAlways in execution\n"
+          while true do
+            context.cycle
+          end
+        when 'bump'
+          puts "\nBump minor version\n"
+          context.minor_bump
+        when 'release'
+          puts "\nBump major version\n"
+          context.major_bump
+        when 'test'
+          puts "\nExecute tests\n"
+          context.cucumber_test(deployer)
+        when 'reset'
+          puts "\nReset versionning\n"
+          # context.cucumber_test(deployer)
+        else
+          puts "Unknown setting #{action}"
+        end
+      end
+    end
   end
 end
