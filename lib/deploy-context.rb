@@ -73,8 +73,8 @@ module Context
       git_bump(self, 'major')
     end
 
-    def wait_release_available
-      ruby_check_if_available_public(context)
+    def wait_until_release_available
+      wait_until_release_available unless ruby_check_if_available_public(self)
     end
   end
 end
