@@ -50,7 +50,7 @@ module Context
             # context.cucumber_test(deployer)
             true
           else
-            context.error_log "Unknown setting #{action}"
+            context.error_log context.context_name, "Unknown setting #{action}"
             false
           end
         end
@@ -58,7 +58,7 @@ module Context
         if state_action
           context.log "Action #{action} executed correctly in context #{context}"
         else
-          context.error_log("Failed to execute action #{action} in context #{context}")
+          context.error_log(context.context_name, "Failed to execute action #{action} in context #{context}")
         end
       end
     end

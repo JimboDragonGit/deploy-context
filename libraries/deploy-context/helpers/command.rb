@@ -13,7 +13,7 @@ module Context
     end
 
     def error_log(name, message)
-      log "\n\n#{name} ERROR: #{message}"
+      log "\n\n#{name} ERROR: #{message}\n\n"
     end
 
     def is_admin?
