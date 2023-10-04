@@ -52,16 +52,19 @@ module Context
       def ruby_cycle(context)
         context.log "\n\nBuilding Ruby application for #{context.context_name}"
         if context.new_update_available?
-          context.log "\n\nNew update available for #{context.context_name}"
+          context.log "\n\nNew update available for #{context.context_name}\nCleaning the building space"
           context.clean
           if git_dirty_state?(context)
             context.patch_bump
             context.commit
           end
+          context.log "\n\nBuilding project #{context.context_name} now ..."
           context.build
           # context.commit
+          context.log "\n\nReleasing project #{context.context_name}"
           context.release
           context.wait_until_release_available
+          context.log "\n\nInstalling project #{context.context_name}"
           context.install
           if context.test_context_successful?
             context.log "newer version installed successfully for #{context.context_name} on version #{context.version}"
