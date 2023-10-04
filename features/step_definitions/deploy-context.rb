@@ -1,2 +1,2 @@
 
-require_relative '../../lib/deploy-context/step_definitions/deploy-context'
+require_relative '../../libraries/deploy-context/step_definitions/deploy-context'
