@@ -29,7 +29,7 @@ MESSAGE_END
 
       def execute_action(context, action = 'once')
         state_action = if action.nil?
-          context.cycle
+          show_help(context)
           false
         else
           case action
@@ -68,6 +68,7 @@ MESSAGE_END
             true
           else
             context.error_log context.context_name, "Unknown setting #{action}"
+            show_help(context)
             false
           end
         end
