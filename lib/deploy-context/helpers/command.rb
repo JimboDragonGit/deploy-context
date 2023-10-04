@@ -28,8 +28,9 @@ module Context
     end
 
     def execute_command(command)
-      system(command.join(' '))
+      command_status = system(command.join(' '))
       debug_log "executed command #{command.join(' ')}"
+      command_status
     end
 
     def sudo_command(command)

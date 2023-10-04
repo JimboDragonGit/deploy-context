@@ -5,20 +5,20 @@ module Context
     module RubyHelper
       def ruby_build(context)
         git_build(context)
-        puts "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created"
+        context.log "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created"
         check_folder get_context_folder(context, 'build')
       end
 
       def ruby_release(context)
-        git_build(context)
+        context.git_build(context)
         # gem ["push #{context.context_name}-#{GVB.version}.gem"]
         # context.patch_bump if gem_installed?(context)
-        rake ['release']
+        context.rake context, ['release']
         # context.commit
       end
 
       def ruby_install(context)
-        gem ['install', context.context_name]
+        context.gem context, ['install', context.context_name]
       end
 
       def clean_folder(context, folder)
@@ -50,6 +50,7 @@ module Context
       end
 
       def ruby_cycle(context)
+        context.log "\n\nBuilding Ruby application for #{context}"
         if context.new_update_available?
           context.clean
           if git_dirty_state?(context)
@@ -62,14 +63,14 @@ module Context
           context.wait_until_release_available
           context.install
           if context.test_context_successful?
-            puts "newer version installed successfully for #{context.context_name} on version #{context.version}"
+            context.log "newer version installed successfully for #{context.context_name} on version #{context.version}"
             # context.patch_bump
             # patch_reset(context)
           else
-            puts "newer version not installed for #{context.context_name} on version #{context.version}"
+            context.log "newer version not installed for #{context.context_name} on version #{context.version}"
           end
         else
-          puts "No update available"
+          context.log "No update available"
         end
       end
     end
