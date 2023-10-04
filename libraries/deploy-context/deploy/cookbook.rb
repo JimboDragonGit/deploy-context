@@ -5,6 +5,10 @@ module Context
         context.execute_command(%w(chef) + commands)
       end
 
+      def knife(context, commands)
+        context.execute_command(%w(knife) + commands)
+      end
+
       def chef_exec(context, commands)
         context.chef(context, %w(exec) + commands)
       end
