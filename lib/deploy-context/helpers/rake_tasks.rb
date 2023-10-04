@@ -16,17 +16,15 @@ require 'git-version-bump/rake-tasks'
 require_relative '../../deploy-context'
 
 namespace :deploycontext do
-  deployer = Context::DeployContext.deployer
-
   task :default => "deploycontext:test" do
-    deployer.execute_action(deployer, 'once')
+    Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'once')
   end
 
   task :bump do
-    deployer.execute_action(deployer, 'bump')
+    Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'bump')
   end
 
   task :test do
-    deployer.execute_action(deployer, 'test')
+    Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'test')
   end
 end
