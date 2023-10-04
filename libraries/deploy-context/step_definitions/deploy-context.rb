@@ -1,7 +1,7 @@
 
 
 # Étantdonnéque('le projet {word} à une dernière version de disponible dans git') do |project_name|
-#   context_exec [project_name, 'once']
+#   context_exec [project_name, 'cycle']
   
 #   if project_name == deployer.context_name
 #     Dir.chdir deployer.context_folder
@@ -11,7 +11,7 @@
 # end
 
 Alors('démarrer un simple cycle de {word}') do |project_name|
-  context_exec [project_name, 'once'] || abort("#{project_name} ERROR: Issue with life cycle")
+  context_exec [project_name, 'cycle'] || abort("#{project_name} ERROR: Issue with life cycle")
 end
 
 Alors('déployer le projet {word}') do |project_name|

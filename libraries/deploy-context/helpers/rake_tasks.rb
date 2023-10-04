@@ -17,7 +17,7 @@ require_relative '../../deploy-context'
 
 namespace :deploycontext do
   task :default => "deploycontext:test" do
-    Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'once')
+    Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'cycle')
   end
 
   task :bump do

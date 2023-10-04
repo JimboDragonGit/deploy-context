@@ -27,14 +27,14 @@ MESSAGE_END
         context.error_log(context, help_message)
       end
 
-      def execute_action(context, action = 'once')
+      def execute_action(context, action)
         state_action = if action.nil?
           show_help(context)
           false
         else
           case action
           when 'cycle'
-            context.log "\nExecute only once\n"
+            context.log "\nExecute only the cycle once\n"
             context.cycle
             true
           when 'agent'
