@@ -28,6 +28,10 @@ namespace :deploycontext do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'test')
   end
 
+  task :release => "deploycontext:default"  do
+    Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'release')
+  end
+
   task :help do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'help')
   end
