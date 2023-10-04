@@ -10,7 +10,7 @@ module Context
       end
 
       def chef_generate(context, commands)
-        context.log("Generating Chel components with command #{commands}")
+        context.log("\n\nGenerating Chel components with command #{commands}")
         context.chef(context, %w(generate) + commands)
       end
 

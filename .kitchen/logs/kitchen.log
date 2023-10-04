@@ -1,29 +1,29 @@
-I, [2023-10-04T15:14:17.869622 #583318]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.3.2)
-E, [2023-10-04T15:14:17.869900 #583318] ERROR -- Kitchen: ------Exception-------
-E, [2023-10-04T15:14:17.869927 #583318] ERROR -- Kitchen: Class: Kitchen::UserError
-E, [2023-10-04T15:14:17.869947 #583318] ERROR -- Kitchen: Message: Kitchen YAML file /home/jimboadmin/deploy-context/kitchen.yml does not exist.
-E, [2023-10-04T15:14:17.869965 #583318] ERROR -- Kitchen: ----------------------
-E, [2023-10-04T15:14:17.869983 #583318] ERROR -- Kitchen: ------Backtrace-------
-E, [2023-10-04T15:14:17.870000 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/loader/yaml.rb:65:in `read'
-E, [2023-10-04T15:14:17.870018 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:153:in `data'
-E, [2023-10-04T15:14:17.870036 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:131:in `suites'
-E, [2023-10-04T15:14:17.870055 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:183:in `filter_instances'
-E, [2023-10-04T15:14:17.870072 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:142:in `build_instances'
-E, [2023-10-04T15:14:17.870094 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:116:in `instances'
-E, [2023-10-04T15:14:17.870114 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:109:in `filtered_instances'
-E, [2023-10-04T15:14:17.870132 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:139:in `parse_subcommand'
-E, [2023-10-04T15:14:17.870151 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command/test.rb:39:in `block in call'
-E, [2023-10-04T15:14:17.870184 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T15:14:17.870206 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command/test.rb:37:in `call'
-E, [2023-10-04T15:14:17.870225 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/cli.rb:52:in `perform'
-E, [2023-10-04T15:14:17.870243 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/cli.rb:250:in `test'
-E, [2023-10-04T15:14:17.870261 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/command.rb:27:in `run'
-E, [2023-10-04T15:14:17.870279 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/invocation.rb:127:in `invoke_command'
-E, [2023-10-04T15:14:17.870297 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor.rb:392:in `dispatch'
-E, [2023-10-04T15:14:17.870314 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/base.rb:485:in `start'
-E, [2023-10-04T15:14:17.870332 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/bin/kitchen:11:in `block in <top (required)>'
-E, [2023-10-04T15:14:17.870361 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/errors.rb:183:in `with_friendly_errors'
-E, [2023-10-04T15:14:17.870384 #583318] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/bin/kitchen:11:in `<top (required)>'
-E, [2023-10-04T15:14:17.870403 #583318] ERROR -- Kitchen: /opt/chef-workstation/bin/kitchen:389:in `load'
-E, [2023-10-04T15:14:17.870424 #583318] ERROR -- Kitchen: /opt/chef-workstation/bin/kitchen:389:in `<main>'
-E, [2023-10-04T15:14:17.870453 #583318] ERROR -- Kitchen: ----End Backtrace-----
+I, [2023-10-04T15:15:57.471410 #584278]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.3.2)
+E, [2023-10-04T15:15:57.471712 #584278] ERROR -- Kitchen: ------Exception-------
+E, [2023-10-04T15:15:57.471743 #584278] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2023-10-04T15:15:57.471771 #584278] ERROR -- Kitchen: Message: Kitchen YAML file /home/jimboadmin/deploy-context/kitchen.yml does not exist.
+E, [2023-10-04T15:15:57.471809 #584278] ERROR -- Kitchen: ----------------------
+E, [2023-10-04T15:15:57.471841 #584278] ERROR -- Kitchen: ------Backtrace-------
+E, [2023-10-04T15:15:57.471873 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/loader/yaml.rb:65:in `read'
+E, [2023-10-04T15:15:57.471906 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:153:in `data'
+E, [2023-10-04T15:15:57.471940 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:131:in `suites'
+E, [2023-10-04T15:15:57.471974 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:183:in `filter_instances'
+E, [2023-10-04T15:15:57.472008 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:142:in `build_instances'
+E, [2023-10-04T15:15:57.472041 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/config.rb:116:in `instances'
+E, [2023-10-04T15:15:57.472077 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:109:in `filtered_instances'
+E, [2023-10-04T15:15:57.472113 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:139:in `parse_subcommand'
+E, [2023-10-04T15:15:57.472137 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command/test.rb:39:in `block in call'
+E, [2023-10-04T15:15:57.472174 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T15:15:57.472239 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command/test.rb:37:in `call'
+E, [2023-10-04T15:15:57.472281 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/cli.rb:52:in `perform'
+E, [2023-10-04T15:15:57.472318 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/cli.rb:250:in `test'
+E, [2023-10-04T15:15:57.472347 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/command.rb:27:in `run'
+E, [2023-10-04T15:15:57.472367 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/invocation.rb:127:in `invoke_command'
+E, [2023-10-04T15:15:57.472388 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor.rb:392:in `dispatch'
+E, [2023-10-04T15:15:57.472406 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/base.rb:485:in `start'
+E, [2023-10-04T15:15:57.472424 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/bin/kitchen:11:in `block in <top (required)>'
+E, [2023-10-04T15:15:57.472441 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/errors.rb:183:in `with_friendly_errors'
+E, [2023-10-04T15:15:57.472458 #584278] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/bin/kitchen:11:in `<top (required)>'
+E, [2023-10-04T15:15:57.472476 #584278] ERROR -- Kitchen: /opt/chef-workstation/bin/kitchen:389:in `load'
+E, [2023-10-04T15:15:57.472492 #584278] ERROR -- Kitchen: /opt/chef-workstation/bin/kitchen:389:in `<main>'
+E, [2023-10-04T15:15:57.472516 #584278] ERROR -- Kitchen: ----End Backtrace-----
