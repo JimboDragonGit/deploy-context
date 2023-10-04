@@ -10,6 +10,7 @@ module Context
           Dir.chdir(context.context_folder)
           context.git_pull(context)
         else
+          context.error_log context.context_name, "Cloning from source in #{Dir.pwd}"
           local_dir = File.join(Dir.pwd, context.context_name)
           context.git context, ["clone git@github.com:JimboDragonGit/#{context.context_name}.git"] unless ::Dir.exist?(local_dir)
           context.move_folder(local_dir)
