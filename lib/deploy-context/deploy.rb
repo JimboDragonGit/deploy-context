@@ -35,7 +35,7 @@ module Context
 
     def version
       git_build(self)
-      puts "Getting version info for #{context_folder} and version should be #{GitVersionBump.version(true)}"
+      log "Getting version info for #{context_folder} and version should be #{GitVersionBump.version(true)}"
       Gem::Version.new(GitVersionBump.version(true))
     end
 
@@ -44,7 +44,7 @@ module Context
     end
 
     def test_context_successful?
-      puts "Check if #{context_name} is install #{version}"
+      log "Check if #{context_name} is install #{version}"
       if gem_installed?(self)
         puts "Test context #{context_name} was successfully install on version #{version}"
         true
