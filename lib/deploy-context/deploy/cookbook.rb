@@ -10,12 +10,12 @@ module Context
       end
 
       def chef_generate(context, commands)
-        context.log("\n\nGenerating Chel components with command #{commands}")
+        context.log("\n\nGenerating Chef components with command #{commands}")
         context.chef(context, %w(generate) + commands)
       end
 
       def generate_cookbook(context, cookbookname)
-        context.chef(context, %w(cookbook) + cookbookname)
+        context.chef_generate(context, %w(cookbook) + cookbookname)
       end
 
       def kitchen(context, commands = %w(test))
