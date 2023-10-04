@@ -13,7 +13,14 @@ module Context
         context.get_context_file(context, 'contexts')
       end
 
-      def execute_action(context, action)
+      def show_help
+        help_message = <<MESSAGE_END
+US
+MESSAGE_END
+        log 
+      end
+
+      def execute_action(context, action = 'once')
         state_action = if action.nil?
           context.cycle
           false
