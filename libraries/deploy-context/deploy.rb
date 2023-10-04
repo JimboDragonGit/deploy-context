@@ -63,6 +63,7 @@ module Context
 
     def commit
       git_commit(self)
+      cookbook_install(self)
     end
 
     def release

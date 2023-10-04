@@ -33,14 +33,25 @@ module Context
       def cookbook_test(context)
         cookbook_build(context)
         context.log "\n\nExecuting kitchen in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
-        context.chef(context, %w(install))
         context.kitchen(context)
+      end
+
+      def cookbook_install(context)
+        cookbook_build(context)
+        context.log "\n\nInstalling cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
+        context.chef(context, %w(install))
       end
 
       def cookbook_push(context)
         cookbook_build(context)
         context.log "\n\nPushing cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
         context.chef(context, %w(push))
+      end
+
+      def clean_file(context, file)
+        clean_folder = context.get_context_folder(context, folder)
+        puts "Clean folder #{clean_folder}"
+        FileUtils.remove_dir(clean_folder) if Dir.exist?(clean_folder)
       end
 
       def cookbook_clean(context)
