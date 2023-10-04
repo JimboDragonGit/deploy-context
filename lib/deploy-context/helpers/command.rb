@@ -1,7 +1,8 @@
 module Context
   module CommandHelper
     def debug?
-      ENV.key?('JIMBODRAGONDEBUG') && ! ENV['JIMBODRAGONDEBUG'].nil? && ENV['JIMBODRAGONDEBUG']
+      ENV.key?('CONTEXTDEBUG') && ! ENV['CONTEXTDEBUG'].nil? && ENV['CONTEXTDEBUG']
+      true
     end
 
     def log(message)
