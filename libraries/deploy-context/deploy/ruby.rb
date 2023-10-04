@@ -14,7 +14,7 @@ module Context
       def ruby_build(context)
         context.git_build(context)
         context.log "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created"
-        check_folder get_context_folder(context, 'build')
+        check_folder get_context_file(context, 'build')
       end
 
       def ruby_release(context)
@@ -30,7 +30,7 @@ module Context
       end
 
       def clean_folder(context, folder)
-        clean_folder = context.get_context_folder(context, folder)
+        clean_folder = context.get_context_file(context, folder)
         puts "Clean folder #{clean_folder}"
         FileUtils.remove_dir(clean_folder) if Dir.exist?(clean_folder)
       end
