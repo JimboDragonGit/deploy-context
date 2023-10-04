@@ -17,7 +17,7 @@ require_relative 'lib/deploy-context'
 
 deployer = Context::DeployContext.deployer
 
-task :default do
+task :default => "test" do
   deployer.execute_action(deployer, 'once')
 end
 
