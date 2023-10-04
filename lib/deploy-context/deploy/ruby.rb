@@ -50,8 +50,9 @@ module Context
       end
 
       def ruby_cycle(context)
-        context.log "\n\nBuilding Ruby application for #{context}"
+        context.log "\n\nBuilding Ruby application for #{context.context_name}"
         if context.new_update_available?
+          context.log "\n\nNew update available for #{context.context_name}"
           context.clean
           if git_dirty_state?(context)
             context.patch_bump
