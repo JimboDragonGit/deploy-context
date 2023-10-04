@@ -10,7 +10,7 @@ module Context
     end
 
     def debug_log(message)
-      puts message if debug?
+      log message if debug?
     end
 
     def is_admin?
@@ -23,6 +23,7 @@ module Context
     end
 
     def get_data(command_line)
+      debug_log "Get data from command #{command_line.join(' ')}"
       `#{command_line.join(' ')}`
     end
 
@@ -32,7 +33,7 @@ module Context
     end
 
     def sudo_command(command)
-      if unix? && Process::Sys.getuid != 0
+      if ! Gem.win_platform? && Process::Sys.getuid != 0
         ['sudo'] + command
       else
         command
@@ -43,7 +44,7 @@ module Context
       debug_log "write_in_system_file #{[file, content]}"
       system("touch #{file}")
       ::File.write(file, content)
-      system("chmod 644 #{file}") if unix?
+      system("chmod 644 #{file}") unless Gem.win_platform?
     end
   end
 end
