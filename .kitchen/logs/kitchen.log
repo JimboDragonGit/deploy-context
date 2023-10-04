@@ -1,221 +1,149 @@
-I, [2023-10-04T18:08:32.039936 #773566]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.3.2)
-I, [2023-10-04T18:08:33.009816 #773566]  INFO -- Kitchen: -----> Cleaning up any prior instances of <default-ubuntu-2004>
-I, [2023-10-04T18:08:33.010383 #773566]  INFO -- Kitchen: -----> Destroying <default-ubuntu-2004>...
-I, [2023-10-04T18:08:38.032142 #773566]  INFO -- Kitchen: -----> Testing <default-ubuntu-2004>
-I, [2023-10-04T18:08:38.032292 #773566]  INFO -- Kitchen: -----> Creating <default-ubuntu-2004>...
-I, [2023-10-04T18:09:47.933375 #773566]  INFO -- Kitchen: -----> Converging <default-ubuntu-2004>...
-I, [2023-10-04T18:09:49.087725 #773566]  INFO -- Kitchen: -----> Cleaning up any prior instances of <default-centos-8>
-I, [2023-10-04T18:09:49.088227 #773566]  INFO -- Kitchen: -----> Destroying <default-centos-8>...
-I, [2023-10-04T18:09:54.338994 #773566]  INFO -- Kitchen: -----> Testing <default-centos-8>
-I, [2023-10-04T18:09:54.339113 #773566]  INFO -- Kitchen: -----> Creating <default-centos-8>...
-I, [2023-10-04T18:10:44.942561 #773566]  INFO -- Kitchen: -----> Converging <default-centos-8>...
-E, [2023-10-04T18:10:45.939399 #773566] ERROR -- Kitchen: ------Exception-------
-E, [2023-10-04T18:10:45.939460 #773566] ERROR -- Kitchen: Class: Kitchen::ActionFailed
-E, [2023-10-04T18:10:45.939501 #773566] ERROR -- Kitchen: Message: 2 actions failed.
->>>>>>     Failed to complete #converge action: [Expected process to exit with [0], but received '1'
----- Begin output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-STDOUT: Installing cookbooks from lock
-Installing deploy-context 2.2.0
-STDERR: Error: Failed to install cookbooks from lockfile
-Reason: (CookbookOmnifetch::CookbookValidationFailure) The cookbook downloaded for Cookbook 'deploy-context' = 2.2.0 {:path=>"."} did not satisfy the constraint.
----- End output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-Ran /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept returned 1] on default-ubuntu-2004
->>>>>>     Failed to complete #converge action: [Expected process to exit with [0], but received '1'
----- Begin output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-STDOUT: Installing cookbooks from lock
-Installing deploy-context 2.2.0
-STDERR: Error: Failed to install cookbooks from lockfile
-Reason: (CookbookOmnifetch::CookbookValidationFailure) The cookbook downloaded for Cookbook 'deploy-context' = 2.2.0 {:path=>"."} did not satisfy the constraint.
----- End output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-Ran /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept returned 1] on default-centos-8
-E, [2023-10-04T18:10:45.939542 #773566] ERROR -- Kitchen: ----------------------
-E, [2023-10-04T18:10:45.939576 #773566] ERROR -- Kitchen: ------Backtrace-------
-E, [2023-10-04T18:10:45.939609 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:181:in `report_errors'
-E, [2023-10-04T18:10:45.939647 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:172:in `run_action'
-E, [2023-10-04T18:10:45.939685 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command/test.rb:41:in `block in call'
-E, [2023-10-04T18:10:45.939718 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T18:10:45.939754 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command/test.rb:37:in `call'
-E, [2023-10-04T18:10:45.939787 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/cli.rb:52:in `perform'
-E, [2023-10-04T18:10:45.939832 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/cli.rb:250:in `test'
-E, [2023-10-04T18:10:45.939867 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/command.rb:27:in `run'
-E, [2023-10-04T18:10:45.939898 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/invocation.rb:127:in `invoke_command'
-E, [2023-10-04T18:10:45.939935 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor.rb:392:in `dispatch'
-E, [2023-10-04T18:10:45.939971 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/base.rb:485:in `start'
-E, [2023-10-04T18:10:45.940003 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/bin/kitchen:11:in `block in <top (required)>'
-E, [2023-10-04T18:10:45.940037 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/errors.rb:183:in `with_friendly_errors'
-E, [2023-10-04T18:10:45.940069 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/bin/kitchen:11:in `<top (required)>'
-E, [2023-10-04T18:10:45.940102 #773566] ERROR -- Kitchen: /opt/chef-workstation/bin/kitchen:389:in `load'
-E, [2023-10-04T18:10:45.940139 #773566] ERROR -- Kitchen: /opt/chef-workstation/bin/kitchen:389:in `<main>'
-E, [2023-10-04T18:10:45.940173 #773566] ERROR -- Kitchen: ----End Backtrace-----
-E, [2023-10-04T18:10:45.940216 #773566] ERROR -- Kitchen: -Composite Exception--
-E, [2023-10-04T18:10:45.940250 #773566] ERROR -- Kitchen: Class: Kitchen::ActionFailed
-E, [2023-10-04T18:10:45.940282 #773566] ERROR -- Kitchen: Message: Failed to complete #converge action: [Expected process to exit with [0], but received '1'
----- Begin output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-STDOUT: Installing cookbooks from lock
-Installing deploy-context 2.2.0
-STDERR: Error: Failed to install cookbooks from lockfile
-Reason: (CookbookOmnifetch::CookbookValidationFailure) The cookbook downloaded for Cookbook 'deploy-context' = 2.2.0 {:path=>"."} did not satisfy the constraint.
----- End output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-Ran /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept returned 1] on default-ubuntu-2004
-E, [2023-10-04T18:10:45.940317 #773566] ERROR -- Kitchen: ----------------------
-E, [2023-10-04T18:10:45.940348 #773566] ERROR -- Kitchen: ------Backtrace-------
-E, [2023-10-04T18:10:45.940381 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
-E, [2023-10-04T18:10:45.940422 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/shell_out.rb:57:in `run_command'
-E, [2023-10-04T18:10:45.940461 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/policyfile.rb:81:in `compile'
-E, [2023-10-04T18:10:45.940501 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:296:in `block in update_dna_for_policyfile'
-E, [2023-10-04T18:10:45.940535 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:295:in `synchronize'
-E, [2023-10-04T18:10:45.940567 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:295:in `update_dna_for_policyfile'
-E, [2023-10-04T18:10:45.940609 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:274:in `prepare_json'
-E, [2023-10-04T18:10:45.940646 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:45:in `populate'
-E, [2023-10-04T18:10:45.940682 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef_base.rb:308:in `create_sandbox'
-E, [2023-10-04T18:10:45.940722 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef_infra.rb:49:in `create_sandbox'
-E, [2023-10-04T18:10:45.940759 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:72:in `call'
-E, [2023-10-04T18:10:45.940797 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:419:in `block in converge_action'
-E, [2023-10-04T18:10:45.940834 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:563:in `synchronize_or_call'
-E, [2023-10-04T18:10:45.940875 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:524:in `block in action'
-E, [2023-10-04T18:10:45.941460 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T18:10:45.941492 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:523:in `action'
-E, [2023-10-04T18:10:45.941523 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:414:in `converge_action'
-E, [2023-10-04T18:10:45.941555 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
-E, [2023-10-04T18:10:45.941590 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
-E, [2023-10-04T18:10:45.941629 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:391:in `block in transition_to'
-E, [2023-10-04T18:10:45.941670 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `each'
-E, [2023-10-04T18:10:45.941711 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `transition_to'
-E, [2023-10-04T18:10:45.941750 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:161:in `verify'
-E, [2023-10-04T18:10:45.941786 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:190:in `block in test'
-E, [2023-10-04T18:10:45.941823 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T18:10:45.941862 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:186:in `test'
-E, [2023-10-04T18:10:45.941902 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `public_send'
-E, [2023-10-04T18:10:45.941939 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `run_action_in_thread'
-E, [2023-10-04T18:10:45.941975 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
-E, [2023-10-04T18:10:45.942022 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.1/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
-E, [2023-10-04T18:10:45.942068 #773566] ERROR -- Kitchen: ----End Backtrace-----
-E, [2023-10-04T18:10:45.942108 #773566] ERROR -- Kitchen: ---Nested Exception---
-E, [2023-10-04T18:10:45.942147 #773566] ERROR -- Kitchen: Class: Kitchen::ActionFailed
-E, [2023-10-04T18:10:45.942180 #773566] ERROR -- Kitchen: Message: Failed to complete #converge action: [Expected process to exit with [0], but received '1'
----- Begin output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-STDOUT: Installing cookbooks from lock
-Installing deploy-context 2.2.0
-STDERR: Error: Failed to install cookbooks from lockfile
-Reason: (CookbookOmnifetch::CookbookValidationFailure) The cookbook downloaded for Cookbook 'deploy-context' = 2.2.0 {:path=>"."} did not satisfy the constraint.
----- End output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-Ran /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept returned 1]
-E, [2023-10-04T18:10:45.942221 #773566] ERROR -- Kitchen: ----------------------
-E, [2023-10-04T18:10:45.942259 #773566] ERROR -- Kitchen: ------Backtrace-------
-E, [2023-10-04T18:10:45.942296 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
-E, [2023-10-04T18:10:45.942335 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/shell_out.rb:57:in `run_command'
-E, [2023-10-04T18:10:45.942386 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/policyfile.rb:81:in `compile'
-E, [2023-10-04T18:10:45.942424 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:296:in `block in update_dna_for_policyfile'
-E, [2023-10-04T18:10:45.942458 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:295:in `synchronize'
-E, [2023-10-04T18:10:45.942497 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:295:in `update_dna_for_policyfile'
-E, [2023-10-04T18:10:45.942535 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:274:in `prepare_json'
-E, [2023-10-04T18:10:45.942573 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:45:in `populate'
-E, [2023-10-04T18:10:45.942609 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef_base.rb:308:in `create_sandbox'
-E, [2023-10-04T18:10:45.942654 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef_infra.rb:49:in `create_sandbox'
-E, [2023-10-04T18:10:45.942697 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:72:in `call'
-E, [2023-10-04T18:10:45.942738 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:419:in `block in converge_action'
-E, [2023-10-04T18:10:45.942775 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:563:in `synchronize_or_call'
-E, [2023-10-04T18:10:45.942811 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:524:in `block in action'
-E, [2023-10-04T18:10:45.942854 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T18:10:45.942893 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:523:in `action'
-E, [2023-10-04T18:10:45.942932 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:414:in `converge_action'
-E, [2023-10-04T18:10:45.942968 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
-E, [2023-10-04T18:10:45.943013 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
-E, [2023-10-04T18:10:45.943050 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:391:in `block in transition_to'
-E, [2023-10-04T18:10:45.943088 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `each'
-E, [2023-10-04T18:10:45.943125 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `transition_to'
-E, [2023-10-04T18:10:45.943162 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:161:in `verify'
-E, [2023-10-04T18:10:45.943201 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:190:in `block in test'
-E, [2023-10-04T18:10:45.943240 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T18:10:45.943279 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:186:in `test'
-E, [2023-10-04T18:10:45.943321 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `public_send'
-E, [2023-10-04T18:10:45.943357 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `run_action_in_thread'
-E, [2023-10-04T18:10:45.943394 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
-E, [2023-10-04T18:10:45.943432 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.1/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
-E, [2023-10-04T18:10:45.943466 #773566] ERROR -- Kitchen: ----End Backtrace-----
-E, [2023-10-04T18:10:45.943501 #773566] ERROR -- Kitchen: -Composite Exception--
-E, [2023-10-04T18:10:45.943542 #773566] ERROR -- Kitchen: Class: Kitchen::ActionFailed
-E, [2023-10-04T18:10:45.943584 #773566] ERROR -- Kitchen: Message: Failed to complete #converge action: [Expected process to exit with [0], but received '1'
----- Begin output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-STDOUT: Installing cookbooks from lock
-Installing deploy-context 2.2.0
-STDERR: Error: Failed to install cookbooks from lockfile
-Reason: (CookbookOmnifetch::CookbookValidationFailure) The cookbook downloaded for Cookbook 'deploy-context' = 2.2.0 {:path=>"."} did not satisfy the constraint.
----- End output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-Ran /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept returned 1] on default-centos-8
-E, [2023-10-04T18:10:45.943741 #773566] ERROR -- Kitchen: ----------------------
-E, [2023-10-04T18:10:45.943786 #773566] ERROR -- Kitchen: ------Backtrace-------
-E, [2023-10-04T18:10:45.943825 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
-E, [2023-10-04T18:10:45.943895 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/shell_out.rb:57:in `run_command'
-E, [2023-10-04T18:10:45.943970 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/policyfile.rb:81:in `compile'
-E, [2023-10-04T18:10:45.944040 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:296:in `block in update_dna_for_policyfile'
-E, [2023-10-04T18:10:45.944112 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:295:in `synchronize'
-E, [2023-10-04T18:10:45.944181 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:295:in `update_dna_for_policyfile'
-E, [2023-10-04T18:10:45.944261 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:274:in `prepare_json'
-E, [2023-10-04T18:10:45.944331 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:45:in `populate'
-E, [2023-10-04T18:10:45.944401 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef_base.rb:308:in `create_sandbox'
-E, [2023-10-04T18:10:45.944471 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef_infra.rb:49:in `create_sandbox'
-E, [2023-10-04T18:10:45.944542 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:72:in `call'
-E, [2023-10-04T18:10:45.944613 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:419:in `block in converge_action'
-E, [2023-10-04T18:10:45.944651 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:563:in `synchronize_or_call'
-E, [2023-10-04T18:10:45.944702 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:524:in `block in action'
-E, [2023-10-04T18:10:45.944758 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T18:10:45.944838 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:523:in `action'
-E, [2023-10-04T18:10:45.944907 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:414:in `converge_action'
-E, [2023-10-04T18:10:45.944949 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
-E, [2023-10-04T18:10:45.944994 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
-E, [2023-10-04T18:10:45.945036 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:391:in `block in transition_to'
-E, [2023-10-04T18:10:45.945078 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `each'
-E, [2023-10-04T18:10:45.945126 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `transition_to'
-E, [2023-10-04T18:10:45.945173 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:161:in `verify'
-E, [2023-10-04T18:10:45.945212 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:190:in `block in test'
-E, [2023-10-04T18:10:45.945256 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T18:10:45.945299 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:186:in `test'
-E, [2023-10-04T18:10:45.945341 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `public_send'
-E, [2023-10-04T18:10:45.945385 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `run_action_in_thread'
-E, [2023-10-04T18:10:45.945427 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
-E, [2023-10-04T18:10:45.945469 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.1/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
-E, [2023-10-04T18:10:45.945513 #773566] ERROR -- Kitchen: ----End Backtrace-----
-E, [2023-10-04T18:10:45.945552 #773566] ERROR -- Kitchen: ---Nested Exception---
-E, [2023-10-04T18:10:45.945589 #773566] ERROR -- Kitchen: Class: Kitchen::ActionFailed
-E, [2023-10-04T18:10:45.945628 #773566] ERROR -- Kitchen: Message: Failed to complete #converge action: [Expected process to exit with [0], but received '1'
----- Begin output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-STDOUT: Installing cookbooks from lock
-Installing deploy-context 2.2.0
-STDERR: Error: Failed to install cookbooks from lockfile
-Reason: (CookbookOmnifetch::CookbookValidationFailure) The cookbook downloaded for Cookbook 'deploy-context' = 2.2.0 {:path=>"."} did not satisfy the constraint.
----- End output of /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept ----
-Ran /opt/chef-workstation/bin/chef-cli install /home/jimboadmin/deploy-context/Policyfile.rb --chef-license accept returned 1]
-E, [2023-10-04T18:10:45.945667 #773566] ERROR -- Kitchen: ----------------------
-E, [2023-10-04T18:10:45.945704 #773566] ERROR -- Kitchen: ------Backtrace-------
-E, [2023-10-04T18:10:45.945742 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
-E, [2023-10-04T18:10:45.945791 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/shell_out.rb:57:in `run_command'
-E, [2023-10-04T18:10:45.945841 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/policyfile.rb:81:in `compile'
-E, [2023-10-04T18:10:45.945891 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:296:in `block in update_dna_for_policyfile'
-E, [2023-10-04T18:10:45.945933 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:295:in `synchronize'
-E, [2023-10-04T18:10:45.945976 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:295:in `update_dna_for_policyfile'
-E, [2023-10-04T18:10:45.946027 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:274:in `prepare_json'
-E, [2023-10-04T18:10:45.946069 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef/common_sandbox.rb:45:in `populate'
-E, [2023-10-04T18:10:45.946109 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef_base.rb:308:in `create_sandbox'
-E, [2023-10-04T18:10:45.946157 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/chef_infra.rb:49:in `create_sandbox'
-E, [2023-10-04T18:10:45.946201 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:72:in `call'
-E, [2023-10-04T18:10:45.946272 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:419:in `block in converge_action'
-E, [2023-10-04T18:10:45.946315 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:563:in `synchronize_or_call'
-E, [2023-10-04T18:10:45.946363 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:524:in `block in action'
-E, [2023-10-04T18:10:45.946410 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T18:10:45.946451 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:523:in `action'
-E, [2023-10-04T18:10:45.946494 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:414:in `converge_action'
-E, [2023-10-04T18:10:45.946535 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
-E, [2023-10-04T18:10:45.946580 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
-E, [2023-10-04T18:10:45.946647 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:391:in `block in transition_to'
-E, [2023-10-04T18:10:45.946688 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `each'
-E, [2023-10-04T18:10:45.946730 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `transition_to'
-E, [2023-10-04T18:10:45.946772 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:161:in `verify'
-E, [2023-10-04T18:10:45.946818 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:190:in `block in test'
-E, [2023-10-04T18:10:45.946860 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
-E, [2023-10-04T18:10:45.946902 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:186:in `test'
-E, [2023-10-04T18:10:45.946948 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `public_send'
-E, [2023-10-04T18:10:45.946996 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `run_action_in_thread'
-E, [2023-10-04T18:10:45.947035 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
-E, [2023-10-04T18:10:45.947082 #773566] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.1/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
-E, [2023-10-04T18:10:45.947123 #773566] ERROR -- Kitchen: ----End Backtrace-----
+I, [2023-10-04T18:12:34.778199 #780474]  INFO -- Kitchen: -----> Starting Test Kitchen (v3.3.2)
+I, [2023-10-04T18:12:35.805470 #780474]  INFO -- Kitchen: -----> Cleaning up any prior instances of <default-ubuntu-2004>
+I, [2023-10-04T18:12:35.805960 #780474]  INFO -- Kitchen: -----> Destroying <default-ubuntu-2004>...
+I, [2023-10-04T18:12:40.770567 #780474]  INFO -- Kitchen: -----> Testing <default-ubuntu-2004>
+I, [2023-10-04T18:12:40.770703 #780474]  INFO -- Kitchen: -----> Creating <default-ubuntu-2004>...
+I, [2023-10-04T18:13:52.553692 #780474]  INFO -- Kitchen: -----> Converging <default-ubuntu-2004>...
+I, [2023-10-04T18:14:12.847602 #780474]  INFO -- Kitchen: -----> Cleaning up any prior instances of <default-centos-8>
+I, [2023-10-04T18:14:12.848094 #780474]  INFO -- Kitchen: -----> Destroying <default-centos-8>...
+I, [2023-10-04T18:14:17.900546 #780474]  INFO -- Kitchen: -----> Testing <default-centos-8>
+I, [2023-10-04T18:14:17.900666 #780474]  INFO -- Kitchen: -----> Creating <default-centos-8>...
+I, [2023-10-04T18:15:10.643363 #780474]  INFO -- Kitchen: -----> Converging <default-centos-8>...
+E, [2023-10-04T18:15:34.531626 #780474] ERROR -- Kitchen: ------Exception-------
+E, [2023-10-04T18:15:34.531706 #780474] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2023-10-04T18:15:34.531748 #780474] ERROR -- Kitchen: Message: 2 actions failed.
+>>>>>>     Converge failed on instance <default-ubuntu-2004>.  Please see .kitchen/logs/default-ubuntu-2004.log for more details
+>>>>>>     Converge failed on instance <default-centos-8>.  Please see .kitchen/logs/default-centos-8.log for more details
+E, [2023-10-04T18:15:34.531791 #780474] ERROR -- Kitchen: ----------------------
+E, [2023-10-04T18:15:34.531817 #780474] ERROR -- Kitchen: ------Backtrace-------
+E, [2023-10-04T18:15:34.531854 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:181:in `report_errors'
+E, [2023-10-04T18:15:34.531887 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:172:in `run_action'
+E, [2023-10-04T18:15:34.531933 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command/test.rb:41:in `block in call'
+E, [2023-10-04T18:15:34.531974 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T18:15:34.532003 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command/test.rb:37:in `call'
+E, [2023-10-04T18:15:34.532048 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/cli.rb:52:in `perform'
+E, [2023-10-04T18:15:34.532087 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/cli.rb:250:in `test'
+E, [2023-10-04T18:15:34.532115 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/command.rb:27:in `run'
+E, [2023-10-04T18:15:34.532163 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/invocation.rb:127:in `invoke_command'
+E, [2023-10-04T18:15:34.532199 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor.rb:392:in `dispatch'
+E, [2023-10-04T18:15:34.532238 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/thor-1.2.1/lib/thor/base.rb:485:in `start'
+E, [2023-10-04T18:15:34.532278 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/bin/kitchen:11:in `block in <top (required)>'
+E, [2023-10-04T18:15:34.532310 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/errors.rb:183:in `with_friendly_errors'
+E, [2023-10-04T18:15:34.532348 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/bin/kitchen:11:in `<top (required)>'
+E, [2023-10-04T18:15:34.532388 #780474] ERROR -- Kitchen: /opt/chef-workstation/bin/kitchen:389:in `load'
+E, [2023-10-04T18:15:34.532413 #780474] ERROR -- Kitchen: /opt/chef-workstation/bin/kitchen:389:in `<main>'
+E, [2023-10-04T18:15:34.532459 #780474] ERROR -- Kitchen: ----End Backtrace-----
+E, [2023-10-04T18:15:34.532496 #780474] ERROR -- Kitchen: -Composite Exception--
+E, [2023-10-04T18:15:34.532524 #780474] ERROR -- Kitchen: Class: Kitchen::InstanceFailure
+E, [2023-10-04T18:15:34.532568 #780474] ERROR -- Kitchen: Message: Converge failed on instance <default-ubuntu-2004>.  Please see .kitchen/logs/default-ubuntu-2004.log for more details
+E, [2023-10-04T18:15:34.532603 #780474] ERROR -- Kitchen: ----------------------
+E, [2023-10-04T18:15:34.532650 #780474] ERROR -- Kitchen: ------Backtrace-------
+E, [2023-10-04T18:15:34.532692 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:99:in `rescue in call'
+E, [2023-10-04T18:15:34.532759 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:98:in `call'
+E, [2023-10-04T18:15:34.532801 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:419:in `block in converge_action'
+E, [2023-10-04T18:15:34.532836 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2023-10-04T18:15:34.532865 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:524:in `block in action'
+E, [2023-10-04T18:15:34.532923 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T18:15:34.532951 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:523:in `action'
+E, [2023-10-04T18:15:34.532990 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:414:in `converge_action'
+E, [2023-10-04T18:15:34.533027 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2023-10-04T18:15:34.533062 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2023-10-04T18:15:34.533106 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2023-10-04T18:15:34.533157 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `each'
+E, [2023-10-04T18:15:34.533188 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2023-10-04T18:15:34.533240 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:161:in `verify'
+E, [2023-10-04T18:15:34.533282 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:190:in `block in test'
+E, [2023-10-04T18:15:34.533326 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T18:15:34.533371 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:186:in `test'
+E, [2023-10-04T18:15:34.533413 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `public_send'
+E, [2023-10-04T18:15:34.533449 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2023-10-04T18:15:34.533483 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2023-10-04T18:15:34.533517 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.1/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2023-10-04T18:15:34.533577 #780474] ERROR -- Kitchen: ----End Backtrace-----
+E, [2023-10-04T18:15:34.533607 #780474] ERROR -- Kitchen: ---Nested Exception---
+E, [2023-10-04T18:15:34.533639 #780474] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2023-10-04T18:15:34.533686 #780474] ERROR -- Kitchen: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2023-10-04T18:15:34.533721 #780474] ERROR -- Kitchen: ----------------------
+E, [2023-10-04T18:15:34.533760 #780474] ERROR -- Kitchen: ------Backtrace-------
+E, [2023-10-04T18:15:34.533799 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:99:in `rescue in call'
+E, [2023-10-04T18:15:34.533992 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:98:in `call'
+E, [2023-10-04T18:15:34.534038 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:419:in `block in converge_action'
+E, [2023-10-04T18:15:34.534069 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2023-10-04T18:15:34.534202 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:524:in `block in action'
+E, [2023-10-04T18:15:34.534275 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T18:15:34.534398 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:523:in `action'
+E, [2023-10-04T18:15:34.534435 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:414:in `converge_action'
+E, [2023-10-04T18:15:34.534505 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2023-10-04T18:15:34.534545 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2023-10-04T18:15:34.534611 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2023-10-04T18:15:34.534650 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `each'
+E, [2023-10-04T18:15:34.534702 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2023-10-04T18:15:34.534753 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:161:in `verify'
+E, [2023-10-04T18:15:34.534796 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:190:in `block in test'
+E, [2023-10-04T18:15:34.534839 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T18:15:34.534900 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:186:in `test'
+E, [2023-10-04T18:15:34.534942 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `public_send'
+E, [2023-10-04T18:15:34.535015 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2023-10-04T18:15:34.535054 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2023-10-04T18:15:34.535083 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.1/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2023-10-04T18:15:34.535125 #780474] ERROR -- Kitchen: ----End Backtrace-----
+E, [2023-10-04T18:15:34.535165 #780474] ERROR -- Kitchen: -Composite Exception--
+E, [2023-10-04T18:15:34.535220 #780474] ERROR -- Kitchen: Class: Kitchen::InstanceFailure
+E, [2023-10-04T18:15:34.535256 #780474] ERROR -- Kitchen: Message: Converge failed on instance <default-centos-8>.  Please see .kitchen/logs/default-centos-8.log for more details
+E, [2023-10-04T18:15:34.535298 #780474] ERROR -- Kitchen: ----------------------
+E, [2023-10-04T18:15:34.535350 #780474] ERROR -- Kitchen: ------Backtrace-------
+E, [2023-10-04T18:15:34.535383 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:99:in `rescue in call'
+E, [2023-10-04T18:15:34.535444 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:98:in `call'
+E, [2023-10-04T18:15:34.535490 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:419:in `block in converge_action'
+E, [2023-10-04T18:15:34.535520 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2023-10-04T18:15:34.535559 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:524:in `block in action'
+E, [2023-10-04T18:15:34.535586 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T18:15:34.535631 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:523:in `action'
+E, [2023-10-04T18:15:34.535686 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:414:in `converge_action'
+E, [2023-10-04T18:15:34.535732 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2023-10-04T18:15:34.535770 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2023-10-04T18:15:34.535810 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2023-10-04T18:15:34.535855 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `each'
+E, [2023-10-04T18:15:34.535893 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2023-10-04T18:15:34.535937 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:161:in `verify'
+E, [2023-10-04T18:15:34.535970 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:190:in `block in test'
+E, [2023-10-04T18:15:34.536023 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T18:15:34.536068 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:186:in `test'
+E, [2023-10-04T18:15:34.536113 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `public_send'
+E, [2023-10-04T18:15:34.536153 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2023-10-04T18:15:34.536198 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2023-10-04T18:15:34.536236 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.1/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2023-10-04T18:15:34.536267 #780474] ERROR -- Kitchen: ----End Backtrace-----
+E, [2023-10-04T18:15:34.536300 #780474] ERROR -- Kitchen: ---Nested Exception---
+E, [2023-10-04T18:15:34.536348 #780474] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2023-10-04T18:15:34.536387 #780474] ERROR -- Kitchen: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2023-10-04T18:15:34.536426 #780474] ERROR -- Kitchen: ----------------------
+E, [2023-10-04T18:15:34.536464 #780474] ERROR -- Kitchen: ------Backtrace-------
+E, [2023-10-04T18:15:34.536494 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:99:in `rescue in call'
+E, [2023-10-04T18:15:34.536519 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/provisioner/base.rb:98:in `call'
+E, [2023-10-04T18:15:34.536547 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:419:in `block in converge_action'
+E, [2023-10-04T18:15:34.536575 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:563:in `synchronize_or_call'
+E, [2023-10-04T18:15:34.536621 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:524:in `block in action'
+E, [2023-10-04T18:15:34.536659 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T18:15:34.536697 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:523:in `action'
+E, [2023-10-04T18:15:34.536729 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:414:in `converge_action'
+E, [2023-10-04T18:15:34.536754 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:392:in `block (2 levels) in transition_to'
+E, [2023-10-04T18:15:34.536781 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/lifecycle_hooks.rb:47:in `run_with_hooks'
+E, [2023-10-04T18:15:34.536825 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:391:in `block in transition_to'
+E, [2023-10-04T18:15:34.536856 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `each'
+E, [2023-10-04T18:15:34.536904 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:390:in `transition_to'
+E, [2023-10-04T18:15:34.536934 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:161:in `verify'
+E, [2023-10-04T18:15:34.536973 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:190:in `block in test'
+E, [2023-10-04T18:15:34.537017 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/3.0.0/benchmark.rb:293:in `measure'
+E, [2023-10-04T18:15:34.537065 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/instance.rb:186:in `test'
+E, [2023-10-04T18:15:34.537110 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `public_send'
+E, [2023-10-04T18:15:34.537150 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:195:in `run_action_in_thread'
+E, [2023-10-04T18:15:34.537206 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/test-kitchen-3.3.2/lib/kitchen/command.rb:166:in `block (2 levels) in run_action'
+E, [2023-10-04T18:15:34.537253 #780474] ERROR -- Kitchen: /opt/chef-workstation/embedded/lib/ruby/gems/3.0.0/gems/logging-2.3.1/lib/logging/diagnostic_context.rb:474:in `block in create_with_logging_context'
+E, [2023-10-04T18:15:34.537292 #780474] ERROR -- Kitchen: ----End Backtrace-----
