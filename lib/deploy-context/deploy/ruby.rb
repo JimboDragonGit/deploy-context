@@ -3,8 +3,16 @@ require 'rubygems'
 module Context
   module DeployHelpers
     module RubyHelper
+      def gem(context, commands)
+        context.chef_exec(context, %w(gem) + commands)
+      end
+      
+      def rake(context, commands = [])
+        context.chef_exec(context, %w(rake) + commands)
+      end
+
       def ruby_build(context)
-        git_build(context)
+        context.git_build(context)
         context.log "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created"
         check_folder get_context_folder(context, 'build')
       end
@@ -22,7 +30,7 @@ module Context
       end
 
       def clean_folder(context, folder)
-        clean_folder = get_context_folder(context, folder)
+        clean_folder = context.get_context_folder(context, folder)
         puts "Clean folder #{clean_folder}"
         FileUtils.remove_dir(clean_folder) if Dir.exist?(clean_folder)
       end

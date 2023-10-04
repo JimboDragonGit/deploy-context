@@ -47,7 +47,7 @@ module Context
       log "Check if #{context_name} is install #{version}"
       if gem_installed?(self)
         puts "Test context #{context_name} was successfully install on version #{version}"
-        true
+        cookbook_test(context)
       else
         abort "Test context #{context_name} has failed to install #{version}"
       end

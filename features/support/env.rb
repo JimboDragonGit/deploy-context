@@ -1,9 +1,6 @@
-require 'deploy-context'
 
-def deployer
-  Context::DeployContext.deployer
-end
+require_relative '../../lib/deploy-context'
 
 def context_exec(command)
-  system(command.join(' '))
+  Context::DeployContext.deployer.execute_command(command.join(' '))
 end

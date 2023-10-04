@@ -12,26 +12,6 @@ module Context
       def contexts_container(context)
         context.get_context_folder(context, 'contexts')
       end
-      
-      def chef_exec(context, commands)
-        context.execute_command(%w(chef exec) + commands)
-      end
-      
-      def git(context, commands)
-        context.chef_exec(context,['git'] + commands)
-      end
-      
-      def gem(context, commands)
-        context.chef_exec(context,['gem'] + commands)
-      end
-      
-      def rake(context, commands)
-        context.chef_exec(context,['rake'] + commands)
-      end
-      
-      def cucumber(context, commands = [])
-        context.chef_exec(context,['cucumber'] + commands)
-      end
 
       def execute_action(context, action)
         state_action = if action.nil?

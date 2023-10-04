@@ -1,6 +1,10 @@
 module Context
   module DeployHelpers
     module GitHelper
+      def git(context, commands)
+        context.chef_exec(context, %w(git) + commands)
+      end
+
       def git_build(context)
         if context.present_localy?
           Dir.chdir(context.context_folder)
@@ -14,7 +18,7 @@ module Context
 
       def git_pull(context)
         context.git_build(context) unless context.actual_working_directory?
-        context.git context, ['pull']
+        context.git context, %w(pull)
       end
 
       def git_commit(context)
