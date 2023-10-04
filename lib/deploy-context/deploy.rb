@@ -30,8 +30,8 @@ module Context
 
     def version
       git_build(self)
-      puts "Getting version info for #{context_folder} and version should be #{GitVersionBump.version}"
-      Gem::Version.new(GitVersionBump.version)
+      puts "Getting version info for #{context_folder} and version should be #{GitVersionBump.version(true)}"
+      Gem::Version.new(GitVersionBump.version(true))
     end
 
     def cycle
@@ -72,15 +72,15 @@ module Context
     end
 
     def patch_bump
-      GitVersionBump.tag_version "#{GitVersionBump.major_version}.#{GitVersionBump.minor_version}.#{GitVersionBump.patch_version+1}"
+      GitVersionBump.tag_version("#{GitVersionBump.major_version(true)}.#{GitVersionBump.minor_version(true)}.#{GitVersionBump.patch_version(true) + 1}")
     end
 
     def minor_bump
-      GitVersionBump.tag_version "#{GitVersionBump.major_version}.#{GitVersionBump.minor_version+1}.0"
+      GitVersionBump.tag_version("#{GitVersionBump.major_version(true)}.#{GitVersionBump.minor_version(true) + 1}.0")
     end
 
     def major_bump
-      GitVersionBump.tag_version "#{GitVersionBump.major_version + 1}.0.0"
+      GitVersionBump.tag_version("#{GitVersionBump.major_version(true) + 1}.0.0")
     end
 
     def wait_until_release_available
