@@ -12,6 +12,10 @@ module Context
       log message if debug?
     end
 
+    def error_log(name, message)
+      log "\n\n#{name} ERROR: #{message}"
+    end
+
     def is_admin?
       Process::Sys.getuid != 0
     end
