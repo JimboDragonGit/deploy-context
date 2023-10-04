@@ -24,7 +24,7 @@ Use the option 'test' to test the context
 Use the option 'reset' to execute the local cycle once
 Use the option 'help' to show this message
 MESSAGE_END
-        context.error_log(context, help_message)
+        context.error_log(context.context_name, help_message)
       end
 
       def execute_action(context, action)
