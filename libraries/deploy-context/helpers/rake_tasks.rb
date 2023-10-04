@@ -24,7 +24,11 @@ namespace :deploycontext do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'bump')
   end
 
-  task :test do
+  task :test => "deploycontext:help" do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'test')
+  end
+
+  task :help do
+    Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'help')
   end
 end
