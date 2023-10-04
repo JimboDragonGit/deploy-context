@@ -45,7 +45,7 @@ module Context
       def cookbook_push(context)
         cookbook_build(context)
         context.log "\n\nPushing cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
-        context.chef(context, %w(push))
+        context.chef(context, %w(push Policyfile.rb))
       end
 
       def clean_file(context, file)
