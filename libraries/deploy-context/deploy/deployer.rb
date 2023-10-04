@@ -74,7 +74,7 @@ MESSAGE_END
         end
         context.commit
         if state_action
-          context.log "Action #{action} executed correctly in context #{context}"
+          context.log "\n\nAction #{action} executed correctly in context #{context}"
         else
           context.error_log(context.context_name, "Failed to execute action #{action} in context #{context}")
         end
