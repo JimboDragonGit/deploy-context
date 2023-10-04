@@ -6,7 +6,7 @@ maintainer 'Jimmy Provencher'
 maintainer_email 'jimmy.provencher@hotmail.ca'
 license 'All Rights Reserved'
 description 'Installs/Configures deploy-context'
-version GVB.version
+version "#{GVB.major_version}.#{GVB.minor_version}.#{GVB.patch_version}"
 chef_version '>= 16.0'
 
 # The `issues_url` points to the location where issues for this cookbook are
