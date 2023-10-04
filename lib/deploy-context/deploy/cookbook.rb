@@ -30,7 +30,7 @@ module Context
       end
 
       def cookbook_test(context)
-        context.log "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
+        context.log "Executing kitchen in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
         context.kitchen(context)
       end
     end
