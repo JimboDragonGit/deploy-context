@@ -7,7 +7,7 @@ module Context
           context.git_pull(context)
         else
           local_dir = File.join(Dir.pwd, context.context_name)
-          context.git ["clone git@github.com:JimboDragonGit/#{context.context_name}.git"] unless ::Dir.exist?(local_dir)
+          context.git context, ["clone git@github.com:JimboDragonGit/#{context.context_name}.git"] unless ::Dir.exist?(local_dir)
           context.move_folder(local_dir)
         end
       end
