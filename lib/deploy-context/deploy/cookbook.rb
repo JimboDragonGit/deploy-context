@@ -13,8 +13,8 @@ module Context
         context.chef(context, %w(generate) + commands)
       end
 
-      def generate_cookbook(context, cookbook)
-        context.chef(context, %w(cookbook) + cookbook)
+      def generate_cookbook(context, cookbookname)
+        context.chef(context, %w(cookbook) + cookbookname)
       end
 
       def kitchen(context, commands = %w(test))
