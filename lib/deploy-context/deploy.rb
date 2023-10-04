@@ -77,23 +77,23 @@ module Context
       ruby_clean(self)
     end
 
-    def show_new_version
-      log "Patch bump #{context_name} at newer version #{version}"
+    def show_new_version(level)
+      log "#{level} bump #{context_name} at newer version #{version}"
     end
 
     def patch_bump
       GitVersionBump.tag_version("#{GitVersionBump.major_version(true)}.#{GitVersionBump.minor_version(true)}.#{GitVersionBump.patch_version(true) + 1}")
-      show_new_version
+      show_new_version('Patch')
     end
 
     def minor_bump
       GitVersionBump.tag_version("#{GitVersionBump.major_version(true)}.#{GitVersionBump.minor_version(true) + 1}.0")
-      show_new_version
+      show_new_version('Minor')
     end
 
     def major_bump
       GitVersionBump.tag_version("#{GitVersionBump.major_version(true) + 1}.0.0")
-      show_new_version
+      show_new_version('Major')
     end
 
     def wait_until_release_available
