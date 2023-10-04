@@ -49,6 +49,12 @@ module Context
             system('rake')
             # context.cucumber_test(deployer)
             true
+          when 'help'
+            context.show_help
+            context.log "\nReset versionning\n"
+            system('rake')
+            # context.cucumber_test(deployer)
+            true
           else
             context.error_log context.context_name, "Unknown setting #{action}"
             false
