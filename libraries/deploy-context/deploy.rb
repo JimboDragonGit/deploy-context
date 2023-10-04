@@ -67,6 +67,7 @@ module Context
 
     def release
       debug_log "Release #{context_name} at version #{version}"
+      cookbook_push(self)
       ruby_release(self)
       git_release(self)
     end
