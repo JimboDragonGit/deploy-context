@@ -43,8 +43,7 @@ module Context
             true
           when 'test'
             context.log "\nExecute tests\n"
-            context.cucumber_test(context)
-            true
+            context.test_context_successful?
           when 'reset'
             context.log "\nReset versionning\n"
             system('rake')
