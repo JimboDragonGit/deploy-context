@@ -13,11 +13,18 @@ module Context
         context.get_context_file(context, 'contexts')
       end
 
-      def show_help
+      def show_help(context)
         help_message = <<MESSAGE_END
-US
+Use not option or the option 'cycle' to cycle through the deployer once
+Use the option 'agent' to made a continual loop of the cycle
+Use the option 'bump' to bump the patch version
+Use the option 'release' to bump the minor version
+Use the option 'upgrade' to bump the major version
+Use the option 'test' to test the context
+Use the option 'reset' to execute the local cycle once
+Use the option 'help' to show this message
 MESSAGE_END
-        log 
+        context.error_log help_message
       end
 
       def execute_action(context, action = 'once')
@@ -26,11 +33,11 @@ MESSAGE_END
           false
         else
           case action
-          when 'once'
+          when 'cycle'
             context.log "\nExecute only once\n"
             context.cycle
             true
-          when 'always'
+          when 'agent'
             context.log "\nAlways in execution\n"
             while true do
               context.cycle
@@ -57,10 +64,7 @@ MESSAGE_END
             # context.cucumber_test(deployer)
             true
           when 'help'
-            context.show_help
-            context.log "\nReset versionning\n"
-            system('rake')
-            # context.cucumber_test(deployer)
+            context.show_help(context)
             true
           else
             context.error_log context.context_name, "Unknown setting #{action}"
