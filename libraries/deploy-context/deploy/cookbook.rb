@@ -49,15 +49,15 @@ module Context
       end
 
       def clean_file(context, file)
-        clean_folder = context.get_context_folder(context, folder)
-        puts "Clean folder #{clean_folder}"
-        FileUtils.remove_dir(clean_folder) if Dir.exist?(clean_folder)
+        clean_file = context.get_context_file(context, file)
+        puts "Clean file #{clean_file}"
+        FileUtils.rm(clean_file) if File.exist?(clean_file)
       end
 
       def cookbook_clean(context)
         cookbook_build(context)
-        context.log "\n\nPushing cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
-        context.chef(context, %w(push))
+        context.log "\n\nCleaningcookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
+        clean_file(context, 'Policyfile.lock.json')
       end
     end
   end

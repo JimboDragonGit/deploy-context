@@ -1,16 +1,16 @@
 module Context
   module DeployHelpers
     module DeployerHelper
-      def get_context_folder(context, folder)
-        File.join(context.context_folder, folder)
+      def get_context_file(context, file)
+        File.join(context.context_folder, file)
       end
 
       def build_folder(context)
-        context.get_context_folder(context, 'build')
+        context.get_context_file(context, 'build')
       end
     
       def contexts_container(context)
-        context.get_context_folder(context, 'contexts')
+        context.get_context_file(context, 'contexts')
       end
 
       def execute_action(context, action)

@@ -80,6 +80,7 @@ module Context
     def clean
       clean_folder(self, 'contexts')
       ruby_clean(self)
+      cookbook_clean(context)
     end
 
     def show_new_version(level)
