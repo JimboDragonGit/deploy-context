@@ -63,6 +63,7 @@ module Context
     end
 
     def release
+      debug_log "Release #{context_name} at version #{version}"
       ruby_release(self)
       git_release(self)
     end
@@ -78,6 +79,7 @@ module Context
 
     def patch_bump
       GitVersionBump.tag_version("#{GitVersionBump.major_version(true)}.#{GitVersionBump.minor_version(true)}.#{GitVersionBump.patch_version(true) + 1}")
+      log "Release #{context_name} at version #{version}"
     end
 
     def minor_bump
