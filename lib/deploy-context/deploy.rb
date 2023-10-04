@@ -1,8 +1,13 @@
-require_relative 'context/deploy'
+require_relative 'helpers/command'
+require_relative 'deploy/deployer'
+require_relative 'deploy/git'
+
 
 module Context
   class Deploy
-    include DeployHelper
+    include CommandHelper
+    include DeployHelpers::DeployerHelper
+    include DeployHelpers::GitHelper
 
     attr_reader :context_name
     attr_reader :context_folder

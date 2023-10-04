@@ -1,2 +1,2 @@
 #!/usr/bin/env ruby
-require 'deploy-context/context/binary'
+require 'deploy-context/helpers/binary'
