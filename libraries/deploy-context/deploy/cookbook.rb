@@ -1,10 +1,6 @@
 module Context
   module DeployHelpers
     module CookbookHelper
-      def cookbook_version(context)
-        context.version.canonical_segments[0..2].join('.')
-      end
-
       def chef(context, commands)
         context.execute_command(%w(chef) + commands)
       end
@@ -82,7 +78,7 @@ module Context
 
       def set_cookbook_version(context)
         context.git_build(context)
-        File.write(context.get_context_file(context, 'VERSION'), context.cookbook_version(context).strip)
+        File.write(context.get_context_file(context, 'VERSION'), context.shorten_version(context).strip)
       end
     end
   end

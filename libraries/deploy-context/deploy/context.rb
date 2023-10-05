@@ -4,7 +4,11 @@ module Context
       def present_localy?
         Dir.exist?(context_folder)
       end
-  
+
+      def shorten_version(context)
+        context.version.canonical_segments[0..2].join('.')
+      end
+
       def actual_working_directory?
         Dir.pwd == context_folder
       end

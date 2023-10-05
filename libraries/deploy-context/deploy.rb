@@ -1,3 +1,12 @@
+
+
+require 'simplecov_setup'
+require 'cucumber/rspec/disable_option_parser'
+require 'cucumber/cli/main'
+
+require 'fileutils'
+require 'git-version-bump'
+
 require_relative 'helpers/command'
 require_relative 'deploy/deployer'
 require_relative 'deploy/git'
@@ -13,6 +22,10 @@ module Context
 
     attr_reader :context_name
     attr_reader :context_folder
+
+    attr_accessor :existing_cucumber_runtime
+    attr_accessor :existing_cucumber_configuration
+
 
     def initialize(context_name, deploycontext_folder)
       @context_name = context_name
