@@ -13,6 +13,10 @@ module Context
         context.chef(context, %w(exec) + commands)
       end
 
+      def cookbook_path(context)
+        File.dirname(context.context_folder)
+      end
+
       def chef_generate(context, commands)
         context.log("\n\nGenerating Chef components with command #{commands}")
         context.chef(context, %w(generate) + commands)
@@ -50,13 +54,13 @@ module Context
         cookbook_build(context)
         context.log "\n\nPushing cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
         context.chef(context, ['push', context.context_name, 'Policyfile.lock.json'])
-        context.knife context, ['cookbook', 'upload', context.context_name, '--cookbook-path', File.dirname(context.context_folder) ]
+        context.knife context, ['cookbook', 'upload', context.context_name, '--cookbook-path', context.cookbook_path(context)]
       end
 
       def supermarket_push(context)
         cookbook_build(context)
         context.log "\n\nPushing cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
-        context.chef(context, %w(supermarket))
+        context.chef(context, ['supermarket', 'share', context.context_name, '--cookbook-path', context.cookbook_path(context)])
       end
 
       def clean_file(context, file)
