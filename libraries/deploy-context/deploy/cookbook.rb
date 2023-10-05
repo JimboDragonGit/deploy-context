@@ -34,7 +34,7 @@ module Context
         context.log("\n\nBuilding cookbook #{context.context_name}\n\n")
         context.git_build(context)
         Dir.chdir File.dirname(context.context_folder)
-        context.generate_cookbook(context, [context.context_name])
+        context.generate_cookbook(context, [context.context_name]) unless Dir.exist?(context.get_context_file(context, 'recipes'))
         context.set_cookbook_version(context)
         Dir.chdir context.context_folder
       end

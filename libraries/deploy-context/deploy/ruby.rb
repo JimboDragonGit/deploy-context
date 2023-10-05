@@ -60,10 +60,10 @@ module Context
         if context.new_update_available?
           context.log "\n\nNew update available for #{context.context_name}\nCleaning the building space"
           context.clean
-          if git_dirty_state?(context)
-            context.patch_bump
-            context.commit
-          end
+          # if git_dirty_state?(context)
+          #   context.patch_bump
+          #   context.commit
+          # end
           context.log "\n\nBuilding project #{context.context_name} now ..."
           context.build
           # context.commit

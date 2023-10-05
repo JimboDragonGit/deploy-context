@@ -43,6 +43,10 @@ MESSAGE_END
               context.cycle
             end
             true
+          when 'commit'
+            context.log "\nBump minor version\n"
+            context.commit
+            true
           when 'bump'
             context.log "\nBump minor version\n"
             context.patch_bump
@@ -72,7 +76,7 @@ MESSAGE_END
             false
           end
         end
-        context.commit
+        # context.commit
         if state_action
           context.log "\n\nAction #{action} executed correctly in context #{context}"
         else

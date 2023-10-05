@@ -1,31 +1,118 @@
+
 ---
-driver:
-  name: vagrant
-
-## The forwarded_port port feature lets you connect to ports on the VM guest
-## via localhost on the host.
-## see also: https://www.vagrantup.com/docs/networking/forwarded_ports
-
-#  network:
-#    - ["forwarded_port", {guest: 80, host: 8080}]
-
 provisioner:
-  name: chef_zero
-
-  ## product_name and product_version specifies a specific Chef product and version to install.
-  ## see the Chef documentation for more details: https://docs.chef.io/workstation/config_yml_kitchen/
-  #  product_name: chef
-  #  product_version: 17
+  name: chef_server
+  always_update_cookbooks: true
+  kitchen_root: <%= ::Dir.pwd %>
 
 verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-20.04
-  - name: centos-8
+  - name: jimbodragon-base_image
+    driver:
+      name: vagrant
+      box: bento/ubuntu-20.04
+      cache_directory: <%= File.expand_path("#{::Dir.pwd}/omnibus/cache") %>
+      kitchen_cache_directory: <%= File.expand_path("#{::Dir.pwd}/.kitchen/cache") %>
+      domain: jimbodragon.qc.to
+      vm_hostname: jimbodragon.qc.to
+      network:
+      - ["forwarded_port", {guest: 22, host: 2220}]
+      - ["forwarded_port", {guest: 80, host: 8880}]
+      - ["forwarded_port", {guest: 443, host: 4430}]
+      customize:
+        memory: 8196
+        cpus: 2
+        firmware: bios
+        hwvirtex: "on"
+        vtxvpid: "on"
+        vtxux: "on"
+        nested-hw-virt: "on"
+        cpuhotplug: "on"
+        vrde: "on"
+        vrdeport: 3390
+        autostart-enabled: "on"
+      pre_create_command: "ssh-keygen -f \"/home/jimboadmin/.ssh/known_hosts\" -R \"[127.0.0.1]:2222\"; ssh-keygen -f \"/home/jimboadmin/.ssh/known_hosts\" -R \"[jimbodragon.qc.to]:2221\";"
+  - name: chefserver
+    driver:
+      name: vagrant
+      box: bento/ubuntu-20.04
+      cache_directory: <%= File.expand_path("#{::Dir.pwd}/.kitchen/omnibus/cache") %>
+      kitchen_cache_directory: <%= File.expand_path("#{::Dir.pwd}/.kitchen/cache") %>
+      domain: jimbodragon.qc.to
+      vm_hostname: chef.jimbodragon.qc.to
+      network:
+      - ["forwarded_port", {guest: 443, host: 4431}]
+      - ["forwarded_port", {guest: 22, host: 2221}]
+      customize:
+        memory: 8196
+        cpus: 2
+        firmware: bios
+        hwvirtex: "on"
+        vtxvpid: "on"
+        vtxux: "on"
+        nested-hw-virt: "on"
+        cpuhotplug: "on"
+        vrde: "on"
+        vrdeport: 3390
+        autostart-enabled: "on"
+      pre_create_command: "ssh-keygen -f \"/home/jimboadmin/.ssh/known_hosts\" -R \"[127.0.0.1]:2222\"; ssh-keygen -f \"/home/jimboadmin/.ssh/known_hosts\" -R \"[jimbodragon.qc.to]:2221\";"
+  - name: jimbodragon-test
+    driver:
+      name: dokken
+      image: debian
+      socket: tcp://127.0.0.1:2375
+    provisioner:
+      name: dokken
+    transport:
+      name: dokken
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get update
+      - RUN /usr/bin/apt-get install lsb_release
+      - RUN mkdir -p /opt/kitchen
+      - COPY . /opt/kitchen
+      - WORKDIR /opt/kitchen
+    ports:
+    - container_port:
+      - host_ip: 127.0.0.1
+      - host_port: 4431
+  - name: chefserver-test
+    driver:
+      name: dokken
+      image: ubuntu:focal
+      socket: tcp://127.0.0.1:2375
+      hostname: chef.jimbodragon.qc.to
+    provisioner:
+      name: dokken
+    transport:
+      name: dokken
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get update
+      - RUN /usr/bin/apt-get install lsb_release
+      - RUN mkdir -p /opt/kitchen
+      - COPY . /opt/kitchen
+      - WORKDIR /opt/kitchen
+    ports:
+    - container_port:
+      - host_ip: 127.0.0.1
+      - host_port: 4431
 
 suites:
   - name: default
-    verifier:
-      inspec_tests:
-        - test/integration/default
+    includes:
+        - jimbodragon-production
+        - jimbodragon-test
+    attributes:
+      infra_chef:
+        project_name: jimbodragon
+  - name: require
+    named_run_list: chefserver
+    attributes:
+    includes:
+      - chefserver-production
+  - name: require
+    named_run_list: chefserver
+    attributes:
+    includes:
+      - chefserver-test

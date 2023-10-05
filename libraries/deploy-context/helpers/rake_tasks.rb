@@ -24,7 +24,7 @@ namespace :deploycontext do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'cycle')
   end
 
-  task :bump do
+  task :bump => "deploycontext:commit" do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'bump')
   end
 
@@ -32,8 +32,12 @@ namespace :deploycontext do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'test')
   end
 
-  task :release => "deploycontext:default"  do
+  task :release => "deploycontext:commit"  do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'release')
+  end
+
+  task :commit => "deploycontext:default" do
+    Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'commit')
   end
 
   task :help do
