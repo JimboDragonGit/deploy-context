@@ -47,6 +47,10 @@ MESSAGE_END
             context.log "\nBump minor version\n"
             context.commit
             true
+          when 'push'
+            context.log "\nBump minor version\n"
+            context.push
+            true
           when 'bump'
             context.log "\nBump minor version\n"
             context.patch_bump

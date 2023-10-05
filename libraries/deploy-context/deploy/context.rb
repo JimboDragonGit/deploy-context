@@ -55,6 +55,11 @@ module Context
         git_commit(self)
       end
   
+      def push
+        commit
+        git_release(self)
+      end
+  
       def release
         log "\n\nRelease #{context_name} at version #{version}"
         cookbook_push(self)

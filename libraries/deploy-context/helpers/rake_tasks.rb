@@ -40,6 +40,10 @@ namespace :deploycontext do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'commit')
   end
 
+  task :push => "deploycontext:commit" do
+    Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'push')
+  end
+
   task :help do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'help')
   end
