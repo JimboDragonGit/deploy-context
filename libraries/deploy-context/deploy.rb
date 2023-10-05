@@ -12,6 +12,7 @@ require_relative 'helpers/command'
 require_relative 'deploy/deployer'
 require_relative 'deploy/git'
 require_relative 'deploy/context'
+require_relative 'deploy/habitat'
 
 
 module Context
@@ -20,6 +21,7 @@ module Context
     include DeployHelpers::DeployerHelper
     include DeployHelpers::GitHelper
     include DeployHelpers::ContextHelper
+    include DeployHelpers::HabitatHelper
 
     attr_reader :context_name
     attr_reader :context_folder
