@@ -14,7 +14,7 @@ pkg_origin="jimbodragon"
 
 # Required.
 # Sets the version of the package
-pkg_version=$(cat VERSION)
+pkg_version=$(cat /src/VERSION)
 
 # Optional.
 # The name and email address of the package maintainer.
@@ -53,7 +53,11 @@ pkg_license=("MIT")
 # An array of package dependencies needed at runtime. You can refer to packages
 # at three levels of specificity: `origin/package`, `origin/package/version`, or
 # `origin/package/version/release`.
-pkg_deps=(core/sentinel)
+
+# pkg_deps=(core/ruby)
+# pkg_deps=(core/glibc core/curl core/ruby chef/chef-infra-client chef/studio-common chef/supermarket/5.1.32/20220524075351 core/hab)
+
+# pkg_deps=(core/sentinel)
 # pkg_deps=(core/glibc core/curl chef/ruby-plus-devkit chef/chef_repo chef/chef-infra-client chef/studio-common chef/supermarket chef/converge-service core/hab)
 
 # Optional.
@@ -184,23 +188,29 @@ do_mix_cookbook(){
   chef exec chef-client -z -o $1
 }
 
+do_deploy_context_action(){
+  echo "Executing action $1 at version $pkg_version in folder $(pwd)"
+  # do_deploy_context_action $1
+}
+
 do_begin() {
   do_default_begin
-  wget -L https://omnitruck.chef.io/install.sh
-  bash install.sh -s once -P chef-workstation
+  do_deploy_context_action do_begin
+  # wget -L https://omnitruck.chef.io/install.sh
+  # bash install.sh -s once -P chef-workstation
   # chef exec git clone git@github.com:JimboDragonGit/$pkg_name.git
   # cd $pkg_name
   # chef exec git submodule init
   # chef exec git submodule update
-  env
-  help
+  # env
+  # help
 
-  chef gem install down
-  chef gem install unix-crypt
-  chef gem install ruby-shadow
-  chef gem install securerandom
-  chef gem install cucumber
-  chef gem install git-version-bump
+  # chef gem install down
+  # chef gem install unix-crypt
+  # chef gem install ruby-shadow
+  # chef gem install securerandom
+  # chef gem install cucumber
+  # chef gem install git-version-bump
   # do_mix_cookbook 'deploy-context'
 }
 
@@ -213,8 +223,9 @@ do_begin() {
 # do_verify() to return 0.
 do_download() {
   do_default_download
-  git clone git@github.com:JimboDragonGit/$pkg_name.git
-  cd $pkg_name
+  do_deploy_context_action do_download
+  # git clone git@github.com:JimboDragonGit/$pkg_name.git
+  # cd $pkg_name
   # do_mix_cookbook 'jimbodragon::do_default_download'
 }
 
@@ -226,6 +237,7 @@ do_download() {
 # any files.
 do_verify() {
   do_default_verify
+  do_deploy_context_action do_default_verify
   # do_mix_cookbook 'jimbodragon::do_default_verify'
 }
 
@@ -233,8 +245,9 @@ do_verify() {
 # in case there was a previously-built version of your package installed on
 # disk. This ensures you start with a clean build environment.
 do_clean() {
-  rm install.sh*
-  do_default_clean
+  do_deploy_context_action do_clean
+  # rm install.sh*
+  # do_default_clean
   # do_mix_cookbook 'jimbodragon::do_default_clean'
 }
 
@@ -244,7 +257,8 @@ do_clean() {
 # not supported, then a message will be printed to stderr with additional
 # information.
 do_unpack() {
-  do_default_clean
+  do_default_unpack
+  do_deploy_context_action do_unpack
   # do_mix_cookbook 'jimbodragon::do_default_unpack'
 }
 
@@ -255,6 +269,7 @@ do_unpack() {
 # symlinks, and so on.
 do_prepare() {
   do_default_prepare
+  do_deploy_context_action do_default_prepare
   # do_mix_cookbook 'jimbodragon::do_default_prepare'
 }
 
@@ -265,7 +280,13 @@ do_prepare() {
 # if you have additional configuration changes to make or other software to
 # build and install as part of building your package.
 do_build() {
-  do_default_build
+  use_make=false
+  if [ "$use_make" == "true" ]
+  then
+    do_default_build
+  fi
+
+  do_deploy_context_action do_build
   # do_mix_cookbook 'jimbodragon::do_default_build'
   # chef gem build
 }
@@ -275,8 +296,12 @@ do_build() {
 # conditions must be true. A) do_check() function has been declared, B) DO_CHECK
 # environment variable exists and set to true, env DO_CHECK=true.
 do_check() {
-  # chef exec cucumber
-  do_default_check
+  do_check_exist=false
+  if [ "$do_check_exist" == "true" ]
+  then
+    do_default_check
+  fi
+  do_deploy_context_action do_default_check
   # do_mix_cookbook 'jimbodragon::do_default_check'
   return 0
 }
@@ -290,7 +315,13 @@ do_check() {
 # specific directories in your package, or installing pre-built binaries into
 # your package.
 do_install() {
-  do_default_install
+  do_rules_ready=false
+  if [ "$do_rules_ready" == "true" ]
+  then
+    do_default_install
+  fi
+  
+  do_deploy_context_action do_install
   # do_mix_cookbook 'jimbodragon::do_default_install'
   # chef gem install jimbodragon_acceptance_test
 }
@@ -302,6 +333,7 @@ do_install() {
 # binaries stripped at all.
 do_strip() {
   do_default_strip
+  do_deploy_context_action do_strip
   # do_mix_cookbook 'jimbodragon::do_default_strip'
 }
 
@@ -310,6 +342,7 @@ do_strip() {
 # files or perform other post-install clean-up actions.
 do_end() {
   do_default_end
+  do_deploy_context_action do_end
   # do_mix_cookbook 'jimbodragon::do_default_end'
   # chef gem push jimbodragon_acceptance_test
 }

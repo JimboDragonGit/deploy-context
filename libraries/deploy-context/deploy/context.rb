@@ -47,6 +47,7 @@ module Context
       def build
         ruby_build(self)
         cookbook_build(self)
+        build_habitat(self)
         check_folder get_context_file(self, 'contexts')
       end
   
