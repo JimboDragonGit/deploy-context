@@ -14,11 +14,9 @@ module Context
       end
 
       def cucumber(context, commands = [])
-        # context.chef_exec(context,['cucumber'] + commands)
-
         context.existing_cucumber_runtime = cucumber_runtime(context, commands)
-        # The dup is to keep ARGV intact, so that tools like ruby-debug can respawn.
         cucumber_runtime(context, commands).run!
+        # context.chef_exec(context,['cucumber'] + commands)
       end
 
       def cucumber_test(context)

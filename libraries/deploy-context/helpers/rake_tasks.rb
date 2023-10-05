@@ -40,6 +40,16 @@ namespace :deploycontext do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'help')
   end
 
+  namespace :deployer do
+    task :cookbook do
+      Context::DeployContext.deployer.cookbook_test(Context::DeployContext.deployer)
+    end
+
+    task :cucumber do
+      Context::DeployContext.deployer.cucumber_test(Context::DeployContext.deployer)
+    end
+  end
+
   namespace :features do
     Cucumber::Rake::Task.new(:strict) do |t|
       t.cucumber_opts = "--format pretty" # Any valid command line option can go here.
