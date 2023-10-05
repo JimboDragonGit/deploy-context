@@ -1,6 +1,10 @@
 module Context
   module DeployHelpers
     module CookbookHelper
+      def cookbook_version(context)
+        context.version.canonical_segments[0..2].join('.')
+      end
+
       def chef(context, commands)
         context.execute_command(%w(chef) + commands)
       end
@@ -35,6 +39,7 @@ module Context
         context.git_build(context)
         Dir.chdir File.dirname(context.context_folder)
         context.generate_cookbook(context, [context.context_name])
+        context.set_cookbook_version(context)
         Dir.chdir context.context_folder
       end
 
@@ -73,6 +78,11 @@ module Context
         cookbook_build(context)
         context.log "\n\nCleaningcookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
         clean_file(context, 'Policyfile.lock.json')
+      end
+
+      def set_cookbook_version(context)
+        context.git_build(context)
+        File.write(context.get_context_file(context, 'VERSION'), context.cookbook_version(context).strip)
       end
     end
   end
