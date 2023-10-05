@@ -41,7 +41,7 @@ module Context
           false
         end
         cookbook_test(self)
-        cucumber(self)
+        cucumber_test(self)
       end
   
       def build

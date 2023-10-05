@@ -17,10 +17,6 @@ require 'rubygems'
 require 'cucumber'
 require 'cucumber/rake/task'
 
-Cucumber::Rake::Task.new(:features) do |t|
-  t.cucumber_opts = "--format pretty" # Any valid command line option can go here.
-end
-
 require_relative '../../deploy-context'
 
 namespace :deploycontext do
@@ -42,5 +38,17 @@ namespace :deploycontext do
 
   task :help do
     Context::DeployContext.deployer.execute_action(Context::DeployContext.deployer, 'help')
+  end
+
+  namespace :features do
+    Cucumber::Rake::Task.new(:strict) do |t|
+      t.cucumber_opts = "--format pretty" # Any valid command line option can go here.
+      t.profile = "strict"
+    end
+  
+    Cucumber::Rake::Task.new(:html_report) do |t|
+      t.cucumber_opts = "--format pretty" # Any valid command line option can go here.
+      t.profile = "html_report"
+    end
   end
 end

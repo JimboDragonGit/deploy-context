@@ -7,7 +7,7 @@ module Context
       end
 
       def cucumber_runtime(context, commands)
-        return Runtime.new(context.cucumber_configuration(context, commands)) unless context.existing_cucumber_runtime
+        return Cucumber::Runtime.new(context.cucumber_configuration(context, commands)) unless context.existing_cucumber_runtime
 
         context.existing_cucumber_runtime.configure(context.cucumber_configuration(context, commands))
         context.existing_cucumber_runtime
