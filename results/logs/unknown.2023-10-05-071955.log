@@ -1,0 +1,11 @@
+Script started on 2023-10-05 07:19:55+00:00 [<not executed on terminal>]
+   [1;36m: [1;37mLoading /src/habitat/plan.sh/x86_64-linux/plan.sh[0m
+On tient vraiment quelque chose@!!!!
+cat: VERSION: No such file or directory
+   [1;36mdeploy-context: [1;37mPlan loaded[0m
+   [1;36mdeploy-context: [1;37mValidating plan metadata[0m
+   [1;36mdeploy-context: [1;31mERROR: [1;37mFailed to build. 'pkg_version' must be set or 'pkg_version()' function must be implemented and then invoking by calling 'update_pkg_version()'.[0m
+   [1;36mdeploy-context: [1;37mBuild time: 0m0s[0m
+   [1;36mdeploy-context: [1;31mExiting on error[0m
+
+Script done on 2023-10-05 07:19:55+00:00 [COMMAND_EXIT_CODE="1"]

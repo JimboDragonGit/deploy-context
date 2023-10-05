@@ -1,0 +1,6 @@
+Script started on 2023-10-05 07:15:23+00:00 [<not executed on terminal>]
+   [1;36m: [1;31mERROR: [1;37mPlan file not found in any of these paths: /src/habitat/plan.sh/x86_64-linux/plan.sh/plan.sh,/src/habitat/plan.sh/x86_64-linux/plan.sh/habitat/plan.sh,/src/habitat/plan.sh/x86_64-linux/plan.sh/x86_64-linux/plan.sh,/src/habitat/plan.sh/x86_64-linux/plan.sh/habitat/x86_64-linux/plan.sh[0m
+   [1;36munknown: [1;37mBuild time: 0m0s[0m
+   [1;36munknown: [1;31mExiting on error[0m
+
+Script done on 2023-10-05 07:15:23+00:00 [COMMAND_EXIT_CODE="42"]

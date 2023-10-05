@@ -1,0 +1,45 @@
+Script started on 2023-10-05 07:24:05+00:00 [<not executed on terminal>]
+   [1;36m: [1;37mLoading /src/habitat/plan.sh/x86_64-linux/plan.sh[0m
+Tient la pwd /src/habitat/plan.sh/x86_64-linux
+Tient la ls total 24K
+drwxr-xr-x 2 1000 1000 4.0K Oct  5 05:43 .
+drwxr-xr-x 5 1000 1000 4.0K Oct  5 05:43 ..
+-rw-r--r-- 1 1000 1000  13K Oct  5 07:23 plan.sh
+Tient la source total 120K
+drwxr-xr-x 15 1000 1000 4.0K Oct  5 07:15 .
+drwxr-xr-x 19 root root 4.0K Oct  5 07:24 ..
+drwxr-xr-x  2 1000 1000 4.0K Oct  5 05:37 .circleci
+drwxr-xr-x  8 1000 1000 4.0K Oct  5 06:00 .git
+-rw-r--r--  1 1000 1000  220 Oct  5 06:34 .gitignore
+drwxr-xr-x  4 1000 1000 4.0K Oct  5 04:51 .kitchen
+-rw-r--r--  1 1000 1000  166 Oct  4 19:16 CHANGELOG.md
+-rw-r--r--  1 1000 1000   39 Oct  3 01:23 Gemfile
+-rw-r--r--  1 1000 1000 8.0K Oct  5 04:57 Gemfile.lock
+-rw-r--r--  1 1000 1000 1.1K Oct  3 01:23 LICENSE
+-rw-r--r--  1 1000 1000 1.2K Oct  5 04:51 Policyfile.lock.json
+-rw-r--r--  1 1000 1000  527 Oct  4 19:16 Policyfile.rb
+-rw-r--r--  1 1000 1000   77 Oct  3 01:23 README.md
+-rw-r--r--  1 1000 1000  105 Oct  4 19:36 Rakefile
+-rw-r--r--  1 1000 1000    5 Oct  5 04:52 VERSION
+drwxr-xr-x  2 1000 1000 4.0K Oct  4 06:33 bin
+-rw-r--r--  1 1000 1000 1.3K Oct  4 19:16 chefignore
+drwxr-xr-x  5 1000 1000 4.0K Oct  4 19:16 compliance
+drwxr-xr-x  2 1000 1000 4.0K Oct  5 04:11 config
+-rw-r--r--  1 1000 1000 2.9K Oct  4 06:32 deploy-context.gemspec
+drwxr-xr-x  4 1000 1000 4.0K Oct  3 04:55 features
+drwxr-xr-x  5 1000 1000 4.0K Oct  5 06:34 habitat
+-rw-r--r--  1 1000 1000  728 Oct  4 19:16 kitchen.yml
+drwxr-xr-x  3 1000 1000 4.0K Oct  4 18:32 libraries
+-rw-r--r--  1 1000 1000  860 Oct  5 02:12 metadata.rb
+drwxr-xr-x  2 1000 1000 4.0K Oct  5 04:48 pkg
+drwxr-xr-x  2 1000 1000 4.0K Oct  4 19:16 recipes
+drwxr-xr-x  3 1000 1000 4.0K Oct  5 07:15 results
+drwxr-xr-x  3 1000 1000 4.0K Oct  4 19:16 test
+cat: ..VERSION: No such file or directory
+   [1;36mdeploy-context: [1;37mPlan loaded[0m
+   [1;36mdeploy-context: [1;37mValidating plan metadata[0m
+   [1;36mdeploy-context: [1;31mERROR: [1;37mFailed to build. 'pkg_version' must be set or 'pkg_version()' function must be implemented and then invoking by calling 'update_pkg_version()'.[0m
+   [1;36mdeploy-context: [1;37mBuild time: 0m0s[0m
+   [1;36mdeploy-context: [1;31mExiting on error[0m
+
+Script done on 2023-10-05 07:24:05+00:00 [COMMAND_EXIT_CODE="1"]
