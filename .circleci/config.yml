@@ -54,6 +54,8 @@ jobs:
             gem install cucumber
             gem install git-version-bump
 
+            gem install chef
+
             rake
 #...
 workflows:
