@@ -57,6 +57,7 @@ jobs:
             gem install chef
             gem install chef-cli
             gem install test-kitchen
+            gem install chef-workstation
 
             rake
 #...
