@@ -29,10 +29,13 @@ module Context
     attr_accessor :existing_cucumber_runtime
     attr_accessor :existing_cucumber_configuration
 
+    attr_reader :organisation_name
 
-    def initialize(context_name, deploycontext_folder)
+
+    def initialize(organisation_name, context_name, deploycontext_folder)
       @context_name = context_name
       @context_folder = move_folder(deploycontext_folder)
+      @organisation_name = organisation_name
     end
   end
 end

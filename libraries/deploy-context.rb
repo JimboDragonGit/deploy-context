@@ -15,7 +15,7 @@ module Context
     end
 
     def initialize(deploycontext_folder)
-      super('deploy-context', deploycontext_folder)
+      super('jimbodragon', 'deploy-context', deploycontext_folder)
     end
   end
 end

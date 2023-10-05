@@ -48,7 +48,6 @@ module Context
         ruby_build(self)
         cookbook_build(self)
         build_habitat(self)
-        check_folder get_context_file(self, 'contexts')
       end
   
       def commit
@@ -61,6 +60,7 @@ module Context
         cookbook_push(self)
         ruby_release(self)
         git_release(self)
+        start_habitat_job(self)
       end
   
       def install
