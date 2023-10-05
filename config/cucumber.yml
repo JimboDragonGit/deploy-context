@@ -1,0 +1,5 @@
+## ##YAML Template
+<% require_relative 'libraries/deploy-context' %>
+<% common = "--tags ~@wip --strict" %>
+strict: <%= common %> features
+html_report: <%= common %> --format html --out=features_report.html features

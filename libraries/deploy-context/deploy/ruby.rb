@@ -1,5 +1,3 @@
-require 'rubygems'
-
 module Context
   module DeployHelpers
     module RubyHelper

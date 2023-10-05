@@ -4,6 +4,7 @@ require 'simplecov_setup'
 require 'cucumber/rspec/disable_option_parser'
 require 'cucumber/cli/main'
 
+require 'rubygems'
 require 'fileutils'
 require 'git-version-bump'
 
