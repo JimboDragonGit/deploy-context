@@ -55,6 +55,8 @@ jobs:
             gem install git-version-bump
 
             gem install chef
+            gem install chef-cli
+            gem install test-kitchen
 
             rake
 #...
