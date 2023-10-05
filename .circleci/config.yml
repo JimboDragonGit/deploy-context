@@ -9,7 +9,7 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
 
     environment: {}
-    working_directory: /home/circleci/jimbodragon_rubygems
+    working_directory: /home/circleci/deploy-context
     steps:
       - checkout
       - run: |
@@ -31,7 +31,7 @@ jobs:
             gem install git-version-bump
 
             cucumber
-  install_rubygem:
+  rake:
     docker:
       - image: cimg/ruby:3.1.2
         auth:
@@ -61,7 +61,7 @@ workflows:
           filters:
             branches:
               only: main
-      - install_rubygem:
+      - rake:
           filters:
             branches:
               only: main
