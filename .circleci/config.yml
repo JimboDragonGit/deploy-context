@@ -60,8 +60,8 @@ workflows:
       - run_cucumber:
           filters:
             branches:
-              only: main
+              only: master
       - rake:
           filters:
             branches:
-              only: main
+              only: master
