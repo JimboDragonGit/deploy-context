@@ -21,18 +21,17 @@ module Context
     end
 
     def temp_dir
-      @temp_dir = Dir.tmpdir() if @temp_dir.nil?
-      @temp_dir
+      File.join(context_folder, 'results')
     end
 
-    def get_data(command_line)
+    def get_shell_data(command_line)
       debug_log "Get data from command #{command_line.join(' ')}"
       `#{command_line.join(' ')}`
     end
 
     def execute_command(command)
       command_status = system(command.join(' '))
-      debug_log "executed command #{command.join(' ')}"
+      log "executed command #{command.join(' ')}"
       command_status
     end
 

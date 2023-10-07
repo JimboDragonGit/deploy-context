@@ -309,12 +309,12 @@ do_build() {
 # conditions must be true. A) do_check() function has been declared, B) DO_CHECK
 # environment variable exists and set to true, env DO_CHECK=true.
 do_check() {
-  do_check_exist=false
-  if [ "$do_check_exist" == "true" ]
+  do_default_exist=false
+  if [ "$do_default_exist" == "true" ]
   then
-    do_default_check
+    do_default_exist
   fi
-  do_deploy_context_action do_default_check
+  do_deploy_context_action do_check
   # do_mix_cookbook 'jimbodragon::do_default_check'
   return 0
 }

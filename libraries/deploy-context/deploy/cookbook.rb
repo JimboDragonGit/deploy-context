@@ -2,6 +2,7 @@ module Context
   module DeployHelpers
     module CookbookHelper
       def chef(context, commands)
+        context.log "Executing chef command #{commands}"
         context.execute_command(%w(chef) + commands)
       end
 
@@ -83,7 +84,11 @@ module Context
       end
 
       def mix_run_list(context, run_list)
-        context.chef_exec(context, ['chef-client', '-z', '-o', run_list])
+        context.execute_command(['chef-client', '-o', run_list])
+      end
+
+      def cookbook_version(context)
+        File.write(context.get_context_file(context, 'VERSION'))
       end
 
       def set_cookbook_version(context)

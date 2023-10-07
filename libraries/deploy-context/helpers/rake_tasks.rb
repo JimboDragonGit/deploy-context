@@ -4,7 +4,7 @@ module Context
       require 'rubygems'
       require 'bundler'
       # require 'bundler/setup'
-      require 'bundler/installer'
+      # require 'bundler/installer'
       
       require 'rdoc/task'
       
@@ -56,8 +56,24 @@ module Context
         end
 
         namespace :studio do
+          task :promote  => "deploycontext:studio:release" do
+            Context::DeployContext.deployer.do_promote
+          end
+
+          task :build  => "deploycontext:studio:habitat" do
+            Context::DeployContext.deployer.do_build
+          end
+
+          task :install  => "deploycontext:studio:build" do
+            Context::DeployContext.deployer.do_install
+          end
+
+          task :release  => "deploycontext:studio:install" do
+            Context::DeployContext.deployer.do_release
+          end
+
           task :habitat do
-            Context::DeployContext.deployer.build_in_habitat
+            Context::DeployContext.deployer.do_build_in_habitat
           end
 
           task :kitchen do

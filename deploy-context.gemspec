@@ -44,9 +44,11 @@
   # s.required_ruby_version     = '>= 2.5.0'
   # s.required_rubygems_version = '>= 2.7.0'
 
-  s.add_development_dependency('chef')
-  s.add_development_dependency('test-kitchen')
+  # s.add_development_dependency('chef')
+  # s.add_development_dependency('test-kitchen')
 
+  s.add_runtime_dependency('chef')
+  s.add_runtime_dependency('test-kitchen')
   s.add_runtime_dependency('chef-bin')
   s.add_runtime_dependency('chef-cli')
   s.add_runtime_dependency('cheffish')
@@ -54,7 +56,7 @@
   s.add_runtime_dependency('kitchen-dokken')
   s.add_runtime_dependency('kitchen-ec2')
   s.add_runtime_dependency('simplecov')
-  s.add_runtime_dependency('cucumber', '9.0.0')
+  s.add_runtime_dependency('cucumber')
   s.add_runtime_dependency('down')
   s.add_runtime_dependency('unix-crypt')
   s.add_runtime_dependency('ruby-shadow')

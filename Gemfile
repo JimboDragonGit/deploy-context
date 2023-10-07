@@ -7,7 +7,7 @@ source 'https://rubygems.org/'
 # gem "kitchen-dokken", require: true
 # gem "kitchen-ec2", require: true
 # gem "simplecov", require: true
-gem "cucumber",  '9.0.0', require: true
+# gem "cucumber",  '9.0.0', require: true
 # gem "down", require: true
 # gem "unix-crypt", require: true
 # gem "ruby-shadow", require: true
