@@ -15,11 +15,12 @@ module Context
     end
 
     def do_cycle
-      do_build
-      do_check
-      do_install
-      do_strip
-      do_end
+      do_mix_cookbook
+      # do_build
+      # do_check
+      # do_install
+      # do_strip
+      # do_end
     end
   end
 end

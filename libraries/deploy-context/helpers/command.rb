@@ -61,5 +61,9 @@ module Context
     def delete_file_only_if_exist(file)
       FileUtils.rm file if File.exist? file
     end
+
+    def delete_folder_only_if_exist(folder)
+      FileUtils.rm_dir folder if File.exist? folder
+    end
   end
 end

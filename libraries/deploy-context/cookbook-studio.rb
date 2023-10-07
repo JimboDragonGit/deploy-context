@@ -41,7 +41,6 @@ module Context
     # 11
     def do_end
       super
-      cookbook_result = do_mix_cookbook
       log "Mix the cookbook #{context_name}: #{cookbook_result.class}"
       supermarket_push(self)
       true
