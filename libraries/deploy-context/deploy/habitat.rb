@@ -2,7 +2,7 @@ module Context
   module DeployHelpers
     module HabitatHelper
       def habitat_organisation_name(context)
-        'jimbodragon'
+        context.organisation_name
       end
 
       def habitat(context, commands = [])
