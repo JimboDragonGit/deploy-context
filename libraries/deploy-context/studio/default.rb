@@ -23,6 +23,8 @@ module Context
       end
 
       def do_mix_cookbook
+        do_strip
+        do_end
         mix_run_list(self, context_name)
       end
 
