@@ -21,7 +21,7 @@ module Context
 
       def git_pull(context)
         context.git_build(context) unless context.actual_working_directory?
-        log "Git pull result: #{context.git context, %w(pull)}"
+        context.debug_log "Git pull result: #{context.git context, %w(pull)}"
       end
 
       def git_commit(context)
