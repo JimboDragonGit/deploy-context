@@ -103,7 +103,8 @@ module Context
       def set_hab_build_id(context)
         context.git_build(context)
         # , "#{organisation_name}/#{context_name}"
-        log "Setting the build ID to #{context.hab_build_id(context)}"
+        running_build_id = 
+        context.debug_log "Setting the build ID from #{context.hab_build_id(context)} to #{running_build_id}"
 
         File.write(context.get_context_file(context, 'HAB_BUILD_ID'), context.hab_build_id(context))
       end

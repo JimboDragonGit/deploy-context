@@ -9,7 +9,7 @@ module Context
     end
 
     def debug_log(message)
-      log message if debug?
+      log message if false # if debug?
     end
 
     def error_log(name, message)
