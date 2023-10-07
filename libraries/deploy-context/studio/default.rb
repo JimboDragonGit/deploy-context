@@ -17,14 +17,12 @@ module Context
           do_strip
           do_end
           help
-          do_cycle
+          do_mix_cookbook
           do_agent
         )
       end
 
       def do_mix_cookbook
-        do_strip
-        do_end
         cookbook_result = mix_run_list(self, context_name)
         log "Mix the cookbook #{context_name}: #{cookbook_result.class}"
       end
@@ -32,7 +30,7 @@ module Context
       def do_agent
         git_build(self)
         while true do
-          do_cycle
+          do_mix_cookbook
         end
       end
     end

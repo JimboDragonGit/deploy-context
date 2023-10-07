@@ -27,29 +27,33 @@ module Context
       end
 
       namespace :deploycontext do
-        task :cycle do
-          Context::DeployContext.deployer.do_cycle
+        task :mix_cookbook => "deploycontext:push_cookbook" do
+          Context::DeployContext.deployer.do_mix_cookbook
         end
 
-        task :bump => "deploycontext:commit" do
-          Context::DeployContext.deployer.bump
+        task :push_cookbook => "deploycontext:studio:release" do
+          Context::DeployContext.deployer.do_end
         end
 
-        task :test => "deploycontext:help" do
-          Context::DeployContext.deployer.test
-        end
+        # task :bump => "deploycontext:commit" do
+        #   Context::DeployContext.deployer.bump
+        # end
 
-        task :release => "deploycontext:commit"  do
-          Context::DeployContext.deployer.release
-        end
+        # task :test => "deploycontext:help" do
+        #   Context::DeployContext.deployer.test
+        # end
 
-        task :commit => "deploycontext:default" do
-          Context::DeployContext.deployer.commit
-        end
+        # task :release => "deploycontext:commit"  do
+        #   Context::DeployContext.deployer.release
+        # end
 
-        task :push => "deploycontext:commit" do
-          Context::DeployContext.deployer.push
-        end
+        # task :commit => "deploycontext:default" do
+        #   Context::DeployContext.deployer.commit
+        # end
+
+        # task :push => "deploycontext:commit" do
+        #   Context::DeployContext.deployer.push
+        # end
 
         task :help do
           Context::DeployContext.deployer.help

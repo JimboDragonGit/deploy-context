@@ -3,7 +3,7 @@ module Context
     module CookbookHelper
       def bundle_chef(context, commands)
         context.debug_log "Executing chef command #{commands}"
-        context.bundle_exec(context, %w(chef) + commands)
+        context.execute_command(%w(chef) + commands)
       end
 
       def chef_exec(context, commands)

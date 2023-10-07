@@ -6,4 +6,4 @@ define_deploy_context_tasks
 
 # task :default => "deploycontext:default"
 
-task :default => "deploycontext:cycle"
+task :default => "deploycontext:mix_cookbook"

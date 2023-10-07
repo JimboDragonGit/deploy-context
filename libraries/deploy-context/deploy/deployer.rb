@@ -54,9 +54,9 @@ MESSAGE_END
           end
         end
         # context.commit
-        if state_action
-          context.debug_log "\n\nAction #{action} executed correctly in context #{context}"
-          state_action.perform unless state_action.kind_of?(TrueClass) || state_action.kind_of?(Integer)
+        if state_action || ! state_action.kind_of?(Integer)
+          context.debug_log "\n\nAction #{action} executed correctly in context #{context}.context_name"
+          state_action.perform unless state_action.kind_of?(TrueClass)
         else
           context.error_log(context.context_name, "Failed to execute action #{action} in context #{context.context_name} resulting to a #{state_action}")
         end
