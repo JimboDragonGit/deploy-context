@@ -12,6 +12,11 @@ module Context
       log message if false # if debug?
     end
 
+    def warning_log(name, message)
+      warning_message = "\n\n#{name} WARNING: #{message}\n\n"
+      log warning_message
+    end
+
     def error_log(name, message)
       error_message = "\n\n#{name} ERROR: #{message}\n\n"
       log error_message

@@ -104,7 +104,7 @@ module Context
           File.write(context.get_context_file(context, 'VERSION'), context.shorten_version(context).strip)
           File.write(context.get_context_file(context, 'DATE'), GVB.date)
         else
-          context.error_log context.context_name, "Unable to set the cookbook version as GVB is not defined", false
+          context.warning_log context.context_name, "Unable to set the cookbook version as GVB is not defined"
         end
       end
     end
