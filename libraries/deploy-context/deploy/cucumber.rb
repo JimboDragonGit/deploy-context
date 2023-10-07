@@ -24,6 +24,12 @@ module Context
         context.log "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
         context.cucumber(context)
       end
+
+      def cucumber_test_successful?(context)
+        result = cucumber_test(context)
+        context.log "\n\nCucumber test result: #{result}"
+        result
+      end
     end
   end
 end

@@ -45,6 +45,12 @@ module Context
         context.kitchen(context)
       end
 
+      def cookbook_test_successful?(context)
+        result = cookbook_test(context)
+        context.log "\n\nCookbook test result: #{result}"
+        result
+      end
+
       def cookbook_install(context)
         cookbook_build(context)
         context.log "\n\nInstalling cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
@@ -66,19 +72,24 @@ module Context
 
       def clean_file(context, file)
         clean_file = context.get_context_file(context, file)
-        puts "Clean file #{clean_file}"
+        context.log "Clean file #{clean_file}"
         FileUtils.rm(clean_file) if File.exist?(clean_file)
       end
 
       def cookbook_clean(context)
-        cookbook_build(context)
+        context.cookbook_build(context)
         context.log "\n\nCleaningcookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
-        clean_file(context, 'Policyfile.lock.json')
+        context.clean_file(context, 'Policyfile.lock.json')
+      end
+
+      def mix_run_list(context, run_list)
+        context.chef_exec(context, ['chef-client', '-z', '-o', run_list])
       end
 
       def set_cookbook_version(context)
         context.git_build(context)
         File.write(context.get_context_file(context, 'VERSION'), context.shorten_version(context).strip)
+        File.write(context.get_context_file(context, 'DATE'), GVB.date)
       end
     end
   end

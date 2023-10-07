@@ -1,2 +1,6 @@
 
-require_relative '../../libraries/deploy-context/step_definitions/deploy-context'
+require_relative '../../libraries/deploy-context'
+
+extend Context::Steps::Deploy
+
+define_steps

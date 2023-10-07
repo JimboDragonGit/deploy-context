@@ -54,8 +54,13 @@ pkg_license=("MIT")
 # at three levels of specificity: `origin/package`, `origin/package/version`, or
 # `origin/package/version/release`.
 
-# pkg_deps=(core/ruby)
+# pkg_scaffolding=core/scaffolding-ruby
+# pkg_deps=(core/scaffolding-ruby, core/aws-cli, core/git)
 # pkg_deps=(core/glibc core/curl core/ruby chef/chef-infra-client chef/studio-common chef/supermarket/5.1.32/20220524075351 core/hab)
+
+pkg_deps=(core/scaffolding-ruby)
+
+# pkg_deps=(jimbodragon/deploy-context/2.2.0/20231005084950)
 
 # pkg_deps=(core/sentinel)
 # pkg_deps=(core/glibc core/curl chef/ruby-plus-devkit chef/chef_repo chef/chef-infra-client chef/studio-common chef/supermarket chef/converge-service core/hab)
@@ -189,13 +194,23 @@ do_mix_cookbook(){
 }
 
 do_deploy_context_action(){
-  echo "Executing action $1 at version $pkg_version in folder $(pwd)"
+  echo "Executing action $1 at version $pkg_version in folder $(pwd) PLAN_CONTEXT = $PLAN_CONTEXT"
   # do_deploy_context_action $1
+  ruby plan.rb $1 || echo  "Ruby not avaialble yet"
 }
 
 do_begin() {
   do_default_begin
   do_deploy_context_action do_begin
+  # git help
+  # ruby -e env
+  # apt install ruby
+  # gem install down
+  # gem install unix-crypt
+  # gem install ruby-shadow
+  # gem install securerandom
+  # gem install cucumber
+  # gem install git-version-bump
   # wget -L https://omnitruck.chef.io/install.sh
   # bash install.sh -s once -P chef-workstation
   # chef exec git clone git@github.com:JimboDragonGit/$pkg_name.git
@@ -237,7 +252,7 @@ do_download() {
 # any files.
 do_verify() {
   do_default_verify
-  do_deploy_context_action do_default_verify
+  do_deploy_context_action do_verify
   # do_mix_cookbook 'jimbodragon::do_default_verify'
 }
 
@@ -269,7 +284,7 @@ do_unpack() {
 # symlinks, and so on.
 do_prepare() {
   do_default_prepare
-  do_deploy_context_action do_default_prepare
+  do_deploy_context_action do_prepare
   # do_mix_cookbook 'jimbodragon::do_default_prepare'
 }
 
@@ -287,8 +302,6 @@ do_build() {
   fi
 
   do_deploy_context_action do_build
-  # do_mix_cookbook 'jimbodragon::do_default_build'
-  # chef gem build
 }
 
 # The default implementation runs nothing during post-compile. An example of a
@@ -322,6 +335,8 @@ do_install() {
   fi
   
   do_deploy_context_action do_install
+
+
   # do_mix_cookbook 'jimbodragon::do_default_install'
   # chef gem install jimbodragon_acceptance_test
 }

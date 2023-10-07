@@ -18,7 +18,7 @@ module Context
       def ruby_release(context)
         context.git_build(context)
         # gem ["push #{context.context_name}-#{GVB.version}.gem"]
-        # context.patch_bump if gem_installed?(context)
+        # context.patch_bump if gem_installed?(context, context.context_name)
         context.rake context, ['release']
         # context.commit
       end
@@ -47,12 +47,37 @@ module Context
         # sleep(60)
       end
 
-      def gem_installed?(context)
-        installed_version = Gem::Specification.find_by_name(context.context_name).version
-        puts "Compare #{context.context_name} installed_version #{installed_version} with #{context.version} in folder #{context.context_folder}"
-        installed = installed_version == context.version
+      def gem_installed?(context, gemname, compare_version = nil)
+        begin
+          installed_version = Gem::Specification.find_by_name(gemname)
+        rescue Gem::MissingSpecError => e
+          context.error_log(context, "The gem '#{gemname}' is missing")
+          # sleep(5)
+          installed_version = nil
+        rescue Exception => e
+          context.error_log(context, "The gem '#{gemname}' got issue with #{e}")
+          sleep(5)
+          installed_version = nil
+        end
+        # context.log("Compare #{context.context_name} installed_version #{installed_version} with #{context.version} in folder #{context.context_folder}")
+        installed = if compare_version.nil? || installed_version.nil?
+          not installed_version.nil?
+        else
+          installed_version.version == context.version
+        end
         puts "installed = #{installed}"
         installed
+      end
+
+      def load_dependency(context, gemname, require_file)
+        context.gem(context, ['install', gemname]) unless context.gem_installed?(context, gemname)
+        context.log("Loading file #{require_file} for gem #{gemname}")
+        sleep 3
+        require require_file
+      end
+
+      def load_all_dependencies(context)
+        context.load_dependencies
       end
 
       def ruby_cycle(context)

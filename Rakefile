@@ -1,3 +1,9 @@
-require_relative 'libraries/deploy-context/helpers/rake_tasks'
+require_relative 'libraries/deploy-context'
 
-task :default => "deploycontext:default"
+extend Context::RakeTasks
+
+define_deploy_context_tasks
+
+# task :default => "deploycontext:default"
+
+task :default => "deploycontext:studio:habitat"

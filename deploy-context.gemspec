@@ -1,6 +1,4 @@
 
-require 'git-version-bump'
-
 ::Gem::Specification.new do |s|
   s.name          = 'deploy-context'
   s.license       = 'MIT'
@@ -11,8 +9,8 @@ require 'git-version-bump'
   s.description   = 'Using Chef cookbook style and force any script using it to switch to chef even if it is not install. It will install it tho ;)'
 
 
-  s.version = GVB.version
-  s.date    = GVB.date
+  s.version = File.read(File.join(__dir__, 'VERSION'))
+  s.date    = File.read(File.join(__dir__, 'DATE'))
 
   # all_files       = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
   # s.files         = all_files.grep(%r!^(exe|libraries|rubocop)/|^.rubocop.yml$!)
@@ -23,8 +21,9 @@ require 'git-version-bump'
   # s.bindir        = 'exe'
 
 
-	s.extra_rdoc_files = ["README.md"]
-	s.files = `git ls-files`.split("\n")
+	s.extra_rdoc_files = ["README.md", 'VERSION', 'DATE']
+	# s.files = `git ls-files`.split("\n")
+	s.files = Dir.glob('libraries/**/*')
   s.executables   = [
     'deploy-context'
   ]
@@ -48,6 +47,18 @@ require 'git-version-bump'
   s.add_development_dependency('chef')
   s.add_development_dependency('test-kitchen')
 
+  s.add_runtime_dependency('chef-bin')
+  s.add_runtime_dependency('chef-cli')
+  s.add_runtime_dependency('cheffish')
+  s.add_runtime_dependency('kitchen-vagrant')
+  s.add_runtime_dependency('kitchen-dokken')
+  s.add_runtime_dependency('kitchen-ec2')
+  s.add_runtime_dependency('simplecov')
+  s.add_runtime_dependency('cucumber', '9.0.0')
+  s.add_runtime_dependency('down')
+  s.add_runtime_dependency('unix-crypt')
+  s.add_runtime_dependency('ruby-shadow')
+  s.add_runtime_dependency('securerandom')
   s.add_runtime_dependency('git-version-bump')
 
   # s.add_runtime_dependency('colorator',             '~> 1.0')

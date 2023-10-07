@@ -50,5 +50,9 @@ module Context
       ::File.write(file, content)
       system("chmod 644 #{file}") unless Gem.win_platform?
     end
+
+    def delete_file_only_if_exist(file)
+      FileUtils.rm file if File.exist? file
+    end
   end
 end

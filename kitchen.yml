@@ -1,7 +1,7 @@
 
 ---
 provisioner:
-  name: chef_server
+  name: chef_infra
   always_update_cookbooks: true
   kitchen_root: <%= ::Dir.pwd %>
 
@@ -9,14 +9,14 @@ verifier:
   name: inspec
 
 platforms:
-  - name: jimbodragon-base_image
+  - name: vb-deploy-context
     driver:
       name: vagrant
       box: bento/ubuntu-20.04
       cache_directory: <%= File.expand_path("#{::Dir.pwd}/omnibus/cache") %>
       kitchen_cache_directory: <%= File.expand_path("#{::Dir.pwd}/.kitchen/cache") %>
-      domain: jimbodragon.qc.to
-      vm_hostname: jimbodragon.qc.to
+      domain: <%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>
+      vm_hostname: <%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>
       network:
       - ["forwarded_port", {guest: 22, host: 2220}]
       - ["forwarded_port", {guest: 80, host: 8880}]
@@ -33,15 +33,15 @@ platforms:
         vrde: "on"
         vrdeport: 3390
         autostart-enabled: "on"
-      pre_create_command: "ssh-keygen -f \"/home/jimboadmin/.ssh/known_hosts\" -R \"[127.0.0.1]:2222\"; ssh-keygen -f \"/home/jimboadmin/.ssh/known_hosts\" -R \"[jimbodragon.qc.to]:2221\";"
-  - name: chefserver
+      pre_create_command: "ssh-keygen -f \"<%= ENV['HOME'] %>/.ssh/known_hosts\" -R \"[127.0.0.1]:2222\"; ssh-keygen -f \"<%= ENV['HOME'] %>/.ssh/known_hosts\" -R \"[<%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>]:2221\";"
+  - name: vb-deploy-context-chefserver
     driver:
       name: vagrant
       box: bento/ubuntu-20.04
       cache_directory: <%= File.expand_path("#{::Dir.pwd}/.kitchen/omnibus/cache") %>
       kitchen_cache_directory: <%= File.expand_path("#{::Dir.pwd}/.kitchen/cache") %>
-      domain: jimbodragon.qc.to
-      vm_hostname: chef.jimbodragon.qc.to
+      domain: <%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>
+      vm_hostname: chef.<%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>
       network:
       - ["forwarded_port", {guest: 443, host: 4431}]
       - ["forwarded_port", {guest: 22, host: 2221}]
@@ -57,8 +57,8 @@ platforms:
         vrde: "on"
         vrdeport: 3390
         autostart-enabled: "on"
-      pre_create_command: "ssh-keygen -f \"/home/jimboadmin/.ssh/known_hosts\" -R \"[127.0.0.1]:2222\"; ssh-keygen -f \"/home/jimboadmin/.ssh/known_hosts\" -R \"[jimbodragon.qc.to]:2221\";"
-  - name: jimbodragon-test
+      pre_create_command: "ssh-keygen -f \"<%= ENV['HOME'] %>/.ssh/known_hosts\" -R \"[127.0.0.1]:2222\"; ssh-keygen -f \"<%= ENV['HOME'] %>/.ssh/known_hosts\" -R \"[<%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>]:2221\";"
+  - name: dock-deploy-context
     driver:
       name: dokken
       image: debian
@@ -77,12 +77,12 @@ platforms:
     - container_port:
       - host_ip: 127.0.0.1
       - host_port: 4431
-  - name: chefserver-test
+  - name: dock-deploy-context-chefserver
     driver:
       name: dokken
       image: ubuntu:focal
       socket: tcp://127.0.0.1:2375
-      hostname: chef.jimbodragon.qc.to
+      hostname: chef.<%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>
     provisioner:
       name: dokken
     transport:
@@ -97,22 +97,48 @@ platforms:
     - container_port:
       - host_ip: 127.0.0.1
       - host_port: 4431
+  - name: aws-deploy-context
+    driver:
+      name: ec2
+      aws_ssh_key_id: <%= ENV['AWS_SSH_DEPLOYCONTEXT_KITCHEN_KEY'] %>
+      security_group_ids: ["<%= ENV['AWS_SSH_DEPLOYCONTEXT_KITCHEN_KEY'] %>"]
+      region: us-east-1
+      subnet_id: <%= ENV['AWS_SSH_DEPLOYCONTEXT_SUBNET_ID'] %>
+      iam_profile_name: deploy-context-kitchen-role
+      instance_type: t2.micro
+      associate_public_ip: true
+      interface: dns
+      image_id: ami-067d1e60475437da2
+  - name: aws-deploy-context-chefserver
+    driver:
+      name: ec2
+      aws_ssh_key_id: <%= ENV['AWS_SSH_DEPLOYCONTEXT_KITCHEN_KEY'] %>
+      security_group_ids: ["<%= ENV['AWS_SSH_DEPLOYCONTEXT_KITCHEN_KEY'] %>"]
+      region: us-east-1
+      subnet_id: <%= ENV['AWS_SSH_DEPLOYCONTEXT_SUBNET_ID'] %>
+      iam_profile_name: deploy-context-kitchen-role
+      instance_type: t2.micro
+      associate_public_ip: true
+      interface: dns
+      image_id: ami-067d1e60475437da2
 
 suites:
   - name: default
     includes:
-        - jimbodragon-production
-        - jimbodragon-test
+        - vb-deploy-context
+        - dock-deploy-context
+        - aws-deploy-context
     attributes:
       infra_chef:
-        project_name: jimbodragon
+        project_name: exemple
   - name: require
     named_run_list: chefserver
     attributes:
     includes:
-      - chefserver-production
+      - vb-deploy-context-chefserver
   - name: require
     named_run_list: chefserver
     attributes:
     includes:
-      - chefserver-test
+      - dock-deploy-context-chefserver
+      - aws-deploy-context-chefserver

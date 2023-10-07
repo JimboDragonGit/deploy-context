@@ -1,19 +1,19 @@
-
-
-require 'simplecov_setup'
-require 'cucumber/rspec/disable_option_parser'
-require 'cucumber/cli/main'
-
 require 'rubygems'
 require 'fileutils'
-require 'git-version-bump'
+
+require_relative 'deployer'
+require_relative 'base'
 
 require_relative 'helpers/command'
+require_relative 'helpers/rake_tasks'
+
 require_relative 'deploy/deployer'
 require_relative 'deploy/git'
 require_relative 'deploy/context'
 require_relative 'deploy/habitat'
+require_relative 'deploy/plan'
 
+require_relative 'steps/deploy'
 
 module Context
   class Deploy
@@ -22,6 +22,8 @@ module Context
     include DeployHelpers::GitHelper
     include DeployHelpers::ContextHelper
     include DeployHelpers::HabitatHelper
+    include DeployHelpers::PlanHelper
+    include Base
 
     attr_reader :context_name
     attr_reader :context_folder
@@ -34,7 +36,7 @@ module Context
 
     def initialize(organisation_name, context_name, deploycontext_folder)
       @context_name = context_name
-      @context_folder = move_folder(deploycontext_folder)
+      @context_folder = deploycontext_folder # move_folder(deploycontext_folder)
       @organisation_name = organisation_name
     end
   end
