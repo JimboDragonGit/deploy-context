@@ -6,6 +6,13 @@ module Context
       super(organisation_name, context_name, deploycontext_folder)
     end
     
+    # 4
+    def do_clean
+      super
+      delete_file_only_if_exist(get_context_file(self, 'Policyfile.lock.json'))
+      true
+    end
+    
     # 7
     def do_build
       cookbook_build(self)
