@@ -89,19 +89,23 @@ module Context
 
       def cookbook_version(context)
         context_version_file = context.get_context_file(context, 'VERSION')
-        context.log "context_version_file = #{context_version_file}"
         context_version_file = if File.exist? context_version_file
           context_version_file
         else
           File.join(__dir__, '../../../VERSION')
         end
+        context.log "context_version_file = #{context_version_file}"
         File.read(context_version_file)
       end
 
       def set_cookbook_version(context)
         context.git_build(context)
-        File.write(context.get_context_file(context, 'VERSION'), context.shorten_version(context).strip)
-        File.write(context.get_context_file(context, 'DATE'), GVB.date)
+        if(defined?(GVB))
+          File.write(context.get_context_file(context, 'VERSION'), context.shorten_version(context).strip)
+          File.write(context.get_context_file(context, 'DATE'), GVB.date)
+        else
+          context.error_log "Unable to set the cookbook version"
+        end
       end
     end
   end

@@ -49,6 +49,8 @@ module Context
 
     attr_reader :organisation_name
 
+    attr_reader :context_state
+
     def initialize(organisation_name, context_name, deploycontext_folder)
       @context_name = context_name
       @context_folder = deploycontext_folder # move_folder(deploycontext_folder)
