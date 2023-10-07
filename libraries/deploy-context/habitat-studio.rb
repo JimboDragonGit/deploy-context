@@ -12,6 +12,13 @@ module Context
       delete_file_only_if_exist(get_context_file(self, 'respond.txt'))
       true
     end
+    
+    # 4
+    def do_build
+      super
+      build_habitat(self)
+      true
+    end
 
     # 9
     def do_install
@@ -24,14 +31,6 @@ module Context
     # 11
     def do_end
       super
-      promote_habitat(self)
-    end
-    
-    def do_build_in_habitat
-      build_habitat(self)
-    end
-  
-    def do_promote
       promote_habitat(self)
     end
   end
