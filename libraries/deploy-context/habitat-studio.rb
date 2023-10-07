@@ -14,6 +14,7 @@ module Context
     
     def do_install
       super
+      gem self, ['install', context_name]
       build_habitat(self)
       true
     end
