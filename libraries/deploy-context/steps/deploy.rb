@@ -2,7 +2,7 @@
 module Context
   module Steps
     module Deploy
-      def define_steps
+      def define_steps(deployer)
         # Étantdonnéque('le projet {word} à une dernière version de disponible dans git') do |project_name|
         #   context_exec [project_name, 'cycle']
           
@@ -39,13 +39,11 @@ module Context
         end
 
         Étantdonnéque('le projet {word} à la bonne version d\'installer') do |project_name|
-          pending
-          context_exec [project_name, 'check_installed_version'] || abort("#{project_name} ERROR: Issue to check installed version")
+          abort("Not the latest version installed") unless deployer.current_version_installed?
         end
 
         Étantdonnéque('le projet {word} à une nouvelle version de disponible') do |project_name|
-          pending
-          context_exec [project_name, 'check_new_version'] || abort("#{project_name} ERROR: Issue to check newer version available")
+          abort("Not the latest version installed") unless deployer.test_context_successful?
         end
       end
     end

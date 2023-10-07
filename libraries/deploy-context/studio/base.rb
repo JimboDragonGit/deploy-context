@@ -19,11 +19,15 @@ module Context
           Gem::Version.new(cookbook_version(self))
         end
       end
+    
+      def current_version_installed?
+        gem_installed?(self, context_name, version)
+      end
 
       def test_context_successful?
         log "Check if #{context_name} is install #{version}"
         
-        if cookbook_test_successful?(self) && cucumber_test_successful?(self) && gem_installed?(self, context_name, version)
+        if cookbook_test_successful?(self) && cucumber_test_successful?(self) && current_version_installed?
           log "Test context #{context_name} was successfully perform on version #{version}"
           true
         else

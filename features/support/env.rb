@@ -1,8 +1,8 @@
 
 require_relative '../../libraries/deploy-context'
 
-def context_exec(command)
-  Context::DeployContext.deployer.execute_command(command)
+def deploy_context_deployer
+  Context::DeployContext.deployer
 end
 
-chef_gem 'cucumber'
+# chef_gem 'cucumber'
