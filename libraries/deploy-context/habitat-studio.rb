@@ -9,6 +9,7 @@ module Context
     def do_clean
       super
       delete_file_only_if_exist(get_context_file(self, 'respond.txt'))
+      delete_folder_only_if_exist(get_context_file(self, 'results/logs'))
       true
     end
     

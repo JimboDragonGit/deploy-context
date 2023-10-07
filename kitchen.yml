@@ -10,6 +10,8 @@ verifier:
 
 platforms:
   - name: vb-deploy-context
+    provisioner:
+      chef_product: chef-workstation
     driver:
       name: vagrant
       box: bento/ubuntu-20.04
