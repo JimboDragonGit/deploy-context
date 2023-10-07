@@ -28,6 +28,7 @@ module Context
     # 9
     def do_install
       cookbook_install(self)
+      knife_push(self)
       true
     end
 
