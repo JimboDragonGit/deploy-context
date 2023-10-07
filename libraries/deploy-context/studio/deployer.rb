@@ -6,6 +6,10 @@ module Context
         @deployer
       end
 
+      def self.execute(action)
+        @deployer.send(action)
+      end
+
       def self.method_missing(method_name, *argv, &block)
         @deployer.debug_log "Searching method #{method_name} in context #{@deployer}"
         is_deploy_context_respond_to_action = @deployer.respond_to?(method_name) && @deployer.actions_permitted?(method_name.to_s)

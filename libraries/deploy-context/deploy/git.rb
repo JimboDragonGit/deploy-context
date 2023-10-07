@@ -1,8 +1,8 @@
 module Context
   module DeployHelpers
     module GitHelper
-      def bundle_git(context, commands)
-        context.execute_command(%w(git) + commands)
+      def bundle_git(context, commands, command_type = :system)
+        context.execute_command(%w(git) + commands, command_type)
       end
 
       def git_build(context, force_clone = false)

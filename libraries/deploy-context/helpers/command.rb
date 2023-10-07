@@ -20,6 +20,7 @@ module Context
     def error_log(name, message)
       error_message = "\n\n#{name} ERROR: #{message}\n\n"
       log error_message
+      log caller
       abort(error_message)
       exit 1
     end
@@ -37,7 +38,19 @@ module Context
       `#{command_line.join(' ')}`
     end
 
-    def execute_command(command)
+    def execute_command(command, command_type = :system)
+      command_state = case command_type
+      when :system
+        system(command.join(' '))
+      when :run_as_admin
+        execute_command(sudo_command(command), command_type)
+      when :get_data
+        get_shell_data(command)
+      when :fork
+        fork(command.join(' '))
+      else
+        error_log(context_name, "Unknown command type #{command_type}")
+      end
       command_status = system(command.join(' '))
       debug_log "\n\nexecuted command #{command.join(' ')}"
       command_status

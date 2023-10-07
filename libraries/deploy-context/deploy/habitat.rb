@@ -5,24 +5,24 @@ module Context
         context.organisation_name
       end
 
-      def habitat(context, commands = [])
-        context.bundle_exec(context, ['hab'] + commands)
+      def habitat(context, commands = [], command_type = :system)
+        context.bundle_exec(context, ['hab'] + commands, command_type)
       end
 
-      def intialize_habitat(context, commands = [])
-        context.habitat(context, ['plan', 'init'] + commands)
+      def intialize_habitat(context, commands = [], command_type = :system)
+        context.habitat(context, ['plan', 'init'] + commands, command_type)
       end
 
-      def render_habitat(context, commands = [])
-        context.habitat(context, ['plan', 'render'] + commands)
+      def render_habitat(context, commands = [], command_type = :system)
+        context.habitat(context, ['plan', 'render'] + commands, command_type)
       end
 
-      def build_habitat(context, commands = [])
-        context.habitat(context, ['studio', 'build', 'habitat/plan.sh'] + commands)
+      def build_habitat(context, commands = [], command_type = :system)
+        context.habitat(context, ['studio', 'build', 'habitat/plan.sh'] + commands, command_type)
       end
 
-      def start_habitat_job(context, commands = [])
-        context.debug_log("Starting an Habitat job #{context.get_shell_data(['hab', 'bldr', 'job', 'start', 'habitat/plan.sh'])}")
+      def start_habitat_job(context, commands = [], command_type = :system)
+        context.debug_log("Starting an Habitat job #{context.get_shell_data(['hab', 'bldr', 'job', 'start', 'habitat/plan.sh'])}", command_type)
         true
       end
 
@@ -35,30 +35,30 @@ module Context
         end
       end
 
-      def load_habitat(context, commands = [])
+      def load_habitat(context, commands = [], command_type = :system)
         supervisor_command = %w(hab svc load) + ["#{habitat_organisation_name(context)}/#{context.context_name}", '--strategy at-once']
         if context.is_admin?
-          context.habitat(context, supervisor_command + commands)
+          context.habitat(context, supervisor_command + commands, command_type)
         else
-          context.execute_command(%w(sudo hab) + supervisor_command + commands) unless Gem.win_platform?
+          context.execute_command(%w(sudo hab) + supervisor_command + commands, command_type) unless Gem.win_platform?
         end
       end
 
-      def run_habitat_supervisor(context, commands = [])
+      def run_habitat_supervisor(context, commands = [], command_type = :system)
         supervisor_command = %w(sup run)
         if context.is_admin?
-          context.habitat(context, supervisor_command + commands)
+          context.habitat(context, supervisor_command + commands, command_type)
         else
-          context.execute_command(%w(sudo hab) + supervisor_command + commands) unless Gem.win_platform?
+          context.execute_command(%w(sudo hab) + supervisor_command + commands, command_type) unless Gem.win_platform?
         end
       end
 
-      def install_habitat_supervisor(context, commands = [])
+      def install_habitat_supervisor(context, commands = [], command_type = :system)
         supervisor_command = %w(sup run)
         if context.is_admin?
-          context.habitat(context, supervisor_command + commands)
+          context.habitat(context, supervisor_command + commands, command_type)
         else
-          context.execute_command(%w(sudo hab) + supervisor_command + commands) unless Gem.win_platform?
+          context.execute_command(%w(sudo hab) + supervisor_command + commands, command_type) unless Gem.win_platform?
         end
       end
 

@@ -15,22 +15,22 @@ module Context
 
         Alors('démarrer un simple cycle de {word}') do |project_name|
           pending
-          context_exec [project_name, 'cycle'] || abort("#{project_name} ERROR: Issue with life cycle")
+          # context_exec [project_name, 'cycle'] || abort("#{project_name} ERROR: Issue with life cycle")
         end
 
         Alors('déployer le projet {word}') do |project_name|
           pending
-          context_exec [project_name, 'release'] || abort("#{project_name} ERROR: Issue with deploy steps")
+          # context_exec [project_name, 'release'] || abort("#{project_name} ERROR: Issue with deploy steps")
         end
 
         Alors('tester le projet {word}') do |project_name|
           pending
-          context_exec [project_name, 'test'] || abort("#{project_name} ERROR: Issue with testing steps")
+          # context_exec [project_name, 'test'] || abort("#{project_name} ERROR: Issue with testing steps")
         end
 
         Étantdonnéque('le projet {word} à du code à updater') do |project_name|
           pending
-          context_exec [project_name, 'check_code_to_update'] || abort("#{project_name} ERROR: Issue to check updated code")
+          # context_exec [project_name, 'check_code_to_update'] || abort("#{project_name} ERROR: Issue to check updated code")
         end
 
         Alors('bumper la version du patch de {word}') do |project_name|
@@ -39,11 +39,15 @@ module Context
         end
 
         Étantdonnéque('le projet {word} à la bonne version d\'installer') do |project_name|
-          abort("Not the latest version installed") unless deployer.current_version_installed?
+          is_current_version_installed = deployer.current_version_installed?
+          deployer.log "is_current_version_installed = #{is_current_version_installed}"
+          abort("Not the latest version installed") unless is_current_version_installed
         end
 
         Étantdonnéque('le projet {word} à une nouvelle version de disponible') do |project_name|
-          abort("Not the latest version installed") unless deployer.test_context_successful?
+          is_current_version_installed = deployer.current_version_installed?
+          deployer.log "is_current_version_installed = #{is_current_version_installed}"
+          abort("Latest version installed") if is_current_version_installed
         end
       end
     end

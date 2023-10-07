@@ -1,25 +1,25 @@
 module Context
   module DeployHelpers
     module RubyHelper
-      def bundle(context, commands)
+      def bundle(context, commands, command_type = :system)
         context.debug_log "Executing chef command #{commands}"
-        context.execute_command(%w(bundle) + commands)
+        context.execute_command(%w(bundle) + commands, command_type)
       end
 
-      def bundle_exec(context, commands)
-        context.bundle(context, %w(exec) + commands)
+      def bundle_exec(context, commands, command_type = :system)
+        context.bundle(context, %w(exec) + commands, command_type)
       end
 
-      def bundle_install(context, commands)
-        context.bundle_exec(context, %w(install) + commands)
+      def bundle_install(context, commands, command_type = :system)
+        context.bundle(context, %w(install) + commands, command_type)
       end
 
-      def bundle_gem(context, commands)
-        context.bundle_exec(context, %w(gem) + commands)
+      def bundle_gem(context, commands, command_type = :system)
+        context.execute_command(%w(gem) + commands, command_type)
       end
       
-      def bundle_rake(context, commands = [])
-        context.execute_command(%w(rake) + commands)
+      def bundle_rake(context, commands = [], command_type = :system)
+        context.execute_command(%w(rake) + commands, command_type)
       end
 
       def ruby_build(context)
@@ -37,7 +37,7 @@ module Context
       end
 
       def ruby_install(context)
-        context.gem context, ['install', context.context_name]
+        context.bundle_gem context, ['install', context.context_name]
       end
 
       def clean_folder(context, folder)
@@ -60,26 +60,31 @@ module Context
         # sleep(60)
       end
 
-      def gem_installed?(context, gemname, compare_version = nil)
+      def gem_available?(context, gemname, compare_version = nil)
         begin
-          installed_version = Gem::Specification.find_by_name(gemname)
+          available_version = Gem::Specification.find_by_name(gemname)
         rescue Gem::MissingSpecError => e
           context.error_log(context, "The gem '#{gemname}' is missing")
           # sleep(5)
-          installed_version = nil
+          available_version = nil
         rescue Exception => e
           context.error_log(context, "The gem '#{gemname}' got issue with #{e}")
           sleep(5)
-          installed_version = nil
+          available_version = nil
         end
-        # context.debug_log("Compare #{context.context_name} installed_version #{installed_version} with #{context.version} in folder #{context.context_folder}")
-        installed = if compare_version.nil? || installed_version.nil?
-          not installed_version.nil?
+        # context.debug_log("Compare #{context.context_name} available_version #{available_version} with #{context.version} in folder #{context.context_folder}")
+        available = if compare_version.nil? || available_version.nil?
+          not available_version.nil?
         else
-          installed_version.version == context.version
+          available_version.version == context.version
         end
-        puts "installed = #{installed}"
-        installed
+        puts "available = #{available}"
+        available
+      end
+
+      def gem_installed?(context, gemname, compare_version = nil)
+        gem_list = context.bundle_gem(context, ['list', context.context_name, "| #{context.context_name}"], :get_data)
+        # pending
       end
 
       def load_dependency(context, gemname, require_file)

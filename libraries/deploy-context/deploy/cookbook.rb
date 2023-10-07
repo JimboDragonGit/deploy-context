@@ -1,21 +1,21 @@
 module Context
   module DeployHelpers
     module CookbookHelper
-      def bundle_chef(context, commands)
+      def bundle_chef(context, commands, command_type = :system)
         context.debug_log "Executing chef command #{commands}"
-        context.execute_command(%w(chef) + commands)
+        context.execute_command(%w(chef) + commands, command_type)
       end
 
-      def chef_exec(context, commands)
-        context.bundle_chef(context, %w(exec) + commands)
+      def chef_exec(context, commands, command_type = :system)
+        context.bundle_chef(context, %w(exec) + commands, command_type)
       end
 
-      def knife(context, commands)
-        context.chef_exec(context, %w(knife) + commands)
+      def knife(context, commands, command_type = :system)
+        context.chef_exec(context, %w(knife) + commands, command_type)
       end
 
-      def kitchen(context, commands = %w(test))
-        context.execute_command(%w(kitchen) + commands)
+      def kitchen(context, commands = %w(test), command_type = :system)
+        context.execute_command(%w(kitchen) + commands, command_type)
       end
 
       def cookbook_path(context)
