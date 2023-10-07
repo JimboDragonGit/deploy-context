@@ -15,7 +15,7 @@ module Context
       end
 
       def kitchen(context, commands = %w(test))
-        context.chef_exec(context, %w(kitchen) + commands)
+        context.execute_command(%w(kitchen) + commands)
       end
 
       def cookbook_path(context)
@@ -104,7 +104,7 @@ module Context
           File.write(context.get_context_file(context, 'VERSION'), context.shorten_version(context).strip)
           File.write(context.get_context_file(context, 'DATE'), GVB.date)
         else
-          context.error_log context.context_name, "Unable to set the cookbook version"
+          context.error_log context.context_name, "Unable to set the cookbook version as GVB is not defined", false
         end
       end
     end

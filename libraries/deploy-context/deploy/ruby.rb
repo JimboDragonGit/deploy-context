@@ -19,7 +19,7 @@ module Context
       end
       
       def bundle_rake(context, commands = [])
-        context.bundle_exec(context, %w(rake) + commands)
+        context.execute_command(%w(rake) + commands)
       end
 
       def ruby_build(context)
