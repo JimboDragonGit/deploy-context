@@ -13,5 +13,13 @@ module Context
 
       abort("No context_name :(") if context_name.nil? || context_name.empty?
     end
+
+    def do_cycle
+      do_build
+      do_check
+      do_install
+      do_strip
+      do_end
+    end
   end
 end

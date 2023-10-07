@@ -27,8 +27,8 @@ module Context
       end
 
       namespace :deploycontext do
-        task :default => "deploycontext:test" do
-          Context::DeployContext.deployer.cycle
+        task :cycle do
+          Context::DeployContext.deployer.do_cycle
         end
 
         task :bump => "deploycontext:commit" do

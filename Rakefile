@@ -6,4 +6,4 @@ define_deploy_context_tasks
 
 # task :default => "deploycontext:default"
 
-task :default => "deploycontext:studio:promote"
+task :default => "deploycontext:cycle"

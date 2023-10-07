@@ -18,7 +18,8 @@ module Context
           do_end
           help
           do_build_in_habitat
-          do_promote
+          do_cycle
+          do_agent
         )
       end
 
