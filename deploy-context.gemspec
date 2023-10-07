@@ -47,8 +47,8 @@
   # s.add_development_dependency('chef')
   # s.add_development_dependency('test-kitchen')
 
-  s.add_runtime_dependency('git')
-  s.add_runtime_dependency('git-cli')
+  # s.add_runtime_dependency('git')
+  s.add_runtime_dependency('git_cli')
   s.add_runtime_dependency('chef')
   s.add_runtime_dependency('test-kitchen')
   s.add_runtime_dependency('chef-bin')

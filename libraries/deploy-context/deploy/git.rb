@@ -2,7 +2,7 @@ module Context
   module DeployHelpers
     module GitHelper
       def bundle_git(context, commands)
-        context.bundle_exec(context, %w(git) + commands)
+        context.execute_command(%w(git) + commands)
       end
 
       def git_build(context, force_clone = false)
