@@ -84,7 +84,7 @@ module Context
       end
 
       def mix_run_list(context, run_list)
-        context.bundle_exec(['chef-client', '-o', run_list])
+        context.bundle_exec(context, ['chef-client', '-o', run_list])
       end
 
       def cookbook_version(context)
