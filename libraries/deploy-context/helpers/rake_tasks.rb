@@ -31,7 +31,7 @@ module Context
           Context::DeployContext.deployer.do_mix_cookbook
         end
 
-        task :push_cookbook => "deploycontext:studio:release" do
+        task :push_cookbook do
           Context::DeployContext.deployer.do_end
         end
 
