@@ -32,7 +32,7 @@ module Context
         context.git_build(context)
         # gem ["push #{context.context_name}-#{GVB.version}.gem"]
         # context.patch_bump if gem_installed?(context, context.context_name)
-        context.rake context, ['release']
+        context.bundle_rake context, ['release']
         # context.commit
       end
 
