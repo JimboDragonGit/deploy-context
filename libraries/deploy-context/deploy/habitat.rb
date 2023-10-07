@@ -100,13 +100,12 @@ module Context
         context.hab_latest_build_status(context).status == 'Complete'
       end
 
-      def set_hab_build_id(context)
+      def set_hab_build_id(context, new_build_id)
         context.git_build(context)
         # , "#{organisation_name}/#{context_name}"
-        running_build_id = 
-        context.debug_log "Setting the build ID from #{context.hab_build_id(context)} to #{running_build_id}"
+        context.debug_log "Setting the build ID from #{context.hab_build_id(context)} to #{new_build_id}"
 
-        File.write(context.get_context_file(context, 'HAB_BUILD_ID'), context.hab_build_id(context))
+        File.write(context.get_context_file(context, 'HAB_BUILD_ID'), new_build_id)
       end
     end
   end
