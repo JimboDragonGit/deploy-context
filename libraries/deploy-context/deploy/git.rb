@@ -1,8 +1,8 @@
 module Context
   module DeployHelpers
     module GitHelper
-      def git(context, commands)
-        context.chef_exec(context, %w(git) + commands)
+      def bundle_git(context, commands)
+        context.bundle_exec(context, %w(git) + commands)
       end
 
       def git_build(context, force_clone = false)
@@ -13,7 +13,7 @@ module Context
         else
           context.error_log context.context_name, "Cloning from source in #{Dir.pwd}"
           local_dir = File.join(Dir.pwd, context.context_name)
-          context.git context, ["clone git@github.com:JimboDragonGit/#{context.context_name}.git"] unless ::Dir.exist?(local_dir)
+          context.bundle_git context, ["clone git@github.com:JimboDragonGit/#{context.context_name}.git"] unless ::Dir.exist?(local_dir)
           context.move_folder(local_dir)
           true
         end
@@ -21,13 +21,13 @@ module Context
 
       def git_pull(context)
         context.git_build(context) unless context.actual_working_directory?
-        context.debug_log "Git pull result: #{context.git context, %w(pull origin master)}"
+        context.debug_log "Git pull result: #{context.bundle_git context, %w(pull origin master)}"
       end
 
       def git_commit(context)
         context.git_build(context)
-        context.git context, ['add .']
-        context.git context, ["commit -m 'Create #{context.context_name} automatic commit'"]
+        context.bundle_git context, ['add .']
+        context.bundle_git context, ["commit -m 'Create #{context.context_name} automatic commit'"]
       end
 
       # def git_release(context)
@@ -49,7 +49,7 @@ module Context
       def git_update_available?(context)
         context.git_build(context)
         # context.git ['log', "v#{context.version}"]
-        context.git context, ['ls-remote origin', "v#{context.version}"]
+        context.bundle_git context, ['ls-remote origin', "v#{context.version}"]
       end
 
       def git_dirty_state?(context)

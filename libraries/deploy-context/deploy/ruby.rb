@@ -1,12 +1,25 @@
 module Context
   module DeployHelpers
     module RubyHelper
-      def gem(context, commands)
-        context.chef_exec(context, %w(gem) + commands)
+      def bundle(context, commands)
+        context.debug_log "Executing chef command #{commands}"
+        context.execute_command(%w(bundle) + commands)
+      end
+
+      def bundle_exec(context, commands)
+        context.bundle(context, %w(exec) + commands)
+      end
+
+      def bundle_install(context, commands)
+        context.bundle_exec(context, %w(install) + commands)
+      end
+
+      def bundle_gem(context, commands)
+        context.bundle_exec(context, %w(gem) + commands)
       end
       
-      def rake(context, commands = [])
-        context.chef_exec(context, %w(rake) + commands)
+      def bundle_rake(context, commands = [])
+        context.bundle_exec(context, %w(rake) + commands)
       end
 
       def ruby_build(context)

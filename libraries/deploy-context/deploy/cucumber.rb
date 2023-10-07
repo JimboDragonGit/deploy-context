@@ -16,7 +16,7 @@ module Context
       def cucumber(context, commands = [])
         context.existing_cucumber_runtime = cucumber_runtime(context, commands)
         cucumber_runtime(context, commands).run!
-        # context.chef_exec(context,['cucumber'] + commands)
+        # context.bundle_exec(context,['cucumber'] + commands)
       end
 
       def cucumber_test(context)

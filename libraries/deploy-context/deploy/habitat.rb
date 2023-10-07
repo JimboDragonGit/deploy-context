@@ -6,7 +6,7 @@ module Context
       end
 
       def habitat(context, commands = [])
-        context.chef_exec(context, ['hab'] + commands)
+        context.bundle_exec(context, ['hab'] + commands)
       end
 
       def intialize_habitat(context, commands = [])
@@ -31,7 +31,7 @@ module Context
           context.set_hab_build_id(context, context.hab_latest_build_status(context).id)
           context.habitat(context, ['bldr', 'job', 'promote', job_id, channel]) 
         else
-          context.error_log(context, "Promote context #{context.context_name} impossible")
+          context.error_log(context.context_name, "Promote context #{context.context_name} impossible")
         end
       end
 

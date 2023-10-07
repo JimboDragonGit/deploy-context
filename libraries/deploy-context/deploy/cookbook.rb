@@ -1,17 +1,17 @@
 module Context
   module DeployHelpers
     module CookbookHelper
-      def chef(context, commands)
+      def bundle_chef(context, commands)
         context.debug_log "Executing chef command #{commands}"
-        context.execute_command(%w(chef) + commands)
-      end
-
-      def knife(context, commands)
-        context.execute_command(%w(knife) + commands)
+        context.bundle_exec(context, %w(chef) + commands)
       end
 
       def chef_exec(context, commands)
-        context.chef(context, %w(exec) + commands)
+        context.bundle_chef(context, %w(exec) + commands)
+      end
+
+      def knife(context, commands)
+        context.bundle_exec(context, %w(knife) + commands)
       end
 
       def cookbook_path(context)
@@ -20,7 +20,7 @@ module Context
 
       def chef_generate(context, commands)
         context.debug_log("\n\nGenerating Chef components with command #{commands}")
-        context.chef(context, %w(generate) + commands)
+        context.bundle_chef(context, %w(generate) + commands)
       end
 
       def generate_cookbook(context, cookbookname)
@@ -28,7 +28,7 @@ module Context
       end
 
       def kitchen(context, commands = %w(test))
-        context.chef_exec(context, %w(kitchen) + commands)
+        context.bundle_exec(context, %w(kitchen) + commands)
       end
 
       def cookbook_build(context)
@@ -55,20 +55,20 @@ module Context
       def cookbook_install(context)
         cookbook_build(context)
         context.debug_log "\n\nInstalling cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
-        context.chef(context, %w(install))
+        context.bundle_chef(context, %w(install))
       end
 
       def cookbook_push(context)
         cookbook_build(context)
         context.debug_log "\n\nPushing cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
-        context.chef(context, ['push', context.context_name, 'Policyfile.lock.json'])
+        context.bundle_chef(context, ['push', context.context_name, 'Policyfile.lock.json'])
         context.knife context, ['cookbook', 'upload', context.context_name, '--cookbook-path', context.cookbook_path(context)]
       end
 
       def supermarket_push(context)
         cookbook_build(context)
         context.debug_log "\n\nPushing cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
-        context.chef(context, ['supermarket', 'share', context.context_name, '--cookbook-path', context.cookbook_path(context)])
+        context.bundle_chef(context, ['supermarket', 'share', context.context_name, '--cookbook-path', context.cookbook_path(context)])
       end
 
       def clean_file(context, file)
@@ -84,7 +84,7 @@ module Context
       end
 
       def mix_run_list(context, run_list)
-        context.execute_command(['chef-client', '-o', run_list])
+        context.bundle_exec(['chef-client', '-o', run_list])
       end
 
       def cookbook_version(context)
@@ -104,7 +104,7 @@ module Context
           File.write(context.get_context_file(context, 'VERSION'), context.shorten_version(context).strip)
           File.write(context.get_context_file(context, 'DATE'), GVB.date)
         else
-          context.error_log "Unable to set the cookbook version"
+          context.error_log context.context_name, "Unable to set the cookbook version"
         end
       end
     end
