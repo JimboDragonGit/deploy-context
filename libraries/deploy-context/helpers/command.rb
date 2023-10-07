@@ -15,6 +15,7 @@ module Context
     def error_log(name, message)
       error_message = "\n\n#{name} ERROR: #{message}\n\n"
       log error_message
+      abort(error_message)
       exit 1
     end
 

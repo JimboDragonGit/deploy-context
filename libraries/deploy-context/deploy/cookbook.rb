@@ -11,7 +11,11 @@ module Context
       end
 
       def knife(context, commands)
-        context.bundle_exec(context, %w(knife) + commands)
+        context.chef_exec(context, %w(knife) + commands)
+      end
+
+      def kitchen(context, commands = %w(test))
+        context.chef_exec(context, %w(kitchen) + commands)
       end
 
       def cookbook_path(context)
@@ -25,10 +29,6 @@ module Context
 
       def generate_cookbook(context, cookbookname)
         context.chef_generate(context, %w(cookbook) + cookbookname)
-      end
-
-      def kitchen(context, commands = %w(test))
-        context.bundle_exec(context, %w(kitchen) + commands)
       end
 
       def cookbook_build(context)
