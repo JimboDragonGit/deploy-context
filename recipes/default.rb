@@ -5,4 +5,4 @@
 # Copyright:: 2023, The Authors, All Rights Reserved.
 
 deployer = Context::DeployContext.deployer
-deployer.cucumber
+deployer.do_cycle

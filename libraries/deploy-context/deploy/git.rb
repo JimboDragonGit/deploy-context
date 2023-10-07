@@ -5,8 +5,8 @@ module Context
         context.chef_exec(context, %w(git) + commands)
       end
 
-      def git_build(context)
-        if context.present_localy?
+      def git_build(context, force_clone = false)
+        if context.present_localy? && force_clone == false
           Dir.chdir(context.context_folder)
           context.git_pull(context)
           true

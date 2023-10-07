@@ -17,7 +17,6 @@ module Context
           do_strip
           do_end
           help
-          do_build_in_habitat
           do_cycle
           do_agent
         )
@@ -25,6 +24,13 @@ module Context
 
       def do_mix_cookbook
         mix_run_list(self, context_name)
+      end
+
+      def do_agent
+        git_build(self)
+        while true do
+          do_cycle
+        end
       end
     end
   end
