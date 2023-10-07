@@ -46,7 +46,7 @@ MESSAGE_END
           false
         else
           if context.respond_to?(action)
-            context.log("\n\nStarting Action '#{action}'")
+            context.debug_log("\n\nStarting Action '#{action}'")
             context.send(action)
           else
             context.error_log(context, "Action '#{action}' is unavailable")
@@ -55,7 +55,7 @@ MESSAGE_END
         end
         # context.commit
         if state_action
-          context.log "\n\nAction #{action} executed correctly in context #{context}"
+          context.debug_log "\n\nAction #{action} executed correctly in context #{context}"
           state_action.perform unless state_action.kind_of?(TrueClass) || state_action.kind_of?(Integer)
         else
           context.error_log(context.context_name, "Failed to execute action #{action} in context #{context.context_name} resulting to a #{state_action}")

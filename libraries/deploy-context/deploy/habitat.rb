@@ -23,7 +23,7 @@ module Context
       end
 
       def start_habitat_job(context, commands = [])
-        context.log("Starting an Habitat job #{context.get_shell_data(['hab', 'bldr', 'job', 'start', 'habitat/plan.sh'])}")
+        context.debug_log("Starting an Habitat job #{context.get_shell_data(['hab', 'bldr', 'job', 'start', 'habitat/plan.sh'])}")
         true
       end
 
@@ -71,16 +71,16 @@ module Context
           "| grep '#{context.context_name}' | head -n 1",
         ]
         # build_result.result_file = File.join(context.temp_dir, 'raw_return.txt')
-        # context.log "Getting data from command #{build_result.command} and result at #{build_result.result_file}"
+        # context.debug_log "Getting data from command #{build_result.command} and result at #{build_result.result_file}"
         # File.write(build_result.result_file, context.get_shell_data(build_result.command))
         # build_result.build_id_raw = "#{File.read(build_result.result_file)}"
-        # context.log "And raw return from file is #{build_result.build_id_raw}"
+        # context.debug_log "And raw return from file is #{build_result.build_id_raw}"
         # build_result.return_arr = build_result.build_id_raw.split("\n")
-        # context.log "And return array is #{build_result.return_arr}"
+        # context.debug_log "And return array is #{build_result.return_arr}"
         # build_result.return_str = build_result.return_arr[3]
-        # context.log "And return string is #{build_result.return_str}"
+        # context.debug_log "And return string is #{build_result.return_str}"
         # build_result.result_arr = build_result.return_str.split(' ')
-        # context.log "And result array is #{build_result.result_arr}"
+        # context.debug_log "And result array is #{build_result.result_arr}"
 
         result_array = context.get_shell_data(build_result.command).split("\n")[0].split(' ')
         build_result.id = result_array[1]

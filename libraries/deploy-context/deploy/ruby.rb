@@ -11,7 +11,7 @@ module Context
 
       def ruby_build(context)
         context.git_build(context)
-        context.log "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created"
+        context.debug_log "Working in folder #{Dir.pwd}\nAnd context #{context.context_name} is created"
         check_folder get_context_file(context, 'build')
       end
 
@@ -59,7 +59,7 @@ module Context
           sleep(5)
           installed_version = nil
         end
-        # context.log("Compare #{context.context_name} installed_version #{installed_version} with #{context.version} in folder #{context.context_folder}")
+        # context.debug_log("Compare #{context.context_name} installed_version #{installed_version} with #{context.version} in folder #{context.context_folder}")
         installed = if compare_version.nil? || installed_version.nil?
           not installed_version.nil?
         else
@@ -71,7 +71,7 @@ module Context
 
       def load_dependency(context, gemname, require_file)
         context.gem(context, ['install', gemname]) unless context.gem_installed?(context, gemname)
-        context.log("Loading file #{require_file} for gem #{gemname}")
+        context.debug_log("Loading file #{require_file} for gem #{gemname}")
         sleep 3
         require require_file
       end
@@ -81,31 +81,31 @@ module Context
       end
 
       def ruby_cycle(context)
-        context.log "\n\nBuilding Ruby application for #{context.context_name}"
+        context.debug_log "\n\nBuilding Ruby application for #{context.context_name}"
         if context.new_update_available?
-          context.log "\n\nNew update available for #{context.context_name}\nCleaning the building space"
+          context.debug_log "\n\nNew update available for #{context.context_name}\nCleaning the building space"
           context.clean
           # if git_dirty_state?(context)
           #   context.patch_bump
           #   context.commit
           # end
-          context.log "\n\nBuilding project #{context.context_name} now ..."
+          context.debug_log "\n\nBuilding project #{context.context_name} now ..."
           context.build
           # context.commit
-          context.log "\n\nReleasing project #{context.context_name}"
+          context.debug_log "\n\nReleasing project #{context.context_name}"
           context.release
           context.wait_until_release_available
-          context.log "\n\nInstalling project #{context.context_name}"
+          context.debug_log "\n\nInstalling project #{context.context_name}"
           context.install
           if context.test_context_successful?
-            context.log "newer version installed successfully for #{context.context_name} on version #{context.version}"
+            context.debug_log "newer version installed successfully for #{context.context_name} on version #{context.version}"
             # context.patch_bump
             # patch_reset(context)
           else
-            context.log "newer version not installed for #{context.context_name} on version #{context.version}"
+            context.debug_log "newer version not installed for #{context.context_name} on version #{context.version}"
           end
         else
-          context.log "No update available"
+          context.debug_log "No update available"
         end
       end
     end
