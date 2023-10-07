@@ -88,7 +88,7 @@ module Context
       end
 
       def cookbook_version(context)
-        File.write(context.get_context_file(context, 'VERSION'))
+        File.read(context.get_context_file(context, 'VERSION'))
       end
 
       def set_cookbook_version(context)

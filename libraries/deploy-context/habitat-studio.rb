@@ -6,22 +6,20 @@ module Context
       super(organisation_name, context_name, deploycontext_folder)
     end
     
-    # 4
     def do_clean
       super
       delete_file_only_if_exist(get_context_file(self, 'respond.txt'))
       true
     end
     
-    # 4
-    def do_build
+    def do_install
       super
       build_habitat(self)
       true
     end
 
     # 9
-    def do_install
+    def do_strip
       super
       Dir.chdir context_folder
       start_habitat_job(self)

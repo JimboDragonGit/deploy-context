@@ -61,14 +61,13 @@ module Context
       true
     end
     
-    # 6
-    def do_prepare
-      # load_dependencies
+    # 7
+    def do_strip
       git_build(self)
     end
     
     # 7
-    def do_build
+    def do_end
       git_commit(self)
     end
   end

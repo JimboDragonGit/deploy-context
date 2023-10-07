@@ -8,31 +8,30 @@ module Context
     
     # 7
     def do_build
-      super
       cookbook_build(self)
       true
     end
     
     # 8
     def do_check
-      super
       cookbook_test(self)
       true
     end
     
     # 9
     def do_install
-      super
       cookbook_install(self)
       true
     end
 
+    # 10
     def do_strip
       super
       cookbook_push(self)
       true
     end
 
+    # 11
     def do_end
       super
       cookbook_result = do_mix_cookbook

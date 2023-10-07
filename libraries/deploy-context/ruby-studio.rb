@@ -12,16 +12,17 @@ module Context
       delete_file_only_if_exist(get_context_file(self, 'Gemfile.lock'))
       true
     end
-
-    # 2
-    def do_prepare
+    
+    # 9
+    def do_strip
       super
       system('bundle install')
       true
     end
     
     # 9
-    def do_install
+    def do_end
+      super
       ruby_release(self)
       true
     end
