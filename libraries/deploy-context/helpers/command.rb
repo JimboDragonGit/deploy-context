@@ -39,7 +39,7 @@ module Context
 
     def execute_command(command)
       command_status = system(command.join(' '))
-      log "executed command #{command.join(' ')}"
+      debug_log "\n\nexecuted command #{command.join(' ')}"
       command_status
     end
 
