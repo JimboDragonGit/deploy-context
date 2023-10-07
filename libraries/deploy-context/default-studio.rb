@@ -56,6 +56,11 @@ module Context
       @context_folder = deploycontext_folder # move_folder(deploycontext_folder)
       @organisation_name = organisation_name
     end
+    
+    # 2
+    def do_download
+      git_build(self)
+    end
 
     # 4
     def do_clean
@@ -63,12 +68,12 @@ module Context
       true
     end
     
-    # 7
+    # 10
     def do_strip
       git_build(self)
     end
     
-    # 7
+    # 11
     def do_end
       git_commit(self)
     end

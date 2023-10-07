@@ -1,6 +1,23 @@
 module Context
   module DeployHelpers
     module DeployerHelper
+      def load_public_dependencies
+        require 'rubygems'
+        require 'bundler'
+        # require 'bundler/setup'
+        # require 'bundler/installer'
+        
+        require 'rdoc/task'
+        
+        require 'git-version-bump'
+        require 'git-version-bump/rake-tasks'
+        
+        require 'cucumber'
+        require 'cucumber/rake/task'
+  
+        require_relative '../../deploy-context'
+      end
+  
       def get_context_file(context, file)
         File.join(context.context_folder, file)
       end

@@ -70,7 +70,6 @@ module Context
         cookbook_build(context)
         context.debug_log "\n\nChef pushing cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
         context.bundle_chef(context, ['push', context.context_name, 'Policyfile.lock.json'])
-        context.knife context, ['cookbook', 'upload', context.context_name, '--cookbook-path', context.cookbook_path(context)]
       end
 
       def supermarket_push(context)

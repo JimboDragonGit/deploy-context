@@ -1,23 +1,7 @@
 module Context
   module RakeTasks
-    def load_public_dependencies
-      require 'rubygems'
-      require 'bundler'
-      # require 'bundler/setup'
-      # require 'bundler/installer'
-      
-      require 'rdoc/task'
-      
-      require 'git-version-bump/rake-tasks'
-      
-      require 'cucumber'
-      require 'cucumber/rake/task'
-
-      require_relative '../../deploy-context'
-    end
-
     def define_deploy_context_tasks(deployer)
-      load_public_dependencies
+      deployer.load_public_dependencies
       Bundler::GemHelper.install_tasks
 
       Rake::RDocTask.new do |rd|

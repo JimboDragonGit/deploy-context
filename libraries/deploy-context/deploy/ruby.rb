@@ -47,15 +47,16 @@ module Context
       end
 
       def ruby_clean(context)
-        clean_folder(context, 'pkg')
+        context.bundle_gem('cleanup')
+        context.clean_folder(context, 'pkg')
       end
 
       def ruby_remove_gem(context)
-        clean_folder(context, 'pkg')
+        context.bundle_gem(['remove', context.context_name])
       end
 
       def ruby_check_if_available_public(context)
-        puts "Waiting a minute before installing #{context.context_name} in folder #{context.context_folder}"
+        context.log "Waiting a minute before installing #{context.context_name} in folder #{context.context_folder}"
         `chef gem list #{context.context_name}`
         # sleep(60)
       end

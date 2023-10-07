@@ -3,6 +3,7 @@ module Context
   module Steps
     module Deploy
       def define_steps(deployer)
+        deployer.load_public_dependencies
         # Étantdonnéque('le projet {word} à une dernière version de disponible dans git') do |project_name|
         #   context_exec [project_name, 'cycle']
           

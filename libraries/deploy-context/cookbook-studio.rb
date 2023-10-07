@@ -13,9 +13,15 @@ module Context
       true
     end
     
+    # 6
+    def do_prepare
+      cookbook_build(self)
+      true
+    end
+    
     # 7
     def do_build
-      cookbook_build(self)
+      cookbook_install(self)
       true
     end
     
@@ -27,7 +33,6 @@ module Context
     
     # 9
     def do_install
-      cookbook_install(self)
       knife_push(self)
       true
     end

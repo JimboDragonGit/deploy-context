@@ -49,13 +49,13 @@ module Context
       def git_update_available?(context)
         context.git_build(context)
         # context.git ['log', "v#{context.version}"]
-        context.bundle_git context, ['ls-remote origin', "v#{context.version}"]
+        context.bundle_git(context, ['ls-remote origin', "v#{context.version}"], :get_data)
       end
 
       def git_dirty_state?(context)
         context.git_build(context)
         # context.git ['log', "v#{context.version}"]
-        context.get_data(["git status --porcelain"]).split('\n').count > 0
+        context.bundle_git(context, ["status --porcelain"], :get_data).split('\n').count > 0
       end
     end
   end
