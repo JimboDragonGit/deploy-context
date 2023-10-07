@@ -54,5 +54,22 @@ module Context
       @context_folder = deploycontext_folder # move_folder(deploycontext_folder)
       @organisation_name = organisation_name
     end
+
+    # 4
+    def do_clean
+      delete_file_only_if_exist(get_context_file(self, 'respond.txt'))
+      true
+    end
+    
+    # 6
+    def do_prepare
+      # load_dependencies
+      git_build(self)
+    end
+    
+    # 7
+    def do_build
+      git_commit(self)
+    end
   end
 end

@@ -19,5 +19,11 @@ module Context
       system('bundle install')
       true
     end
+    
+    # 9
+    def do_install
+      ruby_release(self)
+      true
+    end
   end
 end
