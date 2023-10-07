@@ -57,7 +57,7 @@ module Context
 
         namespace :studio do
           task :promote  => "deploycontext:studio:release" do
-            Context::DeployContext.deployer.do_promote
+            Context::DeployContext.deployer.do_end
           end
 
           task :build  => "deploycontext:studio:habitat" do
