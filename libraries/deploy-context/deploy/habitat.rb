@@ -19,7 +19,6 @@ module Context
 
       def build_habitat(context, commands = [])
         context.habitat(context, ['studio', 'build', 'habitat/plan.sh'] + commands)
-        context.set_hab_build_id(context)
       end
 
       def start_habitat_job(context, commands = [])
@@ -29,6 +28,7 @@ module Context
 
       def promote_habitat(context, job_id = File.read(get_context_file(context, 'HAB_BUILD_ID')), channel = 'unstable')
         if ! context.already_promoted?(context) && context.latest_hab_build_succeed?(context)
+          context.set_hab_build_id(context, context.hab_latest_build_status(context).id)
           context.habitat(context, ['bldr', 'job', 'promote', job_id, channel]) 
         else
           context.error_log(context, "Promote context #{context.context_name} impossible")

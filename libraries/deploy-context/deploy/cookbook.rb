@@ -88,7 +88,8 @@ module Context
       end
 
       def cookbook_version(context)
-        File.read(context.get_context_file(context, 'VERSION'))
+        context_version_file = context.get_context_file(context, 'VERSION')
+        context_version_file = File.exist? context_version_file ? context_version_file : ::File.join(__dir__, '../../../VERSION')
       end
 
       def set_cookbook_version(context)
