@@ -14,11 +14,11 @@ module Context
     end
     
     # 2
-    def do_verify
-      super
-      system('bundle install')
-      true
-    end
+    # def do_verify
+    #   super
+    #   cucumber(self)
+    #   true
+    # end
     
     # 4
     def do_clean

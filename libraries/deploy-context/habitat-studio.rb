@@ -20,7 +20,7 @@ module Context
       true
     end
 
-    # 9
+    # 10
     def do_strip
       super
       Dir.chdir context_folder
