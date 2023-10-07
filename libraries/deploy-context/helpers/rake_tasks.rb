@@ -16,7 +16,7 @@ module Context
       require_relative '../../deploy-context'
     end
 
-    def define_deploy_context_tasks
+    def define_deploy_context_tasks(deployer)
       load_public_dependencies
       Bundler::GemHelper.install_tasks
 
@@ -28,120 +28,124 @@ module Context
 
       namespace :deploycontext do
         task :mix_cookbook => "deploycontext:push_cookbook" do
-          Context::DeployContext.deployer.do_mix_cookbook
+          deployer.do_mix_cookbook
         end
 
-        task :push_cookbook do
-          Context::DeployContext.deployer.do_end
+        task :push_cookbook => "deploycontext:install" do
+          deployer.do_end
+        end
+
+        task :install do
+          deployer.do_install
         end
 
         # task :bump => "deploycontext:commit" do
-        #   Context::DeployContext.deployer.bump
+        #   deployer.bump
         # end
 
         # task :test => "deploycontext:help" do
-        #   Context::DeployContext.deployer.test
+        #   deployer.test
         # end
 
         # task :release => "deploycontext:commit"  do
-        #   Context::DeployContext.deployer.release
+        #   deployer.release
         # end
 
         # task :commit => "deploycontext:default" do
-        #   Context::DeployContext.deployer.commit
+        #   deployer.commit
         # end
 
         # task :push => "deploycontext:commit" do
-        #   Context::DeployContext.deployer.push
+        #   deployer.push
         # end
 
         task :help do
-          Context::DeployContext.deployer.help
+          deployer.help
         end
 
         namespace :studio do
           task :promote  => "deploycontext:studio:release" do
-            Context::DeployContext.deployer.do_end
+            deployer.do_end
           end
 
           task :build  => "deploycontext:studio:habitat" do
-            Context::DeployContext.deployer.do_build
+            deployer.do_build
           end
 
           task :install  => "deploycontext:studio:build" do
-            Context::DeployContext.deployer.do_install
+            deployer.do_install
           end
 
           task :release  => "deploycontext:studio:install" do
-            Context::DeployContext.deployer.do_release
+            deployer.do_release
           end
 
           task :habitat do
-            Context::DeployContext.deployer.do_build_in_habitat
+            deployer.do_build_in_habitat
           end
 
           task :kitchen do
-            Context::DeployContext.deployer.test_with_kitchen
+            deployer.test_with_kitchen
           end
         end
 
         namespace :plan do
           task :do_mix_cookbook do
-            Context::DeployContext.deployer.do_mix_cookbook
+            deployer.do_mix_cookbook
           end
 
           task :do_begin do
-            Context::DeployContext.deployer.do_begin
+            deployer.do_begin
           end
 
           task :do_download do
-            Context::DeployContext.deployer.do_download
+            deployer.do_download
           end
 
           task :do_verify do
-            Context::DeployContext.deployer.do_verify
+            deployer.do_verify
           end
 
           task :do_clean do
-            Context::DeployContext.deployer.do_clean
+            deployer.do_clean
           end
 
           task :do_unpack do
-            Context::DeployContext.deployer.do_unpack
+            deployer.do_unpack
           end
 
           task :do_prepare do
-            Context::DeployContext.deployer.do_prepare
+            deployer.do_prepare
           end
 
           task :do_build do
-            Context::DeployContext.deployer.do_build
+            deployer.do_build
           end
 
           task :do_check do
-            Context::DeployContext.deployer.do_check
+            deployer.do_check
           end
 
           task :do_install do
-            Context::DeployContext.deployer.do_install
+            deployer.do_install
           end
 
           task :do_strip do
-            Context::DeployContext.deployer.do_strip
+            deployer.do_strip
           end
 
           task :do_end do
-            Context::DeployContext.deployer.do_end
+            deployer.do_end
           end
         end
 
         namespace :deployer do
           task :cookbook do
-            Context::DeployContext.deployer.cookbook_test(Context::DeployContext.deployer)
+            deployer.cookbook_test(deployer)
           end
 
           task :cucumber do
-            Context::DeployContext.deployer.cucumber_test(Context::DeployContext.deployer)
+            deployer.cucumber_test(deployer)
           end
         end
 
