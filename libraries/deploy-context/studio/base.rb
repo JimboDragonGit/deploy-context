@@ -16,7 +16,7 @@ module Context
         if defined?(GitVersionBump)
           Gem::Version.new(GitVersionBump.version(true))
         else
-          cookbook_version(self)
+          Gem::Version.new(cookbook_version(self))
         end
       end
 
