@@ -16,6 +16,7 @@
       Étant donné la suite kitchen default-vb
       Et le plan habitat/plan.sh
       Et la branche non maîtresse integrate_cucumber_into_recipe
+      Alors vérify que le tout est OK
       Quand la suite kitchen est vérifié
       Et le studio habitat réussi
       Alors actionne release avec rake
