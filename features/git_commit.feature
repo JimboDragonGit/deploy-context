@@ -16,17 +16,23 @@
   
     Scénario: Phase planning git
       Étant donné la branche non maîtresse integrate_cucumber_into_recipe
+      Alors récupère les dernières modifications
+      Quand le dépot est propre
+      Et déploi les modifications
+  
+    Scénario: Phase execution git
+      Étant donné la branche non maîtresse integrate_cucumber_into_recipe
+      Alors récupère les dernières modifications
       Quand le dépot est propre
       Alors fusionne le dépot avec la branche maîtresse
       Et vérify que le tout est OK
       Et enregistre le statut git_merge_ok
   
-    Scénario: Phase execution git
+    Scénario: Phase closure git
       Étant donné la branche maîtresse
-      Et la branche non maîtresse integrate_cucumber_into_recipe
       Quand le dépot est propre
       Alors récupère les dernières modifications
-      Et déploi les modifications
       Et vérify que le tout est OK
+      Et déploi les modifications
       Et enregistre le statut git_push_ok
       Et va sur la branche non maîtresse integrate_cucumber_into_recipe
