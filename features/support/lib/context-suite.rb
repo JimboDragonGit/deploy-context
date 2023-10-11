@@ -32,8 +32,8 @@ module ContextSuite
     system("git commit -m 'Automatic cucumber commit on branch #{context_suite.branch_name}'")
   end
 
-  def merge_with_branch_successfull?(source_branch, destination_branch)
-    system("git merge #{source_branch} #{destination_branch}")
+  def merge_with_branch_successfull?(source_branch)
+    system("git merge #{source_branch} #{context_suite.branch_name}")
   end
 
   def merge_to_master_successfull?
