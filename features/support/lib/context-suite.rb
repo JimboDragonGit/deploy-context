@@ -32,8 +32,12 @@ module ContextSuite
     system("git commit -m 'Automatic cucumber commit on branch #{context_suite.branch_name}'")
   end
 
-  def push_to_master_successfull?
+  def merge_to_master_successfull?
     system("git merge #{context_suite.branch_name} master")
+  end
+
+  def switch_branch_successful?
+    system("git checkout #{context_suite.branch_name}")
   end
 
   def kitchen_suite_exist?

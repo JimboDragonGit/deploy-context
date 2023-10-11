@@ -23,7 +23,9 @@
   
     Scénario: Phase execution git
       Étant donné la branche maîtresse
+      Et la branche non maîtresse integrate_cucumber_into_recipe
       Quand le dépot est propre
       Alors déploi les modifications
       Et vérify que le tout est OK
       Et enregistre le statut git_push_ok
+      Et va sur la branche non maîtresse integrate_cucumber_into_recipe
