@@ -101,8 +101,7 @@ module Context
       :long => '--context-state',
       :description => "Set the value of the state before run"
 
-    def initialize(argv)
-      super(argv)
+    def initialize
     end
 
     # def initialize(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio = nil)
