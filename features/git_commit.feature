@@ -26,18 +26,12 @@
       Et enregistre le statut git_merge_ok
       Et déploi les modifications
   
-    Scénario: Phase strip git
-      Étant donné la branche non maîtresse integrate_cucumber_into_recipe
-      Quand le dépot est propre
-      Alors fusionne le dépot avec la branche master
-      Et vérify que le tout est OK
-      Et enregistre le statut git_merge_ok
-  
     Scénario: Phase clean git
       Étant donné la branche maîtresse
       Alors récupère les dernières modifications
       Quand le dépot est brouillonné
       Alors supprime le fichier de status
+      Et enregistre le statut git_clean_ok
   
     Scénario: Phase closure git
       Étant donné la branche maîtresse
@@ -48,8 +42,7 @@
       Et déploi les modifications
       Et enregistre le statut git_push_ok
 
-    Scénario: Phase check-up git
-      Quand le dépot est brouillonné
+    Scénario: Phase post mortem git
       Étant donné la branche maîtresse
       Alors récupère les dernières modifications
       Alors va sur la branche non maîtresse integrate_cucumber_into_recipe
