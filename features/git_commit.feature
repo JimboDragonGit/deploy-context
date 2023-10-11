@@ -19,7 +19,6 @@
   
     Scénario: Phase execution git
       Étant donné la branche non maîtresse integrate_cucumber_into_recipe
-      Alors récupère les dernières modifications
       Quand le dépot est propre
       Alors test la suite kitchen
       Et construit selon le plan
@@ -29,7 +28,6 @@
   
     Scénario: Phase strip git
       Étant donné la branche non maîtresse integrate_cucumber_into_recipe
-      Alors récupère les dernières modifications
       Quand le dépot est propre
       Alors fusionne le dépot avec la branche master
       Et vérify que le tout est OK
