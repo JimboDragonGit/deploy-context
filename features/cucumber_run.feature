@@ -4,6 +4,7 @@
   
     Plan du Scénario: Phase initialisation cucumber
       Étant donné la suite de test <tag_name>
+      Quand les tests sont réussi
       Alors note les modifications au dépot
       Et interne les changements sur le dépot
       Et enregistre le statut cucumber_ok
