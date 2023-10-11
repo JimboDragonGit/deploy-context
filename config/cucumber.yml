@@ -8,4 +8,4 @@ closing: <%= default %> cucumber_test/closing
 cycle: -p initialise -p planning -p executing -p closing
 strict: <%= common %> features
 html_report: <%= common %> --format html --out=features_report.html features
-default: --tags @cucumber
+
