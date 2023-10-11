@@ -40,8 +40,8 @@ module ContextSuite
     system("git commit -m 'Automatic cucumber commit on branch #{context_suite.branch_name}'")
   end
 
-  def merge_with_master_successfull?
-    system("git merge master #{context_suite.branch_name}")
+  def push_to_master_successfull?
+    system("git merge #{context_suite.branch_name} master")
   end
 
   def plan_build_successfully?
