@@ -45,6 +45,10 @@ module Context
       Studio::Deployer
     end
 
+    # def initialisation(argv)
+    #   config[:context_name] = 'deploycontext'
+    # end
+
     # def initialize(deploycontext_folder)
     #   super('jimbodragon', 'deploy-context', deploycontext_folder, self)
 
