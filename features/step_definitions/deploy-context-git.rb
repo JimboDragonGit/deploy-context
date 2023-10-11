@@ -41,3 +41,7 @@ end
 Alors('récupère les dernières modifications') do
   stop_test("Le récupération avec son origine lointaine à échouer", :git_pull_issue) unless system('git pull')
 end
+
+Alors('supprime le fichier de status') do
+  File.delete('deploy-status.json') if File.exist? 'deploy-status.json'
+end
