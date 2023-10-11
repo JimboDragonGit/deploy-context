@@ -14,3 +14,4 @@
       |knife|
       |git|
       |rake|
+      |chef|

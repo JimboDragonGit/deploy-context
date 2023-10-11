@@ -62,6 +62,35 @@ module ContextSuite
     system("kitchen test #{context_suite.suite_kitchen}")
   end
 
+  def habitat_task_different?
+    jop_id = last_job_status[1]
+    jop_id != File.read('HAB_BUILD_ID')
+  end
+
+  def habitat_task_completed?
+    jop_status = last_job_status[2]
+    jop_status == 'Complete'
+  end
+
+  def job_status_raw
+    `hab bldr job status --origin #{context_suite.organisation_name} | grep  #{context_suite.organisation_name}/#{context_suite.application_name}`
+  end
+
+  def last_job_status
+    job_status_arr = job_status_raw.split('\n')
+    jop_status = job_status_arr[0].split(' ')
+  end
+
+  def habitat_new_task?
+    jop_status = last_job_status[2]
+    jop_status == 'Dispatching'
+  end
+
+  def write_build_id
+    jop_id = last_job_status[1]
+    File.write('HAB_BUILD_ID', jop_id)
+  end
+
   def verify_habitat?
     system("hab studio run echo")
   end

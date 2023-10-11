@@ -5,5 +5,5 @@
 end
 
 Quand('les tests sont réussi') do
-  stop_test("Cucumber test #{context_suite.test_suite} failed on execution", :cucumber_test_issue) unless system("cucumber -t @#{context_suite.test_suite}")
+  stop_test("Cucumber test #{context_suite.test_suite} failed on execution", :cucumber_test_issue) unless system("knife context deploy --context-name #{context_suite.test_suite}")
 end

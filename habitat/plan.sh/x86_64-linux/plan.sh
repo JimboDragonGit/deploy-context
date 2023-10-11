@@ -67,7 +67,8 @@ pkg_deps=(chef/chef-infra-client)
 
 # Optional.
 # An array of the package dependencies needed only at build time.
-# pkg_build_deps=(core/make core/gcc)
+pkg_build_deps=(core/make core/gcc)
+# pkg_build_deps=(core/build-tools-gcc/9.4.0/20230621072438 , core/build-tools-gcc-libs)
 
 # Optional.
 # An array of paths, relative to the final install of the software, where
@@ -201,7 +202,8 @@ do_deploy_context_action(){
 
 do_begin() {
   do_default_begin
-  do_deploy_context_action do_begin
+  # do_deploy_context_action do_begin
+
   # git help
   # ruby -e env
   # apt install ruby
@@ -238,7 +240,8 @@ do_begin() {
 # do_verify() to return 0.
 do_download() {
   do_default_download
-  do_deploy_context_action do_download
+  # do_deploy_context_action do_download
+
   # git clone git@github.com:JimboDragonGit/$pkg_name.git
   # cd $pkg_name
   # do_mix_cookbook 'jimbodragon::do_default_download'
@@ -252,7 +255,8 @@ do_download() {
 # any files.
 do_verify() {
   do_default_verify
-  do_deploy_context_action do_verify
+  # do_deploy_context_action do_verify
+
   # do_mix_cookbook 'jimbodragon::do_default_verify'
 }
 
@@ -260,9 +264,9 @@ do_verify() {
 # in case there was a previously-built version of your package installed on
 # disk. This ensures you start with a clean build environment.
 do_clean() {
-  do_deploy_context_action do_clean
+  # do_deploy_context_action do_clean
   # rm install.sh*
-  # do_default_clean
+  do_default_clean
   # do_mix_cookbook 'jimbodragon::do_default_clean'
 }
 
@@ -273,7 +277,7 @@ do_clean() {
 # information.
 do_unpack() {
   do_default_unpack
-  do_deploy_context_action do_unpack
+  # do_deploy_context_action do_unpack
   # do_mix_cookbook 'jimbodragon::do_default_unpack'
 }
 
@@ -284,7 +288,7 @@ do_unpack() {
 # symlinks, and so on.
 do_prepare() {
   do_default_prepare
-  do_deploy_context_action do_prepare
+  # do_deploy_context_action do_prepare
   # do_mix_cookbook 'jimbodragon::do_default_prepare'
 }
 
@@ -301,7 +305,7 @@ do_build() {
     do_default_build
   fi
 
-  do_deploy_context_action do_build
+  # do_deploy_context_action do_build
 }
 
 # The default implementation runs nothing during post-compile. An example of a
@@ -314,7 +318,7 @@ do_check() {
   then
     do_default_exist
   fi
-  do_deploy_context_action do_check
+  # do_deploy_context_action do_check
   # do_mix_cookbook 'jimbodragon::do_default_check'
   return 0
 }
@@ -334,7 +338,7 @@ do_install() {
     do_default_install
   fi
   
-  do_deploy_context_action do_install
+  # do_deploy_context_action do_install
 
 
   # do_mix_cookbook 'jimbodragon::do_default_install'
@@ -348,7 +352,7 @@ do_install() {
 # binaries stripped at all.
 do_strip() {
   do_default_strip
-  do_deploy_context_action do_strip
+  # do_deploy_context_action do_strip
   # do_mix_cookbook 'jimbodragon::do_default_strip'
 }
 
@@ -357,7 +361,7 @@ do_strip() {
 # files or perform other post-install clean-up actions.
 do_end() {
   do_default_end
-  do_deploy_context_action do_end
+  # do_deploy_context_action do_end
   # do_mix_cookbook 'jimbodragon::do_default_end'
   # chef gem push jimbodragon_acceptance_test
 }
