@@ -37,3 +37,6 @@ Alors('va sur la branche non maîtresse {word}') do |branch_name|
   stop_test("Le déploiment vers son origine lointaine à échouer", :git_checkout_issue) unless switch_branch_successful?
 end
 
+Alors('récupère les dernières modifications') do
+  stop_test("Le récupération avec son origine lointaine à échouer", :git_pull_issue) unless ystem('git pull')
+end
