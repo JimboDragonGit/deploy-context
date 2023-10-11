@@ -39,5 +39,5 @@ Alors('va sur la branche non maîtresse {word}') do |branch_name|
 end
 
 Alors('récupère les dernières modifications') do
-  stop_test("Le récupération avec son origine lointaine à échouer", :git_pull_issue) unless ystem('git pull')
+  stop_test("Le récupération avec son origine lointaine à échouer", :git_pull_issue) unless system('git pull')
 end

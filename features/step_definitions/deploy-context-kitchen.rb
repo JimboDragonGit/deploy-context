@@ -41,9 +41,13 @@ Quand('la suite kitchen n\'est pas vérifié') do
 end
 
 Alors('détruire la suite kitchen') do
-  stop_test("Kitchen suite #{kitchen_name} destruction failed", :no_kitchen) unless kitchen_destroyed_correctly?
+  stop_test("Kitchen suite #{context_suite.kitchen_suite} destruction failed", :no_kitchen) unless kitchen_destroyed_correctly?
 end
 
 Alors('vérifie la suite kitchen') do
-  stop_test("Kitchen suite #{kitchen_name} verification failed", :verify_kitchen_failed) unless verify_kitchen?
+  stop_test("Kitchen suite #{context_suite.kitchen_suite} verification failed", :verify_kitchen_failed) unless verify_kitchen?
+end
+
+Alors('test la suite kitchen') do
+  stop_test("Kitchen suite #{context_suite.kitchen_suite} test failed", :test_kitchen_failed) unless kitchen_tested_successfully?
 end

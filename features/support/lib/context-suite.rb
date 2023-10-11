@@ -60,6 +60,10 @@ module ContextSuite
     system("kitchen destroy #{context_suite.suite_kitchen}")
   end
 
+  def kitchen_tested_successfully?
+    system("kitchen test #{context_suite.suite_kitchen}")
+  end
+
   def verify_habitat?
     system("hab studio run echo")
   end
