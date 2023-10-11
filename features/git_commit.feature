@@ -15,7 +15,7 @@
       Et enregistre le statut git_commit_ok
   
     Scénario: Phase planning git
-      Étant donné la branch non maîtresse integrate_cucumber_into_recipe
+      Étant donné la branche non maîtresse integrate_cucumber_into_recipe
       Quand le dépot est propre
       Alors fusionne le dépot avec la branche maîtresse
       Et vérify que le tout est OK

@@ -13,7 +13,7 @@ Quand('le dépot est propre') do
 end
 
 Alors('note les modifications au dépot') do
-  stop_test("Git branch #{context_suite.branch_name} modifications cannot be added", :commit_issue) unless system('git add .')
+  stop_test("Git branch #{context_suite.branch_name} modifications cannot be added", :git_add_issue) unless system('git add .')
 end
 
 Alors('interne les changements sur le dépot') do
