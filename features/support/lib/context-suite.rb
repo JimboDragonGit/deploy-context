@@ -20,16 +20,8 @@ module ContextSuite
     end
   end
 
-  def kitchen_suite_exist?
-    system("kitchen list #{context_suite.suite_kitchen}")
-  end
-
-  def verify_kitchen?
-    system("kitchen verify #{context_suite.suite_kitchen}")
-  end
-
-  def verify_habitat?
-    system("hab studio run echo")
+  def dirty_branch?
+    `git status --porcelain`.split('\n').count > 0
   end
 
   def branch_exist?
@@ -44,8 +36,12 @@ module ContextSuite
     system("git merge #{context_suite.branch_name} master")
   end
 
-  def plan_build_successfully?
-    system("hab studio build #{context_suite.plan_path}")
+  def kitchen_suite_exist?
+    system("kitchen list #{context_suite.suite_kitchen}")
+  end
+
+  def verify_kitchen?
+    system("kitchen verify #{context_suite.suite_kitchen}")
   end
 
   def kitchen_converged_successfully?
@@ -56,8 +52,12 @@ module ContextSuite
     system("kitchen destroy #{context_suite.suite_kitchen}")
   end
 
-  def dirty_branch?
-    `git status --porcelain`.split('\n').count > 0
+  def verify_habitat?
+    system("hab studio run echo")
+  end
+
+  def plan_build_successfully?
+    system("hab studio build #{context_suite.plan_path}")
   end
 
   def context_status

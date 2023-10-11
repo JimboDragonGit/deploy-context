@@ -19,4 +19,11 @@
       Quand le dépot est propre
       Alors fusionne le dépot avec la branche maîtresse
       Et vérify que le tout est OK
-      Et enregistre le statut git_commit_ok
+      Et enregistre le statut git_merge_ok
+  
+    Scénario: Phase execution git
+      Étant donné la branche maîtresse
+      Quand le dépot est propre
+      Alors déploi les modifications
+      Et vérify que le tout est OK
+      Et enregistre le statut git_push_ok
