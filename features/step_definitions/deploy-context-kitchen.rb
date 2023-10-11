@@ -23,13 +23,11 @@ Alors('vérify que le tout est OK') do
   else
     :not_all_ok
   end
-  update_kitchen_status(context_suite.status)
   stop_test("la suite kitchen #{context_suite.suite_kitchen} est en échec", context_suite.status) if context_suite.status == :initialisation_fail
 end
 
 Alors('enregistre le statut {word}') do |status|
-  context_suite.status = status
-  update_status_file
+  update_status(status)
 end
 
 Quand('la suite kitchen est vérifié') do
@@ -40,7 +38,6 @@ end
 Quand('la suite kitchen n\'est pas vérifié') do
   verify_kitchen_status
   stop_test("La suite #{context_suite.suite_kitchen} est vérifié", context_suite.status) unless context_suite.status != :verified
-  # update_kitchen_status(status, kitchen_status, habitat_status)
 end
 
 Alors('détruire la suite kitchen') do

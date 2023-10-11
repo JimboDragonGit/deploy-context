@@ -40,6 +40,10 @@ module ContextSuite
     system("git commit -m 'Automatic cucumber commit on branch #{context_suite.branch_name}'")
   end
 
+  def merge_with_master_successfull?
+    system("git merge master #{context_suite.branch_name}")
+  end
+
   def plan_build_successfully?
     system("hab studio build #{context_suite.plan_path}")
   end
@@ -79,27 +83,13 @@ module ContextSuite
     update_status_file
   end
 
-  def update_kitchen_status(new_status)
-    context_suite.kitchen.status = new_status
-    update_status_file
-  end
-
-  def update_habitat_status(new_status)
-    context_suite.habitat.status = new_status
-    update_status_file
-  end
-
   def update_status_file
     File.write(context_suite.status_file, JSON.pretty_generate({
       status_file: context_suite.status_file,
       kitchen_suite: context_suite.kitchen_suite,
       plan_path: context_suite.plan_path,
       branch_name: context_suite.branch_name,
-      status: {
-        status: context_suite.status,
-        kitchen: context_suite.kitchen.status,
-        habitat: context_suite.habitat.status,
-        }
+      status: context_suite.status,
       }
     ))
   end

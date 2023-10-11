@@ -21,5 +21,5 @@ Alors('interne les changements sur le dépot') do
 end
 
 Alors('fusionne le dépot avec la branche maîtresse') do
-  pending # Write code here that turns the phrase above into concrete actions
+  stop_test("Git branch #{context_suite.branch_name} could't merge with master branch", :merge_issue) unless git_commit_successfully?
 end
