@@ -13,5 +13,14 @@ end
 end
 
 Alors('je peux affiché l\'aide du couteau') do
-  stop_test("le couteau #{sub_knife} ne peux afficher son aide", :no_sub_help) unless system("knife #{context_suite.knife_context} --help")
+  stop_test("le couteau #{context_suite.knife_context} ne peux afficher son aide", :no_sub_help) unless system("knife #{context_suite.knife_context} knife context --help")
+end
+
+Alors('publier le cookbook {word}') do |cookbook_name|
+  stop_test("le couteau ne peux publier le cookbook #{cookbook_name}", :no_sub_help) unless system("knife cookbook upload #{cookbook_name}")
+end
+
+Alors('autopublier le cookbook {word}') do |cookbook_name|
+  puts "Publier le cookbook #{cookbook_name}"
+  stop_test("le couteau ne peux publier le cookbook #{cookbook_name}", :no_sub_help) unless system("knife cookbook upload #{cookbook_name} --cookbook-path #{::File.dirname(Dir.pwd)}")
 end

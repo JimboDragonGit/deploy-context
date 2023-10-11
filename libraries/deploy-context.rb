@@ -1,4 +1,3 @@
-puts "On me charge à #{__FILE__}"
 
 require_relative 'context-knife-context'
 
@@ -8,7 +7,6 @@ module Context
 
     deps do
       Knife::DefaultKnifeContext.load_deps
-      puts "S'a prend ça en 9"
     end
 
     option :omg,

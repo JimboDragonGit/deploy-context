@@ -1,4 +1,3 @@
-puts "On me charge à #{__FILE__}"
 
 require_relative 'context-manager'
 
@@ -8,15 +7,10 @@ module Context
 
     deps do
       Knife::DefaultKnifeContext.load_deps
-      # puts "S'a prend ça"
-      # require "chef/json_compat"
-      # true
     end
 
-    option :omg,
-      :short => '-O',
-      :long => '--omg',
-      :description => "I'm so excited! 8"
+    option :context,
+      :description => "Load an object internally on it"
 
     # set_knife(DeployContext)
 
