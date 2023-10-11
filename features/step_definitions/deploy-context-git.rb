@@ -20,11 +20,12 @@ Alors('interne les changements sur le dépot') do
   stop_test("Git branch #{context_suite.branch_name} commit issue", :commit_issue) unless git_commit_successfully?
 end
 
-Alors('fusionne le dépot avec la branche maîtresse') do
-  stop_test("Git branch #{context_suite.branch_name} could't merge with master branch", :merge_issue) unless merge_to_master_successfull?
+Alors('fusionne le dépot avec la branche {word}') do |branch_name|
+  stop_test("Git branch #{context_suite.branch_name} could't merge with master branch", :merge_issue) unless merge_with_branch_successfull?(branch_name)
 end
 
 Étantdonné('la branche maîtresse') do
+  context_suite.branch_name = 'master'
   stop_test("Issue switching to master", :master_switch_issue) unless system('git checkout master')
 end
 
