@@ -12,13 +12,19 @@
       Et interne les changements sur le dépot
       Et enregistre le statut rake_ok
   
-    Scénario: Phase closure rake
+    Scénario: Phase execution rake
       Étant donné la suite kitchen default-vb
       Et le plan habitat/plan.sh
       Et la branche non maîtresse integrate_cucumber_into_recipe
       Alors vérify que le tout est OK
+      Et enregistre le statut rake_integration_ok
+
+    Scénario: Phase closure rake
+      Étant donné la branche maîtresse
+      Et la suite kitchen default-vb
+      Et le plan habitat/plan.sh
       Quand la suite kitchen est vérifié
       Et le studio habitat réussi
-      Alors actionne release avec rake
+      Alors récupère les dernières modifications
+      Et actionne release avec rake
       Et bump la version
-      Et enregistre le statut rake_bump_ok
