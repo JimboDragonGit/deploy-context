@@ -41,7 +41,7 @@ module Context
     # set_knife(DeployContext)
 
     def self.deployer(origin_folder = ENV.key?('DEPLOYCONTEXTFOLDER') ? ENV['DEPLOYCONTEXTFOLDER'] : Dir.pwd)
-      Studio::Deployer.set(DeployContext.new(origin_folder))
+      Studio::Deployer.set(DeployContext.new)
       Studio::Deployer
     end
 
