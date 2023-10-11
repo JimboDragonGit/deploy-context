@@ -54,11 +54,11 @@ pkg_license=("MIT")
 # at three levels of specificity: `origin/package`, `origin/package/version`, or
 # `origin/package/version/release`.
 
-# pkg_scaffolding=core/scaffolding-ruby
+pkg_scaffolding=core/scaffolding-ruby
 # pkg_deps=(core/scaffolding-ruby, core/aws-cli, core/git)
 # pkg_deps=(core/glibc core/curl core/ruby chef/chef-infra-client chef/studio-common chef/supermarket/5.1.32/20220524075351 core/hab)
 
-pkg_deps=(core/scaffolding-ruby)
+pkg_deps=(chef/chef-infra-client)
 
 # pkg_deps=(jimbodragon/deploy-context/2.2.0/20231005084950)
 

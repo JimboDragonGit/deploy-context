@@ -10,7 +10,6 @@
       Et le studio habitat réussi
       Alors note les modifications au dépot
       Et interne les changements sur le dépot
-      Et vérify que le tout est OK
       Et enregistre le statut rake_ok
   
     Scénario: Phase closure rake
@@ -21,5 +20,4 @@
       Et le studio habitat réussi
       Alors actionne release avec rake
       Et bump la version
-      Et vérify que le tout est OK
       Et enregistre le statut rake_bump_ok

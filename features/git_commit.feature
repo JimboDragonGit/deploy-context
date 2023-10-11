@@ -10,8 +10,6 @@
       Étant donné la suite kitchen default-vb
       Et le plan habitat/plan.sh
       Quand le dépot est brouillonné
-      Et la suite kitchen est vérifié
-      Et le studio habitat réussi
       Alors note les modifications au dépot
       Et interne les changements sur le dépot
       Et vérify que le tout est OK

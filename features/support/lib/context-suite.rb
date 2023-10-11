@@ -6,14 +6,12 @@ module ContextSuite
       @context_suite.status_file = 'deploy-status.json'
       # @context_suite.suite_kitchen = "patatae"
       @context_suite.status = :initialisation
-      @context_suite.kitchen = OpenStruct.new
-      @context_suite.habitat = OpenStruct.new
     end
     @context_suite
   end
 
   def verify_kitchen_status
-    context_suite.kitchen.status = if kitchen_status['last_action'] == "verify" && kitchen_status['last_error'].nil?
+    context_suite.status = if kitchen_status['last_action'] == "verify" && kitchen_status['last_error'].nil?
       :verified
     else
       :verification_fail
@@ -80,8 +78,8 @@ module ContextSuite
     JSON.parse(`kitchen list #{context_suite.suite_kitchen} --json`).detect{|suite| suite['instance'].include?(context_suite.suite_kitchen)}
   end
 
-  def command_available?(context_name)
-    system("knife #{context_name} knife context")
+  def command_available?(context_name, sub_command)
+    system("knife #{context_name} #{sub_command}")
   end
 
   def stop_test(message, status)

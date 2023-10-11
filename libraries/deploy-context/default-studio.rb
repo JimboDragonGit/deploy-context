@@ -58,6 +58,9 @@ module Context
 
     banner 'knife default studio'
 
+    deps do
+    end
+
     option :context_name,
       :short => '-N',
       :long => '--context-name',
@@ -98,12 +101,9 @@ module Context
       :long => '--context-state',
       :description => "Set the value of the state before run"
 
-    # def initialize(argv)
-    #   @context_name = deployer_context_name
-    #   @context_folder = deploycontext_folder # move_folder(deploycontext_folder)
-    #   @organisation_name = context_organisation_name
-    #   @ruby_studio = default_ruby_studio
-    # end
+    def initialize(argv)
+      super(argv)
+    end
 
     # def initialize(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio = nil)
     #   @context_name = deployer_context_name
