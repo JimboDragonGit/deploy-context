@@ -2,7 +2,7 @@
 deploy context based on cucumber feature and Chef cookbooks
 
 ***
-This project is intend to be a essai about all my knowledge on project lifecycle and management.
+This project is intend to be an essai about all my knowledge on project lifecycle and management.
 
 Chef is a discovery to me as I try over the past years lot of free scripting solution to be as more Infrastructure as code as possible even before I intend to be a software enginneer, back in 2006. The name of Martin Foller doesn't ring any bell on my though back there and I was taking care as volunteer of a network of 10 computers for my community center.
 

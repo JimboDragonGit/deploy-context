@@ -47,4 +47,13 @@
       Et vérify que le tout est OK
       Et déploi les modifications
       Et enregistre le statut git_push_ok
-      Et va sur la branche non maîtresse integrate_cucumber_into_recipe
+
+    Scénario: Phase post-mortem git
+      Étant donné la branche maîtresse
+      Alors récupère les dernières modifications
+      Quand le dépot est brouillonné
+      Alors va sur la branche non maîtresse integrate_cucumber_into_recipe
+      Et fusionne le dépot avec la branche master
+      Et vérify que le tout est OK
+      Et déploi les modifications
+      Et enregistre le statut git_post_mortem_ok
