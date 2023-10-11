@@ -35,6 +35,12 @@
       Et vérify que le tout est OK
       Et enregistre le statut git_merge_ok
   
+    Scénario: Phase clean git
+      Étant donné la branche maîtresse
+      Alors récupère les dernières modifications
+      Quand le dépot est brouillonné
+      Alors supprime le fichier de status
+  
     Scénario: Phase closure git
       Étant donné la branche maîtresse
       Alors récupère les dernières modifications
