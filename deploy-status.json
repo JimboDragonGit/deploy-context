@@ -1,0 +1,11 @@
+{
+  "status_file": "deploy-status.json",
+  "kitchen_suite": null,
+  "plan_path": "habitat/plan.sh",
+  "branch_name": "integrate_cucumber_into_recipe",
+  "status": {
+    "status": "initialisation",
+    "kitchen": "verified",
+    "habitat": "build_successfull"
+  }
+}

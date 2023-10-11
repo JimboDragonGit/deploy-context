@@ -1,4 +1,3 @@
-
 ---
 provisioner:
   name: chef_infra
@@ -11,10 +10,18 @@ verifier:
 platforms:
   - name: vb-deploy-context
     provisioner:
-      chef_product: chef-workstation
+      product_name: chef-workstation
+      channel: stable
+      install_strategy: once
+      chef_license: accept
+      product_version: latest
+    transport: # Dealing with 22.04 deprecating ssh-rsa prior to tooling being ready for it
+      name: ssh
+      username: vagrant
+      password: vagrant
     driver:
       name: vagrant
-      box: bento/ubuntu-20.04
+      box: bento/ubuntu-22.04
       cache_directory: <%= File.expand_path("#{::Dir.pwd}/omnibus/cache") %>
       kitchen_cache_directory: <%= File.expand_path("#{::Dir.pwd}/.kitchen/cache") %>
       domain: <%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>
@@ -60,13 +67,21 @@ platforms:
         vrdeport: 3390
         autostart-enabled: "on"
       pre_create_command: "ssh-keygen -f \"<%= ENV['HOME'] %>/.ssh/known_hosts\" -R \"[127.0.0.1]:2222\"; ssh-keygen -f \"<%= ENV['HOME'] %>/.ssh/known_hosts\" -R \"[<%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>]:2221\";"
+    provisioner:
+      product_name: chef-workstation
   - name: dock-deploy-context
     driver:
       name: dokken
-      image: debian
+      image: habitat/default-studio-x86_64-linux
       socket: tcp://127.0.0.1:2375
     provisioner:
       name: dokken
+      product_name: chef-workstation
+      channel: stable
+      install_strategy: once
+      chef_license: accept
+      product_version: latest
+      pull_chef_image: true
     transport:
       name: dokken
     intermediate_instructions:
@@ -111,6 +126,8 @@ platforms:
       associate_public_ip: true
       interface: dns
       image_id: ami-067d1e60475437da2
+    provisioner:
+      product_name: chef-workstation
   - name: aws-deploy-context-chefserver
     driver:
       name: ec2

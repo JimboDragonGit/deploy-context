@@ -2,9 +2,8 @@ require_relative 'default-studio'
 
 module Context
   class RubyStudio < DefaultStudio
-    def initialize(organisation_name, context_name, deploycontext_folder)
-      super(organisation_name, context_name, deploycontext_folder)
-    end
+    # def initialize()
+    # end
     
     # 2
     def do_download
@@ -32,6 +31,10 @@ module Context
       super
       ruby_release(self)
       true
+    end
+
+    def studio_present?
+      execute_command('which ruby') || super
     end
   end
 end

@@ -45,15 +45,15 @@ module Context
       when :run_as_admin
         execute_command(sudo_command(command), command_type)
       when :get_data
+        debug_log "get data command = #{command} on type #{command_type}"
         get_shell_data(command)
       when :fork
         fork(command.join(' '))
       else
         error_log(context_name, "Unknown command type #{command_type}")
       end
-      command_status = system(command.join(' '))
       debug_log "\n\nexecuted command #{command.join(' ')}"
-      command_status
+      command_state
     end
 
     def sudo_command(command)
@@ -77,6 +77,10 @@ module Context
 
     def delete_folder_only_if_exist(folder)
       FileUtils.rm_dir folder if File.exist? folder
+    end
+
+    def is_binary_available?(binary_name)
+      execute_command(['which', binary_name])
     end
   end
 end

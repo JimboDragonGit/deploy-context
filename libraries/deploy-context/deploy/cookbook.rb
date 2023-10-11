@@ -1,3 +1,5 @@
+require_relative 'recipe'
+
 module Context
   module DeployHelpers
     module CookbookHelper

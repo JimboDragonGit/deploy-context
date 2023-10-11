@@ -1,15 +1,16 @@
-require_relative 'cucumber-studio'
+require_relative 'ruby-studio'
 
 module Context
-  class CookbookStudio < CucumberStudio
-    def initialize(organisation_name, context_name, deploycontext_folder)
-      super(organisation_name, context_name, deploycontext_folder)
-    end
+  class CookbookStudio < DefaultStudio
+    # def initialize(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio = nil)
+    #   super(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio)
+    # end
     
     # 4
     def do_clean
       super
       delete_file_only_if_exist(get_context_file(self, 'Policyfile.lock.json'))
+      kitchen(%w(destroy))
       true
     end
     
@@ -49,6 +50,10 @@ module Context
       super
       supermarket_push(self)
       true
+    end
+
+    def studio_available?
+      is_binary_available?('kitchen') && is_binary_available?('knife') && super
     end
   end
 end

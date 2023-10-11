@@ -20,6 +20,7 @@ module Context
         end
 
         Alors('déployer le projet {word}') do |project_name|
+          abort("Deployer failed to update") unless deployer.do_begin
           pending
           # context_exec [project_name, 'release'] || abort("#{project_name} ERROR: Issue with deploy steps")
         end
@@ -30,7 +31,7 @@ module Context
         end
 
         Étantdonnéque('le projet {word} à du code à updater') do |project_name|
-          pending
+          abort("Not on a dirty studio") unless deployer.on_a_dirty_studio?
           # context_exec [project_name, 'check_code_to_update'] || abort("#{project_name} ERROR: Issue to check updated code")
         end
 
@@ -40,15 +41,19 @@ module Context
         end
 
         Étantdonnéque('le projet {word} à la bonne version d\'installer') do |project_name|
-          is_current_version_installed = deployer.current_version_installed?
-          deployer.log "is_current_version_installed = #{is_current_version_installed}"
-          abort("Not the latest version installed") unless is_current_version_installed
+          abort("Not the latest version installed") unless deployer.current_version_installed?
         end
 
         Étantdonnéque('le projet {word} à une nouvelle version de disponible') do |project_name|
-          is_current_version_installed = deployer.current_version_installed?
-          deployer.log "is_current_version_installed = #{is_current_version_installed}"
-          abort("Latest version installed") if is_current_version_installed
+          abort("Latest version installed") if deployer.current_version_installed?
+        end
+
+        Étantdonnéque('le projet {word} est chargé') do |project_name|
+          abort("Latest version installed") if deployer.current_version_installed?
+        end
+
+        Quand('le studio est disponible') do
+          abort("Studio not available") unless deployer.studio_available?
         end
       end
     end

@@ -1,17 +1,15 @@
 
-require_relative 'deploy-context/habitat-studio'
+require_relative 'deploy-context/cucumber-studio'
 
 module Context
-  class Manager < HabitatStudio
+  class Manager < DefaultStudio
     attr_reader :contexts
 
-    def initialize(organisation_name, context_name, deploycontext_folder)
-      super(organisation_name, context_name, deploycontext_folder)
+    # def initialize(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio = nil)
+    #   super(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio)
 
-      @contexts = Array.new
-
-      abort("No context_name :(") if context_name.nil? || context_name.empty?
-    end
+    #   @contexts = Array.new
+    # end
 
     # 2
     def do_download

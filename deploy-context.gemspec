@@ -58,6 +58,8 @@
   s.add_runtime_dependency('kitchen-vagrant')
   s.add_runtime_dependency('kitchen-dokken')
   s.add_runtime_dependency('kitchen-ec2')
+  s.add_runtime_dependency('knife')
+  s.add_runtime_dependency('knife-ec2')
   s.add_runtime_dependency('simplecov')
   s.add_runtime_dependency('cucumber')
   s.add_runtime_dependency('down')

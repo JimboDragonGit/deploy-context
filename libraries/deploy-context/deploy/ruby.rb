@@ -84,8 +84,14 @@ module Context
       end
 
       def gem_installed?(context, gemname, compare_version = nil)
-        gem_list = context.bundle_gem(context, ['list', context.context_name, "| #{context.context_name}"], :get_data)
-        # pending
+        gem_list = context.bundle_gem(context, ['list', gemname, "| grep #{gemname}"], :get_data)
+        context.debug_log "gemlist = #{gem_list}"
+        is_installed = gem_list.include?(gemname)
+        is_correct_version = gem_list.split(',').detect do |gem_app|
+          gem_app.include?(gemname)
+        end
+        context.debug_log "is_correct_version = #{is_correct_version}"
+        is_correct_version.include?(gemname)
       end
 
       def load_dependency(context, gemname, require_file)

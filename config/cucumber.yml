@@ -1,5 +1,10 @@
-## ##YAML Template
-<% require_relative 'libraries/deploy-context' %>
-<% common = "--tags ~@wip --strict" %>
+##YAML Template
+<% default = "--require Gemfile" %>
+<% common = "#{default} --tags @wip --strict" %>
+initialise: <%= default %> cucumber_test/initialise
+planning: <%= default %> cucumber_test/planning
+executing: <%= default %> cucumber_test/executing
+closing: <%= default %> cucumber_test/closing
+cycle: -p initialise -p planning -p executing -p closing
 strict: <%= common %> features
 html_report: <%= common %> --format html --out=features_report.html features

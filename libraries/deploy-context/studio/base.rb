@@ -36,6 +36,14 @@ module Context
         end
       end
 
+      def on_a_dirty_studio?
+        git_dirty_state?(self)
+      end
+
+      def loaded_in_ruby?
+        gem_available?(self, context_name, version)
+      end
+
       # def cycle
       #   ruby_cycle(self)
       # end
