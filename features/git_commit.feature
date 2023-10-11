@@ -46,4 +46,5 @@
       Étant donné la branche maîtresse
       Alors récupère les dernières modifications
       Alors va sur la branche non maîtresse integrate_cucumber_into_recipe
+      Et fusionne le dépot avec la branche master
       Et enregistre le statut git_post_mortem_ok
