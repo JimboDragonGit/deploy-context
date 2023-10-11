@@ -27,3 +27,4 @@ results
 .kitchen
 pkg/
 respond.txt
+deploy-status.json
