@@ -28,4 +28,5 @@
       Alors récupère les dernières modifications
       Et actionne release avec rake
       Et bump la version
+      Et enregistre la version et la date
       Et enregistre le statut rake_bump_ok
