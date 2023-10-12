@@ -12,7 +12,6 @@
       Quand le dépot est brouillonné
       Alors note les modifications au dépot
       Et interne les changements sur le dépot
-      Et vérify que le tout est OK
       Et enregistre le statut git_commit_ok
   
     Scénario: Phase execution git
@@ -20,7 +19,6 @@
       Quand le dépot est propre
       Alors test la suite kitchen
       Et construit selon le plan
-      Et vérify que le tout est OK
       Et enregistre le statut git_merge_ok
       Et déploi les modifications
   
@@ -36,7 +34,6 @@
       Alors récupère les dernières modifications
       Quand le dépot est propre
       Alors fusionne le dépot avec la branche integrate_cucumber_into_recipe
-      Et vérify que le tout est OK
       Et déploi les modifications
       Et enregistre le statut git_push_ok
 

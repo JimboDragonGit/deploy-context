@@ -13,6 +13,8 @@
 resource_name :deploycontext
 provides :deploycontext
 
+property 
+
 default_action :execution
 
 # use_inline_resources
@@ -23,18 +25,21 @@ end
 
 action :initialisation do
   load_dependencies
+  execute 'cucumber -t @initialisation'
 end
 
 action :planning do
+  execute 'cucumber -t @planning'
 end
 
 action :execution do
-  execute 'chef exec cucumber'
+  execute 'cucumber -t @execution'
   
   # cucumber self
 end
 
 action :closure do
+  execute 'cucumber -t @execution'
 end
 
 action_class do
