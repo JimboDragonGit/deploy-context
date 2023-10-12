@@ -83,5 +83,3 @@
   # s.add_runtime_dependency('terminal-table',        '>= 1.8', '< 4.0')
   # s.add_runtime_dependency('webrick',               '~> 1.7')
 end
-
-

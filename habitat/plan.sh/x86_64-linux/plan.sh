@@ -46,6 +46,7 @@ do_build() {
   then
     do_default_build
   fi
+  gem build deploy-context.gemspec
 }
 
 do_check() {
@@ -63,6 +64,7 @@ do_install() {
   then
     do_default_install
   fi
+  gem push deploy-context.gem
 }
 
 do_strip() {
