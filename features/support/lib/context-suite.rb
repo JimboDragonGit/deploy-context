@@ -91,6 +91,11 @@ module ContextSuite
     File.write('HAB_BUILD_ID', jop_id)
   end
 
+  def write_cookbook_version
+    File.write('VERSION', GVB.version)
+    File.write('VERSION', jop_id)
+  end
+
   def verify_habitat?
     system("hab studio run echo")
   end
