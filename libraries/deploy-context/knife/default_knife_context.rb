@@ -5,24 +5,31 @@ require_relative 'dummy_knife.rb'
 module Context
   module Knife
     class DefaultKnifeContext < Chef::Knife
+      include CommandHelper
+
       banner "knife default knife context"
 
       deps do
       end
     
-      option :omg,
-        :short => '-O',
-        :long => '--omg',
-        :boolean => true,
-        :description => "I'm so excited! 7"
+      option :context_name,
+        :long => '--context-name VALUE',
+        :boolean => false,
+        :description => "The name of the context we running on"
+      
+      option :context_folder,
+      :long => '--context-path VALUE',
+      :description => "Path of the context"
+
+      option :organisation_name,
+        :long => '--organisation-name VALUE',
+        :description => "Organisation name of the context"
 
       def run
-        if config[:omg]
-          # Oh yeah, we are pumped.
-          puts "OMG HELLO WORLD!!!7!!77"
+        if config[:context_name]
+          log "Running on context #{config[:context_name]}, config = #{config.inspect}\n#{name_args}"
         else
-          # meh
-          puts "I am just a fucking example. 7"
+          error_log self, "Running on context #{config[:context_name]}"
         end
       end
     end

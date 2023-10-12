@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative '../libraries/deploy-context'
+
+Context::DeployContext.deployer.send(ARGV[0])

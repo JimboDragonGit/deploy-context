@@ -1,10 +1,25 @@
 require_relative 'habitat-studio'
 
 module Context
-  class CucumberStudio < DefaultStudio
-    # def initialize(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio = nil)
-    #   super(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio)
-    # end
+  class ContextCucumberStudio < DefaultStudio
+    banner "knife context cucumber studio"
+
+    deps do
+      Knife::DefaultKnifeContext.load_deps
+    end
+
+    option :omg,
+      :short => '-O',
+      :long => '--omg',
+      :description => "I'm so excited! 9"
+
+    def run
+      if config[:omg]
+        puts "OMG HELLO WORLD!!!9!!99"
+      else
+        puts "I am just a fucking example. 9"
+      end
+    end
 
     def studio_available?
       is_binary_available?('cucumber') && super

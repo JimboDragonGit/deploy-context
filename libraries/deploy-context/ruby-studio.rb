@@ -1,9 +1,25 @@
 require_relative 'default-studio'
 
 module Context
-  class RubyStudio < DefaultStudio
-    # def initialize()
-    # end
+  class ContextRubyStudio < DefaultStudio
+    banner "knife context ruby studio"
+
+    deps do
+      Knife::DefaultKnifeContext.load_deps
+    end
+
+    option :omg,
+      :short => '-O',
+      :long => '--omg',
+      :description => "I'm so excited! 9"
+
+    def run
+      if config[:omg]
+        puts "OMG HELLO WORLD!!!9!!99"
+      else
+        puts "I am just a fucking example. 9"
+      end
+    end
     
     # 2
     def do_download

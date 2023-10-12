@@ -22,6 +22,10 @@ chef_version '>= 16.0'
 #
 # source_url 'https://github.com/<insert_org_here>/deploy-context'
 
+# gem 'diff-lcs', '~> 1.5'
+# gem 'sys-uname', '1.2.3'
+# gem "cucumber",  '~> 8', require: true
+
 # gem "chef-bin", require: true
 # gem "chef-cli", require: true
 # gem "cheffish", require: true
@@ -31,9 +35,10 @@ chef_version '>= 16.0'
 # gem "knife", require: true
 # gem "knife-ec2", require: true
 # gem "simplecov", require: true
-# gem "cucumber",  '9.0.0', require: true
 # gem "down", require: true
 # gem "unix-crypt", require: true
 # gem "ruby-shadow", require: true
 # gem "securerandom", require: true
 # gem "git-version-bump", require: true
+
+gemspec

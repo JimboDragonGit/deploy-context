@@ -12,19 +12,6 @@ module Context
     option :context,
       :description => "Load an object internally on it"
 
-    # set_knife(DeployContext)
-
-    # def self.deployer(origin_folder = ENV.key?('DEPLOYCONTEXTFOLDER') ? ENV['DEPLOYCONTEXTFOLDER'] : Dir.pwd)
-    #   Studio::Deployer.set(DeployContext.new(origin_folder))
-    #   Studio::Deployer
-    # end
-
-    # def initialize(deploycontext_folder)
-    #   super('jimbodragon', 'deploy-context', deploycontext_folder, self)
-
-    #   abort("No context_name :(") if context_name.nil? || context_name.empty?
-    # end
-
     def run
       # Context::DeployContext.deployer.send(config[:omg])
       if config[:omg]

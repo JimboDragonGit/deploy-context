@@ -1,10 +1,25 @@
 require_relative 'ruby-studio'
 
 module Context
-  class CookbookStudio < DefaultStudio
-    # def initialize(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio = nil)
-    #   super(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio)
-    # end
+  class ContextCookbookStudio < DefaultStudio
+    banner "knife context cookbook studio"
+
+    deps do
+      Knife::DefaultKnifeContext.load_deps
+    end
+
+    option :omg,
+      :short => '-O',
+      :long => '--omg',
+      :description => "I'm so excited! 9"
+
+    def run
+      if config[:omg]
+        puts "OMG HELLO WORLD!!!9!!99"
+      else
+        puts "I am just a fucking example. 9"
+      end
+    end
     
     # 4
     def do_clean

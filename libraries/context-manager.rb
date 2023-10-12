@@ -5,12 +5,6 @@ module Context
   class Manager < DefaultStudio
     attr_reader :contexts
 
-    # def initialize(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio = nil)
-    #   super(context_organisation_name, deployer_context_name, deploycontext_folder, default_ruby_studio)
-
-    #   @contexts = Array.new
-    # end
-
     # 2
     def do_download
       super

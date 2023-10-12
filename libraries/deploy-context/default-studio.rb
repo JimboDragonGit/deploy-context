@@ -29,7 +29,6 @@ require_relative 'knife/default_knife_context'
 
 module Context
   class DefaultStudio < Knife::DefaultKnifeContext
-    include CommandHelper
     include DeployHelpers::DeployerHelper
     include DeployHelpers::GitHelper
     include DeployHelpers::RubyHelper
@@ -65,16 +64,6 @@ module Context
       :short => '-N',
       :long => '--context-name',
       :description => "Name of the context"
-
-    option :context_folder,
-      :short => '-P',
-      :long => '--context-path',
-      :description => "Path of the context"
-
-    option :organisation_name,
-      :short => '-O',
-      :long => '--organisation-name',
-      :description => "Organisation name of the context"
 
     option :ruby_studio,
       :short => '-B',

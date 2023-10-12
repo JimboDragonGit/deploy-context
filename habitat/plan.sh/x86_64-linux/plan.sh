@@ -4,8 +4,9 @@ pkg_version=$(cat /src/VERSION)
 pkg_maintainer="Jimmy Provencher <jimmy.provencher@hotmail.ca>"
 pkg_license=("MIT")
 pkg_scaffolding=core/scaffolding-ruby
+# pkg_deps=(core/ruby)
 pkg_deps=(chef/chef-infra-client)
-pkg_build_deps=(core/make core/gcc)
+# pkg_build_deps=(core/make core/gcc)
 
 do_mix_cookbook(){
   chef exec chef-client -z -o $1
@@ -22,6 +23,7 @@ do_begin() {
 
 do_download() {
   do_default_download
+  # git clone 'git@github.com:JimboDragonGit/deploy-context.git'
 }
 
 do_verify() {
@@ -30,6 +32,14 @@ do_verify() {
 
 do_clean() {
   do_default_clean
+  if [ -f Gemfile.lock ]
+  then
+    rm Gemfile.lock
+  fi
+  if [ -d bin ]
+  then
+    rmdir bin
+  fi
 }
 
 do_unpack() {
@@ -46,7 +56,22 @@ do_build() {
   then
     do_default_build
   fi
-  gem build deploy-context.gemspec
+  # cd deploy-context
+  # gem build deploy-context.gemspec
+  
+  # gem pristine byebug --version 11.1.3
+  # gem pristine date --version 3.3.3
+  # gem pristine debug_inspector --version 1.1.0
+  # gem pristine ed25519 --version 1.3.0
+  # gem pristine ffi --version 1.15.5
+  # gem pristine ffi-yajl --version 2.6.0
+  # gem pristine json --version 2.6.3
+  # gem pristine libyajl2 --version 2.1.0
+  # gem pristine ruby-shadow --version 2.5.0
+  # gem pristine unf_ext --version 0.0.8.2
+
+  # mkdir bin
+  # cp /src/bin/deploy-context bin/
 }
 
 do_check() {
@@ -64,7 +89,8 @@ do_install() {
   then
     do_default_install
   fi
-  gem push deploy-context.gem
+  # gem push deploy-context.gem
+  rake release
 }
 
 do_strip() {

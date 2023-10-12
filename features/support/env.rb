@@ -7,7 +7,6 @@
 
 # chef_gem 'cucumber'
 
-
 require 'ostruct'
 
 require_relative 'lib/context-suite'

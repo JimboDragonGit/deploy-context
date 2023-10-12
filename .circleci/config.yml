@@ -163,52 +163,80 @@ jobs:
       - run: |
             set -xu
             ruby bin/deploy-context do_end
+  initialize:
+    docker:
+      - image: cimg/ruby:3.1.2
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+    environment: {}
+    working_directory: /home/circleci/deploy-context
+    steps:
+      - checkout
+      - run: |
+            set -xu
+            ruby bin/deploy-context do_end
+  planning:
+    docker:
+      - image: cimg/ruby:3.1.2
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+    environment: {}
+    working_directory: /home/circleci/deploy-context
+    steps:
+      - checkout
+      - run: |
+            set -xu
+            ruby bin/deploy-context do_end
+  execution:
+    docker:
+      - image: cimg/ruby:3.1.2
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+    environment: {}
+    working_directory: /home/circleci/deploy-context
+    steps:
+      - checkout
+      - run: |
+            set -xu
+            ruby bin/deploy-context do_end
+  closure:
+    docker:
+      - image: cimg/ruby:3.1.2
+        auth:
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+    environment: {}
+    working_directory: /home/circleci/deploy-context
+    steps:
+      - checkout
+      - run: |
+            set -xu
+            cucumber -t @closure
 #...
 workflows:
   version: 2
   build-deploy:
     jobs:
-      - do_begin:
+      - initialize:
           filters:
             branches:
               only: master
-      - do_download:
+      - planning:
           filters:
             branches:
               only: master
-      - do_verify:
+      - execution:
           filters:
             branches:
               only: master
-      - do_clean:
-          filters:
-            branches:
-              only: master
-      - do_unpack:
-          filters:
-            branches:
-              only: master
-      - do_prepare:
-          filters:
-            branches:
-              only: master
-      - do_build:
-          filters:
-            branches:
-              only: master
-      - do_check:
-          filters:
-            branches:
-              only: master
-      - do_install:
-          filters:
-            branches:
-              only: master
-      - do_strip:
-          filters:
-            branches:
-              only: master
-      - do_end:
+      - closure:
           filters:
             branches:
               only: master
