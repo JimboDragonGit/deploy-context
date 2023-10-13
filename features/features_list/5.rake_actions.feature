@@ -4,7 +4,7 @@
   
     @initialize
     Scénario: Phase initialisation rake
-      Étant donné la suite kitchen default-vb
+      Étant donné la suite kitchen workstation-vb
       Et le plan habitat/plan.sh
       Et la branche non maîtresse integrate_cucumber_into_recipe
       Quand la suite kitchen est vérifié
@@ -15,7 +15,7 @@
   
     @execution
     Scénario: Phase execution rake
-      Étant donné la suite kitchen default-vb
+      Étant donné la suite kitchen workstation-vb
       Et le plan habitat/plan.sh
       Et la branche non maîtresse integrate_cucumber_into_recipe
       Alors vérify que le tout est OK
@@ -24,7 +24,7 @@
     @closure
     Scénario: Phase closure rake
       Étant donné la branche maîtresse
-      Et la suite kitchen default-vb
+      Et la suite kitchen workstation-vb
       Et le plan habitat/plan.sh
       Quand la suite kitchen est vérifié
       Et le studio habitat réussi
