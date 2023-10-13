@@ -3,6 +3,8 @@ require 'bundler'
 require 'fileutils'
 require 'json'
 
+require 'git-version-bump'
+
 require_relative 'deploy/context'
 require_relative 'deploy/context-suite'
 require_relative 'deploy/cookbook'
