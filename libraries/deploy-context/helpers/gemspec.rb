@@ -26,7 +26,9 @@ module Context
 
       # s.extra_rdoc_files = ["README.md", 'VERSION', 'DATE']
       # s.files = `git ls-files`.split("\n")
-      s.files = Dir.glob(File.join(deploycontext_rootfolder, 'libraries/**/*')) + Dir.glob(File.join(deploycontext_rootfolder, 'bin/*'))
+      libraries = Dir.glob(File.join(deploycontext_rootfolder, 'libraries/**/*'))
+      steps = Dir.glob(File.join(deploycontext_rootfolder, 'features/step_definitions/*'))
+      s.files = libraries + steps
       s.executables   = [
         'deploy-context'
       ]
