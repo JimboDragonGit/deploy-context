@@ -7,7 +7,9 @@
 # deployer = Context::DeployContext.deployer
 # deployer.cucumber
 
+knife_test 'deploycontext' do
+  action [:initialisation, :planning, :execution, :closure]
+end
 
-include_recipe '::workstation'
-include_recipe '::knife-test'
-include_recipe '::cucumber-test'
+
+# execute 'knife context git initialisation'

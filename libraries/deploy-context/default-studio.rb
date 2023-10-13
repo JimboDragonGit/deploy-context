@@ -4,6 +4,7 @@ require 'fileutils'
 require 'json'
 
 require_relative 'deploy/context'
+require_relative 'deploy/context-suite'
 require_relative 'deploy/cookbook'
 require_relative 'deploy/cucumber'
 require_relative 'deploy/deployer'
@@ -36,6 +37,8 @@ module Context
     include DeployHelpers::CookbookHelper
     include DeployHelpers::RecipeHelper
     include DeployHelpers::HabitatHelper
+    include DeployHelpers::CucumberHelper
+    include DeployHelpers::ContexSuiteHelper
     include Studio::Base
     include Studio::Default
     include Steps::Deploy

@@ -9,7 +9,7 @@
 
 require 'ostruct'
 
-require_relative 'lib/context-suite'
+require_relative '../../libraries/deploy-context'
 
 # def context_suite
 #   if @context_suite.nil?
@@ -18,4 +18,4 @@ require_relative 'lib/context-suite'
 #   @context_suite
 # end
 
-include ContextSuite
+include Context::DeployHelpers::ContexSuiteHelper

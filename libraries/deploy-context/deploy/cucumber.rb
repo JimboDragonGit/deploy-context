@@ -14,8 +14,14 @@ module Context
       end
 
       def cucumber(context, commands = [])
-        context.existing_cucumber_runtime = context.cucumber_runtime(context, commands)
-        context.cucumber_runtime(context, commands).run!
+        begin
+          require 'cucumber'
+          context.existing_cucumber_runtime = context.cucumber_runtime(context, commands)
+          context.cucumber_runtime(context, commands).run!
+        rescue Exception => e
+          context.warning_log "Cucumber library not available", "Unable to use internal cucumber, using external application instead for command #{commands}"
+          context.execute_command(%w(chef exec cucumber) + commands)
+        end
         # context.bundle_exec(context,['cucumber'] + commands)
       end
 

@@ -10,10 +10,12 @@
 
 # To learn more about Custom Resources, see https://docs.chef.io/custom_resources/
 
-resource_name :deploycontext
-provides :deploycontext
+resource_name :cucumber_test
+provides :cucumber_test
 
-property 
+property :project_name, String, name_property: true
+property :builder_path, String, default: lazy { node['jimbodragon']['builder_path'] }
+property :cookbooks, Array, default: []
 
 default_action :execution
 
@@ -34,12 +36,10 @@ end
 
 action :execution do
   execute 'cucumber -t @execution'
-  
-  # cucumber self
 end
 
 action :closure do
-  execute 'cucumber -t @execution'
+  execute 'cucumber -t @closure'
 end
 
 action_class do

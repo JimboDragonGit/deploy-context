@@ -2,14 +2,17 @@
 @fr @deploycontext @habitat
   Fonctionnalité: Je suis le testeur du déployeur de deploy-context avec habitat
   
+    @initialize
     Scénario: Phase initialisation habitat
       Étant donné la suite kitchen default-vb
       Et le plan habitat/plan.sh
       Quand le studio habitat est initialisé
       Alors construit selon le plan
+      Et enregistre la version et la date
       Et enregistre le statut habitat_ok
 
   
+    @planning
     Scénario: Phase de planification habitat
       Étant donné la suite kitchen default-vb
       Et l'organisation jimbodragon
@@ -20,6 +23,7 @@
       Et démarre une tâche pour construire
       Et enregistre le statut habitat_build_ok
   
+    @execution
     Scénario: Phase exécutif habitat
       Étant donné la suite kitchen default-vb
       Et l'organisation jimbodragon
@@ -30,6 +34,7 @@
       Et promouvoir la dite tâche
       Et enregistre le statut habitat_promote_ok
   
+    @closure
     Scénario: Phase closure habitat
       Étant donné la suite kitchen default-vb
       Et l'organisation jimbodragon

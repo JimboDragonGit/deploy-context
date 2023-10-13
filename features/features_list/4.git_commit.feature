@@ -2,10 +2,12 @@
 @fr @deploycontext @git
   Fonctionnalité: Je suis le testeur du déployeur de deploy-context avec git
   
+    @initialize
     Scénario: Phase initialisation git
       Étant donné la branche non maîtresse integrate_cucumber_into_recipe
       Alors va sur la branche non maîtresse integrate_cucumber_into_recipe
 
+    @planning
     Scénario: Phase planning de git
       Étant donné la suite kitchen default-vb
       Et le plan habitat/plan.sh
@@ -14,6 +16,7 @@
       Et interne les changements sur le dépot
       Et enregistre le statut git_commit_ok
   
+    @execution
     Scénario: Phase execution git
       Étant donné la branche non maîtresse integrate_cucumber_into_recipe
       Quand le dépot est propre
@@ -22,6 +25,7 @@
       Et enregistre le statut git_merge_ok
       Et déploi les modifications
   
+    @clean
     Scénario: Phase clean git
       Étant donné la branche maîtresse
       Alors récupère les dernières modifications
@@ -29,6 +33,7 @@
       Alors supprime le fichier de status
       Et enregistre le statut git_clean_ok
   
+    @closure
     Scénario: Phase closure git
       Étant donné la branche maîtresse
       Alors récupère les dernières modifications
@@ -37,6 +42,7 @@
       Et déploi les modifications
       Et enregistre le statut git_push_ok
 
+    @post_mortem
     Scénario: Phase post mortem git
       Étant donné la branche maîtresse
       Alors récupère les dernières modifications

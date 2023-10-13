@@ -1,5 +1,3 @@
-require 'chef/knife'
-
 require_relative 'dummy_knife.rb'
 
 module Context

@@ -2,6 +2,7 @@
 @fr @deploycontext @rake
   Fonctionnalité: Je suis le testeur du déployeur de deploy-context avec rake
   
+    @initialize
     Scénario: Phase initialisation rake
       Étant donné la suite kitchen default-vb
       Et le plan habitat/plan.sh
@@ -12,6 +13,7 @@
       Et interne les changements sur le dépot
       Et enregistre le statut rake_ok
   
+    @execution
     Scénario: Phase execution rake
       Étant donné la suite kitchen default-vb
       Et le plan habitat/plan.sh
@@ -19,6 +21,7 @@
       Alors vérify que le tout est OK
       Et enregistre le statut rake_integration_ok
 
+    @closure
     Scénario: Phase closure rake
       Étant donné la branche maîtresse
       Et la suite kitchen default-vb

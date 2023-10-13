@@ -8,16 +8,14 @@ module Context
       Knife::DefaultKnifeContext.load_deps
     end
 
-    option :omg,
-      :short => '-O',
-      :long => '--omg',
-      :description => "I'm so excited! 9"
-
     def run
-      if config[:omg]
-        puts "OMG HELLO WORLD!!!9!!99"
-      else
-        puts "I am just a fucking example. 9"
+      case name_args[0]
+      when 'converge'
+        kitchen(self, name_args)
+      when 'verify'
+        kitchen(self, name_args)
+      when 'destroy'
+        kitchen(self, name_args)
       end
     end
     

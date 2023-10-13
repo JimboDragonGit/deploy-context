@@ -2,6 +2,7 @@
 @fr @deploycontext @knife
   Fonctionnalité: Je suis le testeur du déployeur de deploy-context avec knife
   
+    @initialize
     Scénario: Phase initialisation knife
       Quand on peut lister les cookbooks
       Et un couteau mannequin est accessible
@@ -9,6 +10,7 @@
       Et un couteau deploy est accessible
       Et enregistre le statut coutelleries_ok
 
+    @planning
     Scénario: Phase planning
       Quand on peut lister les cookbooks
       Et un couteau context est accessible
@@ -16,6 +18,7 @@
       Alors je peux affiché l'aide du couteau
       Et enregistre le statut couteau_ok
 
+    @execution
     Plan du Scénario: Phase executing knife sur les cookbooks
       Étant donné le couteau context
       Alors autopublier le cookbook <cookbook_name>
@@ -24,7 +27,8 @@
     Exemples:
       | cookbook_name |
       | deploy-context |
-
+    
+    @testing
     Plan du Scénario: Phase testing knife
       Étant donné le couteau <knife_name>
       Et la commande couteau <command_name>
