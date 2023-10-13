@@ -8,7 +8,7 @@
 # deployer.cucumber
 
 knife_test 'deploycontext' do
-  action [:initialisation, :planning, :execution, :closure]
+  action [:initialize, :planning, :execution, :closure]
 end
 
 

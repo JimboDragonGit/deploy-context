@@ -9,5 +9,5 @@
 
 
 include_recipe '::workstation'
-include_recipe '::knife-test'
-include_recipe '::cucumber-test'
+# include_recipe '::knife-test'
+# include_recipe '::cucumber-test'

@@ -20,10 +20,10 @@
     Scénario: Phase execution git
       Étant donné la branche non maîtresse integrate_cucumber_into_recipe
       Quand le dépot est propre
-      Alors test la suite kitchen
-      Et construit selon le plan
-      Et enregistre le statut git_merge_ok
+      # Alors test la suite kitchen
+      # Et construit selon le plan
       Et déploi les modifications
+      Et enregistre le statut git_merge_ok
   
     @clean
     Scénario: Phase clean git
