@@ -1,0 +1,209 @@
+Script started on 2023-10-11 18:08:03+00:00 [<not executed on terminal>]
+   [1;36m: [1;37mLoading /src/habitat/plan.sh/x86_64-linux/plan.sh[0m
+   [1;36mdeploy-context: [1;37mPlan loaded[0m
+   [1;36mdeploy-context: [1;37mValidating plan metadata[0m
+   [1;36mdeploy-context: [1;37mUsing HAB_BIN=/hab/pkgs/core/hab/1.6.568/20220831181712/bin/hab for installs, signing, and hashing[0m
+   [1;36mdeploy-context: [1;37mhab-plan-build setup[0m
+   [1;36mdeploy-context: [1;37mWriting pre_build file[0m
+   [1;36mdeploy-context: [1;37mResolving scaffolding dependencies[0m
+[0m[0m[1m[33m» Installing core/scaffolding-ruby[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/scaffolding-ruby in the 'stable' channel
+[0m[0m[1m[32m☛ Verifying[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[32m☛ Verifying[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m→ Using[0m core/tar/1.34/20220311102650
+[0m[0m[1m[32m→ Using[0m core/rq/0.10.4/20220311112035
+[0m[0m[1m[32m☛ Verifying[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m→ Using[0m core/make/4.3/20220311105244
+[0m[0m[1m[32m☛ Verifying[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m☛ Verifying[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m☛ Verifying[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m☛ Verifying[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m☛ Verifying[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m☛ Verifying[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m→ Using[0m core/readline/8.1/20220311102318
+[0m[0m[1m[32m☛ Verifying[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
+[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
+[0m[0m[1m[32m☛ Verifying[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
+[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
+[0m[0m[1m[32m→ Using[0m core/grep/3.7/20220311102158
+[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
+[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
+[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
+[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
+[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
+[0m[0m[1m[32m☛ Verifying[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m→ Using[0m core/binutils/2.37/20220311083411
+[0m[0m[1m[32m→ Using[0m core/mpfr/4.1.0/20220311084038
+[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
+[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
+[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
+[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
+[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
+[0m[0m[1m[32m✓ Installed[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m✓ Installed[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m✓ Installed[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m✓ Installed[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m✓ Installed[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m✓ Installed[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m✓ Installed[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m✓ Installed[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m✓ Installed[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m✓ Installed[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m✓ Installed[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m✓ Installed[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[35m★ Install of core/scaffolding-ruby/0.8.11/20230822123619 complete with 12 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved scaffolding dependency 'core/scaffolding-ruby' to /hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619[0m
+   [1;36mdeploy-context: [1;37mLoading Scaffolding /hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619/lib/scaffolding.sh[0m
+   [1;36mdeploy-context: [1;37mDetected Rack app type[0m
+   [1;36mdeploy-context: [1;37mAdding git to build dependencies[0m
+   [1;36mdeploy-context: [1;37mAdding Busybox package to run dependencies[0m
+No Ruby version found in ./Gemfile.lock
+   [1;36mdeploy-context: [1;37mNo Ruby version detected in Plan or Gemfile.lock, using default 'core/ruby'[0m
+   [1;36mdeploy-context: [1;37mSetting pkg_svc_run='deploy-context-web'[0m
+   [1;36mdeploy-context: [1;37mResolving build dependencies[0m
+[0m[0m[1m[33m» Installing core/git[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/git in the 'stable' channel
+[0m[0m[1m[32m☛ Verifying[0m core/git/2.33.1/20230816101621
+[0m[0m[1m[32m☛ Verifying[0m core/curl/7.79.1/20230816065924
+[0m[0m[1m[32m☛ Verifying[0m core/expat/2.4.6/20220311103124
+[0m[0m[1m[32m☛ Verifying[0m core/gettext/0.21/20220311104729
+[0m[0m[1m[32m☛ Verifying[0m core/openssh/7.9p1/20230816095218
+[0m[0m[1m[32m☛ Verifying[0m core/perl/5.34.0/20220311103651
+[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
+[0m[0m[1m[32m☛ Verifying[0m core/nghttp2/1.46.0/20220817113611
+[0m[0m[1m[32m↓ Downloading[0m core-20220817080933 public origin key
+    75 B / 75 B | [========================================] 100.00 % 1.05 MB/s 
+[0m[0m[1m[32m☑ Cached[0m core-20220817080933 public origin key
+[0m[0m[1m[32m→ Using[0m core/xz/5.2.5/20220311104623
+[0m[0m[1m[32m→ Using[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
+[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
+[0m[0m[1m[32m→ Using[0m core/bzip2/1.0.8/20220311100531
+[0m[0m[1m[32m☛ Verifying[0m core/gdbm/1.22/20220311103026
+[0m[0m[1m[32m☛ Verifying[0m core/db/5.3.28/20220311103217
+[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
+[0m[0m[1m[32m→ Using[0m core/less/590/20220311103557
+[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
+[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
+[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
+[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
+[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
+[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
+[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
+[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
+[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
+[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
+[0m[0m[1m[32m✓ Installed[0m core/curl/7.79.1/20230816065924
+[0m[0m[1m[32m✓ Installed[0m core/expat/2.4.6/20220311103124
+[0m[0m[1m[32m✓ Installed[0m core/gettext/0.21/20220311104729
+[0m[0m[1m[32m✓ Installed[0m core/openssh/7.9p1/20230816095218
+[0m[0m[1m[32m✓ Installed[0m core/perl/5.34.0/20220311103651
+[0m[0m[1m[32m✓ Installed[0m core/nghttp2/1.46.0/20220817113611
+[0m[0m[1m[32m✓ Installed[0m core/gdbm/1.22/20220311103026
+[0m[0m[1m[32m✓ Installed[0m core/db/5.3.28/20220311103217
+[0m[0m[1m[32m✓ Installed[0m core/git/2.33.1/20230816101621
+[0m[0m[1m[35m★ Install of core/git/2.33.1/20230816101621 complete with 9 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/git' to /hab/pkgs/core/git/2.33.1/20230816101621[0m
+[0m[0m[1m[33m» Installing core/scaffolding-ruby[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/scaffolding-ruby in the 'stable' channel
+[0m[0m[1m[32m→ Using[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[35m★ Install of core/scaffolding-ruby/0.8.11/20230822123619 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/scaffolding-ruby' to /hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619[0m
+[0m[0m[1m[33m» Installing core/bundler/2.2.33/20230822122238[0m
+[0m[0m[1m[32m→ Using[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[35m★ Install of core/bundler/2.2.33/20230822122238 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/bundler/2.2.33/20230822122238' to /hab/pkgs/core/bundler/2.2.33/20230822122238[0m
+[0m[0m[1m[33m» Installing core/ruby/3.0.3/20230822120944[0m
+[0m[0m[1m[32m→ Using[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[35m★ Install of core/ruby/3.0.3/20230822120944 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/ruby/3.0.3/20230822120944' to /hab/pkgs/core/ruby/3.0.3/20230822120944[0m
+[0m[0m[1m[33m» Installing core/tar/1.34/20220311102650[0m
+[0m[0m[1m[32m→ Using[0m core/tar/1.34/20220311102650
+[0m[0m[1m[35m★ Install of core/tar/1.34/20220311102650 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/tar/1.34/20220311102650' to /hab/pkgs/core/tar/1.34/20220311102650[0m
+[0m[0m[1m[33m» Installing core/busybox-static/1.34.1/20220311112317[0m
+[0m[0m[1m[32m→ Using[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[35m★ Install of core/busybox-static/1.34.1/20220311112317 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/busybox-static/1.34.1/20220311112317' to /hab/pkgs/core/busybox-static/1.34.1/20220311112317[0m
+[0m[0m[1m[33m» Installing core/rq/0.10.4/20220311112035[0m
+[0m[0m[1m[32m→ Using[0m core/rq/0.10.4/20220311112035
+[0m[0m[1m[35m★ Install of core/rq/0.10.4/20220311112035 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/rq/0.10.4/20220311112035' to /hab/pkgs/core/rq/0.10.4/20220311112035[0m
+[0m[0m[1m[33m» Installing core/gcc/9.4.0/20220311084247[0m
+[0m[0m[1m[32m→ Using[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[35m★ Install of core/gcc/9.4.0/20220311084247 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/gcc/9.4.0/20220311084247' to /hab/pkgs/core/gcc/9.4.0/20220311084247[0m
+[0m[0m[1m[33m» Installing core/make/4.3/20220311105244[0m
+[0m[0m[1m[32m→ Using[0m core/make/4.3/20220311105244
+[0m[0m[1m[35m★ Install of core/make/4.3/20220311105244 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/make/4.3/20220311105244' to /hab/pkgs/core/make/4.3/20220311105244[0m
+[0m[0m[1m[33m» Installing core/pkg-config/0.29.2/20220311100618[0m
+[0m[0m[1m[32m→ Using[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[35m★ Install of core/pkg-config/0.29.2/20220311100618 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved build dependency 'core/pkg-config/0.29.2/20220311100618' to /hab/pkgs/core/pkg-config/0.29.2/20220311100618[0m
+   [1;36mdeploy-context: [1;37mResolving run dependencies[0m
+[0m[0m[1m[33m» Installing core/ruby[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/ruby in the 'stable' channel
+[0m[0m[1m[32m→ Using[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[35m★ Install of core/ruby/3.0.3/20230822120944 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved dependency 'core/ruby' to /hab/pkgs/core/ruby/3.0.3/20230822120944[0m
+[0m[0m[1m[33m» Installing core/busybox-static[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/busybox-static in the 'stable' channel
+[0m[0m[1m[32m→ Using[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[35m★ Install of core/busybox-static/1.34.1/20220311112317 complete with 0 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved dependency 'core/busybox-static' to /hab/pkgs/core/busybox-static/1.34.1/20220311112317[0m
+[0m[0m[1m[33m» Installing chef/chef-infra-client[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of chef/chef-infra-client in the 'stable' channel
+[0m[0m[1m[32m☛ Verifying[0m chef/chef-infra-client/18.3.0/20230830115804
+[0m[0m[1m[32m↓ Downloading[0m chef-20160614114050 public origin key
+    75 B / 75 B | [========================================] 100.00 % 1.54 MB/s 
+[0m[0m[1m[32m☑ Cached[0m chef-20160614114050 public origin key
+[0m[0m[1m[32m☛ Verifying[0m core/ruby31/3.1.2/20230818191654
+[0m[0m[1m[32m☛ Verifying[0m core/libxslt/1.1.34/20220312081836
+[0m[0m[1m[32m→ Using[0m core/libiconv/1.16/20220311111355
+[0m[0m[1m[32m☛ Verifying[0m core/libarchive/3.5.2/20230816095445
+[0m[0m[1m[32m→ Using[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m→ Using[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m→ Using[0m core/readline/8.1/20220311102318
+[0m[0m[1m[32m→ Using[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
+[0m[0m[1m[32m☛ Verifying[0m core/libxml2/2.9.12/20220311133931
+[0m[0m[1m[32m→ Using[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
+[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
+[0m[0m[1m[32m→ Using[0m core/grep/3.7/20220311102158
+[0m[0m[1m[32m→ Using[0m core/binutils/2.37/20220311083411
+[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
+[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
+[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
+[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
+[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
+[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
+[0m[0m[1m[32m→ Using[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
+[0m[0m[1m[32m→ Using[0m core/bzip2/1.0.8/20220311100531
+[0m[0m[1m[32m→ Using[0m core/xz/5.2.5/20220311104623
+[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
+[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
+[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
+[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
+[0m[0m[1m[32m✓ Installed[0m core/ruby31/3.1.2/20230818191654
+[0m[0m[1m[32m✓ Installed[0m core/libxslt/1.1.34/20220312081836
+[0m[0m[1m[32m✓ Installed[0m core/libarchive/3.5.2/20230816095445
+[0m[0m[1m[32m✓ Installed[0m core/libxml2/2.9.12/20220311133931
+[0m[0m[1m[32m✓ Installed[0m chef/chef-infra-client/18.3.0/20230830115804
+[0m[0m[1m[35m★ Install of chef/chef-infra-client/18.3.0/20230830115804 complete with 5 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved dependency 'chef/chef-infra-client' to /hab/pkgs/chef/chef-infra-client/18.3.0/20230830115804[0m
+[0m[0m[1m[33m» Installing core/build-tools-gcc/9.4.0,[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/build-tools-gcc/9.4.0, in the 'stable' channel
+[0m[0m[1m[31m✗✗✗[0m
+[0m[0m[1m[31m✗✗✗ Package not found. [0m
+[0m[0m[1m[31m✗✗✗[0m
+   [1;36mdeploy-context: [1;33mWARN: [1;37mCould not find a suitable installed package for 'core/build-tools-gcc/9.4.0,'[0m
+   [1;36mdeploy-context: [1;31mERROR: [1;37mResolving 'core/build-tools-gcc/9.4.0,' failed, should this be built first?[0m
+   [1;36mdeploy-context: [1;37mBuild time: 0m36s[0m
+   [1;36mdeploy-context: [1;31mExiting on error[0m
+
+Script done on 2023-10-11 18:08:39+00:00 [COMMAND_EXIT_CODE="1"]

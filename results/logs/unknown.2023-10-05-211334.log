@@ -1,0 +1,147 @@
+Script started on 2023-10-05 21:13:34+00:00 [<not executed on terminal>]
+   [1;36m: [1;37mLoading /src/habitat/plan.sh/x86_64-linux/plan.sh[0m
+   [1;36mdeploy-context: [1;37mPlan loaded[0m
+   [1;36mdeploy-context: [1;37mValidating plan metadata[0m
+   [1;36mdeploy-context: [1;37mUsing HAB_BIN=/hab/pkgs/core/hab/1.6.568/20220831181712/bin/hab for installs, signing, and hashing[0m
+   [1;36mdeploy-context: [1;37mhab-plan-build setup[0m
+Executing action do_begin at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mWriting pre_build file[0m
+   [1;36mdeploy-context: [1;37mResolving build dependencies[0m
+   [1;36mdeploy-context: [1;37mResolving run dependencies[0m
+[0m[0m[1m[33m» Installing core/ruby[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/ruby in the 'stable' channel
+[0m[0m[1m[32m☛ Verifying[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m☛ Verifying[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m☛ Verifying[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m☛ Verifying[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m→ Using[0m core/readline/8.1/20220311102318
+[0m[0m[1m[32m☛ Verifying[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
+[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
+[0m[0m[1m[32m☛ Verifying[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
+[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
+[0m[0m[1m[32m→ Using[0m core/grep/3.7/20220311102158
+[0m[0m[1m[32m→ Using[0m core/binutils/2.37/20220311083411
+[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
+[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
+[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
+[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
+[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
+[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
+[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
+[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
+[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
+[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
+[0m[0m[1m[32m✓ Installed[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m✓ Installed[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m✓ Installed[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m✓ Installed[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m✓ Installed[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m✓ Installed[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[35m★ Install of core/ruby/3.0.3/20230822120944 complete with 6 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved dependency 'core/ruby' to /hab/pkgs/core/ruby/3.0.3/20230822120944[0m
+   [1;36mdeploy-context: [1;37mSetting up environment[0m
+   [1;36mdeploy-context: [1;37mPopulating runtime environment from dependencies[0m
+   [1;36mdeploy-context: [1;37mPopulating buildtime environment from dependencies[0m
+   [1;36mdeploy-context: [1;37mLayering runtime environment on top of system environment[0m
+   [1;36mdeploy-context: [1;37mLayering buildtime environment on top of system environment[0m
+   [1;36mdeploy-context: [1;37mSetting PATH=/hab/pkgs/core/ruby/3.0.3/20230822120944/bin:/hab/pkgs/core/openssl/1.0.2zf/20230816063107/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/libtool/2.4.6/20220311102922/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/pkgs/core/hab-plan-build/1.6.568/20220831183139/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.568/20220831181712/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin:/hab/pkgs/core/hab-plan-build/1.6.568/20220831183139/bin:/hab/pkgs/core/diffutils/3.8/20220311104054/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/mg/20180927/20220311114614/bin:/hab/pkgs/core/util-linux/2.37/20220311105626/bin:/hab/pkgs/core/vim/8.2.2825/20220311114125/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.568/20220831181712/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/libmd/1.0.4/20220311114359/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin[0m
+mkdir: created directory '/hab/cache/src'
+Executing action do_download at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux
+Executing action do_default_verify at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux
+Executing action do_clean at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux
+Executing action do_unpack at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mSetting build environment[0m
+mkdir: created directory '/hab/cache/src/deploy-context-2.13.0'
+   [1;36mdeploy-context: [1;37mSetting PREFIX=/hab/pkgs/jimbodragon/deploy-context/2.13.0/20231005211334[0m
+   [1;36mdeploy-context: [1;37mSetting LD_RUN_PATH=/hab/pkgs/core/ruby/3.0.3/20230822120944/lib[0m
+   [1;36mdeploy-context: [1;37mSetting CFLAGS=-I/hab/pkgs/core/ruby/3.0.3/20230822120944/include[0m
+   [1;36mdeploy-context: [1;37mSetting CXXFLAGS=-I/hab/pkgs/core/ruby/3.0.3/20230822120944/include[0m
+   [1;36mdeploy-context: [1;37mSetting CPPFLAGS=-I/hab/pkgs/core/ruby/3.0.3/20230822120944/include[0m
+   [1;36mdeploy-context: [1;37mSetting LDFLAGS=-L/hab/pkgs/core/ruby/3.0.3/20230822120944/lib[0m
+   [1;36mdeploy-context: [1;37mSetting PKG_CONFIG_PATH=/hab/pkgs/core/ruby/3.0.3/20230822120944/lib/pkgconfig[0m
+   [1;36mdeploy-context: [1;37mPreparing to build[0m
+Executing action do_default_prepare at version 2.13.0 in folder /src/habitat/plan.sh
+   [1;36mdeploy-context: [1;37mBuilding[0m
+Executing action do_build at version 2.13.0 in folder /src/habitat/plan.sh
+Fetching addressable-2.8.5.gem
+Fetching down-5.4.1.gem
+Fetching public_suffix-5.0.3.gem
+Successfully installed public_suffix-5.0.3
+Successfully installed addressable-2.8.5
+Successfully installed down-5.4.1
+Parsing documentation for public_suffix-5.0.3
+Installing ri documentation for public_suffix-5.0.3
+Parsing documentation for addressable-2.8.5
+Installing ri documentation for addressable-2.8.5
+Parsing documentation for down-5.4.1
+Installing ri documentation for down-5.4.1
+Done installing documentation for public_suffix, addressable, down after 0 seconds
+3 gems installed
+Fetching unix-crypt-1.3.1.gem
+Successfully installed unix-crypt-1.3.1
+Parsing documentation for unix-crypt-1.3.1
+Installing ri documentation for unix-crypt-1.3.1
+Done installing documentation for unix-crypt after 0 seconds
+1 gem installed
+Fetching ruby-shadow-2.5.1.gem
+Building native extensions. This could take a while...
+ERROR:  Error installing ruby-shadow:
+	ERROR: Failed to build gem native extension.
+
+    current directory: /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/gems/3.0.0/gems/ruby-shadow-2.5.1
+/hab/pkgs/core/ruby/3.0.3/20230822120944/bin/ruby -I /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0 -r ./siteconf20231005-1591208-x73rj6.rb extconf.rb
+checking for getspent() in -lshadow... *** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/hab/pkgs/core/ruby/3.0.3/20230822120944/bin/$(RUBY_BASE_NAME)
+	--with-shadow-dir
+	--without-shadow-dir
+	--with-shadow-include
+	--without-shadow-include=${shadow-dir}/include
+	--with-shadow-lib
+	--without-shadow-lib=${shadow-dir}/lib
+	--with-shadowlib
+	--without-shadowlib
+/hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:471:in `try_do': The compiler failed to generate an executable file. (RuntimeError)
+You have to install development tools first.
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:564:in `try_link0'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:582:in `try_link'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:794:in `try_func'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:1029:in `block in have_library'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:971:in `block in checking_for'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:361:in `block (2 levels) in postpone'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:331:in `open'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:361:in `block in postpone'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:331:in `open'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:357:in `postpone'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:970:in `checking_for'
+	from /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/3.0.0/mkmf.rb:1024:in `have_library'
+	from extconf.rb:32:in `<main>'
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/gems/3.0.0/extensions/x86_64-linux/3.0.0/ruby-shadow-2.5.1/mkmf.log
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/gems/3.0.0/gems/ruby-shadow-2.5.1 for inspection.
+Results logged to /hab/pkgs/core/ruby/3.0.3/20230822120944/lib/ruby/gems/3.0.0/extensions/x86_64-linux/3.0.0/ruby-shadow-2.5.1/gem_make.out
+   [1;36mdeploy-context: [1;37mBuild time: 0m6s[0m
+   [1;36mdeploy-context: [1;31mExiting on error[0m
+
+Script done on 2023-10-05 21:13:40+00:00 [COMMAND_EXIT_CODE="1"]

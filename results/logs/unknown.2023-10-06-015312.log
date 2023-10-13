@@ -1,0 +1,934 @@
+Script started on 2023-10-06 01:53:12+00:00 [<not executed on terminal>]
+   [1;36m: [1;37mLoading /src/habitat/plan.sh/x86_64-linux/plan.sh[0m
+   [1;36mdeploy-context: [1;37mPlan loaded[0m
+   [1;36mdeploy-context: [1;37mValidating plan metadata[0m
+   [1;36mdeploy-context: [1;37mUsing HAB_BIN=/hab/pkgs/core/hab/1.6.568/20220831181712/bin/hab for installs, signing, and hashing[0m
+   [1;36mdeploy-context: [1;37mhab-plan-build setup[0m
+Executing action do_begin at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+/src/habitat/plan.sh/x86_64-linux/plan.sh: line 197: ruby: command not found
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mWriting pre_build file[0m
+   [1;36mdeploy-context: [1;37mResolving build dependencies[0m
+   [1;36mdeploy-context: [1;37mResolving run dependencies[0m
+[0m[0m[1m[33m» Installing core/scaffolding-ruby[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/scaffolding-ruby in the 'stable' channel
+[0m[0m[1m[32m☛ Verifying[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[32m☛ Verifying[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m→ Using[0m core/tar/1.34/20220311102650
+[0m[0m[1m[32m→ Using[0m core/rq/0.10.4/20220311112035
+[0m[0m[1m[32m☛ Verifying[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m→ Using[0m core/make/4.3/20220311105244
+[0m[0m[1m[32m☛ Verifying[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m☛ Verifying[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m☛ Verifying[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m☛ Verifying[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m☛ Verifying[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m☛ Verifying[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m→ Using[0m core/readline/8.1/20220311102318
+[0m[0m[1m[32m☛ Verifying[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
+[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
+[0m[0m[1m[32m☛ Verifying[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
+[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
+[0m[0m[1m[32m→ Using[0m core/grep/3.7/20220311102158
+[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
+[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
+[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
+[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
+[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
+[0m[0m[1m[32m☛ Verifying[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m→ Using[0m core/binutils/2.37/20220311083411
+[0m[0m[1m[32m→ Using[0m core/mpfr/4.1.0/20220311084038
+[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
+[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
+[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
+[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
+[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
+[0m[0m[1m[32m✓ Installed[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m✓ Installed[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m✓ Installed[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m✓ Installed[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m✓ Installed[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m✓ Installed[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m✓ Installed[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m✓ Installed[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m✓ Installed[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m✓ Installed[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m✓ Installed[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m✓ Installed[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[35m★ Install of core/scaffolding-ruby/0.8.11/20230822123619 complete with 12 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved dependency 'core/scaffolding-ruby' to /hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619[0m
+   [1;36mdeploy-context: [1;37mSetting up environment[0m
+   [1;36mdeploy-context: [1;37mPopulating runtime environment from dependencies[0m
+   [1;36mdeploy-context: [1;37mPopulating buildtime environment from dependencies[0m
+   [1;36mdeploy-context: [1;37mLayering runtime environment on top of system environment[0m
+   [1;36mdeploy-context: [1;37mLayering buildtime environment on top of system environment[0m
+   [1;36mdeploy-context: [1;37mSetting PATH=/hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619/bin:/hab/pkgs/core/bundler/2.2.33/20230822122238/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/gcc/9.4.0/20220311084247/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/pkg-config/0.29.2/20220311100618/bin:/hab/pkgs/core/ruby/3.0.3/20230822120944/bin:/hab/pkgs/core/busybox-static/1.34.1/20220311112317/bin:/hab/pkgs/core/openssl/1.0.2zf/20230816063107/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/libtool/2.4.6/20220311102922/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/pkgs/core/hab-plan-build/1.6.568/20220831183139/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.568/20220831181712/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin:/hab/pkgs/core/hab-plan-build/1.6.568/20220831183139/bin:/hab/pkgs/core/diffutils/3.8/20220311104054/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/mg/20180927/20220311114614/bin:/hab/pkgs/core/util-linux/2.37/20220311105626/bin:/hab/pkgs/core/vim/8.2.2825/20220311114125/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.568/20220831181712/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/libmd/1.0.4/20220311114359/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin[0m
+created directory: '/hab/cache/src'
+Executing action do_download at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Executing action do_default_verify at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+/src/habitat/plan.sh/plan.rb:75:in `<top (required)>': [1mundefined method `do_default_verify' for main:Object ([1;4mNoMethodError[m[1m)[m
+	from plan.rb:3:in `require_relative'
+	from plan.rb:3:in `<main>'
+Ruby not avaialble yet
+Executing action do_clean at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Executing action do_unpack at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mSetting build environment[0m
+created directory: '/hab/cache/src/deploy-context-2.13.0'
+   [1;36mdeploy-context: [1;37mSetting PREFIX=/hab/pkgs/jimbodragon/deploy-context/2.13.0/20231006015312[0m
+   [1;36mdeploy-context: [1;37mSetting LD_RUN_PATH=[0m
+   [1;36mdeploy-context: [1;37mSetting CFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting CXXFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting CPPFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting LDFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting PKG_CONFIG_PATH=[0m
+   [1;36mdeploy-context: [1;37mPreparing to build[0m
+Executing action do_default_prepare at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+plan.rb:75:in `<main>': [1mundefined method `do_default_prepare' for main:Object ([1;4mNoMethodError[m[1m)[m
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mBuilding[0m
+Executing action do_build at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Fetching vault-0.18.1.gem
+Fetching uuidtools-2.2.0.gem
+Fetching unf_ext-0.0.8.2.gem
+Fetching rubyntlm-0.6.3.gem
+Fetching multi_json-1.15.0.gem
+Fetching aws-sigv4-1.6.0.gem
+Fetching nori-2.6.0.gem
+Fetching aws-eventstream-1.2.0.gem
+Fetching gssapi-1.3.1.gem
+Fetching little-plugger-1.1.4.gem
+Fetching logging-2.3.1.gem
+Fetching httpclient-2.8.3.gem
+Fetching builder-3.2.4.gem
+Fetching gyoku-1.4.0.gem
+Fetching ffi-1.16.3.gem
+Fetching erubi-1.12.0.gem
+Fetching winrm-2.3.6.gem
+Fetching rubyzip-2.3.2.gem
+Fetching winrm-fs-1.3.5.gem
+Fetching winrm-elevated-1.2.3.gem
+Fetching train-winrm-0.2.13.gem
+Fetching net-ssh-7.2.0.gem
+Fetching net-scp-4.0.0.gem
+Fetching concurrent-ruby-1.2.2.gem
+Fetching chef-utils-18.0.185.gem
+Fetching mixlib-shellout-3.2.7.gem
+Fetching addressable-2.8.5.gem
+Fetching train-core-3.10.8.gem
+Fetching netrc-0.11.0.gem
+Fetching mime-types-data-3.2023.1003.gem
+Fetching public_suffix-5.0.3.gem
+Fetching domain_name-0.5.20190701.gem
+Fetching mime-types-3.5.1.gem
+Fetching unf-0.1.4.gem
+Fetching http-cookie-1.0.5.gem
+Fetching http-accept-1.7.0.gem
+Fetching rest-client-2.1.0.gem
+Fetching train-rest-0.5.0.gem
+Fetching syslog-logger-1.6.8.gem
+Fetching proxifier-1.0.3.gem
+Fetching plist-3.7.0.gem
+Fetching wmi-lite-1.0.7.gem
+Fetching mixlib-log-3.0.9.gem
+Fetching tomlrb-1.3.0.gem
+Fetching mixlib-config-3.0.27.gem
+Fetching mixlib-cli-2.1.8.gem
+Fetching ipaddress-0.8.3.gem
+Fetching libyajl2-2.1.0.gem
+Fetching ffi-yajl-2.6.0.gem
+Fetching fuzzyurl-0.9.0.gem
+Fetching chef-config-18.0.185.gem
+Fetching ohai-18.1.3.gem
+Fetching net-sftp-4.0.0.gem
+Fetching mixlib-authentication-3.0.10.gem
+Fetching mixlib-archive-1.1.7.gem
+Fetching wisper-2.0.1.gem
+Fetching tty-screen-0.8.1.gem
+Fetching tty-cursor-0.7.1.gem
+Fetching tty-reader-0.9.0.gem
+Fetching tty-color-0.6.0.gem
+Fetching pastel-0.8.0.gem
+Fetching tty-prompt-0.23.1.gem
+Fetching unicode_utils-1.4.0.gem
+Fetching unicode-display_width-2.5.0.gem
+Fetching strings-ansi-0.2.0.gem
+Fetching strings-0.2.1.gem
+Fetching tty-box-0.7.0.gem
+Fetching license-acceptance-2.1.13.gem
+Fetching tty-table-0.12.0.gem
+Fetching thor-1.2.2.gem
+Fetching sslshake-1.3.1.gem
+Fetching semverse-3.0.2.gem
+Fetching rspec-core-3.11.0.gem
+Fetching rspec-support-3.11.1.gem
+Fetching diff-lcs-1.5.0.gem
+Fetching rspec-expectations-3.11.1.gem
+Fetching rspec-mocks-3.11.2.gem
+Fetching rspec-3.11.0.gem
+Fetching method_source-1.0.0.gem
+Fetching rspec-its-1.3.0.gem
+Fetching coderay-1.1.3.gem
+Fetching pry-0.14.2.gem
+Fetching parslet-1.8.2.gem
+Fetching parallel-1.23.0.gem
+Fetching multipart-post-2.3.0.gem
+Fetching hashie-4.1.0.gem
+Fetching ruby2_keywords-0.0.5.gem
+Fetching faraday-net_http-3.0.2.gem
+Fetching faraday-2.7.11.gem
+Fetching faraday-follow_redirects-0.3.0.gem
+Fetching chef-telemetry-1.1.1.gem
+Fetching inspec-core-5.22.3.gem
+Fetching iniparse-1.5.0.gem
+Fetching ffi-libarchive-1.1.13.gem
+Fetching erubis-2.7.0.gem
+Fetching corefoundation-0.3.13.gem
+Fetching webrick-1.8.1.gem
+Fetching rack-2.2.8.gem
+Fetching chef-zero-15.0.11.gem
+Fetching chef-vault-4.1.11.gem
+Fetching jmespath-1.6.2.gem
+Fetching aws-partitions-1.834.0.gem
+Fetching aws-sdk-core-3.185.1.gem
+Fetching aws-sdk-secretsmanager-1.83.0.gem
+Fetching aws-sdk-kms-1.72.0.gem
+Fetching aws-sdk-s3-1.136.0.gem
+Fetching chef-18.0.185.gem
+Fetching chef-bin-18.0.185.gem
+Successfully installed aws-eventstream-1.2.0
+Successfully installed aws-sigv4-1.6.0
+Successfully installed vault-0.18.1
+Successfully installed uuidtools-2.2.0
+Building native extensions. This could take a while...
+Successfully installed unf_ext-0.0.8.2
+Successfully installed rubyntlm-0.6.3
+Successfully installed nori-2.6.0
+Successfully installed multi_json-1.15.0
+Successfully installed little-plugger-1.1.4
+Successfully installed logging-2.3.1
+Successfully installed httpclient-2.8.3
+Successfully installed builder-3.2.4
+Successfully installed gyoku-1.4.0
+Building native extensions. This could take a while...
+Successfully installed ffi-1.16.3
+Successfully installed gssapi-1.3.1
+Successfully installed erubi-1.12.0
+Successfully installed winrm-2.3.6
+RubyZip 3.0 is coming!
+**********************
+
+The public API of some Rubyzip classes has been modernized to use named
+parameters for optional arguments. Please check your usage of the
+following classes:
+  * `Zip::File`
+  * `Zip::Entry`
+  * `Zip::InputStream`
+  * `Zip::OutputStream`
+
+Please ensure that your Gemfiles and .gemspecs are suitably restrictive
+to avoid an unexpected breakage when 3.0 is released (e.g. ~> 2.3.0).
+See https://github.com/rubyzip/rubyzip for details. The Changelog also
+lists other enhancements and bugfixes that have been implemented since
+version 2.3.0.
+Successfully installed rubyzip-2.3.2
+Successfully installed winrm-fs-1.3.5
+Successfully installed winrm-elevated-1.2.3
+Successfully installed train-winrm-0.2.13
+Successfully installed net-ssh-7.2.0
+Successfully installed net-scp-4.0.0
+Successfully installed concurrent-ruby-1.2.2
+Successfully installed chef-utils-18.0.185
+Successfully installed mixlib-shellout-3.2.7
+Successfully installed public_suffix-5.0.3
+Successfully installed addressable-2.8.5
+Successfully installed train-core-3.10.8
+Successfully installed netrc-0.11.0
+Successfully installed mime-types-data-3.2023.1003
+Successfully installed mime-types-3.5.1
+Successfully installed unf-0.1.4
+Successfully installed domain_name-0.5.20190701
+Successfully installed http-cookie-1.0.5
+Successfully installed http-accept-1.7.0
+Successfully installed rest-client-2.1.0
+Successfully installed train-rest-0.5.0
+Successfully installed syslog-logger-1.6.8
+Successfully installed proxifier-1.0.3
+Successfully installed plist-3.7.0
+Successfully installed wmi-lite-1.0.7
+Successfully installed mixlib-log-3.0.9
+Successfully installed tomlrb-1.3.0
+Successfully installed mixlib-config-3.0.27
+Successfully installed mixlib-cli-2.1.8
+Successfully installed ipaddress-0.8.3
+Building native extensions. This could take a while...
+Successfully installed libyajl2-2.1.0
+Building native extensions. This could take a while...
+Successfully installed ffi-yajl-2.6.0
+Successfully installed fuzzyurl-0.9.0
+Successfully installed chef-config-18.0.185
+Successfully installed ohai-18.1.3
+Successfully installed net-sftp-4.0.0
+Successfully installed mixlib-authentication-3.0.10
+Successfully installed mixlib-archive-1.1.7
+Successfully installed wisper-2.0.1
+Successfully installed tty-screen-0.8.1
+Successfully installed tty-cursor-0.7.1
+Successfully installed tty-reader-0.9.0
+Successfully installed tty-color-0.6.0
+Successfully installed pastel-0.8.0
+Successfully installed tty-prompt-0.23.1
+Successfully installed unicode_utils-1.4.0
+Successfully installed unicode-display_width-2.5.0
+Successfully installed strings-ansi-0.2.0
+Successfully installed strings-0.2.1
+Successfully installed tty-box-0.7.0
+Successfully installed license-acceptance-2.1.13
+Successfully installed tty-table-0.12.0
+Successfully installed thor-1.2.2
+Successfully installed sslshake-1.3.1
+Successfully installed semverse-3.0.2
+Successfully installed rspec-support-3.11.1
+Successfully installed diff-lcs-1.5.0
+Successfully installed rspec-expectations-3.11.1
+Successfully installed rspec-core-3.11.0
+Successfully installed rspec-its-1.3.0
+Successfully installed rspec-mocks-3.11.2
+Successfully installed rspec-3.11.0
+Successfully installed method_source-1.0.0
+Successfully installed coderay-1.1.3
+Successfully installed pry-0.14.2
+Successfully installed parslet-1.8.2
+Successfully installed parallel-1.23.0
+Successfully installed multipart-post-2.3.0
+Successfully installed hashie-4.1.0
+Successfully installed ruby2_keywords-0.0.5
+Successfully installed faraday-net_http-3.0.2
+Successfully installed faraday-2.7.11
+Successfully installed faraday-follow_redirects-0.3.0
+Successfully installed chef-telemetry-1.1.1
+Successfully installed inspec-core-5.22.3
+Successfully installed iniparse-1.5.0
+Successfully installed ffi-libarchive-1.1.13
+Successfully installed erubis-2.7.0
+Successfully installed corefoundation-0.3.13
+Successfully installed webrick-1.8.1
+Successfully installed rack-2.2.8
+Successfully installed chef-zero-15.0.11
+Successfully installed chef-vault-4.1.11
+Successfully installed jmespath-1.6.2
+Successfully installed aws-partitions-1.834.0
+Successfully installed aws-sdk-core-3.185.1
+Successfully installed aws-sdk-secretsmanager-1.83.0
+Successfully installed aws-sdk-kms-1.72.0
+Successfully installed aws-sdk-s3-1.136.0
+Successfully installed chef-18.0.185
+Successfully installed chef-bin-18.0.185
+Parsing documentation for aws-eventstream-1.2.0
+Installing ri documentation for aws-eventstream-1.2.0
+Parsing documentation for aws-sigv4-1.6.0
+Installing ri documentation for aws-sigv4-1.6.0
+Parsing documentation for vault-0.18.1
+Installing ri documentation for vault-0.18.1
+Parsing documentation for uuidtools-2.2.0
+Installing ri documentation for uuidtools-2.2.0
+Parsing documentation for unf_ext-0.0.8.2
+Installing ri documentation for unf_ext-0.0.8.2
+Parsing documentation for rubyntlm-0.6.3
+Installing ri documentation for rubyntlm-0.6.3
+Parsing documentation for nori-2.6.0
+Installing ri documentation for nori-2.6.0
+Parsing documentation for multi_json-1.15.0
+Installing ri documentation for multi_json-1.15.0
+Parsing documentation for little-plugger-1.1.4
+Installing ri documentation for little-plugger-1.1.4
+Parsing documentation for logging-2.3.1
+Installing ri documentation for logging-2.3.1
+Parsing documentation for httpclient-2.8.3
+Installing ri documentation for httpclient-2.8.3
+Parsing documentation for builder-3.2.4
+Installing ri documentation for builder-3.2.4
+Parsing documentation for gyoku-1.4.0
+Installing ri documentation for gyoku-1.4.0
+Parsing documentation for ffi-1.16.3
+Installing ri documentation for ffi-1.16.3
+Parsing documentation for gssapi-1.3.1
+Installing ri documentation for gssapi-1.3.1
+Parsing documentation for erubi-1.12.0
+Installing ri documentation for erubi-1.12.0
+Parsing documentation for winrm-2.3.6
+Installing ri documentation for winrm-2.3.6
+Parsing documentation for rubyzip-2.3.2
+Installing ri documentation for rubyzip-2.3.2
+Parsing documentation for winrm-fs-1.3.5
+Installing ri documentation for winrm-fs-1.3.5
+Parsing documentation for winrm-elevated-1.2.3
+unable to convert "$u" on UTF-16 for lib/winrm-elevated/scripts/elevated_shell.ps1, skipping
+Installing ri documentation for winrm-elevated-1.2.3
+Parsing documentation for train-winrm-0.2.13
+Installing ri documentation for train-winrm-0.2.13
+Parsing documentation for net-ssh-7.2.0
+Installing ri documentation for net-ssh-7.2.0
+Parsing documentation for net-scp-4.0.0
+Installing ri documentation for net-scp-4.0.0
+Parsing documentation for concurrent-ruby-1.2.2
+Installing ri documentation for concurrent-ruby-1.2.2
+Parsing documentation for chef-utils-18.0.185
+Installing ri documentation for chef-utils-18.0.185
+Parsing documentation for mixlib-shellout-3.2.7
+Installing ri documentation for mixlib-shellout-3.2.7
+Parsing documentation for public_suffix-5.0.3
+Installing ri documentation for public_suffix-5.0.3
+Parsing documentation for addressable-2.8.5
+Installing ri documentation for addressable-2.8.5
+Parsing documentation for train-core-3.10.8
+Installing ri documentation for train-core-3.10.8
+Parsing documentation for netrc-0.11.0
+Installing ri documentation for netrc-0.11.0
+Parsing documentation for mime-types-data-3.2023.1003
+Installing ri documentation for mime-types-data-3.2023.1003
+Parsing documentation for mime-types-3.5.1
+Installing ri documentation for mime-types-3.5.1
+Parsing documentation for unf-0.1.4
+Installing ri documentation for unf-0.1.4
+Parsing documentation for domain_name-0.5.20190701
+Installing ri documentation for domain_name-0.5.20190701
+Parsing documentation for http-cookie-1.0.5
+Installing ri documentation for http-cookie-1.0.5
+Parsing documentation for http-accept-1.7.0
+unknown encoding name "header" for lib/http/accept.rb, skipping
+Installing ri documentation for http-accept-1.7.0
+Parsing documentation for rest-client-2.1.0
+Installing ri documentation for rest-client-2.1.0
+Parsing documentation for train-rest-0.5.0
+Installing ri documentation for train-rest-0.5.0
+Parsing documentation for syslog-logger-1.6.8
+Installing ri documentation for syslog-logger-1.6.8
+Parsing documentation for proxifier-1.0.3
+Installing ri documentation for proxifier-1.0.3
+Parsing documentation for plist-3.7.0
+Installing ri documentation for plist-3.7.0
+Parsing documentation for wmi-lite-1.0.7
+Installing ri documentation for wmi-lite-1.0.7
+Parsing documentation for mixlib-log-3.0.9
+Installing ri documentation for mixlib-log-3.0.9
+Parsing documentation for tomlrb-1.3.0
+Installing ri documentation for tomlrb-1.3.0
+Parsing documentation for mixlib-config-3.0.27
+Installing ri documentation for mixlib-config-3.0.27
+Parsing documentation for mixlib-cli-2.1.8
+Installing ri documentation for mixlib-cli-2.1.8
+Parsing documentation for ipaddress-0.8.3
+Installing ri documentation for ipaddress-0.8.3
+Parsing documentation for libyajl2-2.1.0
+Installing ri documentation for libyajl2-2.1.0
+Parsing documentation for ffi-yajl-2.6.0
+Installing ri documentation for ffi-yajl-2.6.0
+Parsing documentation for fuzzyurl-0.9.0
+Installing ri documentation for fuzzyurl-0.9.0
+Parsing documentation for chef-config-18.0.185
+Installing ri documentation for chef-config-18.0.185
+Parsing documentation for ohai-18.1.3
+Installing ri documentation for ohai-18.1.3
+Parsing documentation for net-sftp-4.0.0
+Installing ri documentation for net-sftp-4.0.0
+Parsing documentation for mixlib-authentication-3.0.10
+Installing ri documentation for mixlib-authentication-3.0.10
+Parsing documentation for mixlib-archive-1.1.7
+Installing ri documentation for mixlib-archive-1.1.7
+Parsing documentation for wisper-2.0.1
+Installing ri documentation for wisper-2.0.1
+Parsing documentation for tty-screen-0.8.1
+Installing ri documentation for tty-screen-0.8.1
+Parsing documentation for tty-cursor-0.7.1
+Installing ri documentation for tty-cursor-0.7.1
+Parsing documentation for tty-reader-0.9.0
+Installing ri documentation for tty-reader-0.9.0
+Parsing documentation for tty-color-0.6.0
+Installing ri documentation for tty-color-0.6.0
+Parsing documentation for pastel-0.8.0
+Installing ri documentation for pastel-0.8.0
+Parsing documentation for tty-prompt-0.23.1
+Installing ri documentation for tty-prompt-0.23.1
+Parsing documentation for unicode_utils-1.4.0
+Installing ri documentation for unicode_utils-1.4.0
+Parsing documentation for unicode-display_width-2.5.0
+Installing ri documentation for unicode-display_width-2.5.0
+Parsing documentation for strings-ansi-0.2.0
+Installing ri documentation for strings-ansi-0.2.0
+Parsing documentation for strings-0.2.1
+Installing ri documentation for strings-0.2.1
+Parsing documentation for tty-box-0.7.0
+Installing ri documentation for tty-box-0.7.0
+Parsing documentation for license-acceptance-2.1.13
+Installing ri documentation for license-acceptance-2.1.13
+Parsing documentation for tty-table-0.12.0
+Installing ri documentation for tty-table-0.12.0
+Parsing documentation for thor-1.2.2
+Installing ri documentation for thor-1.2.2
+Parsing documentation for sslshake-1.3.1
+Installing ri documentation for sslshake-1.3.1
+Parsing documentation for semverse-3.0.2
+Installing ri documentation for semverse-3.0.2
+Parsing documentation for rspec-support-3.11.1
+Installing ri documentation for rspec-support-3.11.1
+Parsing documentation for diff-lcs-1.5.0
+Installing ri documentation for diff-lcs-1.5.0
+Parsing documentation for rspec-expectations-3.11.1
+Installing ri documentation for rspec-expectations-3.11.1
+Parsing documentation for rspec-core-3.11.0
+Installing ri documentation for rspec-core-3.11.0
+Parsing documentation for rspec-its-1.3.0
+Installing ri documentation for rspec-its-1.3.0
+Parsing documentation for rspec-mocks-3.11.2
+Installing ri documentation for rspec-mocks-3.11.2
+Parsing documentation for rspec-3.11.0
+Installing ri documentation for rspec-3.11.0
+Parsing documentation for method_source-1.0.0
+Installing ri documentation for method_source-1.0.0
+invalid options: -SNw2
+(invalid options are ignored)
+Parsing documentation for coderay-1.1.3
+Installing ri documentation for coderay-1.1.3
+Parsing documentation for pry-0.14.2
+Installing ri documentation for pry-0.14.2
+Parsing documentation for parslet-1.8.2
+Installing ri documentation for parslet-1.8.2
+Parsing documentation for parallel-1.23.0
+Installing ri documentation for parallel-1.23.0
+Parsing documentation for multipart-post-2.3.0
+Installing ri documentation for multipart-post-2.3.0
+Parsing documentation for hashie-4.1.0
+Installing ri documentation for hashie-4.1.0
+Parsing documentation for ruby2_keywords-0.0.5
+Installing ri documentation for ruby2_keywords-0.0.5
+Parsing documentation for faraday-net_http-3.0.2
+Installing ri documentation for faraday-net_http-3.0.2
+Parsing documentation for faraday-2.7.11
+Installing ri documentation for faraday-2.7.11
+Parsing documentation for faraday-follow_redirects-0.3.0
+Installing ri documentation for faraday-follow_redirects-0.3.0
+Parsing documentation for chef-telemetry-1.1.1
+Installing ri documentation for chef-telemetry-1.1.1
+Parsing documentation for inspec-core-5.22.3
+Installing ri documentation for inspec-core-5.22.3
+Parsing documentation for iniparse-1.5.0
+Installing ri documentation for iniparse-1.5.0
+Parsing documentation for ffi-libarchive-1.1.13
+Installing ri documentation for ffi-libarchive-1.1.13
+Parsing documentation for erubis-2.7.0
+Installing ri documentation for erubis-2.7.0
+Parsing documentation for corefoundation-0.3.13
+Installing ri documentation for corefoundation-0.3.13
+Parsing documentation for webrick-1.8.1
+Installing ri documentation for webrick-1.8.1
+Parsing documentation for rack-2.2.8
+Installing ri documentation for rack-2.2.8
+Parsing documentation for chef-zero-15.0.11
+Installing ri documentation for chef-zero-15.0.11
+Parsing documentation for chef-vault-4.1.11
+Installing ri documentation for chef-vault-4.1.11
+Parsing documentation for jmespath-1.6.2
+Installing ri documentation for jmespath-1.6.2
+Parsing documentation for aws-partitions-1.834.0
+Installing ri documentation for aws-partitions-1.834.0
+Parsing documentation for aws-sdk-core-3.185.1
+Installing ri documentation for aws-sdk-core-3.185.1
+Parsing documentation for aws-sdk-secretsmanager-1.83.0
+Installing ri documentation for aws-sdk-secretsmanager-1.83.0
+Parsing documentation for aws-sdk-kms-1.72.0
+Installing ri documentation for aws-sdk-kms-1.72.0
+Parsing documentation for aws-sdk-s3-1.136.0
+Installing ri documentation for aws-sdk-s3-1.136.0
+Parsing documentation for chef-18.0.185
+Installing ri documentation for chef-18.0.185
+Parsing documentation for chef-bin-18.0.185
+Installing ri documentation for chef-bin-18.0.185
+Done installing documentation for aws-eventstream, aws-sigv4, vault, uuidtools, unf_ext, rubyntlm, nori, multi_json, little-plugger, logging, httpclient, builder, gyoku, ffi, gssapi, erubi, winrm, rubyzip, winrm-fs, winrm-elevated, train-winrm, net-ssh, net-scp, concurrent-ruby, chef-utils, mixlib-shellout, public_suffix, addressable, train-core, netrc, mime-types-data, mime-types, unf, domain_name, http-cookie, http-accept, rest-client, train-rest, syslog-logger, proxifier, plist, wmi-lite, mixlib-log, tomlrb, mixlib-config, mixlib-cli, ipaddress, libyajl2, ffi-yajl, fuzzyurl, chef-config, ohai, net-sftp, mixlib-authentication, mixlib-archive, wisper, tty-screen, tty-cursor, tty-reader, tty-color, pastel, tty-prompt, unicode_utils, unicode-display_width, strings-ansi, strings, tty-box, license-acceptance, tty-table, thor, sslshake, semverse, rspec-support, diff-lcs, rspec-expectations, rspec-core, rspec-its, rspec-mocks, rspec, method_source, coderay, pry, parslet, parallel, multipart-post, hashie, ruby2_keywords, faraday-net_http, faraday, faraday-follow_redirects, chef-telemetry, inspec-core, iniparse, ffi-libarchive, erubis, corefoundation, webrick, rack, chef-zero, chef-vault, jmespath, aws-partitions, aws-sdk-core, aws-sdk-secretsmanager, aws-sdk-kms, aws-sdk-s3, chef, chef-bin after 100 seconds
+Fetching molinillo-0.8.0.gem
+Fetching chef-cli-5.6.14.gem
+Fetching minitar-0.9.gem
+Fetching solve-4.0.4.gem
+Fetching cookbook-omnifetch-0.12.2.gem
+Fetching diff-lcs-1.3.gem
+Successfully installed molinillo-0.8.0
+Successfully installed solve-4.0.4
+The `minitar` executable is no longer bundled with `minitar`. If you are
+expecting this executable, make sure you also install `minitar-cli`.
+Successfully installed minitar-0.9
+Successfully installed diff-lcs-1.3
+Successfully installed cookbook-omnifetch-0.12.2
+Successfully installed chef-cli-5.6.14
+Parsing documentation for molinillo-0.8.0
+Installing ri documentation for molinillo-0.8.0
+Parsing documentation for solve-4.0.4
+Installing ri documentation for solve-4.0.4
+Parsing documentation for minitar-0.9
+Installing ri documentation for minitar-0.9
+Parsing documentation for diff-lcs-1.3
+Couldn't find file to include 'Contributing.rdoc' from README.rdoc
+Couldn't find file to include 'License.rdoc' from README.rdoc
+Installing ri documentation for diff-lcs-1.3
+Parsing documentation for cookbook-omnifetch-0.12.2
+Installing ri documentation for cookbook-omnifetch-0.12.2
+Parsing documentation for chef-cli-5.6.14
+Installing ri documentation for chef-cli-5.6.14
+Done installing documentation for molinillo, solve, minitar, diff-lcs, cookbook-omnifetch, chef-cli after 4 seconds
+Fetching cheffish-17.1.5.gem
+Successfully installed cheffish-17.1.5
+Parsing documentation for cheffish-17.1.5
+Installing ri documentation for cheffish-17.1.5
+Done installing documentation for cheffish after 0 seconds
+Fetching kitchen-vagrant-1.14.1.gem
+Fetching net-ssh-gateway-2.0.0.gem
+Fetching chef-utils-18.3.0.gem
+Fetching mixlib-versioning-1.2.12.gem
+Fetching mixlib-install-3.12.27.gem
+Fetching bcrypt_pbkdf-1.1.0.gem
+Fetching test-kitchen-3.5.0.gem
+Fetching ed25519-1.3.0.gem
+Successfully installed net-ssh-gateway-2.0.0
+Successfully installed chef-utils-18.3.0
+Successfully installed mixlib-versioning-1.2.12
+Successfully installed mixlib-install-3.12.27
+Building native extensions. This could take a while...
+Successfully installed ed25519-1.3.0
+Building native extensions. This could take a while...
+Successfully installed bcrypt_pbkdf-1.1.0
+Successfully installed test-kitchen-3.5.0
+Successfully installed kitchen-vagrant-1.14.1
+Parsing documentation for net-ssh-gateway-2.0.0
+Installing ri documentation for net-ssh-gateway-2.0.0
+Parsing documentation for chef-utils-18.3.0
+Installing ri documentation for chef-utils-18.3.0
+Parsing documentation for mixlib-versioning-1.2.12
+Installing ri documentation for mixlib-versioning-1.2.12
+Parsing documentation for mixlib-install-3.12.27
+Installing ri documentation for mixlib-install-3.12.27
+Parsing documentation for ed25519-1.3.0
+Installing ri documentation for ed25519-1.3.0
+Parsing documentation for bcrypt_pbkdf-1.1.0
+Installing ri documentation for bcrypt_pbkdf-1.1.0
+Parsing documentation for test-kitchen-3.5.0
+Installing ri documentation for test-kitchen-3.5.0
+Parsing documentation for kitchen-vagrant-1.14.1
+Installing ri documentation for kitchen-vagrant-1.14.1
+Done installing documentation for net-ssh-gateway, chef-utils, mixlib-versioning, mixlib-install, ed25519, bcrypt_pbkdf, test-kitchen, kitchen-vagrant after 2 seconds
+Fetching kitchen-dokken-2.19.1.gem
+Fetching lockfile-2.1.3.gem
+Fetching excon-0.104.0.gem
+Fetching docker-api-2.2.0.gem
+Successfully installed lockfile-2.1.3
+Successfully installed excon-0.104.0
+Successfully installed docker-api-2.2.0
+Successfully installed kitchen-dokken-2.19.1
+Parsing documentation for lockfile-2.1.3
+Installing ri documentation for lockfile-2.1.3
+Parsing documentation for excon-0.104.0
+Installing ri documentation for excon-0.104.0
+Parsing documentation for docker-api-2.2.0
+Installing ri documentation for docker-api-2.2.0
+Parsing documentation for kitchen-dokken-2.19.1
+Installing ri documentation for kitchen-dokken-2.19.1
+Done installing documentation for lockfile, excon, docker-api, kitchen-dokken after 1 seconds
+Fetching kitchen-ec2-3.17.0.gem
+Fetching retryable-3.0.5.gem
+Fetching aws-sdk-ec2-1.411.0.gem
+Successfully installed retryable-3.0.5
+Successfully installed aws-sdk-ec2-1.411.0
+Successfully installed kitchen-ec2-3.17.0
+Parsing documentation for retryable-3.0.5
+Installing ri documentation for retryable-3.0.5
+Parsing documentation for aws-sdk-ec2-1.411.0
+Installing ri documentation for aws-sdk-ec2-1.411.0
+Parsing documentation for kitchen-ec2-3.17.0
+Installing ri documentation for kitchen-ec2-3.17.0
+Done installing documentation for retryable, aws-sdk-ec2, kitchen-ec2 after 17 seconds
+Fetching multi_test-1.1.0.gem
+Fetching sys-uname-1.2.3.gem
+Fetching mini_mime-1.1.5.gem
+Fetching cucumber-9.0.2.gem
+Fetching cucumber-messages-21.0.1.gem
+Fetching cucumber-html-formatter-20.4.0.gem
+Fetching cucumber-cucumber-expressions-16.1.2.gem
+Fetching cucumber-tag-expressions-4.1.0.gem
+Fetching cucumber-gherkin-26.2.0.gem
+Fetching cucumber-core-11.1.0.gem
+Fetching cucumber-ci-environment-9.2.0.gem
+Successfully installed sys-uname-1.2.3
+Successfully installed multi_test-1.1.0
+Successfully installed mini_mime-1.1.5
+Successfully installed cucumber-messages-21.0.1
+Successfully installed cucumber-html-formatter-20.4.0
+Successfully installed cucumber-gherkin-26.2.0
+Successfully installed cucumber-cucumber-expressions-16.1.2
+Successfully installed cucumber-tag-expressions-4.1.0
+Successfully installed cucumber-core-11.1.0
+Successfully installed cucumber-ci-environment-9.2.0
+Successfully installed cucumber-9.0.2
+Parsing documentation for sys-uname-1.2.3
+Installing ri documentation for sys-uname-1.2.3
+Parsing documentation for multi_test-1.1.0
+Installing ri documentation for multi_test-1.1.0
+Parsing documentation for mini_mime-1.1.5
+Installing ri documentation for mini_mime-1.1.5
+Parsing documentation for cucumber-messages-21.0.1
+Installing ri documentation for cucumber-messages-21.0.1
+Parsing documentation for cucumber-html-formatter-20.4.0
+Installing ri documentation for cucumber-html-formatter-20.4.0
+Parsing documentation for cucumber-gherkin-26.2.0
+Installing ri documentation for cucumber-gherkin-26.2.0
+Parsing documentation for cucumber-cucumber-expressions-16.1.2
+Installing ri documentation for cucumber-cucumber-expressions-16.1.2
+Parsing documentation for cucumber-tag-expressions-4.1.0
+Installing ri documentation for cucumber-tag-expressions-4.1.0
+Parsing documentation for cucumber-core-11.1.0
+Installing ri documentation for cucumber-core-11.1.0
+Parsing documentation for cucumber-ci-environment-9.2.0
+Installing ri documentation for cucumber-ci-environment-9.2.0
+Parsing documentation for cucumber-9.0.2
+Installing ri documentation for cucumber-9.0.2
+Done installing documentation for sys-uname, multi_test, mini_mime, cucumber-messages, cucumber-html-formatter, cucumber-gherkin, cucumber-cucumber-expressions, cucumber-tag-expressions, cucumber-core, cucumber-ci-environment, cucumber after 3 seconds
+Fetching down-5.4.1.gem
+Successfully installed down-5.4.1
+Parsing documentation for down-5.4.1
+Installing ri documentation for down-5.4.1
+Done installing documentation for down after 0 seconds
+Fetching unix-crypt-1.3.1.gem
+Successfully installed unix-crypt-1.3.1
+Parsing documentation for unix-crypt-1.3.1
+Installing ri documentation for unix-crypt-1.3.1
+Done installing documentation for unix-crypt after 0 seconds
+Fetching ruby-shadow-2.5.1.gem
+Building native extensions. This could take a while...
+Successfully installed ruby-shadow-2.5.1
+Parsing documentation for ruby-shadow-2.5.1
+Installing ri documentation for ruby-shadow-2.5.1
+Done installing documentation for ruby-shadow after 0 seconds
+Fetching securerandom-0.2.2.gem
+Successfully installed securerandom-0.2.2
+Parsing documentation for securerandom-0.2.2
+Installing ri documentation for securerandom-0.2.2
+Done installing documentation for securerandom after 0 seconds
+Fetching git-version-bump-0.19.1.gem
+Successfully installed git-version-bump-0.19.1
+Parsing documentation for git-version-bump-0.19.1
+Installing ri documentation for git-version-bump-0.19.1
+Done installing documentation for git-version-bump after 0 seconds
+146 gems installed
+-----> Starting Test Kitchen (v3.5.0)
+[31m>>>>>> ------Exception-------[0m
+[31m>>>>>> Class: Kitchen::UserError[0m
+[31m>>>>>> Message: Vagrant 1.1.0 or higher is not installed. Please download a package from https://www.vagrantup.com/downloads.html.[0m
+[31m>>>>>> ----------------------[0m
+[31m>>>>>> Please see .kitchen/logs/kitchen.log for more details[0m
+[31m>>>>>> Also try running `kitchen diagnose --all` for configuration
+[0m
+kitchen is not working
+[90m# language: fr[0m
+[36m@fr[0m [36m@deploycontext[0m
+Fonctionnalité: Je suis le testeur du déployeur de deploy-context
+
+  Plan du Scénario: Démarrer un simple cycle de projet           [90m# features/code_update.feature:5[0m
+[36m    Étant donné que le projet <project_name> à du code à updater[0m [90m# features/code_update.feature:6[0m
+[36m    Alors déployer le projet <project_name>[0m                      [90m# features/code_update.feature:7[0m
+[36m    Et tester le projet <project_name>[0m                           [90m# features/code_update.feature:8[0m
+
+    Exemples: 
+      | project_name |
+      [33m| deploy-context |[0m
+[33m      TODO (Cucumber::Pending)[0m
+[33m      ./libraries/deploy-context/step_definitions/deploy-context.rb:29:in `"le projet {word} à du code à updater"'[0m
+[33m      features/code_update.feature:12:6:in `le projet deploy-context à du code à updater'[0m
+
+[90m# language: fr[0m
+[36m@fr[0m [36m@deploycontext[0m
+Fonctionnalité: Je suis le testeur du déployeur de deploy-context
+
+  Plan du Scénario: Tester le project deploy-context                        [90m# features/update_deployer.feature:5[0m
+[36m    Étant donné que le projet <project_name> à la bonne version d'installer[0m [90m# features/update_deployer.feature:6[0m
+
+    Exemples: 
+      | project_name |
+      [33m| deploy-context |[0m
+[33m      TODO (Cucumber::Pending)[0m
+[33m      ./libraries/deploy-context/step_definitions/deploy-context.rb:39:in `"le projet {word} à la bonne version d'installer"'[0m
+[33m      features/update_deployer.feature:10:6:in `le projet deploy-context à la bonne version d'installer'[0m
+
+[90m# language: fr[0m
+[36m@fr[0m [36m@deploycontext[0m
+Fonctionnalité: Je suis le testeur du déployeur de deploy-context
+
+  Plan du Scénario: Tester le project deploy-context                              [90m# features/updated_git.feature:5[0m
+[36m    Étant donné que le projet <project_name> à une nouvelle version de disponible[0m [90m# features/updated_git.feature:6[0m
+
+    Exemples: 
+      | project_name |
+      [33m| deploy-context |[0m
+[33m      TODO (Cucumber::Pending)[0m
+[33m      ./libraries/deploy-context/step_definitions/deploy-context.rb:44:in `"le projet {word} à une nouvelle version de disponible"'[0m
+[33m      features/updated_git.feature:10:6:in `le projet deploy-context à une nouvelle version de disponible'[0m
+
+3 scenarios ([33m3 pending[0m)
+5 steps ([36m2 skipped[0m, [33m3 pending[0m)
+0m0.028s
+[1m[32m┌──────────────────────────────────────────────────────────────────────────────┐[0m[0m
+[1m[32m│[0m[0m Share your Cucumber Report with your team at [4m[1m[36mhttps://reports.cucumber.io[0m[0m[0m     [1m[32m│[0m[0m
+[1m[32m│[0m[0m                                                                              [1m[32m│[0m[0m
+[1m[32m│[0m[0m Command line option:    [36m--publish[0m                                            [1m[32m│[0m[0m
+[1m[32m│[0m[0m Environment variable:   [36mCUCUMBER_PUBLISH_ENABLED[0m=[36mtrue[0m                        [1m[32m│[0m[0m
+[1m[32m│[0m[0m cucumber.yml:           [36mdefault: --publish[0m                                   [1m[32m│[0m[0m
+[1m[32m│[0m[0m                                                                              [1m[32m│[0m[0m
+[1m[32m│[0m[0m More information at [4m[1m[36mhttps://cucumber.io/docs/cucumber/environment-variables/[0m[0m[0m [1m[32m│[0m[0m
+[1m[32m│[0m[0m                                                                              [1m[32m│[0m[0m
+[1m[32m│[0m[0m To disable this message, specify [1mCUCUMBER_PUBLISH_QUIET=true[0m or use the      [1m[32m│[0m[0m
+[1m[32m│[0m[0m [1m--publish-quiet[0m option. You can also add this to your [1mcucumber.yml:[0m          [1m[32m│[0m[0m
+[1m[32m│[0m[0m [1mdefault: --publish-quiet[0m                                                     [1m[32m│[0m[0m
+[1m[32m└──────────────────────────────────────────────────────────────────────────────┘[0m[0m
+rake aborted!
+Bundler::GemspecError: 
+[!] There was an error while loading `deploy-context.gemspec`: syntax error, unexpected local variable or method, expecting ')' -   s.date    = File.read(File.joi...
+  ^
+/src/deploy-context.gemspec:26: syntax error, unexpected local variable or method, expecting ')'
+	s.extra_rdoc_files = ["README....
+	^
+. Bundler cannot continue.
+
+ #  from /src/deploy-context.gemspec:15
+ #  -------------------------------------------
+ #    s.version = File.read(File.join(__dir__, 'VERSION')
+ >    s.date    = File.read(File.join(__dir__, 'DATE')
+ #  
+ #  -------------------------------------------
+/src/libraries/deploy-context/helpers/rake_tasks.rb:4:in `<top (required)>'
+/src/Rakefile:1:in `require_relative'
+/src/Rakefile:1:in `<top (required)>'
+
+Caused by:
+SyntaxError: /src/deploy-context.gemspec:15: syntax error, unexpected local variable or method, expecting ')'
+  s.date    = File.read(File.joi...
+  ^
+/src/deploy-context.gemspec:26: syntax error, unexpected local variable or method, expecting ')'
+	s.extra_rdoc_files = ["README....
+	^
+/src/libraries/deploy-context/helpers/rake_tasks.rb:4:in `<top (required)>'
+/src/Rakefile:1:in `require_relative'
+/src/Rakefile:1:in `<top (required)>'
+(See full trace by running task with --trace)
+cucumber is not working
+ffi-libarchive could not be loaded, libarchive is probably not installed on system, archive_file will not be available
+[2023-10-06T01:56:36+00:00] WARN: *****************************************
+[2023-10-06T01:56:36+00:00] WARN: Did not find config file: /etc/chef/client.rb. Using command line options instead.
+[2023-10-06T01:56:36+00:00] WARN: *****************************************
++---------------------------------------------+
+            Chef License Acceptance
+
+Before you can continue, 2 product licenses
+must be accepted. View the license at
+https://www.chef.io/end-user-license-agreement/
+
+Licenses that need accepting:
+  * Chef Infra Client
+  * Chef InSpec
+
+Do you accept the 2 product licenses ([32;1myes[0m/no)?
+
+> [2K[1G> y[2K[1G> ye[2K[1G> yes[2K[1G> yes
+[1A[2K[1G> [1myes[0m
+
+Persisting 2 product licenses...
+[32m✔[0m 2 product licenses persisted.
+
++---------------------------------------------+
+Chef Infra Client, version 18.0.185
+Patents: https://www.chef.io/patents
+Infra Phase starting
+[2023-10-06T01:56:38+00:00] ERROR: shard_seed: Failed to get dmi property serial_number: is dmidecode installed?
+Creating a new client identity for jimbozental.jimbodragon.qc.to using the validator key.
+[2023-10-06T01:56:38+00:00] WARN: Failed to read the private key /etc/chef/validation.pem: #<Errno::ENOENT: No such file or directory @ rb_sysopen - /etc/chef/validation.pem>
+
+================================================================================
+[31mChef Infra Client encountered an error attempting to create the client "jimbozental.jimbodragon.qc.to"[0m
+================================================================================
+
+Private Key Not Found:
+----------------------
+Your private key could not be loaded. If the key file exists, ensure that it is
+readable by Chef Infra Client.
+
+Relevant Config Settings:
+-------------------------
+validation_key "/etc/chef/validation.pem"
+
+System Info:
+------------
+chef_version=18.0.185
+ruby=ruby 3.0.3p157 (2021-11-24 revision 3fb7d2cadc) [x86_64-linux]
+program_name=/hab/pkgs/core/ruby/3.0.3/20230822120944/bin/chef-client
+executable=/hab/pkgs/core/ruby/3.0.3/20230822120944/bin/chef-client
+
+
+Running handlers:
+[2023-10-06T01:56:38+00:00] ERROR: Running exception handlers
+Running handlers complete
+[2023-10-06T01:56:38+00:00] ERROR: Exception handlers complete
+Infra Phase failed. 0 resources updated in 01 seconds
+[2023-10-06T01:56:38+00:00] WARN: Failed to read the private key /etc/chef/client.pem: #<Errno::ENOENT: No such file or directory @ rb_sysopen - /etc/chef/client.pem>
+[2023-10-06T01:56:38+00:00] WARN: Error while reporting run start to Data Collector. URL: https://localhost:443/data-collector Exception: No HTTP Code -- I cannot read /etc/chef/client.pem, which you told me to use to sign requests! 
+[2023-10-06T01:56:38+00:00] WARN: Failed to read the private key /etc/chef/client.pem: #<Errno::ENOENT: No such file or directory @ rb_sysopen - /etc/chef/client.pem>
+[2023-10-06T01:56:38+00:00] WARN: Error while reporting run start to Data Collector. URL: https://localhost:443/data-collector Exception: No HTTP Code -- I cannot read /etc/chef/client.pem, which you told me to use to sign requests! 
+[2023-10-06T01:56:38+00:00] FATAL: Stacktrace dumped to /var/chef/cache/chef-stacktrace.out
+[2023-10-06T01:56:38+00:00] FATAL: ---------------------------------------------------------------------------------------
+[2023-10-06T01:56:38+00:00] FATAL: PLEASE PROVIDE THE CONTENTS OF THE stacktrace.out FILE (above) IF YOU FILE A BUG REPORT
+[2023-10-06T01:56:38+00:00] FATAL: ---------------------------------------------------------------------------------------
+[2023-10-06T01:56:38+00:00] FATAL: Chef::Exceptions::PrivateKeyMissing: I cannot read /etc/chef/validation.pem, which you told me to use to sign requests!
+chef-client is not working
+sh: line 1: chef: command not found
+chef cli is not available
+   [1;36mdeploy-context: [1;37mRunning post-compile tests[0m
+Executing action do_default_check at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+plan.rb:75:in `<main>': [1mundefined method `do_default_check' for main:Object ([1;4mNoMethodError[m[1m)[m
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mInstalling[0m
+created directory: '/hab/pkgs/jimbodragon/'
+created directory: '/hab/pkgs/jimbodragon/deploy-context/'
+created directory: '/hab/pkgs/jimbodragon/deploy-context/2.13.0/'
+created directory: '/hab/pkgs/jimbodragon/deploy-context/2.13.0/20231006015312'
+Executing action do_install at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mWriting configuration[0m
+   [1;36mdeploy-context: [1;37mWriting service management scripts[0m
+   [1;36mdeploy-context: [1;37mStripping unneeded symbols from binaries and libraries[0m
+Executing action do_strip at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mBuilding package metadata[0m
+/hab/cache/src/deploy-context-2.13.0 /src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mGenerating blake2b hashes of all files in the package[0m
+   [1;36mdeploy-context: [1;37mGenerating signed metadata FILES[0m
+[0m[0m[1m[33m» Signing deploy-context_blake2bsums[0m
+[0m[0m[1m[36m☛ Signing[0m deploy-context_blake2bsums with jimbodragon-20221104194800 to create /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231006015312/FILES
+[0m[0m[1m[35m★ Signed artifact /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231006015312/FILES.[0m
+/src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mCreating manifest[0m
+   [1;36mdeploy-context: [1;37mGenerating package artifact[0m
+/hab/pkgs/core/tar/1.34/20220311102650/bin/tar: Removing leading `/' from member names
+/hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231006015312-x86_64-linux.tar (1/1)
+  100 %           6236 B / 30.0 KiB = 0.203                                    
+[0m[0m[1m[33m» Signing /hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231006015312-x86_64-linux.tar.xz[0m
+[0m[0m[1m[36m☛ Signing[0m /hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231006015312-x86_64-linux.tar.xz with jimbodragon-20221104194800 to create /hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231006015312-x86_64-linux.hart
+[0m[0m[1m[35m★ Signed artifact /hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231006015312-x86_64-linux.hart.[0m
+'/hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231006015312-x86_64-linux.hart' -> '/src/results/jimbodragon-deploy-context-2.13.0-20231006015312-x86_64-linux.hart'
+   [1;36mdeploy-context: [1;37mhab-plan-build cleanup[0m
+Executing action do_end at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37m[0m
+   [1;36mdeploy-context: [1;37mSource Path: /src/habitat/plan.sh[0m
+   [1;36mdeploy-context: [1;37mInstalled Path: /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231006015312[0m
+   [1;36mdeploy-context: [1;37mArtifact: /src/results/jimbodragon-deploy-context-2.13.0-20231006015312-x86_64-linux.hart[0m
+   [1;36mdeploy-context: [1;37mBuild Report: /src/results/last_build.env[0m
+   [1;36mdeploy-context: [1;37mSHA256 Checksum: 57f1b1e2273f78f90942812d9cbd375d330a4dcbc1707dcc0e7b8ade967a24c3[0m
+   [1;36mdeploy-context: [1;37mBlake2b Checksum: 5f8d9e272d833652716de5fab6ab5ff3a8705089ae451c4dc764a9640230ca05[0m
+   [1;36mdeploy-context: [1;37m[0m
+   [1;36mdeploy-context: [1;37mI love it when a plan.sh comes together.[0m
+   [1;36mdeploy-context: [1;37m[0m
+   [1;36mdeploy-context: [1;37mBuild time: 3m26s[0m
+
+Script done on 2023-10-06 01:56:38+00:00 [COMMAND_EXIT_CODE="0"]

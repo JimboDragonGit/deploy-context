@@ -46,7 +46,7 @@ Use the option 'test' to test the context
 Use the option 'reset' to execute the local cycle once
 Use the option 'help' to show this message
 MESSAGE_END
-        context.error_log(context.context_name, help_message)
+        context.warning_context_log(context.context_name, help_message)
       end
 
       def actions_permitted?(action)
@@ -63,19 +63,19 @@ MESSAGE_END
           false
         else
           if context.respond_to?(action)
-            context.debug_log("\n\nStarting Action '#{action}'")
+            context.debug_context_log(context.context_name, "\n\nStarting Action '#{action}'")
             context.send(action)
           else
-            context.error_log(context, "Action '#{action}' is unavailable")
+            context.error_context_log(context, "Action '#{action}' is unavailable")
             false
           end
         end
         # context.commit
         if state_action || ! state_action.kind_of?(Integer)
-          context.debug_log "\n\nAction #{action} executed correctly in context #{context}.context_name"
+          context.debug_context_log context.context_name, "\n\nAction #{action} executed correctly in context #{context}.context_name"
           state_action.perform unless state_action.kind_of?(TrueClass)
         else
-          context.error_log(context.context_name, "Failed to execute action #{action} in context #{context.context_name} resulting to a #{state_action}")
+          context.error_context_log(context.context_name, "Failed to execute action #{action} in context #{context.context_name} resulting to a #{state_action}")
         end
       end
     end

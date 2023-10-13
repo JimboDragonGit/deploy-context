@@ -22,6 +22,7 @@ chef_version '>= 16.0'
 #
 # source_url 'https://github.com/<insert_org_here>/deploy-context'
 
+# depends 'apt'
 depends 'chef-ingredient'
 
 # gem 'diff-lcs', '~> 1.5'

@@ -1,0 +1,586 @@
+Script started on 2023-10-07 06:40:29+00:00 [<not executed on terminal>]
+   [1;36m: [1;37mLoading /src/habitat/plan.sh/x86_64-linux/plan.sh[0m
+   [1;36mdeploy-context: [1;37mPlan loaded[0m
+   [1;36mdeploy-context: [1;37mValidating plan metadata[0m
+   [1;36mdeploy-context: [1;37mUsing HAB_BIN=/hab/pkgs/core/hab/1.6.568/20220831181712/bin/hab for installs, signing, and hashing[0m
+   [1;36mdeploy-context: [1;37mhab-plan-build setup[0m
+Executing action do_begin at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+/src/habitat/plan.sh/x86_64-linux/plan.sh: line 199: ruby: command not found
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mWriting pre_build file[0m
+   [1;36mdeploy-context: [1;37mResolving build dependencies[0m
+   [1;36mdeploy-context: [1;37mResolving run dependencies[0m
+[0m[0m[1m[33m» Installing core/scaffolding-ruby[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/scaffolding-ruby in the 'stable' channel
+[0m[0m[1m[32m☛ Verifying[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[32m☛ Verifying[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m→ Using[0m core/tar/1.34/20220311102650
+[0m[0m[1m[32m→ Using[0m core/rq/0.10.4/20220311112035
+[0m[0m[1m[32m☛ Verifying[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m→ Using[0m core/make/4.3/20220311105244
+[0m[0m[1m[32m☛ Verifying[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m☛ Verifying[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m☛ Verifying[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m☛ Verifying[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m☛ Verifying[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m☛ Verifying[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m→ Using[0m core/readline/8.1/20220311102318
+[0m[0m[1m[32m☛ Verifying[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
+[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
+[0m[0m[1m[32m☛ Verifying[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
+[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
+[0m[0m[1m[32m→ Using[0m core/grep/3.7/20220311102158
+[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
+[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
+[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
+[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
+[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
+[0m[0m[1m[32m☛ Verifying[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m→ Using[0m core/binutils/2.37/20220311083411
+[0m[0m[1m[32m→ Using[0m core/mpfr/4.1.0/20220311084038
+[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
+[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
+[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
+[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
+[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
+[0m[0m[1m[32m✓ Installed[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m✓ Installed[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m✓ Installed[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m✓ Installed[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m✓ Installed[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m✓ Installed[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m✓ Installed[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m✓ Installed[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m✓ Installed[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m✓ Installed[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m✓ Installed[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m✓ Installed[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[35m★ Install of core/scaffolding-ruby/0.8.11/20230822123619 complete with 12 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved dependency 'core/scaffolding-ruby' to /hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619[0m
+   [1;36mdeploy-context: [1;37mSetting up environment[0m
+   [1;36mdeploy-context: [1;37mPopulating runtime environment from dependencies[0m
+   [1;36mdeploy-context: [1;37mPopulating buildtime environment from dependencies[0m
+   [1;36mdeploy-context: [1;37mLayering runtime environment on top of system environment[0m
+   [1;36mdeploy-context: [1;37mLayering buildtime environment on top of system environment[0m
+   [1;36mdeploy-context: [1;37mSetting PATH=/hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619/bin:/hab/pkgs/core/bundler/2.2.33/20230822122238/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/gcc/9.4.0/20220311084247/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/pkg-config/0.29.2/20220311100618/bin:/hab/pkgs/core/ruby/3.0.3/20230822120944/bin:/hab/pkgs/core/busybox-static/1.34.1/20220311112317/bin:/hab/pkgs/core/openssl/1.0.2zf/20230816063107/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/libtool/2.4.6/20220311102922/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/pkgs/core/hab-plan-build/1.6.568/20220831183139/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.568/20220831181712/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin:/hab/pkgs/core/hab-plan-build/1.6.568/20220831183139/bin:/hab/pkgs/core/diffutils/3.8/20220311104054/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/mg/20180927/20220311114614/bin:/hab/pkgs/core/util-linux/2.37/20220311105626/bin:/hab/pkgs/core/vim/8.2.2825/20220311114125/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.568/20220831181712/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/libmd/1.0.4/20220311114359/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin[0m
+created directory: '/hab/cache/src'
+Executing action do_download at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_download in context #<Context::DeployContext:0x00000000013803f0>
+Is Default action 'do_download' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_download'
+[33mDon't run Bundler as root. Bundler can ask for sudo if it is needed, and
+installing your bundle as root will break this application for all non-root
+users on this machine.[0m
+Resolving dependencies...Fetching gem metadata from https://rubygems.org/........
+...............................................................................................................................................
+[32mFetching public_suffix 5.0.3[0m
+[32mFetching aws-partitions 1.834.0[0m
+[32mFetching bcrypt_pbkdf 1.1.0[0m
+Using bundler 2.2.33
+[32mFetching builder 3.2.4[0m
+[32mFetching fuzzyurl 0.9.0[0m
+[32mFetching aws-eventstream 1.2.0[0m
+[32mFetching tomlrb 1.3.0[0m
+[32mFetching chef-vault 4.1.11[0m
+[32mFetching jmespath 1.6.2[0m
+[32mFetching connection_pool 2.4.1[0m
+[32mFetching ruby2_keywords 0.0.5[0m
+[32mFetching bigdecimal 3.1.4[0m
+[32mFetching minitest 5.20.0[0m
+[32mFetching concurrent-ruby 1.2.2[0m
+[32mFetching mutex_m 0.1.2[0m
+[32mFetching base64 0.1.1[0m
+[32mInstalling aws-eventstream 1.2.0[0m
+[32mInstalling builder 3.2.4[0m
+[32mInstalling ruby2_keywords 0.0.5[0m
+[32mInstalling connection_pool 2.4.1[0m
+[32mInstalling bcrypt_pbkdf 1.1.0 with native extensions[0m
+[32mInstalling public_suffix 5.0.3[0m
+[32mInstalling bigdecimal 3.1.4 with native extensions[0m
+[32mInstalling chef-vault 4.1.11[0m
+[32mInstalling tomlrb 1.3.0[0m
+[32mInstalling fuzzyurl 0.9.0[0m
+[32mInstalling base64 0.1.1[0m
+[32mInstalling mutex_m 0.1.2[0m
+[32mInstalling jmespath 1.6.2[0m
+[32mInstalling aws-partitions 1.834.0[0m
+[32mFetching libyajl2 2.1.0[0m
+[32mFetching hashie 4.1.0[0m
+[32mInstalling minitest 5.20.0[0m
+[32mInstalling concurrent-ruby 1.2.2[0m
+[32mFetching mixlib-log 3.0.9[0m
+[32mFetching rack 2.2.8[0m
+[32mFetching uuidtools 2.2.0[0m
+[32mFetching webrick 1.8.1[0m
+[32mFetching ffi 1.16.3[0m
+[32mInstalling mixlib-log 3.0.9[0m
+[32mFetching diff-lcs 1.3[0m
+[32mInstalling hashie 4.1.0[0m
+[32mFetching erubis 2.7.0[0m
+[32mInstalling uuidtools 2.2.0[0m
+[32mFetching iniparse 1.5.0[0m
+[32mFetching faraday-net_http 3.0.2[0m
+[32mInstalling rack 2.2.8[0m
+[32mInstalling libyajl2 2.1.0 with native extensions[0m
+[32mFetching tty-color 0.6.0[0m
+[32mFetching strings-ansi 0.2.0[0m
+[32mInstalling diff-lcs 1.3[0m
+[32mInstalling iniparse 1.5.0[0m
+[32mFetching unicode-display_width 2.5.0[0m
+[32mFetching unicode_utils 1.4.0[0m
+[32mInstalling webrick 1.8.1[0m
+[32mInstalling faraday-net_http 3.0.2[0m
+[32mFetching tty-cursor 0.7.1[0m
+[32mInstalling strings-ansi 0.2.0[0m
+[32mInstalling erubis 2.7.0[0m
+[32mFetching tty-screen 0.8.1[0m
+[32mInstalling tty-color 0.6.0[0m
+[32mInstalling unicode-display_width 2.5.0[0m
+[32mFetching wisper 2.0.1[0m
+[32mInstalling tty-cursor 0.7.1[0m
+[32mFetching method_source 1.0.0[0m
+[32mInstalling unicode_utils 1.4.0[0m
+[32mFetching multipart-post 2.3.0[0m
+[32mInstalling tty-screen 0.8.1[0m
+[32mFetching parallel 1.23.0[0m
+[32mInstalling wisper 2.0.1[0m
+[32mFetching parslet 1.8.2[0m
+[32mFetching coderay 1.1.3[0m
+[32mInstalling parallel 1.23.0[0m
+[32mInstalling method_source 1.0.0[0m
+[32mInstalling multipart-post 2.3.0[0m
+[32mFetching rspec-support 3.11.1[0m
+[32mFetching rubyzip 2.3.2[0m
+[32mFetching semverse 3.0.2[0m
+[32mFetching sslshake 1.3.1[0m
+[32mFetching thor 1.2.2[0m
+[32mInstalling parslet 1.8.2[0m
+[32mInstalling rspec-support 3.11.1[0m
+[32mInstalling coderay 1.1.3[0m
+[32mInstalling semverse 3.0.2[0m
+[32mInstalling sslshake 1.3.1[0m
+[32mFetching json 2.6.3[0m
+[32mInstalling rubyzip 2.3.2[0m
+[32mInstalling ffi 1.16.3 with native extensions[0m
+[32mFetching net-ssh 7.2.0[0m
+[32mInstalling thor 1.2.2[0m
+[32mFetching mixlib-authentication 3.0.10[0m
+[32mFetching mixlib-cli 2.1.8[0m
+[32mInstalling mixlib-cli 2.1.8[0m
+[32mInstalling json 2.6.3 with native extensions[0m
+[32mInstalling mixlib-authentication 3.0.10[0m
+[32mFetching date 3.3.3[0m
+[32mFetching timeout 0.4.0[0m
+[32mFetching ipaddress 0.8.3[0m
+[32mInstalling net-ssh 7.2.0[0m
+[32mFetching plist 3.7.0[0m
+[32mFetching wmi-lite 1.0.7[0m
+[32mFetching syslog-logger 1.6.8[0m
+[32mFetching proxifier 1.0.3[0m
+[32mInstalling timeout 0.4.0[0m
+[32mFetching http-accept 1.7.0[0m
+[32mInstalling ipaddress 0.8.3[0m
+[32mInstalling plist 3.7.0[0m
+[32mInstalling wmi-lite 1.0.7[0m
+[32mInstalling date 3.3.3 with native extensions[0m
+[32mFetching unf_ext 0.0.8.2[0m
+[32mInstalling proxifier 1.0.3[0m
+[32mInstalling http-accept 1.7.0[0m
+[32mInstalling syslog-logger 1.6.8[0m
+[32mFetching mime-types-data 3.2023.1003[0m
+[32mFetching netrc 0.11.0[0m
+[32mFetching erubi 1.12.0[0m
+[32mFetching httpclient 2.8.3[0m
+[32mFetching rexml 3.2.6[0m
+[32mFetching little-plugger 1.1.4[0m
+[32mInstalling erubi 1.12.0[0m
+[32mInstalling netrc 0.11.0[0m
+[32mFetching multi_json 1.15.0[0m
+[32mInstalling little-plugger 1.1.4[0m
+[32mFetching nori 2.6.0[0m
+[32mFetching rubyntlm 0.6.3[0m
+[32mFetching minitar 0.9[0m
+[32mFetching molinillo 0.8.0[0m
+[32mInstalling mime-types-data 3.2023.1003[0m
+[32mInstalling rexml 3.2.6[0m
+[32mInstalling multi_json 1.15.0[0m
+[32mInstalling nori 2.6.0[0m
+[32mInstalling molinillo 0.8.0[0m
+[32mInstalling rubyntlm 0.6.3[0m
+[32mInstalling minitar 0.9[0m
+[32mInstalling unf_ext 0.0.8.2 with native extensions[0m
+[32mFetching middleware 0.1.0[0m
+[32mInstalling httpclient 2.8.3[0m
+[32mInstalling middleware 0.1.0[0m
+[32mFetching thread_safe 0.3.6[0m
+[32mFetching cucumber-tag-expressions 2.0.4[0m
+[32mFetching cucumber-cucumber-expressions 10.3.0[0m
+[32mFetching multi_test 0.1.2[0m
+[32mFetching lockfile 2.1.3[0m
+[32mFetching git-version-bump 0.19.1[0m
+[32mFetching ed25519 1.3.0[0m
+[32mFetching excon 0.104.0[0m
+[32mInstalling thread_safe 0.3.6[0m
+[32mInstalling cucumber-tag-expressions 2.0.4[0m
+[32mInstalling cucumber-cucumber-expressions 10.3.0[0m
+[32mInstalling multi_test 0.1.2[0m
+[32mFetching mixlib-versioning 1.2.12[0m
+[32mInstalling lockfile 2.1.3[0m
+[32mFetching retryable 3.0.5[0m
+[32mFetching ruby-shadow 2.5.1[0m
+[32mInstalling git-version-bump 0.19.1[0m
+[32mInstalling ed25519 1.3.0 with native extensions[0m
+[32mInstalling mixlib-versioning 1.2.12[0m
+[32mFetching securerandom 0.2.2[0m
+[32mInstalling retryable 3.0.5[0m
+[32mInstalling excon 0.104.0[0m
+[32mFetching docile 1.4.0[0m
+[32mInstalling ruby-shadow 2.5.1 with native extensions[0m
+[32mInstalling securerandom 0.2.2[0m
+[32mFetching simplecov-html 0.12.3[0m
+[32mFetching simplecov_json_formatter 0.1.4[0m
+[32mFetching unix-crypt 1.3.1[0m
+[32mInstalling docile 1.4.0[0m
+[32mInstalling unix-crypt 1.3.1[0m
+[32mInstalling simplecov_json_formatter 0.1.4[0m
+[32mFetching drb 2.1.1[0m
+[32mFetching mixlib-config 3.0.27[0m
+[32mFetching addressable 2.8.5[0m
+[32mFetching aws-sigv4 1.6.0[0m
+[32mFetching mixlib-archive 1.1.7[0m
+[32mFetching pastel 0.8.0[0m
+[32mInstalling drb 2.1.1[0m
+[32mInstalling mixlib-config 3.0.27[0m
+[32mFetching faraday 2.7.11[0m
+[32mInstalling aws-sigv4 1.6.0[0m
+[32mInstalling simplecov-html 0.12.3[0m
+[32mInstalling addressable 2.8.5[0m
+[32mInstalling pastel 0.8.0[0m
+[32mInstalling mixlib-archive 1.1.7[0m
+[32mFetching tty-reader 0.9.0[0m
+[32mFetching i18n 1.14.1[0m
+[32mFetching pry 0.14.2[0m
+[32mFetching tzinfo 2.0.6[0m
+[32mFetching chef-utils 18.0.185[0m
+[32mInstalling faraday 2.7.11[0m
+[32mInstalling tty-reader 0.9.0[0m
+[32mFetching rspec-core 3.11.0[0m
+[32mInstalling i18n 1.14.1[0m
+[32mFetching rspec-expectations 3.11.1[0m
+[32mInstalling pry 0.14.2[0m
+[32mInstalling chef-utils 18.0.185[0m
+[32mInstalling tzinfo 2.0.6[0m
+[32mInstalling rspec-core 3.11.0[0m
+[32mFetching rspec-mocks 3.11.2[0m
+[32mFetching net-protocol 0.2.1[0m
+[32mFetching strings 0.2.1[0m
+[32mInstalling rspec-expectations 3.11.1[0m
+[32mFetching net-scp 4.0.0[0m
+[32mInstalling net-protocol 0.2.1[0m
+[32mInstalling strings 0.2.1[0m
+[32mInstalling rspec-mocks 3.11.2[0m
+[32mFetching net-sftp 4.0.0[0m
+[32mInstalling net-scp 4.0.0[0m
+[32mFetching net-ssh-gateway 2.0.0[0m
+[32mFetching logging 2.3.1[0m
+[32mFetching solve 4.0.4[0m
+[32mInstalling net-ssh-gateway 2.0.0[0m
+[32mFetching mime-types 3.5.1[0m
+[32mInstalling net-sftp 4.0.0[0m
+[32mFetching gyoku 1.4.0[0m
+[32mFetching docker-api 2.2.0[0m
+[32mInstalling solve 4.0.4[0m
+[32mFetching aws-sdk-core 3.185.1[0m
+[32mFetching vault 0.18.1[0m
+[32mInstalling mime-types 3.5.1[0m
+[32mInstalling docker-api 2.2.0[0m
+[32mInstalling logging 2.3.1[0m
+[32mFetching ffi-yajl 2.6.0[0m
+[32mInstalling gyoku 1.4.0[0m
+[32mFetching cookbook-omnifetch 0.12.2[0m
+[32mInstalling vault 0.18.1[0m
+[32mFetching tty-prompt 0.23.1[0m
+[32mInstalling cookbook-omnifetch 0.12.2[0m
+[32mFetching down 5.4.1[0m
+[32mFetching faraday-follow_redirects 0.3.0[0m
+[32mFetching mixlib-shellout 3.2.7[0m
+[32mFetching tty-box 0.7.0[0m
+[32mInstalling aws-sdk-core 3.185.1[0m
+[32mInstalling tty-prompt 0.23.1[0m
+[32mInstalling ffi-yajl 2.6.0 with native extensions[0m
+[32mInstalling down 5.4.1[0m
+[32mInstalling tty-box 0.7.0[0m
+[32mFetching tty-table 0.12.0[0m
+[32mInstalling faraday-follow_redirects 0.3.0[0m
+[32mInstalling mixlib-shellout 3.2.7[0m
+[32mFetching rspec 3.11.0[0m
+[32mFetching rspec-its 1.3.0[0m
+[32mFetching simplecov 0.22.0[0m
+[32mInstalling rspec 3.11.0[0m
+[32mFetching mixlib-install 3.12.27[0m
+[32mFetching chef-config 18.0.185[0m
+[32mInstalling rspec-its 1.3.0[0m
+[32mFetching license-acceptance 2.1.13[0m
+[32mInstalling tty-table 0.12.0[0m
+[32mInstalling mixlib-install 3.12.27[0m
+[32mInstalling simplecov 0.22.0[0m
+[32mFetching unf 0.1.4[0m
+[32mInstalling license-acceptance 2.1.13[0m
+[32mInstalling chef-config 18.0.185[0m
+[32mFetching chef-telemetry 1.1.1[0m
+[32mInstalling unf 0.1.4[0m
+[32mInstalling chef-telemetry 1.1.1[0m
+[32mFetching domain_name 0.5.20190701[0m
+[32mFetching aws-sdk-kms 1.72.0[0m
+[32mFetching aws-sdk-ec2 1.412.0[0m
+[32mFetching aws-sdk-secretsmanager 1.83.0[0m
+[32mInstalling domain_name 0.5.20190701[0m
+[32mInstalling aws-sdk-secretsmanager 1.83.0[0m
+[32mInstalling aws-sdk-kms 1.72.0[0m
+[32mFetching http-cookie 1.0.5[0m
+[32mFetching aws-sdk-s3 1.136.0[0m
+[32mInstalling http-cookie 1.0.5[0m
+[32mInstalling aws-sdk-ec2 1.412.0[0m
+[32mFetching rest-client 2.1.0[0m
+[32mInstalling aws-sdk-s3 1.136.0[0m
+[32mInstalling rest-client 2.1.0[0m
+[32mFetching chef-zero 15.0.11[0m
+[32mInstalling chef-zero 15.0.11[0m
+[32mFetching cheffish 17.1.5[0m
+[32mInstalling cheffish 17.1.5[0m
+[32mFetching activesupport 7.1.0[0m
+[32mInstalling activesupport 7.1.0[0m
+[32mFetching protobuf-cucumber 3.10.8[0m
+[32mInstalling protobuf-cucumber 3.10.8[0m
+[32mFetching cucumber-messages 12.4.0[0m
+[32mInstalling cucumber-messages 12.4.0[0m
+[32mFetching cucumber-gherkin 14.2.0[0m
+[32mFetching cucumber-html-formatter 7.2.0[0m
+[32mInstalling cucumber-gherkin 14.2.0[0m
+[32mFetching cucumber-core 7.1.0[0m
+[32mInstalling cucumber-core 7.1.0[0m
+[32mInstalling cucumber-html-formatter 7.2.0[0m
+[32mFetching cucumber-wire 3.1.0[0m
+[32mInstalling cucumber-wire 3.1.0[0m
+[32mFetching time 0.2.2[0m
+[32mInstalling time 0.2.2[0m
+[32mFetching net-ftp 0.2.0[0m
+[32mInstalling net-ftp 0.2.0[0m
+[32mFetching ffi-libarchive 1.1.13[0m
+[32mFetching train-core 3.10.8[0m
+[32mFetching sys-uname 1.2.3[0m
+[32mFetching corefoundation 0.3.13[0m
+[32mFetching gssapi 1.3.1[0m
+[32mInstalling ffi-libarchive 1.1.13[0m
+[32mInstalling corefoundation 0.3.13[0m
+[32mInstalling gssapi 1.3.1[0m
+[32mInstalling sys-uname 1.2.3[0m
+[32mInstalling train-core 3.10.8[0m
+[32mFetching cucumber-create-meta 1.0.0[0m
+[32mFetching winrm 2.3.6[0m
+[32mFetching inspec-core 5.22.3[0m
+[32mFetching train-rest 0.5.0[0m
+[32mFetching ohai 18.1.3[0m
+[32mInstalling cucumber-create-meta 1.0.0[0m
+[32mInstalling winrm 2.3.6[0m
+[32mFetching cucumber 4.1.0[0m
+[32mInstalling train-rest 0.5.0[0m
+[32mInstalling ohai 18.1.3[0m
+[32mInstalling inspec-core 5.22.3[0m
+[32mInstalling cucumber 4.1.0[0m
+[32mFetching winrm-fs 1.3.5[0m
+[32mInstalling winrm-fs 1.3.5[0m
+[32mFetching winrm-elevated 1.2.3[0m
+[32mInstalling winrm-elevated 1.2.3[0m
+[32mFetching train-winrm 0.2.13[0m
+[32mFetching test-kitchen 3.5.0[0m
+[32mInstalling train-winrm 0.2.13[0m
+[32mInstalling test-kitchen 3.5.0[0m
+[32mFetching chef 18.0.185[0m
+[32mFetching kitchen-dokken 2.19.1[0m
+[32mFetching kitchen-ec2 3.17.0[0m
+[32mFetching kitchen-vagrant 1.14.1[0m
+[32mInstalling kitchen-dokken 2.19.1[0m
+[32mInstalling kitchen-vagrant 1.14.1[0m
+[32mInstalling kitchen-ec2 3.17.0[0m
+[32mInstalling chef 18.0.185[0m
+[32mFetching chef-bin 18.0.185[0m
+[32mFetching chef-cli 5.6.14[0m
+[32mInstalling chef-bin 18.0.185[0m
+[32mInstalling chef-cli 5.6.14[0m
+Using deploy-context 2.13.0 from source at `.` and installing its executables
+[32mBundle complete! 1 Gemfile dependency, 169 gems now installed.[0m
+[32mUse `bundle info [gemname]` to see where a bundled gem is installed.[0m
+[32mPost-install message from rubyzip:[0m
+RubyZip 3.0 is coming!
+**********************
+
+The public API of some Rubyzip classes has been modernized to use named
+parameters for optional arguments. Please check your usage of the
+following classes:
+  * `Zip::File`
+  * `Zip::Entry`
+  * `Zip::InputStream`
+  * `Zip::OutputStream`
+
+Please ensure that your Gemfiles and .gemspecs are suitably restrictive
+to avoid an unexpected breakage when 3.0 is released (e.g. ~> 2.3.0).
+See https://github.com/rubyzip/rubyzip for details. The Changelog also
+lists other enhancements and bugfixes that have been implemented since
+version 2.3.0.
+[32mPost-install message from minitar:[0m
+The `minitar` executable is no longer bundled with `minitar`. If you are
+expecting this executable, make sure you also install `minitar-cli`.
+
+
+Action do_download executed correctly in context #<Context::DeployContext:0x00000000013803f0>
+Executing action do_verify at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_verify in context #<Context::DeployContext:0x0000000000dfb9e8>
+Is Default action 'do_verify' permitted?
+The answer is false through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Unavailable action 'do_verify' for context deploy-context as false and false for Context::DeployContext
+Executing action do_clean at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_clean in context #<Context::DeployContext:0x00000000027879e8>
+Is Default action 'do_clean' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_clean'
+
+
+Action do_clean executed correctly in context #<Context::DeployContext:0x00000000027879e8>
+Executing action do_unpack at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_unpack in context #<Context::DeployContext:0x0000000001b503f0>
+Is Default action 'do_unpack' permitted?
+The answer is false through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Unavailable action 'do_unpack' for context deploy-context as false and false for Context::DeployContext
+   [1;36mdeploy-context: [1;37mSetting build environment[0m
+created directory: '/hab/cache/src/deploy-context-2.13.0'
+   [1;36mdeploy-context: [1;37mSetting PREFIX=/hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007064029[0m
+   [1;36mdeploy-context: [1;37mSetting LD_RUN_PATH=[0m
+   [1;36mdeploy-context: [1;37mSetting CFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting CXXFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting CPPFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting LDFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting PKG_CONFIG_PATH=[0m
+   [1;36mdeploy-context: [1;37mPreparing to build[0m
+Executing action do_prepare at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_prepare in context #<Context::DeployContext:0x0000000002150750>
+Is Default action 'do_prepare' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_prepare'
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+
+
+Action do_prepare executed correctly in context #<Context::DeployContext:0x0000000002150750>
+   [1;36mdeploy-context: [1;37mBuilding[0m
+Executing action do_build at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_build in context #<Context::DeployContext:0x0000000001cac848>
+Is Default action 'do_build' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_build'
+executed command chef-client -z -o deploy-context
+Mix the cookbook deploy-context: NilClass
+
+
+Action do_build executed correctly in context #<Context::DeployContext:0x0000000001cac848>
+   [1;36mdeploy-context: [1;37mRunning post-compile tests[0m
+Executing action do_check at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_check in context #<Context::DeployContext:0x0000000001770820>
+Is Default action 'do_check' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_check'
+
+
+deploy-context ERROR: Failed to execute action do_check in context deploy-context resulting to a 
+
+   [1;36mdeploy-context: [1;37mInstalling[0m
+created directory: '/hab/pkgs/jimbodragon/'
+created directory: '/hab/pkgs/jimbodragon/deploy-context/'
+created directory: '/hab/pkgs/jimbodragon/deploy-context/2.13.0/'
+created directory: '/hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007064029'
+Executing action do_install at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_install in context #<Context::DeployContext:0x00000000018787b8>
+Is Default action 'do_install' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_install'
+[0m[0m[1m[31m✗✗✗[0m
+[0m[0m[1m[31m✗✗✗ [403 Forbidden][0m
+[0m[0m[1m[31m✗✗✗[0m
+Starting an Habitat job [0m[0m[1m[32mΩ Creating[0m build job for habitat/plan.sh (x86_64-linux)
+
+
+Action do_install executed correctly in context #<Context::DeployContext:0x00000000018787b8>
+   [1;36mdeploy-context: [1;37mWriting configuration[0m
+   [1;36mdeploy-context: [1;37mWriting service management scripts[0m
+   [1;36mdeploy-context: [1;37mStripping unneeded symbols from binaries and libraries[0m
+Executing action do_strip at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_strip in context #<Context::DeployContext:0x00000000014a44c0>
+Is Default action 'do_strip' permitted?
+The answer is false through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Unavailable action 'do_strip' for context deploy-context as false and false for Context::DeployContext
+   [1;36mdeploy-context: [1;37mBuilding package metadata[0m
+/hab/cache/src/deploy-context-2.13.0 /src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mGenerating blake2b hashes of all files in the package[0m
+   [1;36mdeploy-context: [1;37mGenerating signed metadata FILES[0m
+[0m[0m[1m[33m» Signing deploy-context_blake2bsums[0m
+[0m[0m[1m[36m☛ Signing[0m deploy-context_blake2bsums with jimbodragon-20221104194800 to create /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007064029/FILES
+[0m[0m[1m[35m★ Signed artifact /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007064029/FILES.[0m
+/src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mCreating manifest[0m
+   [1;36mdeploy-context: [1;37mGenerating package artifact[0m
+/hab/pkgs/core/tar/1.34/20220311102650/bin/tar: Removing leading `/' from member names
+/hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231007064029-x86_64-linux.tar (1/1)
+  100 %           6236 B / 30.0 KiB = 0.203                                    
+[0m[0m[1m[33m» Signing /hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231007064029-x86_64-linux.tar.xz[0m
+[0m[0m[1m[36m☛ Signing[0m /hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231007064029-x86_64-linux.tar.xz with jimbodragon-20221104194800 to create /hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231007064029-x86_64-linux.hart
+[0m[0m[1m[35m★ Signed artifact /hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231007064029-x86_64-linux.hart.[0m
+'/hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231007064029-x86_64-linux.hart' -> '/src/results/jimbodragon-deploy-context-2.13.0-20231007064029-x86_64-linux.hart'
+   [1;36mdeploy-context: [1;37mhab-plan-build cleanup[0m
+Executing action do_end at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_end in context #<Context::DeployContext:0x0000000002120398>
+Is Default action 'do_end' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_end'
+Executing chef command ["exec", "hab", "bldr", "job", "promote", "240945649925288755", "unstable"]
+executed command chef exec hab bldr job promote 240945649925288755 unstable
+
+
+deploy-context ERROR: Failed to execute action do_end in context deploy-context resulting to a 
+
+   [1;36mdeploy-context: [1;37m[0m
+   [1;36mdeploy-context: [1;37mSource Path: /src/habitat/plan.sh[0m
+   [1;36mdeploy-context: [1;37mInstalled Path: /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007064029[0m
+   [1;36mdeploy-context: [1;37mArtifact: /src/results/jimbodragon-deploy-context-2.13.0-20231007064029-x86_64-linux.hart[0m
+   [1;36mdeploy-context: [1;37mBuild Report: /src/results/last_build.env[0m
+   [1;36mdeploy-context: [1;37mSHA256 Checksum: 03305ab2c7ff3b3b3cae06b14a38cc2830278adceae18d0d92a938d3ba35bbe0[0m
+   [1;36mdeploy-context: [1;37mBlake2b Checksum: e2d3218104344f1b629cb562f648b8450c4bdab6590952654eebf308398b2a83[0m
+   [1;36mdeploy-context: [1;37m[0m
+   [1;36mdeploy-context: [1;37mI love it when a plan.sh comes together.[0m
+   [1;36mdeploy-context: [1;37m[0m
+   [1;36mdeploy-context: [1;37mBuild time: 0m46s[0m
+
+Script done on 2023-10-07 06:41:15+00:00 [COMMAND_EXIT_CODE="0"]

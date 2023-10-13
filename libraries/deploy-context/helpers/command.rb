@@ -4,20 +4,21 @@ module Context
       ENV.key?('CONTEXTDEBUG') && ! ENV['CONTEXTDEBUG'].nil? && ENV['CONTEXTDEBUG']
     end
 
-    def log(message)
+    def context_log(message)
       puts message
     end
 
-    def debug_log(message)
-      log message if false # if debug?
+    def debug_context_log(name, message)
+      debug_message = "\n\n#{name} DEBUG: #{message}\n\n"
+      log debug_message if debug?
     end
 
-    def warning_log(name, message)
+    def warning_context_log(name, message)
       warning_message = "\n\n#{name} WARNING: #{message}\n\n"
       log warning_message
     end
 
-    def error_log(name, message)
+    def error_context_log(name, message)
       error_message = "\n\n#{name} ERROR: #{message}\n\n"
       log error_message
       log caller
@@ -34,7 +35,7 @@ module Context
     end
 
     def get_shell_data(command_line)
-      debug_log "Get data from command #{command_line.join(' ')}"
+      debug_context_log 'Get data from command', command_line
       `#{command_line.join(' ')}`
     end
 
@@ -45,14 +46,14 @@ module Context
       when :run_as_admin
         execute_command(sudo_command(command), command_type)
       when :get_data
-        debug_log "get data command = #{command} on type #{command_type}"
+        debug_context_log "get data command = #{command} on type #{command_type}"
         get_shell_data(command)
       when :fork
         fork(command.join(' '))
       else
         error_log(context_name, "Unknown command type #{command_type}")
       end
-      debug_log "\n\nexecuted command #{command.join(' ')}"
+      debug_context_log 'Execute Command', "\n\nexecuted command #{command.join(' ')}"
       command_state
     end
 
@@ -65,7 +66,7 @@ module Context
     end
 
     def write_in_system_file(file, content)
-      debug_log "write_in_system_file #{[file, content]}"
+      debug_context_log "Write in file system", [file, content]
       system("touch #{file}")
       ::File.write(file, content)
       system("chmod 644 #{file}") unless Gem.win_platform?

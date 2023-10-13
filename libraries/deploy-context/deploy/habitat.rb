@@ -22,7 +22,7 @@ module Context
       end
 
       def start_habitat_job(context, commands = [], command_type = :system)
-        context.debug_log("Starting an Habitat job #{context.get_shell_data(['hab', 'bldr', 'job', 'start', 'habitat/plan.sh'])}", command_type)
+        context.debug_context_log(context.context_name, "Starting an Habitat job #{context.get_shell_data(['hab', 'bldr', 'job', 'start', 'habitat/plan.sh'])}", command_type)
         true
       end
 
@@ -31,7 +31,7 @@ module Context
           context.set_hab_build_id(context, context.hab_latest_build_status(context).id)
           context.habitat(context, ['bldr', 'job', 'promote', job_id, channel]) 
         else
-          context.error_log(context.context_name, "Promote context #{context.context_name} impossible")
+          context.error_context_log(context.context_name, "Promote context #{context.context_name} impossible")
         end
       end
 
@@ -71,16 +71,16 @@ module Context
           "| grep '#{context.context_name}' | head -n 1",
         ]
         # build_result.result_file = File.join(context.temp_dir, 'raw_return.txt')
-        # context.debug_log "Getting data from command #{build_result.command} and result at #{build_result.result_file}"
+        # context.debug_context_log context.context_name, "Getting data from command #{build_result.command} and result at #{build_result.result_file}"
         # File.write(build_result.result_file, context.get_shell_data(build_result.command))
         # build_result.build_id_raw = "#{File.read(build_result.result_file)}"
-        # context.debug_log "And raw return from file is #{build_result.build_id_raw}"
+        # context.debug_context_log context.context_name, "And raw return from file is #{build_result.build_id_raw}"
         # build_result.return_arr = build_result.build_id_raw.split("\n")
-        # context.debug_log "And return array is #{build_result.return_arr}"
+        # context.debug_context_log context.context_name, "And return array is #{build_result.return_arr}"
         # build_result.return_str = build_result.return_arr[3]
-        # context.debug_log "And return string is #{build_result.return_str}"
+        # context.debug_context_log context.context_name, "And return string is #{build_result.return_str}"
         # build_result.result_arr = build_result.return_str.split(' ')
-        # context.debug_log "And result array is #{build_result.result_arr}"
+        # context.debug_context_log context.context_name, "And result array is #{build_result.result_arr}"
 
         result_array = context.get_shell_data(build_result.command).split("\n")[0].split(' ')
         build_result.id = result_array[1]
@@ -103,7 +103,7 @@ module Context
       def set_hab_build_id(context, new_build_id)
         context.git_build(context)
         # , "#{organisation_name}/#{context_name}"
-        context.debug_log "Setting the build ID from #{context.hab_build_id(context)} to #{new_build_id}"
+        context.debug_context_log context.context_name, "Setting the build ID from #{context.hab_build_id(context)} to #{new_build_id}"
 
         File.write(context.get_context_file(context, 'HAB_BUILD_ID'), new_build_id)
       end

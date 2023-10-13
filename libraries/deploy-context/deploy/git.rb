@@ -11,7 +11,7 @@ module Context
           context.git_pull(context)
           true
         else
-          context.error_log context.context_name, "Cloning from source in #{Dir.pwd}"
+          context.error_context_log context.context_name, "Cloning from source in #{Dir.pwd}"
           local_dir = File.join(Dir.pwd, context.context_name)
           context.bundle_git context, ["clone git@github.com:JimboDragonGit/#{context.context_name}.git"] unless ::Dir.exist?(local_dir)
           context.move_folder(local_dir)
@@ -21,7 +21,7 @@ module Context
 
       def git_pull(context)
         context.git_build(context) unless context.actual_working_directory?
-        context.debug_log "Git pull result: #{context.bundle_git context, %w(pull origin master)}"
+        context.debug_context_log context.context_name, "Git pull result: #{context.bundle_git context, %w(pull origin master)}"
       end
 
       def git_commit(context)

@@ -1,0 +1,7 @@
+{
+  "status_file": "deploy-status.json",
+  "kitchen_suite": null,
+  "plan_path": "habitat/plan.sh",
+  "branch_name": null,
+  "status": "habitat_promote_ok"
+}

@@ -1,0 +1,314 @@
+Script started on 2023-10-07 07:43:45+00:00 [<not executed on terminal>]
+   [1;36m: [1;37mLoading /src/habitat/plan.sh/x86_64-linux/plan.sh[0m
+   [1;36mdeploy-context: [1;37mPlan loaded[0m
+   [1;36mdeploy-context: [1;37mValidating plan metadata[0m
+   [1;36mdeploy-context: [1;37mUsing HAB_BIN=/hab/pkgs/core/hab/1.6.568/20220831181712/bin/hab for installs, signing, and hashing[0m
+   [1;36mdeploy-context: [1;37mhab-plan-build setup[0m
+Executing action do_begin at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+/src/habitat/plan.sh/x86_64-linux/plan.sh: line 199: ruby: command not found
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mWriting pre_build file[0m
+   [1;36mdeploy-context: [1;37mResolving build dependencies[0m
+   [1;36mdeploy-context: [1;37mResolving run dependencies[0m
+[0m[0m[1m[33m» Installing core/scaffolding-ruby[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/scaffolding-ruby in the 'stable' channel
+[0m[0m[1m[32m☛ Verifying[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[32m☛ Verifying[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m→ Using[0m core/tar/1.34/20220311102650
+[0m[0m[1m[32m→ Using[0m core/rq/0.10.4/20220311112035
+[0m[0m[1m[32m☛ Verifying[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m→ Using[0m core/make/4.3/20220311105244
+[0m[0m[1m[32m☛ Verifying[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m☛ Verifying[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m☛ Verifying[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m☛ Verifying[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m☛ Verifying[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m☛ Verifying[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m→ Using[0m core/readline/8.1/20220311102318
+[0m[0m[1m[32m☛ Verifying[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
+[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
+[0m[0m[1m[32m☛ Verifying[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
+[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
+[0m[0m[1m[32m→ Using[0m core/grep/3.7/20220311102158
+[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
+[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
+[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
+[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
+[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
+[0m[0m[1m[32m☛ Verifying[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m→ Using[0m core/binutils/2.37/20220311083411
+[0m[0m[1m[32m→ Using[0m core/mpfr/4.1.0/20220311084038
+[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
+[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
+[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
+[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
+[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
+[0m[0m[1m[32m✓ Installed[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m✓ Installed[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m✓ Installed[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m✓ Installed[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m✓ Installed[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m✓ Installed[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m✓ Installed[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m✓ Installed[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m✓ Installed[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m✓ Installed[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m✓ Installed[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m✓ Installed[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[35m★ Install of core/scaffolding-ruby/0.8.11/20230822123619 complete with 12 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved dependency 'core/scaffolding-ruby' to /hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619[0m
+   [1;36mdeploy-context: [1;37mSetting up environment[0m
+   [1;36mdeploy-context: [1;37mPopulating runtime environment from dependencies[0m
+   [1;36mdeploy-context: [1;37mPopulating buildtime environment from dependencies[0m
+   [1;36mdeploy-context: [1;37mLayering runtime environment on top of system environment[0m
+   [1;36mdeploy-context: [1;37mLayering buildtime environment on top of system environment[0m
+   [1;36mdeploy-context: [1;37mSetting PATH=/hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619/bin:/hab/pkgs/core/bundler/2.2.33/20230822122238/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/gcc/9.4.0/20220311084247/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/pkg-config/0.29.2/20220311100618/bin:/hab/pkgs/core/ruby/3.0.3/20230822120944/bin:/hab/pkgs/core/busybox-static/1.34.1/20220311112317/bin:/hab/pkgs/core/openssl/1.0.2zf/20230816063107/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/libtool/2.4.6/20220311102922/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/pkgs/core/hab-plan-build/1.6.568/20220831183139/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.568/20220831181712/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin:/hab/pkgs/core/hab-plan-build/1.6.568/20220831183139/bin:/hab/pkgs/core/diffutils/3.8/20220311104054/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/mg/20180927/20220311114614/bin:/hab/pkgs/core/util-linux/2.37/20220311105626/bin:/hab/pkgs/core/vim/8.2.2825/20220311114125/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.568/20220831181712/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/libmd/1.0.4/20220311114359/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin[0m
+created directory: '/hab/cache/src'
+Executing action do_download at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_download in context #<Context::DeployContext:0x0000000000e35dc8>
+Is Default action 'do_download' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_download'
+/src/libraries/deploy-context/ruby-studio.rb:11:in `do_download': [1msuper: no superclass method `do_download' for #<Context::DeployContext:0x0000000000e35dc8 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon", @contexts=[], @rubystudio=#<Context::RubyStudio:0x0000000000e35968 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon">> ([1;4mNoMethodError[m[1m)[m
+	from /src/libraries/context-manager.rb:18:in `do_download'
+	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
+	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
+	from /src/habitat/plan.sh/plan.rb:3:in `<top (required)>'
+	from plan.rb:3:in `require_relative'
+	from plan.rb:3:in `<main>'
+Ruby not avaialble yet
+Executing action do_verify at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_verify in context #<Context::DeployContext:0x0000000002395da8>
+Is Default action 'do_verify' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_verify'
+/src/libraries/context-manager.rb:27:in `do_verify': [1msuper: no superclass method `do_verify' for #<Context::DeployContext:0x0000000002395da8 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon", @contexts=[], @rubystudio=#<Context::RubyStudio:0x0000000002395948 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon">> ([1;4mNoMethodError[m[1m)[m
+	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
+	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
+	from /src/habitat/plan.sh/plan.rb:3:in `<top (required)>'
+	from plan.rb:3:in `require_relative'
+	from plan.rb:3:in `<main>'
+Ruby not avaialble yet
+Executing action do_clean at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_clean in context #<Context::DeployContext:0x00000000025960d0>
+Is Default action 'do_clean' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_clean'
+
+
+Action do_clean executed correctly in context #<Context::DeployContext:0x00000000025960d0>
+Executing action do_unpack at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_unpack in context #<Context::DeployContext:0x0000000001d5dd00>
+Is Default action 'do_unpack' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_unpack'
+/src/libraries/context-manager.rb:45:in `do_unpack': [1msuper: no superclass method `do_unpack' for #<Context::DeployContext:0x0000000001d5dd00 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon", @contexts=[], @rubystudio=#<Context::RubyStudio:0x0000000001d5d8a0 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon">> ([1;4mNoMethodError[m[1m)[m
+	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
+	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
+	from /src/habitat/plan.sh/plan.rb:3:in `<top (required)>'
+	from plan.rb:3:in `require_relative'
+	from plan.rb:3:in `<main>'
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mSetting build environment[0m
+created directory: '/hab/cache/src/deploy-context-2.13.0'
+   [1;36mdeploy-context: [1;37mSetting PREFIX=/hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007074345[0m
+   [1;36mdeploy-context: [1;37mSetting LD_RUN_PATH=[0m
+   [1;36mdeploy-context: [1;37mSetting CFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting CXXFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting CPPFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting LDFLAGS=[0m
+   [1;36mdeploy-context: [1;37mSetting PKG_CONFIG_PATH=[0m
+   [1;36mdeploy-context: [1;37mPreparing to build[0m
+Executing action do_prepare at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_prepare in context #<Context::DeployContext:0x0000000001f8ddf0>
+Is Default action 'do_prepare' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_prepare'
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+
+
+Action do_prepare executed correctly in context #<Context::DeployContext:0x0000000001f8ddf0>
+   [1;36mdeploy-context: [1;37mBuilding[0m
+Executing action do_build at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_build in context #<Context::DeployContext:0x00000000017e5d00>
+Is Default action 'do_build' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_build'
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+Executing chef command ["exec", "git", "add ."]
+executed command chef exec git add .
+Executing chef command ["exec", "git", "commit -m 'Create deploy-context automatic commit'"]
+sh: line 1: chef: command not found
+executed command chef exec git commit -m 'Create deploy-context automatic commit'
+
+
+Building cookbook deploy-context
+
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+/src/libraries/deploy-context/deploy/cookbook.rb:90:in `cookbook_version': [1mwrong number of arguments (given 0, expected 1) ([1;4mArgumentError[m[1m)[m
+	from /src/libraries/deploy-context/studio/base.rb:19:in `version'
+	from /src/libraries/deploy-context/deploy/context.rb:9:in `shorten_version'
+	from /src/libraries/deploy-context/deploy/cookbook.rb:96:in `set_cookbook_version'
+	from /src/libraries/deploy-context/deploy/cookbook.rb:39:in `cookbook_build'
+	from /src/libraries/deploy-context/cookbook-studio.rb:12:in `do_build'
+	from /src/libraries/context-manager.rb:63:in `do_build'
+	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
+	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
+	from plan.rb:3:in `<main>'
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mRunning post-compile tests[0m
+Executing action do_check at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_check in context #<Context::DeployContext:0x000000000139e990>
+Is Default action 'do_check' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_check'
+
+
+Building cookbook deploy-context
+
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+/src/libraries/deploy-context/deploy/cookbook.rb:90:in `cookbook_version': [1mwrong number of arguments (given 0, expected 1) ([1;4mArgumentError[m[1m)[m
+	from /src/libraries/deploy-context/studio/base.rb:19:in `version'
+	from /src/libraries/deploy-context/deploy/context.rb:9:in `shorten_version'
+	from /src/libraries/deploy-context/deploy/cookbook.rb:96:in `set_cookbook_version'
+	from /src/libraries/deploy-context/deploy/cookbook.rb:39:in `cookbook_build'
+	from /src/libraries/deploy-context/deploy/cookbook.rb:44:in `cookbook_test'
+	from /src/libraries/deploy-context/cookbook-studio.rb:19:in `do_check'
+	from /src/libraries/context-manager.rb:72:in `do_check'
+	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
+	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
+	from plan.rb:3:in `<main>'
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mInstalling[0m
+created directory: '/hab/pkgs/jimbodragon/'
+created directory: '/hab/pkgs/jimbodragon/deploy-context/'
+created directory: '/hab/pkgs/jimbodragon/deploy-context/2.13.0/'
+created directory: '/hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007074345'
+Executing action do_install at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_install in context #<Context::DeployContext:0x0000000000f15d60>
+Is Default action 'do_install' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_install'
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+Executing chef command ["exec", "rake", "release"]
+executed command chef exec rake release
+
+
+Building cookbook deploy-context
+
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+Executing chef command ["exec", "git", "pull"]
+executed command chef exec git pull
+Git pull result: 
+/src/libraries/deploy-context/deploy/cookbook.rb:90:in `cookbook_version': [1mwrong number of arguments (given 0, expected 1) ([1;4mArgumentError[m[1m)[m
+	from /src/libraries/deploy-context/studio/base.rb:19:in `version'
+	from /src/libraries/deploy-context/deploy/context.rb:9:in `shorten_version'
+	from /src/libraries/deploy-context/deploy/cookbook.rb:96:in `set_cookbook_version'
+	from /src/libraries/deploy-context/deploy/cookbook.rb:39:in `cookbook_build'
+	from /src/libraries/deploy-context/deploy/cookbook.rb:56:in `cookbook_install'
+	from /src/libraries/deploy-context/cookbook-studio.rb:26:in `do_install'
+	from /src/libraries/deploy-context/habitat-studio.rb:18:in `do_install'
+	from /src/libraries/context-manager.rb:81:in `do_install'
+	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
+	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
+	from plan.rb:3:in `<main>'
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mWriting configuration[0m
+   [1;36mdeploy-context: [1;37mWriting service management scripts[0m
+   [1;36mdeploy-context: [1;37mStripping unneeded symbols from binaries and libraries[0m
+Executing action do_strip at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_strip in context #<Context::DeployContext:0x0000000001569bf8>
+Is Default action 'do_strip' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_strip'
+/src/libraries/deploy-context/cookbook-studio.rb:31:in `do_strip': [1msuper: no superclass method `do_strip' for #<Context::DeployContext:0x0000000001569bf8 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon", @contexts=[], @rubystudio=#<Context::RubyStudio:0x00000000015697e8 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon">> ([1;4mNoMethodError[m[1m)[m
+	from /src/libraries/context-manager.rb:90:in `do_strip'
+	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
+	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
+	from /src/habitat/plan.sh/plan.rb:3:in `<top (required)>'
+	from plan.rb:3:in `require_relative'
+	from plan.rb:3:in `<main>'
+Ruby not avaialble yet
+   [1;36mdeploy-context: [1;37mBuilding package metadata[0m
+/hab/cache/src/deploy-context-2.13.0 /src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mGenerating blake2b hashes of all files in the package[0m
+   [1;36mdeploy-context: [1;37mGenerating signed metadata FILES[0m
+[0m[0m[1m[33m» Signing deploy-context_blake2bsums[0m
+[0m[0m[1m[36m☛ Signing[0m deploy-context_blake2bsums with jimbodragon-20221104194800 to create /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007074345/FILES
+[0m[0m[1m[35m★ Signed artifact /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007074345/FILES.[0m
+/src/habitat/plan.sh/x86_64-linux
+   [1;36mdeploy-context: [1;37mCreating manifest[0m
+   [1;36mdeploy-context: [1;37mGenerating package artifact[0m
+/hab/pkgs/core/tar/1.34/20220311102650/bin/tar: Removing leading `/' from member names
+/hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231007074345-x86_64-linux.tar (1/1)
+  100 %           6232 B / 30.0 KiB = 0.203                                    
+[0m[0m[1m[33m» Signing /hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231007074345-x86_64-linux.tar.xz[0m
+[0m[0m[1m[36m☛ Signing[0m /hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231007074345-x86_64-linux.tar.xz with jimbodragon-20221104194800 to create /hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231007074345-x86_64-linux.hart
+[0m[0m[1m[35m★ Signed artifact /hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231007074345-x86_64-linux.hart.[0m
+'/hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231007074345-x86_64-linux.hart' -> '/src/results/jimbodragon-deploy-context-2.13.0-20231007074345-x86_64-linux.hart'
+   [1;36mdeploy-context: [1;37mhab-plan-build cleanup[0m
+Executing action do_end at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
+Searching method do_end in context #<Context::DeployContext:0x0000000001ee9ea8>
+Is Default action 'do_end' permitted?
+The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_build_in_habitat", "do_promote"]'
+
+
+Starting Action 'do_end'
+executed command chef-client -o deploy-context
+Mix the cookbook deploy-context: NilClass
+Executing chef command ["exec", "hab", "bldr", "job", "promote", "240945649925288755", "unstable"]
+executed command chef exec hab bldr job promote 240945649925288755 unstable
+
+
+Action do_end executed correctly in context #<Context::DeployContext:0x0000000001ee9ea8>
+   [1;36mdeploy-context: [1;37m[0m
+   [1;36mdeploy-context: [1;37mSource Path: /src/habitat/plan.sh[0m
+   [1;36mdeploy-context: [1;37mInstalled Path: /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007074345[0m
+   [1;36mdeploy-context: [1;37mArtifact: /src/results/jimbodragon-deploy-context-2.13.0-20231007074345-x86_64-linux.hart[0m
+   [1;36mdeploy-context: [1;37mBuild Report: /src/results/last_build.env[0m
+   [1;36mdeploy-context: [1;37mSHA256 Checksum: 5439056f87c3e52e1dd210c106cc74e3f58ceda9e646d931ebc04a47b590eb6a[0m
+   [1;36mdeploy-context: [1;37mBlake2b Checksum: 14d054b3f31a2824e00e11f62f6407ebd7d443be3ecd7d13f932886908d2cf12[0m
+   [1;36mdeploy-context: [1;37m[0m
+   [1;36mdeploy-context: [1;37mI love it when a plan.sh comes together.[0m
+   [1;36mdeploy-context: [1;37m[0m
+   [1;36mdeploy-context: [1;37mBuild time: 0m13s[0m
+
+Script done on 2023-10-07 07:43:58+00:00 [COMMAND_EXIT_CODE="0"]

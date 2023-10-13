@@ -3,8 +3,6 @@ require_relative 'dummy_knife.rb'
 module Context
   module Knife
     class DefaultKnifeContext < Chef::Knife
-      include CommandHelper
-
       banner "knife default knife context"
 
       deps do

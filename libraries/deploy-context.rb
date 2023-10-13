@@ -2,6 +2,20 @@
 require_relative 'context-knife-context'
 
 module Context
+  module DeployKnifeConstant
+    def organisation_name
+      'deploy-context'
+    end
+
+    def context_name
+      'deploy-context'
+    end
+
+    def context_folder
+      File.join(ENV['HOME'], 'deploy-context')
+    end
+  end
+
   class DeployKnifeContext < Manager
     banner "knife deploy knife context"
 
@@ -24,29 +38,16 @@ module Context
   end
 
   class DeployContext < Manager
+    include DeployKnifeConstant
     banner "knife deploy context"
 
     deps do
       Knife::DefaultKnifeContext.load_deps
-      # puts "S'a prend ça"
-      # require "chef/json_compat"
-      # true
     end
 
-    option :omg,
-      :short => '-O',
-      :long => '--omg',
-      :description => "I'm so excited! 4"
-
     def run
-      # Context::DeployContext.deployer.send(config[:omg])
-      if config[:omg]
-        # Oh yeah, we are pumped.
-        puts "OMG HELLO WORLD!!!4!!44"
-      else
-        # meh
-        puts "I am just a fucking example. 4"
-      end
+      run_cmd = %w(knife context) + [name_args[0], 'studio'] + name_args[1...]
+      execute_command(run_cmd)
     end
   end
 end

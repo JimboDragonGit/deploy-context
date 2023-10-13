@@ -10,7 +10,7 @@
 end
 
 Quand('on initialise le projet') do
-  stop_test('Le projet est déjà initialisé', :already_initialized) if File.exist?(context_suite.status_file) && context_suite.status != :initialisation_fail
+  stop_test('Le projet est déjà initialisé', :already_initialized) if context_suite.status == :no_kitchen
 end
 
 Alors('converge la suite kitchen') do
@@ -23,7 +23,7 @@ Alors('vérify que le tout est OK') do
   else
     :not_all_ok
   end
-  stop_test("la suite kitchen #{context_suite.suite_kitchen} est en échec", context_suite.status) if context_suite.status == :initialisation_fail
+  stop_test("la suite kitchen #{context_suite.suite_kitchen} est en échec", context_suite.status) if context_suite.status == :no_kitchen
 end
 
 Alors('enregistre le statut {word}') do |status|
@@ -50,4 +50,8 @@ end
 
 Alors('test la suite kitchen') do
   stop_test("Kitchen suite #{context_suite.kitchen_suite} test failed", :test_kitchen_failed) unless kitchen_tested_successfully?
+end
+
+Alors("nettoyer le fichiers vérouillés") do
+  cookbook_clean(self)
 end

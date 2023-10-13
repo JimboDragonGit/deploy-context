@@ -6,6 +6,7 @@ module Context
       end
 
       def shorten_version(context)
+        context.debug_context_context_log "Shorten Version", "Getting shorten version #{context.version}"
         context.version.canonical_segments[0..2].join('.')
       end
 

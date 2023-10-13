@@ -5,25 +5,16 @@ require 'json'
 
 require 'git-version-bump'
 
-require_relative 'deploy/context'
-require_relative 'deploy/context-suite'
-require_relative 'deploy/cookbook'
-require_relative 'deploy/cucumber'
-require_relative 'deploy/deployer'
-require_relative 'deploy/git'
-require_relative 'deploy/habitat'
-require_relative 'deploy/ruby'
-require_relative 'deploy/vagrant'
+require_relative 'helpers/command'
+require_relative 'helpers/rake_tasks'
 
 require_relative 'studio/default'
 require_relative 'studio/deployer'
 
-require_relative 'helpers/command'
-require_relative 'helpers/rake_tasks'
-
 require_relative 'steps/deploy'
 
 require_relative 'knife/default_knife_context'
+require_relative 'cucumber-suite'
 
 # require_relative 'ruby-studio'
 # require_relative 'cookbook-studio'
@@ -32,18 +23,7 @@ require_relative 'knife/default_knife_context'
 
 module Context
   class DefaultStudio < Knife::DefaultKnifeContext
-    include DeployHelpers::DeployerHelper
-    include DeployHelpers::GitHelper
-    include DeployHelpers::RubyHelper
-    include DeployHelpers::ContextHelper
-    include DeployHelpers::CookbookHelper
-    include DeployHelpers::RecipeHelper
-    include DeployHelpers::HabitatHelper
-    include DeployHelpers::CucumberHelper
-    include DeployHelpers::ContexSuiteHelper
-    include Studio::Base
-    include Studio::Default
-    include Steps::Deploy
+    include CucumberSuiteHelper
 
     # attr_reader :context_name
     # attr_reader :context_folder

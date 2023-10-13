@@ -1,0 +1,71 @@
+Script started on 2023-10-12 05:32:04+00:00 [<not executed on terminal>]
+   [1;36m: [1;37mLoading /src/habitat/plan.sh/x86_64-linux/plan.sh[0m
+   [1;36mdeploy-context: [1;37mPlan loaded[0m
+   [1;36mdeploy-context: [1;37mValidating plan metadata[0m
+   [1;36mdeploy-context: [1;37mUsing HAB_BIN=/hab/pkgs/core/hab/1.6.568/20220831181712/bin/hab for installs, signing, and hashing[0m
+   [1;36mdeploy-context: [1;37mhab-plan-build setup[0m
+   [1;36mdeploy-context: [1;37mWriting pre_build file[0m
+   [1;36mdeploy-context: [1;37mResolving scaffolding dependencies[0m
+[0m[0m[1m[33m» Installing core/scaffolding-ruby[0m
+[0m[0m[1m[32m☁ Determining[0m latest version of core/scaffolding-ruby in the 'stable' channel
+[0m[0m[1m[32m☛ Verifying[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[32m☛ Verifying[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m→ Using[0m core/tar/1.34/20220311102650
+[0m[0m[1m[32m→ Using[0m core/rq/0.10.4/20220311112035
+[0m[0m[1m[32m☛ Verifying[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m→ Using[0m core/make/4.3/20220311105244
+[0m[0m[1m[32m☛ Verifying[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m☛ Verifying[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m☛ Verifying[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m☛ Verifying[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m☛ Verifying[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m☛ Verifying[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m→ Using[0m core/readline/8.1/20220311102318
+[0m[0m[1m[32m☛ Verifying[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
+[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
+[0m[0m[1m[32m☛ Verifying[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
+[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
+[0m[0m[1m[32m→ Using[0m core/grep/3.7/20220311102158
+[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
+[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
+[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
+[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
+[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
+[0m[0m[1m[32m☛ Verifying[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m→ Using[0m core/binutils/2.37/20220311083411
+[0m[0m[1m[32m→ Using[0m core/mpfr/4.1.0/20220311084038
+[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
+[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
+[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
+[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
+[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
+[0m[0m[1m[32m✓ Installed[0m core/bundler/2.2.33/20230822122238
+[0m[0m[1m[32m✓ Installed[0m core/gcc/9.4.0/20220311084247
+[0m[0m[1m[32m✓ Installed[0m core/pkg-config/0.29.2/20220311100618
+[0m[0m[1m[32m✓ Installed[0m core/ruby/3.0.3/20230822120944
+[0m[0m[1m[32m✓ Installed[0m core/busybox-static/1.34.1/20220311112317
+[0m[0m[1m[32m✓ Installed[0m core/openssl/1.0.2zf/20230816063107
+[0m[0m[1m[32m✓ Installed[0m core/libyaml/0.2.5/20220312092318
+[0m[0m[1m[32m✓ Installed[0m core/libffi/3.4.2/20220311120049
+[0m[0m[1m[32m✓ Installed[0m core/nss-myhostname/0.3/20220311210919
+[0m[0m[1m[32m✓ Installed[0m core/libtool/2.4.6/20220311102922
+[0m[0m[1m[32m✓ Installed[0m core/libmpc/1.2.1/20220311084147
+[0m[0m[1m[32m✓ Installed[0m core/scaffolding-ruby/0.8.11/20230822123619
+[0m[0m[1m[35m★ Install of core/scaffolding-ruby/0.8.11/20230822123619 complete with 12 new packages installed.[0m
+   [1;36mdeploy-context: [1;37mResolved scaffolding dependency 'core/scaffolding-ruby' to /hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619[0m
+   [1;36mdeploy-context: [1;37mLoading Scaffolding /hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619/lib/scaffolding.sh[0m
+   [1;36mdeploy-context: [1;37mNo Gemfile.lock found, running 'bundle lock'[0m
+[31m
+[!] There was an error parsing `Gemfile`: undefined method `loaded_from=' for true:TrueClass. Bundler cannot continue.
+
+ #  from /src/habitat/plan.sh/Gemfile:17
+ #  -------------------------------------------
+ #  
+ >  gemspec
+ #  -------------------------------------------
+[0m   [1;36mdeploy-context: [1;37mBuild time: 0m11s[0m
+   [1;36mdeploy-context: [1;31mExiting on error[0m
+
+Script done on 2023-10-12 05:32:15+00:00 [COMMAND_EXIT_CODE="4"]

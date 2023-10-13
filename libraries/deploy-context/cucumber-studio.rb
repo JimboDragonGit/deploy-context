@@ -9,10 +9,16 @@ module Context
     end
 
     def run
-      if name_args[0]
-         additionnal_tag = name_args[1].nil? ? [] : ['--tags', "@#{name_args[1]}"]
-        cucumber(self, ['--profile', name_args[0]] + additionnal_tag)
+      case name_args[1]
+      when 'destroy'
+        execute_command(%w(knife context cookbook studio destroy)) if name_args[0] == 'kitchen'
+      else
+        if name_args[0]
+           additionnal_tag = name_args[1].nil? ? [] : ['--tags', "@#{name_args[1]}"]
+          return cucumber(self, ['--profile', name_args[0]] + additionnal_tag)
+        end
       end
+
     end
 
     def studio_available?
