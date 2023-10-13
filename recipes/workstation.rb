@@ -16,8 +16,8 @@ chef_gem 'kitchen-ec2'
 
 chef_ingredient 'chef-workstation'
 
-git File.join(ENV['HOME'], 'deploy-context') do
-  repository 'git@github.com:JimboDragonGit/deploy-context.git'
-  revision 'master'
-  action :sync
-end
+# git File.join(ENV['HOME'], 'deploy-context') do
+#   repository 'git@github.com:JimboDragonGit/deploy-context.git'
+#   revision 'master'
+#   action :sync
+# end
