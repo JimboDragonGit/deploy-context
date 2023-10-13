@@ -96,6 +96,8 @@ module Context
       def write_cookbook_version
         File.write('VERSION', GVB.version)
         File.write('DATE', GVB.date)
+        File.write(File.join('habitat/plan.sh', 'VERSION'), GVB.version)
+        File.write(File.join('habitat/plan.sh', 'DATE'), GVB.date)
       end
 
       def verify_habitat?

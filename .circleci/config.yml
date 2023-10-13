@@ -176,7 +176,7 @@ jobs:
       - checkout
       - run: |
             set -xu
-            ruby bin/deploy-context do_end
+            cucumber -t @initialize
   planning:
     docker:
       - image: cimg/ruby:3.1.2
@@ -190,7 +190,8 @@ jobs:
       - checkout
       - run: |
             set -xu
-            ruby bin/deploy-context do_end
+            cucumber -t @initialize
+            cucumber -t @planning
   execution:
     docker:
       - image: cimg/ruby:3.1.2
@@ -204,7 +205,9 @@ jobs:
       - checkout
       - run: |
             set -xu
-            ruby bin/deploy-context do_end
+            cucumber -t @initialize
+            cucumber -t @planning
+            cucumber -t @execution
   closure:
     docker:
       - image: cimg/ruby:3.1.2
@@ -218,6 +221,9 @@ jobs:
       - checkout
       - run: |
             set -xu
+            cucumber -t @initialize
+            cucumber -t @planning
+            cucumber -t @execution
             cucumber -t @closure
 #...
 workflows:
