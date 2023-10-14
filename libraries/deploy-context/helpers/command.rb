@@ -51,7 +51,7 @@ module Context
       when :fork
         fork(command.join(' '))
       else
-        error_log(context_name, "Unknown command type #{command_type}")
+        error_context_log(context_name, "Unknown command type #{command_type}")
       end
       debug_context_log 'Execute Command', "\n\nexecuted command #{command.join(' ')}"
       command_state

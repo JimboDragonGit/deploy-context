@@ -161,7 +161,7 @@ end
           #   context.show_help(context)
           #   true
           # else
-          #   context.error_log context.context_name, "Unknown setting #{action}"
+          #   context.error_context_log context.context_name, "Unknown setting #{action}"
           #   show_help(context)
           #   false
           # end

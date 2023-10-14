@@ -25,7 +25,7 @@ module Context
         if config[:context_name]
           log "Running on context #{config[:context_name]}, config = #{config.inspect}\n#{name_args}"
         else
-          error_log self, "Running on context #{config[:context_name]}"
+          error_context_log self, "Running on context #{config[:context_name]}"
         end
       end
     end
