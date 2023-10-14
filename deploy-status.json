@@ -2,6 +2,6 @@
   "status_file": "deploy-status.json",
   "kitchen_suite": null,
   "plan_path": null,
-  "branch_name": "master",
-  "status": "master_switch_issue"
+  "branch_name": null,
+  "status": "no_profile"
 }
