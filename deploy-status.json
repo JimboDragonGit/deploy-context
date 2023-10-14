@@ -3,5 +3,5 @@
   "kitchen_suite": null,
   "plan_path": "habitat/plan.sh",
   "branch_name": null,
-  "status": "build_fail"
+  "status": "habitat_promote_ok"
 }
