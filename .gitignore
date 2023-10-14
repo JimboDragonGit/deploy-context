@@ -23,3 +23,12 @@ Policyfile.lock.json
 
 .idea/
 
+results
+results/*
+.kitchen
+pkg/
+respond.txt
+deploy-status.json
+
+workstation-space/*
+

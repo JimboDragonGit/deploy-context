@@ -7,9 +7,9 @@
 # deployer = Context::DeployContext.deployer
 # deployer.cucumber
 
-chef_ingredient 'chef-workstation' do
-  architecture 'x86_64'
-end
+# chef_ingredient 'chef-workstation' do
+#   architecture 'x86_64'
+# end
 
 apt_update 'workstation' do
   action :update

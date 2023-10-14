@@ -3,6 +3,8 @@ require_relative 'dummy_knife.rb'
 module Context
   module Knife
     class DefaultKnifeContext < Chef::Knife
+      include Context::CommandHelper
+
       banner "knife default knife context"
 
       deps do
@@ -23,9 +25,9 @@ module Context
 
       def run
         if config[:context_name]
-          log "Running on context #{config[:context_name]}, config = #{config.inspect}\n#{name_args}"
+          context_log "Running on context #{config[:context_name]}, config = #{config.inspect}\n#{name_args}"
         else
-          error_context_log self, "Running on context #{config[:context_name]}"
+          warning_context_log self, "Running on context without name"
         end
       end
     end

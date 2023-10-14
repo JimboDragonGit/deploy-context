@@ -46,7 +46,19 @@ module Context
     end
 
     def run
-      run_cmd = %w(knife context) + [name_args[0], 'studio'] + name_args[1...]
+      run_cmd = if name_args.empty?
+        warning_context_log 'Deploy Context', 'No argumet passed'
+        show_help(self)
+        []
+      else
+        warning_context_log 'Deploy Context', name_args
+        tmp_cmd = %w(knife context) + [name_args[0], 'studio']
+        if name_args[1].nil?
+          tmp_cmd
+        else
+          tmp_cmd + name_args[1...]
+        end
+      end
       execute_command(run_cmd)
     end
   end

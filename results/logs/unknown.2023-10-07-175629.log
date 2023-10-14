@@ -1,1072 +1,0 @@
-Script started on 2023-10-07 17:56:29+00:00 [<not executed on terminal>]
-   [1;36m: [1;37mLoading /src/habitat/plan.sh/x86_64-linux/plan.sh[0m
-   [1;36mdeploy-context: [1;37mPlan loaded[0m
-   [1;36mdeploy-context: [1;37mValidating plan metadata[0m
-   [1;36mdeploy-context: [1;37mUsing HAB_BIN=/hab/pkgs/core/hab/1.6.521/20220603154827/bin/hab for installs, signing, and hashing[0m
-   [1;36mdeploy-context: [1;37mhab-plan-build setup[0m
-Executing action do_begin at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-/src/habitat/plan.sh/x86_64-linux/plan.sh: line 199: ruby: command not found
-Ruby not avaialble yet
-   [1;36mdeploy-context: [1;37mWriting pre_build file[0m
-   [1;36mdeploy-context: [1;37mResolving build dependencies[0m
-   [1;36mdeploy-context: [1;37mResolving run dependencies[0m
-[0m[0m[1m[33m» Installing core/scaffolding-ruby[0m
-[0m[0m[1m[32m☁ Determining[0m latest version of core/scaffolding-ruby in the 'stable' channel
-[0m[0m[1m[32m☛ Verifying[0m core/scaffolding-ruby/0.8.11/20230822123619
-[0m[0m[1m[32m☛ Verifying[0m core/bundler/2.2.33/20230822122238
-[0m[0m[1m[32m→ Using[0m core/tar/1.34/20220311102650
-[0m[0m[1m[32m→ Using[0m core/rq/0.10.4/20220311112035
-[0m[0m[1m[32m☛ Verifying[0m core/gcc/9.4.0/20220311084247
-[0m[0m[1m[32m→ Using[0m core/make/4.3/20220311105244
-[0m[0m[1m[32m☛ Verifying[0m core/pkg-config/0.29.2/20220311100618
-[0m[0m[1m[32m☛ Verifying[0m core/ruby/3.0.3/20230822120944
-[0m[0m[1m[32m☛ Verifying[0m core/busybox-static/1.34.1/20220311112317
-[0m[0m[1m[32m☛ Verifying[0m core/openssl/1.0.2zf/20230816063107
-[0m[0m[1m[32m☛ Verifying[0m core/libyaml/0.2.5/20220312092318
-[0m[0m[1m[32m☛ Verifying[0m core/libffi/3.4.2/20220311120049
-[0m[0m[1m[32m→ Using[0m core/readline/8.1/20220311102318
-[0m[0m[1m[32m☛ Verifying[0m core/nss-myhostname/0.3/20220311210919
-[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
-[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
-[0m[0m[1m[32m☛ Verifying[0m core/libtool/2.4.6/20220311102922
-[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
-[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
-[0m[0m[1m[32m→ Using[0m core/grep/3.7/20220311102158
-[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
-[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
-[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
-[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
-[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
-[0m[0m[1m[32m☛ Verifying[0m core/libmpc/1.2.1/20220311084147
-[0m[0m[1m[32m→ Using[0m core/binutils/2.37/20220311083411
-[0m[0m[1m[32m→ Using[0m core/mpfr/4.1.0/20220311084038
-[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
-[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
-[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
-[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
-[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
-[0m[0m[1m[32m✓ Installed[0m core/bundler/2.2.33/20230822122238
-[0m[0m[1m[32m✓ Installed[0m core/gcc/9.4.0/20220311084247
-[0m[0m[1m[32m✓ Installed[0m core/pkg-config/0.29.2/20220311100618
-[0m[0m[1m[32m✓ Installed[0m core/ruby/3.0.3/20230822120944
-[0m[0m[1m[32m✓ Installed[0m core/busybox-static/1.34.1/20220311112317
-[0m[0m[1m[32m✓ Installed[0m core/openssl/1.0.2zf/20230816063107
-[0m[0m[1m[32m✓ Installed[0m core/libyaml/0.2.5/20220312092318
-[0m[0m[1m[32m✓ Installed[0m core/libffi/3.4.2/20220311120049
-[0m[0m[1m[32m✓ Installed[0m core/nss-myhostname/0.3/20220311210919
-[0m[0m[1m[32m✓ Installed[0m core/libtool/2.4.6/20220311102922
-[0m[0m[1m[32m✓ Installed[0m core/libmpc/1.2.1/20220311084147
-[0m[0m[1m[32m✓ Installed[0m core/scaffolding-ruby/0.8.11/20230822123619
-[0m[0m[1m[35m★ Install of core/scaffolding-ruby/0.8.11/20230822123619 complete with 12 new packages installed.[0m
-   [1;36mdeploy-context: [1;37mResolved dependency 'core/scaffolding-ruby' to /hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619[0m
-   [1;36mdeploy-context: [1;37mSetting up environment[0m
-   [1;36mdeploy-context: [1;37mPopulating runtime environment from dependencies[0m
-   [1;36mdeploy-context: [1;37mPopulating buildtime environment from dependencies[0m
-   [1;36mdeploy-context: [1;37mLayering runtime environment on top of system environment[0m
-   [1;36mdeploy-context: [1;37mLayering buildtime environment on top of system environment[0m
-   [1;36mdeploy-context: [1;37mSetting PATH=/hab/pkgs/core/scaffolding-ruby/0.8.11/20230822123619/bin:/hab/pkgs/core/bundler/2.2.33/20230822122238/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/gcc/9.4.0/20220311084247/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/pkg-config/0.29.2/20220311100618/bin:/hab/pkgs/core/ruby/3.0.3/20230822120944/bin:/hab/pkgs/core/busybox-static/1.34.1/20220311112317/bin:/hab/pkgs/core/openssl/1.0.2zf/20230816063107/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/libtool/2.4.6/20220311102922/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/pkgs/core/hab-plan-build/1.6.521/20220603160622/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.521/20220603154827/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin:/hab/pkgs/core/hab-plan-build/1.6.521/20220603160622/bin:/hab/pkgs/core/diffutils/3.8/20220311104054/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/mg/20180927/20220311114614/bin:/hab/pkgs/core/util-linux/2.37/20220311105626/bin:/hab/pkgs/core/vim/8.2.2825/20220311114125/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.521/20220603154827/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/libmd/1.0.4/20220311114359/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin[0m
-created directory: '/hab/cache/src'
-Executing action do_download at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_download' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-/src/libraries/context-manager.rb:18:in `do_download': [1msuper: no superclass method `do_download' for #<Context::DeployContext:0x0000000001813368 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon", @contexts=[], @rubystudio=#<Context::RubyStudio:0x0000000001811360 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon">> ([1;4mNoMethodError[m[1m)[m
-	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
-	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
-	from /src/habitat/plan.sh/plan.rb:3:in `<top (required)>'
-	from plan.rb:3:in `require_relative'
-	from plan.rb:3:in `<main>'
-Ruby not avaialble yet
-Executing action do_verify at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_verify' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-/src/libraries/context-manager.rb:27:in `do_verify': [1msuper: no superclass method `do_verify' for #<Context::DeployContext:0x00000000027df2b0 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon", @contexts=[], @rubystudio=#<Context::RubyStudio:0x00000000027dd208 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon">> ([1;4mNoMethodError[m[1m)[m
-	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
-	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
-	from /src/habitat/plan.sh/plan.rb:3:in `<top (required)>'
-	from plan.rb:3:in `require_relative'
-	from plan.rb:3:in `<main>'
-Ruby not avaialble yet
-Executing action do_clean at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_clean' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-Executing action do_unpack at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_unpack' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-/src/libraries/context-manager.rb:45:in `do_unpack': [1msuper: no superclass method `do_unpack' for #<Context::DeployContext:0x00000000013a41d8 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon", @contexts=[], @rubystudio=#<Context::RubyStudio:0x000000000149be60 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon">> ([1;4mNoMethodError[m[1m)[m
-	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
-	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
-	from /src/habitat/plan.sh/plan.rb:3:in `<top (required)>'
-	from plan.rb:3:in `require_relative'
-	from plan.rb:3:in `<main>'
-Ruby not avaialble yet
-   [1;36mdeploy-context: [1;37mSetting build environment[0m
-created directory: '/hab/cache/src/deploy-context-2.13.0'
-   [1;36mdeploy-context: [1;37mSetting PREFIX=/hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007175629[0m
-   [1;36mdeploy-context: [1;37mSetting LD_RUN_PATH=[0m
-   [1;36mdeploy-context: [1;37mSetting CFLAGS=[0m
-   [1;36mdeploy-context: [1;37mSetting CXXFLAGS=[0m
-   [1;36mdeploy-context: [1;37mSetting CPPFLAGS=[0m
-   [1;36mdeploy-context: [1;37mSetting LDFLAGS=[0m
-   [1;36mdeploy-context: [1;37mSetting PKG_CONFIG_PATH=[0m
-   [1;36mdeploy-context: [1;37mPreparing to build[0m
-Executing action do_prepare at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_prepare' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-/src/libraries/context-manager.rb:54:in `do_prepare': [1msuper: no superclass method `do_prepare' for #<Context::DeployContext:0x0000000001c05c50 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon", @contexts=[], @rubystudio=#<Context::RubyStudio:0x0000000001c05840 @context_name="deploy-context", @context_folder="/src", @organisation_name="jimbodragon">> ([1;4mNoMethodError[m[1m)[m
-	from /src/libraries/deploy-context/deploy/deployer.rb:50:in `execute_action'
-	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
-	from plan.rb:3:in `<main>'
-Ruby not avaialble yet
-   [1;36mdeploy-context: [1;37mBuilding[0m
-Executing action do_build at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_build' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-executed command git pull origin master
-executed command git pull origin master
-
-
-deploy-context WARNING: Unable to set the cookbook version as GVB is not defined
-
-   [1;36mdeploy-context: [1;37mRunning post-compile tests[0m
-Executing action do_check at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_check' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-executed command git pull origin master
-executed command git pull origin master
-
-
-deploy-context WARNING: Unable to set the cookbook version as GVB is not defined
-
-context_version_file = /src/VERSION
-executed command kitchen test
-   [1;36mdeploy-context: [1;37mInstalling[0m
-created directory: '/hab/pkgs/jimbodragon/'
-created directory: '/hab/pkgs/jimbodragon/deploy-context/'
-created directory: '/hab/pkgs/jimbodragon/deploy-context/2.13.0/'
-created directory: '/hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007175629'
-Executing action do_install at version 2.13.0 in folder /src/habitat/plan.sh PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_install' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-executed command git pull origin master
-executed command git pull origin master
-
-
-deploy-context WARNING: Unable to set the cookbook version as GVB is not defined
-
-context_version_file = /src/VERSION
-[31mbundler: command not found: chef[0m
-[33mInstall missing gem executables with `bundle install`[0m
-executed command bundle exec chef install
-[31mBundler could not find compatible versions for gem "chef":
-  In Gemfile:
-    deploy-context was resolved to 2.13.0, which depends on
-      chef
-
-Could not find gem 'chef', which is required by gem 'deploy-context', in any of the sources.[0m
-executed command bundle exec gem install deploy-context
-[0m[0m[1m[31m∵ Missing[0m package for core/hab-studio/1.6.521
-[0m[0m[1m[33m» Installing core/hab-studio/1.6.521[0m
-[0m[0m[1m[32m☁ Determining[0m latest version of core/hab-studio/1.6.521 in the 'stable' channel
-[0m[0m[1m[32m↓ Downloading[0m core/hab-studio/1.6.521/20220603160937 for x86_64-linux
-    8.00 KB / 4.93 MB | [>-------------------------------] 0.16 % 81.53 MB/s 0s     16.00 KB / 4.93 MB / [>-----------------------------] 0.32 % 102.76 MB/s 0s     24.00 KB / 4.93 MB - [>-----------------------------] 0.48 % 135.94 MB/s 0s     32.00 KB / 4.93 MB \ [>-----------------------------] 0.63 % 160.07 MB/s 0s     40.00 KB / 4.93 MB | [>-----------------------------] 0.79 % 172.02 MB/s 0s     48.00 KB / 4.93 MB / [>-----------------------------] 0.95 % 183.26 MB/s 0s     56.00 KB / 4.93 MB - [>-----------------------------] 1.11 % 191.39 MB/s 0s     64.00 KB / 4.93 MB \ [>-----------------------------] 1.27 % 198.36 MB/s 0s     72.00 KB / 4.93 MB | [>-----------------------------] 1.43 % 206.04 MB/s 0s     80.00 KB / 4.93 MB / [>-----------------------------] 1.58 % 215.71 MB/s 0s     88.00 KB / 4.93 MB - [>-----------------------------] 1.74 % 225.50 MB/s 0s     96.00 KB / 4.93 MB \ [>-----------------------------] 1.90 % 233.45 MB/s 0s     104.00 KB / 4.93 MB | [>----------------------------] 2.06 % 241.30 MB/s 0s     112.00 KB / 4.93 MB / [>----------------------------] 2.22 % 248.81 MB/s 0s     120.00 KB / 4.93 MB - [>----------------------------] 2.38 % 253.13 MB/s 0s     128.00 KB / 4.93 MB \ [>----------------------------] 2.53 % 256.27 MB/s 0s     136.00 KB / 4.93 MB | [>----------------------------] 2.69 % 253.37 MB/s 0s     144.00 KB / 4.93 MB / [>----------------------------] 2.85 % 253.29 MB/s 0s     152.00 KB / 4.93 MB - [>----------------------------] 3.01 % 253.80 MB/s 0s     160.00 KB / 4.93 MB \ [>----------------------------] 3.17 % 256.92 MB/s 0s     168.00 KB / 4.93 MB | [>----------------------------] 3.33 % 261.59 MB/s 0s     176.00 KB / 4.93 MB / [=>---------------------------] 3.48 % 266.29 MB/s 0s     184.00 KB / 4.93 MB - [=>---------------------------] 3.64 % 270.48 MB/s 0s     192.00 KB / 4.93 MB \ [=>---------------------------] 3.80 % 274.30 MB/s 0s     200.00 KB / 4.93 MB | [=>---------------------------] 3.96 % 278.15 MB/s 0s     208.00 KB / 4.93 MB / [=>---------------------------] 4.12 % 281.87 MB/s 0s     216.00 KB / 4.93 MB - [=>---------------------------] 4.28 % 283.78 MB/s 0s     224.00 KB / 4.93 MB \ [=>---------------------------] 4.43 % 283.63 MB/s 0s     232.00 KB / 4.93 MB | [=>---------------------------] 4.59 % 282.89 MB/s 0s     240.00 KB / 4.93 MB / [=>---------------------------] 4.75 % 282.66 MB/s 0s     248.00 KB / 4.93 MB - [=>---------------------------] 4.91 % 285.33 MB/s 0s     256.00 KB / 4.93 MB \ [=>---------------------------] 5.07 % 287.88 MB/s 0s     264.00 KB / 4.93 MB | [=>---------------------------] 5.23 % 289.87 MB/s 0s     272.00 KB / 4.93 MB / [=>---------------------------] 5.38 % 292.30 MB/s 0s     280.00 KB / 4.93 MB - [=>---------------------------] 5.54 % 293.81 MB/s 0s     288.00 KB / 4.93 MB \ [=>---------------------------] 5.70 % 294.16 MB/s 0s     296.00 KB / 4.93 MB | [=>---------------------------] 5.86 % 294.63 MB/s 0s     304.00 KB / 4.93 MB / [=>---------------------------] 6.02 % 296.33 MB/s 0s     312.00 KB / 4.93 MB - [=>---------------------------] 6.18 % 297.88 MB/s 0s     320.00 KB / 4.93 MB \ [=>---------------------------] 6.33 % 299.69 MB/s 0s     328.00 KB / 4.93 MB | [=>---------------------------] 6.49 % 301.50 MB/s 0s     336.00 KB / 4.93 MB / [=>---------------------------] 6.65 % 300.68 MB/s 0s     344.00 KB / 4.93 MB - [=>---------------------------] 6.81 % 301.86 MB/s 0s     352.00 KB / 4.93 MB \ [==>--------------------------] 6.97 % 303.51 MB/s 0s     360.00 KB / 4.93 MB | [==>--------------------------] 7.13 % 305.37 MB/s 0s     368.00 KB / 4.93 MB / [==>--------------------------] 7.28 % 306.90 MB/s 0s     376.00 KB / 4.93 MB - [==>--------------------------] 7.44 % 308.42 MB/s 0s     384.00 KB / 4.93 MB \ [==>--------------------------] 7.60 % 309.99 MB/s 0s     392.00 KB / 4.93 MB | [==>--------------------------] 7.76 % 311.61 MB/s 0s     400.00 KB / 4.93 MB / [==>--------------------------] 7.92 % 312.52 MB/s 0s     408.00 KB / 4.93 MB - [==>--------------------------] 8.08 % 311.73 MB/s 0s     416.00 KB / 4.93 MB \ [==>--------------------------] 8.23 % 312.50 MB/s 0s     424.00 KB / 4.93 MB | [==>--------------------------] 8.39 % 313.83 MB/s 0s     432.00 KB / 4.93 MB / [==>--------------------------] 8.55 % 315.15 MB/s 0s     440.00 KB / 4.93 MB - [==>--------------------------] 8.71 % 316.54 MB/s 0s     448.00 KB / 4.93 MB \ [==>--------------------------] 8.87 % 317.78 MB/s 0s     456.00 KB / 4.93 MB | [==>--------------------------] 9.03 % 318.85 MB/s 0s     464.00 KB / 4.93 MB / [==>--------------------------] 9.18 % 320.14 MB/s 0s     472.00 KB / 4.93 MB - [==>--------------------------] 9.34 % 321.29 MB/s 0s     480.00 KB / 4.93 MB \ [==>--------------------------] 9.50 % 322.57 MB/s 0s     488.00 KB / 4.93 MB | [==>--------------------------] 9.66 % 323.88 MB/s 0s     496.00 KB / 4.93 MB / [==>--------------------------] 9.82 % 323.94 MB/s 0s     504.00 KB / 4.93 MB - [==>--------------------------] 9.98 % 325.11 MB/s 0s     512.00 KB / 4.93 MB \ [==>-------------------------] 10.14 % 326.24 MB/s 0s     520.00 KB / 4.93 MB | [==>-------------------------] 10.29 % 327.07 MB/s 0s     528.00 KB / 4.93 MB / [==>-------------------------] 10.45 % 328.25 MB/s 0s     536.00 KB / 4.93 MB - [==>-------------------------] 10.61 % 329.45 MB/s 0s     544.00 KB / 4.93 MB \ [===>------------------------] 10.77 % 330.54 MB/s 0s     552.00 KB / 4.93 MB | [===>------------------------] 10.93 % 331.58 MB/s 0s     560.00 KB / 4.93 MB / [===>------------------------] 11.09 % 332.53 MB/s 0s     568.00 KB / 4.93 MB - [===>------------------------] 11.24 % 333.55 MB/s 0s     576.00 KB / 4.93 MB \ [===>------------------------] 11.40 % 334.18 MB/s 0s     584.00 KB / 4.93 MB | [===>------------------------] 11.56 % 335.17 MB/s 0s     592.00 KB / 4.93 MB / [===>------------------------] 11.72 % 336.15 MB/s 0s     600.00 KB / 4.93 MB - [===>------------------------] 11.88 % 337.09 MB/s 0s     608.00 KB / 4.93 MB \ [===>------------------------] 12.04 % 338.04 MB/s 0s     616.00 KB / 4.93 MB | [===>------------------------] 12.19 % 336.52 MB/s 0s     624.00 KB / 4.93 MB / [===>------------------------] 12.35 % 337.48 MB/s 0s     632.00 KB / 4.93 MB - [===>------------------------] 12.51 % 338.41 MB/s 0s     640.00 KB / 4.93 MB \ [===>------------------------] 12.67 % 338.95 MB/s 0s     648.00 KB / 4.93 MB | [===>------------------------] 12.83 % 339.83 MB/s 0s     656.00 KB / 4.93 MB / [===>------------------------] 12.99 % 340.73 MB/s 0s     664.00 KB / 4.93 MB - [===>------------------------] 13.14 % 341.63 MB/s 0s     672.00 KB / 4.93 MB \ [===>------------------------] 13.30 % 341.63 MB/s 0s     680.00 KB / 4.93 MB | [===>------------------------] 13.46 % 341.05 MB/s 0s     688.00 KB / 4.93 MB / [===>------------------------] 13.62 % 341.15 MB/s 0s     696.00 KB / 4.93 MB - [===>------------------------] 13.78 % 341.63 MB/s 0s     704.00 KB / 4.93 MB \ [===>------------------------] 13.94 % 342.30 MB/s 0s     712.00 KB / 4.93 MB | [===>------------------------] 14.09 % 343.08 MB/s 0s     720.00 KB / 4.93 MB / [===>------------------------] 14.25 % 343.81 MB/s 0s     728.00 KB / 4.93 MB - [====>-----------------------] 14.41 % 344.52 MB/s 0s     736.00 KB / 4.93 MB \ [====>-----------------------] 14.57 % 345.07 MB/s 0s     744.00 KB / 4.93 MB | [====>-----------------------] 14.73 % 344.21 MB/s 0s     752.00 KB / 4.93 MB / [====>-----------------------] 14.89 % 344.09 MB/s 0s     760.00 KB / 4.93 MB - [====>-----------------------] 15.04 % 344.44 MB/s 0s     768.00 KB / 4.93 MB \ [====>-----------------------] 15.20 % 344.96 MB/s 0s     776.00 KB / 4.93 MB | [====>-----------------------] 15.36 % 345.54 MB/s 0s     784.00 KB / 4.93 MB / [====>-----------------------] 15.52 % 346.23 MB/s 0s     792.00 KB / 4.93 MB - [====>-----------------------] 15.68 % 345.96 MB/s 0s     800.00 KB / 4.93 MB \ [====>-----------------------] 15.84 % 346.02 MB/s 0s     808.00 KB / 4.93 MB | [====>-----------------------] 15.99 % 346.61 MB/s 0s     816.00 KB / 4.93 MB / [====>-----------------------] 16.15 % 347.04 MB/s 0s     824.00 KB / 4.93 MB - [====>-----------------------] 16.31 % 347.66 MB/s 0s     832.00 KB / 4.93 MB \ [====>-----------------------] 16.47 % 348.19 MB/s 0s     840.00 KB / 4.93 MB | [====>-----------------------] 16.63 % 348.79 MB/s 0s     848.00 KB / 4.93 MB / [====>-----------------------] 16.79 % 349.48 MB/s 0s     856.00 KB / 4.93 MB - [====>-----------------------] 16.94 % 350.09 MB/s 0s     864.00 KB / 4.93 MB \ [====>-----------------------] 17.10 % 350.69 MB/s 0s     872.00 KB / 4.93 MB | [====>-----------------------] 17.26 % 351.22 MB/s 0s     880.00 KB / 4.93 MB / [====>-----------------------] 17.42 % 351.61 MB/s 0s     888.00 KB / 4.93 MB - [====>-----------------------] 17.58 % 352.13 MB/s 0s     896.00 KB / 4.93 MB \ [====>-----------------------] 17.74 % 352.67 MB/s 0s     904.00 KB / 4.93 MB | [=====>----------------------] 17.89 % 353.22 MB/s 0s     912.00 KB / 4.93 MB / [=====>----------------------] 18.05 % 353.75 MB/s 0s     920.00 KB / 4.93 MB - [=====>----------------------] 18.21 % 354.24 MB/s 0s     928.00 KB / 4.93 MB \ [=====>----------------------] 18.37 % 354.74 MB/s 0s     936.00 KB / 4.93 MB | [=====>----------------------] 18.53 % 355.14 MB/s 0s     944.00 KB / 4.93 MB / [=====>----------------------] 18.69 % 355.66 MB/s 0s     952.00 KB / 4.93 MB - [=====>----------------------] 18.84 % 356.15 MB/s 0s     960.00 KB / 4.93 MB \ [=====>----------------------] 19.00 % 356.54 MB/s 0s     968.00 KB / 4.93 MB | [=====>----------------------] 19.16 % 357.06 MB/s 0s     976.00 KB / 4.93 MB / [=====>----------------------] 19.32 % 357.56 MB/s 0s     984.00 KB / 4.93 MB - [=====>----------------------] 19.48 % 357.49 MB/s 0s     992.00 KB / 4.93 MB \ [=====>----------------------] 19.64 % 357.08 MB/s 0s     1000.00 KB / 4.93 MB | [=====>---------------------] 19.80 % 355.97 MB/s 0s     1008.00 KB / 4.93 MB / [=====>---------------------] 19.95 % 355.64 MB/s 0s     1016.00 KB / 4.93 MB - [=====>---------------------] 20.11 % 355.47 MB/s 0s     1.00 MB / 4.93 MB \ [======>-----------------------] 20.27 % 355.83 MB/s 0s     1.01 MB / 4.93 MB | [======>-----------------------] 20.43 % 356.19 MB/s 0s     1.02 MB / 4.93 MB / [======>-----------------------] 20.59 % 356.63 MB/s 0s     1.02 MB / 4.93 MB - [======>-----------------------] 20.75 % 357.07 MB/s 0s     1.03 MB / 4.93 MB \ [======>-----------------------] 20.90 % 357.33 MB/s 0s     1.04 MB / 4.93 MB | [======>-----------------------] 21.06 % 357.72 MB/s 0s     1.05 MB / 4.93 MB / [======>-----------------------] 21.22 % 357.24 MB/s 0s     1.05 MB / 4.93 MB - [======>-----------------------] 21.38 % 357.34 MB/s 0s     1.06 MB / 4.93 MB \ [======>-----------------------] 21.54 % 357.54 MB/s 0s     1.07 MB / 4.93 MB | [======>-----------------------] 21.70 % 357.86 MB/s 0s     1.08 MB / 4.93 MB / [======>-----------------------] 21.85 % 358.26 MB/s 0s     1.09 MB / 4.93 MB - [======>-----------------------] 22.01 % 358.64 MB/s 0s     1.09 MB / 4.93 MB \ [======>-----------------------] 22.17 % 358.81 MB/s 0s     1.10 MB / 4.93 MB | [======>-----------------------] 22.33 % 358.22 MB/s 0s     1.11 MB / 4.93 MB / [======>-----------------------] 22.49 % 358.10 MB/s 0s     1.12 MB / 4.93 MB - [======>-----------------------] 22.65 % 358.40 MB/s 0s     1.12 MB / 4.93 MB \ [======>-----------------------] 22.80 % 358.78 MB/s 0s     1.13 MB / 4.93 MB | [======>-----------------------] 22.96 % 359.01 MB/s 0s     1.14 MB / 4.93 MB / [======>-----------------------] 23.12 % 358.58 MB/s 0s     1.15 MB / 4.93 MB - [======>-----------------------] 23.28 % 358.20 MB/s 0s     1.16 MB / 4.93 MB \ [=======>----------------------] 23.44 % 358.46 MB/s 0s     1.16 MB / 4.93 MB | [=======>----------------------] 23.60 % 358.84 MB/s 0s     1.17 MB / 4.93 MB / [=======>----------------------] 23.75 % 359.27 MB/s 0s     1.18 MB / 4.93 MB - [=======>----------------------] 23.91 % 359.69 MB/s 0s     1.19 MB / 4.93 MB \ [=======>----------------------] 24.07 % 360.02 MB/s 0s     1.20 MB / 4.93 MB | [=======>----------------------] 24.23 % 360.37 MB/s 0s     1.20 MB / 4.93 MB / [=======>----------------------] 24.39 % 359.94 MB/s 0s     1.21 MB / 4.93 MB - [=======>----------------------] 24.55 % 359.90 MB/s 0s     1.22 MB / 4.93 MB \ [=======>----------------------] 24.70 % 359.63 MB/s 0s     1.23 MB / 4.93 MB | [=======>----------------------] 24.86 % 359.94 MB/s 0s     1.23 MB / 4.93 MB / [=======>----------------------] 25.02 % 360.32 MB/s 0s     1.24 MB / 4.93 MB - [=======>----------------------] 25.18 % 360.58 MB/s 0s     1.25 MB / 4.93 MB \ [=======>----------------------] 25.34 % 360.94 MB/s 0s     1.26 MB / 4.93 MB | [=======>----------------------] 25.50 % 361.26 MB/s 0s     1.27 MB / 4.93 MB / [=======>----------------------] 25.65 % 361.45 MB/s 0s     1.27 MB / 4.93 MB - [=======>----------------------] 25.81 % 361.76 MB/s 0s     1.28 MB / 4.93 MB \ [=======>----------------------] 25.97 % 362.11 MB/s 0s     1.29 MB / 4.93 MB | [=======>----------------------] 26.13 % 362.44 MB/s 0s     1.30 MB / 4.93 MB / [=======>----------------------] 26.29 % 362.06 MB/s 0s     1.30 MB / 4.93 MB - [=======>----------------------] 26.45 % 362.41 MB/s 0s     1.31 MB / 4.93 MB \ [=======>----------------------] 26.60 % 362.77 MB/s 0s     1.32 MB / 4.93 MB | [========>---------------------] 26.76 % 363.14 MB/s 0s     1.33 MB / 4.93 MB / [========>---------------------] 26.92 % 363.27 MB/s 0s     1.34 MB / 4.93 MB - [========>---------------------] 27.08 % 363.56 MB/s 0s     1.34 MB / 4.93 MB \ [========>---------------------] 27.24 % 363.78 MB/s 0s     1.35 MB / 4.93 MB | [========>---------------------] 27.40 % 364.05 MB/s 0s     1.36 MB / 4.93 MB / [========>---------------------] 27.55 % 364.36 MB/s 0s     1.37 MB / 4.93 MB - [========>---------------------] 27.71 % 364.67 MB/s 0s     1.38 MB / 4.93 MB \ [========>---------------------] 27.87 % 364.93 MB/s 0s     1.38 MB / 4.93 MB | [========>---------------------] 28.03 % 365.02 MB/s 0s     1.39 MB / 4.93 MB / [========>---------------------] 28.19 % 365.30 MB/s 0s     1.40 MB / 4.93 MB - [========>---------------------] 28.35 % 365.64 MB/s 0s     1.41 MB / 4.93 MB \ [========>---------------------] 28.51 % 365.96 MB/s 0s     1.41 MB / 4.93 MB | [========>---------------------] 28.66 % 366.21 MB/s 0s     1.42 MB / 4.93 MB / [========>---------------------] 28.82 % 366.44 MB/s 0s     1.43 MB / 4.93 MB - [========>---------------------] 28.98 % 366.30 MB/s 0s     1.44 MB / 4.93 MB \ [========>---------------------] 29.14 % 365.61 MB/s 0s     1.45 MB / 4.93 MB | [========>---------------------] 29.30 % 364.81 MB/s 0s     1.45 MB / 4.93 MB / [========>---------------------] 29.46 % 364.66 MB/s 0s     1.46 MB / 4.93 MB - [========>---------------------] 29.61 % 364.98 MB/s 0s     1.47 MB / 4.93 MB \ [========>---------------------] 29.77 % 364.69 MB/s 0s     1.48 MB / 4.93 MB | [========>---------------------] 29.93 % 364.80 MB/s 0s     1.48 MB / 4.93 MB / [=========>--------------------] 30.09 % 364.37 MB/s 0s     1.49 MB / 4.93 MB - [=========>--------------------] 30.25 % 364.10 MB/s 0s     1.50 MB / 4.93 MB \ [=========>--------------------] 30.41 % 363.88 MB/s 0s     1.51 MB / 4.93 MB | [=========>--------------------] 30.56 % 363.98 MB/s 0s     1.52 MB / 4.93 MB / [=========>--------------------] 30.72 % 364.16 MB/s 0s     1.52 MB / 4.93 MB - [=========>--------------------] 30.88 % 364.36 MB/s 0s     1.53 MB / 4.93 MB \ [=========>--------------------] 31.04 % 364.58 MB/s 0s     1.54 MB / 4.93 MB | [=========>--------------------] 31.20 % 364.74 MB/s 0s     1.55 MB / 4.93 MB / [=========>--------------------] 31.36 % 364.22 MB/s 0s     1.55 MB / 4.93 MB - [=========>--------------------] 31.51 % 363.86 MB/s 0s     1.56 MB / 4.93 MB \ [=========>--------------------] 31.67 % 363.76 MB/s 0s     1.57 MB / 4.93 MB | [=========>--------------------] 31.83 % 363.90 MB/s 0s     1.58 MB / 4.93 MB / [=========>--------------------] 31.99 % 364.01 MB/s 0s     1.59 MB / 4.93 MB - [=========>--------------------] 32.15 % 364.15 MB/s 0s     1.59 MB / 4.93 MB \ [=========>--------------------] 32.31 % 364.35 MB/s 0s     1.60 MB / 4.93 MB | [=========>--------------------] 32.46 % 364.54 MB/s 0s     1.61 MB / 4.93 MB / [=========>--------------------] 32.62 % 364.77 MB/s 0s     1.62 MB / 4.93 MB - [=========>--------------------] 32.78 % 364.59 MB/s 0s     1.62 MB / 4.93 MB \ [=========>--------------------] 32.94 % 364.08 MB/s 0s     1.63 MB / 4.93 MB | [=========>--------------------] 33.10 % 363.59 MB/s 0s     1.64 MB / 4.93 MB / [=========>--------------------] 33.26 % 362.56 MB/s 0s     1.65 MB / 4.93 MB - [==========>-------------------] 33.41 % 362.47 MB/s 0s     1.66 MB / 4.93 MB \ [==========>-------------------] 33.57 % 362.65 MB/s 0s     1.66 MB / 4.93 MB | [==========>-------------------] 33.73 % 362.82 MB/s 0s     1.67 MB / 4.93 MB / [==========>-------------------] 33.89 % 363.02 MB/s 0s     1.68 MB / 4.93 MB - [==========>-------------------] 34.05 % 363.12 MB/s 0s     1.69 MB / 4.93 MB \ [==========>-------------------] 34.21 % 363.30 MB/s 0s     1.70 MB / 4.93 MB | [==========>-------------------] 34.36 % 363.47 MB/s 0s     1.70 MB / 4.93 MB / [==========>-------------------] 34.52 % 363.66 MB/s 0s     1.71 MB / 4.93 MB - [==========>-------------------] 34.68 % 363.45 MB/s 0s     1.72 MB / 4.93 MB \ [==========>-------------------] 34.84 % 363.27 MB/s 0s     1.73 MB / 4.93 MB | [==========>-------------------] 35.00 % 362.74 MB/s 0s     1.73 MB / 4.93 MB / [==========>-------------------] 35.16 % 362.52 MB/s 0s     1.74 MB / 4.93 MB - [==========>-------------------] 35.31 % 362.63 MB/s 0s     1.75 MB / 4.93 MB \ [==========>-------------------] 35.47 % 362.82 MB/s 0s     1.76 MB / 4.93 MB | [==========>-------------------] 35.63 % 362.71 MB/s 0s     1.77 MB / 4.93 MB / [==========>-------------------] 35.79 % 361.44 MB/s 0s     1.77 MB / 4.93 MB - [==========>-------------------] 35.95 % 360.35 MB/s 0s     1.78 MB / 4.93 MB \ [==========>-------------------] 36.11 % 359.38 MB/s 0s     1.79 MB / 4.93 MB | [==========>-------------------] 36.26 % 358.17 MB/s 0s     1.80 MB / 4.93 MB / [==========>-------------------] 36.42 % 356.79 MB/s 0s     1.80 MB / 4.93 MB - [==========>-------------------] 36.58 % 355.60 MB/s 0s     1.81 MB / 4.93 MB \ [===========>------------------] 36.74 % 354.46 MB/s 0s     1.82 MB / 4.93 MB | [===========>------------------] 36.90 % 353.35 MB/s 0s     1.83 MB / 4.93 MB / [===========>------------------] 37.06 % 352.08 MB/s 0s     1.84 MB / 4.93 MB - [===========>------------------] 37.21 % 350.93 MB/s 0s     1.84 MB / 4.93 MB \ [===========>------------------] 37.37 % 349.79 MB/s 0s     1.85 MB / 4.93 MB | [===========>------------------] 37.53 % 348.60 MB/s 0s     1.86 MB / 4.93 MB / [===========>------------------] 37.69 % 347.60 MB/s 0s     1.87 MB / 4.93 MB - [===========>------------------] 37.85 % 346.57 MB/s 0s     1.88 MB / 4.93 MB \ [===========>------------------] 38.01 % 345.62 MB/s 0s     1.88 MB / 4.93 MB | [===========>------------------] 38.17 % 344.65 MB/s 0s     1.89 MB / 4.93 MB / [===========>------------------] 38.32 % 343.60 MB/s 0s     1.90 MB / 4.93 MB - [===========>------------------] 38.48 % 342.69 MB/s 0s     1.91 MB / 4.93 MB \ [===========>------------------] 38.64 % 341.74 MB/s 0s     1.91 MB / 4.93 MB | [===========>------------------] 38.80 % 341.20 MB/s 0s     1.92 MB / 4.93 MB / [===========>------------------] 38.96 % 340.27 MB/s 0s     1.93 MB / 4.93 MB - [===========>------------------] 39.12 % 323.83 MB/s 0s     1.94 MB / 4.93 MB \ [===========>------------------] 39.27 % 323.09 MB/s 0s     1.95 MB / 4.93 MB | [===========>------------------] 39.43 % 322.56 MB/s 0s     1.95 MB / 4.93 MB / [===========>------------------] 39.59 % 322.06 MB/s 0s     1.96 MB / 4.93 MB - [===========>------------------] 39.75 % 321.24 MB/s 0s     1.97 MB / 4.93 MB \ [===========>------------------] 39.91 % 320.62 MB/s 0s     1.98 MB / 4.93 MB | [============>-----------------] 40.07 % 271.72 MB/s 0s     1.98 MB / 4.93 MB / [============>-----------------] 40.22 % 271.67 MB/s 0s     1.99 MB / 4.93 MB - [============>-----------------] 40.38 % 272.05 MB/s 0s     2.00 MB / 4.93 MB \ [============>-----------------] 40.54 % 272.40 MB/s 0s     2.01 MB / 4.93 MB | [============>-----------------] 40.70 % 272.69 MB/s 0s     2.02 MB / 4.93 MB / [============>-----------------] 40.86 % 273.03 MB/s 0s     2.02 MB / 4.93 MB - [============>-----------------] 41.02 % 273.38 MB/s 0s     2.03 MB / 4.93 MB \ [============>-----------------] 41.17 % 273.63 MB/s 0s     2.04 MB / 4.93 MB | [============>-----------------] 41.33 % 273.90 MB/s 0s     2.05 MB / 4.93 MB / [============>-----------------] 41.49 % 274.25 MB/s 0s     2.05 MB / 4.93 MB - [============>-----------------] 41.65 % 274.53 MB/s 0s     2.06 MB / 4.93 MB \ [============>-----------------] 41.81 % 274.84 MB/s 0s     2.07 MB / 4.93 MB | [============>-----------------] 41.97 % 275.15 MB/s 0s     2.08 MB / 4.93 MB / [============>-----------------] 42.12 % 275.43 MB/s 0s     2.09 MB / 4.93 MB - [============>-----------------] 42.28 % 275.70 MB/s 0s     2.09 MB / 4.93 MB \ [============>-----------------] 42.44 % 276.01 MB/s 0s     2.10 MB / 4.93 MB | [============>-----------------] 42.60 % 276.33 MB/s 0s     2.11 MB / 4.93 MB / [============>-----------------] 42.76 % 276.45 MB/s 0s     2.12 MB / 4.93 MB - [============>-----------------] 42.92 % 276.61 MB/s 0s     2.12 MB / 4.93 MB \ [============>-----------------] 43.07 % 276.70 MB/s 0s     2.13 MB / 4.93 MB | [============>-----------------] 43.23 % 276.76 MB/s 0s     2.14 MB / 4.93 MB / [=============>----------------] 43.39 % 276.90 MB/s 0s     2.15 MB / 4.93 MB - [=============>----------------] 43.55 % 277.00 MB/s 0s     2.16 MB / 4.93 MB \ [=============>----------------] 43.71 % 277.17 MB/s 0s     2.16 MB / 4.93 MB | [=============>----------------] 43.87 % 277.35 MB/s 0s     2.17 MB / 4.93 MB / [=============>----------------] 44.02 % 277.50 MB/s 0s     2.18 MB / 4.93 MB - [=============>----------------] 44.18 % 277.65 MB/s 0s     2.19 MB / 4.93 MB \ [=============>----------------] 44.34 % 277.81 MB/s 0s     2.20 MB / 4.93 MB | [=============>----------------] 44.50 % 277.96 MB/s 0s     2.20 MB / 4.93 MB / [=============>----------------] 44.66 % 277.85 MB/s 0s     2.21 MB / 4.93 MB - [=============>----------------] 44.82 % 277.97 MB/s 0s     2.22 MB / 4.93 MB \ [=============>----------------] 44.97 % 278.10 MB/s 0s     2.23 MB / 4.93 MB | [=============>----------------] 45.13 % 278.27 MB/s 0s     2.23 MB / 4.93 MB / [=============>----------------] 45.29 % 278.41 MB/s 0s     2.24 MB / 4.93 MB - [=============>----------------] 45.45 % 278.58 MB/s 0s     2.25 MB / 4.93 MB \ [=============>----------------] 45.61 % 278.74 MB/s 0s     2.26 MB / 4.93 MB | [=============>----------------] 45.77 % 278.89 MB/s 0s     2.27 MB / 4.93 MB / [=============>----------------] 45.92 % 279.00 MB/s 0s     2.27 MB / 4.93 MB - [=============>----------------] 46.08 % 279.15 MB/s 0s     2.28 MB / 4.93 MB \ [=============>----------------] 46.24 % 279.33 MB/s 0s     2.29 MB / 4.93 MB | [=============>----------------] 46.40 % 279.47 MB/s 0s     2.30 MB / 4.93 MB / [=============>----------------] 46.56 % 279.63 MB/s 0s     2.30 MB / 4.93 MB - [==============>---------------] 46.72 % 279.79 MB/s 0s     2.31 MB / 4.93 MB \ [==============>---------------] 46.87 % 279.94 MB/s 0s     2.32 MB / 4.93 MB | [==============>---------------] 47.03 % 279.99 MB/s 0s     2.33 MB / 4.93 MB / [==============>---------------] 47.19 % 280.16 MB/s 0s     2.34 MB / 4.93 MB - [==============>---------------] 47.35 % 280.28 MB/s 0s     2.34 MB / 4.93 MB \ [==============>---------------] 47.51 % 280.42 MB/s 0s     2.35 MB / 4.93 MB | [==============>---------------] 47.67 % 280.56 MB/s 0s     2.36 MB / 4.93 MB / [==============>---------------] 47.83 % 280.70 MB/s 0s     2.37 MB / 4.93 MB - [==============>---------------] 47.98 % 280.83 MB/s 0s     2.38 MB / 4.93 MB \ [==============>---------------] 48.14 % 280.96 MB/s 0s     2.38 MB / 4.93 MB | [==============>---------------] 48.30 % 280.92 MB/s 0s     2.39 MB / 4.93 MB / [==============>---------------] 48.46 % 280.70 MB/s 0s     2.40 MB / 4.93 MB - [==============>---------------] 48.62 % 280.72 MB/s 0s     2.41 MB / 4.93 MB \ [==============>---------------] 48.78 % 280.85 MB/s 0s     2.41 MB / 4.93 MB | [==============>---------------] 48.93 % 280.96 MB/s 0s     2.42 MB / 4.93 MB / [==============>---------------] 49.09 % 281.10 MB/s 0s     2.43 MB / 4.93 MB - [==============>---------------] 49.25 % 281.25 MB/s 0s     2.44 MB / 4.93 MB \ [==============>---------------] 49.41 % 281.31 MB/s 0s     2.45 MB / 4.93 MB | [==============>---------------] 49.57 % 281.40 MB/s 0s     2.45 MB / 4.93 MB / [==============>---------------] 49.73 % 281.37 MB/s 0s     2.46 MB / 4.93 MB - [==============>---------------] 49.88 % 281.50 MB/s 0s     2.47 MB / 4.93 MB \ [===============>--------------] 50.04 % 281.62 MB/s 0s     2.48 MB / 4.93 MB | [===============>--------------] 50.20 % 281.75 MB/s 0s     2.48 MB / 4.93 MB / [===============>--------------] 50.36 % 281.89 MB/s 0s     2.49 MB / 4.93 MB - [===============>--------------] 50.52 % 282.05 MB/s 0s     2.50 MB / 4.93 MB \ [===============>--------------] 50.68 % 282.14 MB/s 0s     2.51 MB / 4.93 MB | [===============>--------------] 50.83 % 282.26 MB/s 0s     2.52 MB / 4.93 MB / [===============>--------------] 50.99 % 282.39 MB/s 0s     2.52 MB / 4.93 MB - [===============>--------------] 51.15 % 282.53 MB/s 0s     2.53 MB / 4.93 MB \ [===============>--------------] 51.31 % 282.67 MB/s 0s     2.54 MB / 4.93 MB | [===============>--------------] 51.47 % 282.81 MB/s 0s     2.55 MB / 4.93 MB / [===============>--------------] 51.63 % 282.94 MB/s 0s     2.55 MB / 4.93 MB - [===============>--------------] 51.78 % 283.02 MB/s 0s     2.56 MB / 4.93 MB \ [===============>--------------] 51.94 % 283.15 MB/s 0s     2.57 MB / 4.93 MB | [===============>--------------] 52.10 % 283.27 MB/s 0s     2.58 MB / 4.93 MB / [===============>--------------] 52.26 % 283.39 MB/s 0s     2.59 MB / 4.93 MB - [===============>--------------] 52.42 % 283.50 MB/s 0s     2.59 MB / 4.93 MB \ [===============>--------------] 52.58 % 283.64 MB/s 0s     2.60 MB / 4.93 MB | [===============>--------------] 52.73 % 283.79 MB/s 0s     2.61 MB / 4.93 MB / [===============>--------------] 52.89 % 283.93 MB/s 0s     2.62 MB / 4.93 MB - [===============>--------------] 53.05 % 284.02 MB/s 0s     2.62 MB / 4.93 MB \ [===============>--------------] 53.21 % 284.15 MB/s 0s     2.63 MB / 4.93 MB | [================>-------------] 53.37 % 284.26 MB/s 0s     2.64 MB / 4.93 MB / [================>-------------] 53.53 % 284.38 MB/s 0s     2.65 MB / 4.93 MB - [================>-------------] 53.68 % 284.50 MB/s 0s     2.66 MB / 4.93 MB \ [================>-------------] 53.84 % 284.65 MB/s 0s     2.66 MB / 4.93 MB | [================>-------------] 54.00 % 284.79 MB/s 0s     2.67 MB / 4.93 MB / [================>-------------] 54.16 % 284.85 MB/s 0s     2.68 MB / 4.93 MB - [================>-------------] 54.32 % 284.96 MB/s 0s     2.69 MB / 4.93 MB \ [================>-------------] 54.48 % 285.07 MB/s 0s     2.70 MB / 4.93 MB | [================>-------------] 54.63 % 285.04 MB/s 0s     2.70 MB / 4.93 MB / [================>-------------] 54.79 % 285.15 MB/s 0s     2.71 MB / 4.93 MB - [================>-------------] 54.95 % 285.26 MB/s 0s     2.72 MB / 4.93 MB \ [================>-------------] 55.11 % 285.40 MB/s 0s     2.73 MB / 4.93 MB | [================>-------------] 55.27 % 285.52 MB/s 0s     2.73 MB / 4.93 MB / [================>-------------] 55.43 % 285.61 MB/s 0s     2.74 MB / 4.93 MB - [================>-------------] 55.58 % 285.73 MB/s 0s     2.75 MB / 4.93 MB \ [================>-------------] 55.74 % 285.87 MB/s 0s     2.76 MB / 4.93 MB | [================>-------------] 55.90 % 286.00 MB/s 0s     2.77 MB / 4.93 MB / [================>-------------] 56.06 % 286.11 MB/s 0s     2.77 MB / 4.93 MB - [================>-------------] 56.22 % 286.24 MB/s 0s     2.78 MB / 4.93 MB \ [================>-------------] 56.38 % 286.37 MB/s 0s     2.79 MB / 4.93 MB | [================>-------------] 56.53 % 286.45 MB/s 0s     2.80 MB / 4.93 MB / [=================>------------] 56.69 % 286.53 MB/s 0s     2.80 MB / 4.93 MB - [=================>------------] 56.85 % 286.66 MB/s 0s     2.81 MB / 4.93 MB \ [=================>------------] 57.01 % 286.79 MB/s 0s     2.82 MB / 4.93 MB | [=================>------------] 57.17 % 286.92 MB/s 0s     2.83 MB / 4.93 MB / [=================>------------] 57.33 % 287.07 MB/s 0s     2.84 MB / 4.93 MB - [=================>------------] 57.49 % 287.20 MB/s 0s     2.84 MB / 4.93 MB \ [=================>------------] 57.64 % 287.35 MB/s 0s     2.85 MB / 4.93 MB | [=================>------------] 57.80 % 287.45 MB/s 0s     2.86 MB / 4.93 MB / [=================>------------] 57.96 % 287.58 MB/s 0s     2.87 MB / 4.93 MB - [=================>------------] 58.12 % 287.71 MB/s 0s     2.88 MB / 4.93 MB \ [=================>------------] 58.28 % 287.85 MB/s 0s     2.88 MB / 4.93 MB | [=================>------------] 58.44 % 287.96 MB/s 0s     2.89 MB / 4.93 MB / [=================>------------] 58.59 % 288.10 MB/s 0s     2.90 MB / 4.93 MB - [=================>------------] 58.75 % 288.24 MB/s 0s     2.91 MB / 4.93 MB \ [=================>------------] 58.91 % 288.33 MB/s 0s     2.91 MB / 4.93 MB | [=================>------------] 59.07 % 288.46 MB/s 0s     2.92 MB / 4.93 MB / [=================>------------] 59.23 % 288.60 MB/s 0s     2.93 MB / 4.93 MB - [=================>------------] 59.39 % 288.73 MB/s 0s     2.94 MB / 4.93 MB \ [=================>------------] 59.54 % 288.82 MB/s 0s     2.95 MB / 4.93 MB | [=================>------------] 59.70 % 288.80 MB/s 0s     2.95 MB / 4.93 MB / [=================>------------] 59.86 % 288.92 MB/s 0s     2.96 MB / 4.93 MB - [==================>-----------] 60.02 % 289.05 MB/s 0s     2.97 MB / 4.93 MB \ [==================>-----------] 60.18 % 289.14 MB/s 0s     2.98 MB / 4.93 MB | [==================>-----------] 60.34 % 289.26 MB/s 0s     2.98 MB / 4.93 MB / [==================>-----------] 60.49 % 289.39 MB/s 0s     2.99 MB / 4.93 MB - [==================>-----------] 60.65 % 289.49 MB/s 0s     3.00 MB / 4.93 MB \ [==================>-----------] 60.81 % 289.61 MB/s 0s     3.01 MB / 4.93 MB | [==================>-----------] 60.97 % 289.65 MB/s 0s     3.02 MB / 4.93 MB / [==================>-----------] 61.13 % 289.69 MB/s 0s     3.02 MB / 4.93 MB - [==================>-----------] 61.29 % 289.58 MB/s 0s     3.03 MB / 4.93 MB \ [==================>-----------] 61.44 % 289.55 MB/s 0s     3.04 MB / 4.93 MB | [==================>-----------] 61.60 % 289.59 MB/s 0s     3.05 MB / 4.93 MB / [==================>-----------] 61.76 % 289.66 MB/s 0s     3.05 MB / 4.93 MB - [==================>-----------] 61.92 % 289.75 MB/s 0s     3.06 MB / 4.93 MB \ [==================>-----------] 62.08 % 289.91 MB/s 0s     3.07 MB / 4.93 MB | [==================>-----------] 62.24 % 290.13 MB/s 0s     3.08 MB / 4.93 MB / [==================>-----------] 62.39 % 290.20 MB/s 0s     3.09 MB / 4.93 MB - [==================>-----------] 62.55 % 290.36 MB/s 0s     3.09 MB / 4.93 MB \ [==================>-----------] 62.71 % 290.59 MB/s 0s     3.10 MB / 4.93 MB | [==================>-----------] 62.87 % 290.61 MB/s 0s     3.11 MB / 4.93 MB / [==================>-----------] 63.03 % 290.63 MB/s 0s     3.12 MB / 4.93 MB - [==================>-----------] 63.19 % 290.70 MB/s 0s     3.12 MB / 4.93 MB \ [===================>----------] 63.34 % 290.79 MB/s 0s     3.13 MB / 4.93 MB | [===================>----------] 63.50 % 290.78 MB/s 0s     3.14 MB / 4.93 MB / [===================>----------] 63.66 % 290.75 MB/s 0s     3.15 MB / 4.93 MB - [===================>----------] 63.82 % 290.74 MB/s 0s     3.16 MB / 4.93 MB \ [===================>----------] 63.98 % 290.78 MB/s 0s     3.16 MB / 4.93 MB | [===================>----------] 64.14 % 290.82 MB/s 0s     3.17 MB / 4.93 MB / [===================>----------] 64.29 % 290.90 MB/s 0s     3.18 MB / 4.93 MB - [===================>----------] 64.45 % 290.92 MB/s 0s     3.19 MB / 4.93 MB \ [===================>----------] 64.61 % 290.77 MB/s 0s     3.20 MB / 4.93 MB | [===================>----------] 64.77 % 290.83 MB/s 0s     3.20 MB / 4.93 MB / [===================>----------] 64.93 % 290.79 MB/s 0s     3.21 MB / 4.93 MB - [===================>----------] 65.09 % 290.82 MB/s 0s     3.22 MB / 4.93 MB \ [===================>----------] 65.24 % 290.86 MB/s 0s     3.23 MB / 4.93 MB | [===================>----------] 65.40 % 290.89 MB/s 0s     3.23 MB / 4.93 MB / [===================>----------] 65.56 % 290.89 MB/s 0s     3.24 MB / 4.93 MB - [===================>----------] 65.72 % 290.92 MB/s 0s     3.25 MB / 4.93 MB \ [===================>----------] 65.88 % 290.96 MB/s 0s     3.26 MB / 4.93 MB | [===================>----------] 66.04 % 290.93 MB/s 0s     3.27 MB / 4.93 MB / [===================>----------] 66.19 % 290.94 MB/s 0s     3.27 MB / 4.93 MB - [===================>----------] 66.35 % 290.96 MB/s 0s     3.28 MB / 4.93 MB \ [===================>----------] 66.51 % 291.01 MB/s 0s     3.29 MB / 4.93 MB | [====================>---------] 66.67 % 291.04 MB/s 0s     3.30 MB / 4.93 MB / [====================>---------] 66.83 % 291.08 MB/s 0s     3.30 MB / 4.93 MB - [====================>---------] 66.99 % 291.12 MB/s 0s     3.31 MB / 4.93 MB \ [====================>---------] 67.15 % 291.11 MB/s 0s     3.32 MB / 4.93 MB | [====================>---------] 67.30 % 291.07 MB/s 0s     3.33 MB / 4.93 MB / [====================>---------] 67.46 % 291.09 MB/s 0s     3.34 MB / 4.93 MB - [====================>---------] 67.62 % 291.13 MB/s 0s     3.34 MB / 4.93 MB \ [====================>---------] 67.78 % 290.40 MB/s 0s     3.35 MB / 4.93 MB | [====================>---------] 67.94 % 290.44 MB/s 0s     3.36 MB / 4.93 MB / [====================>---------] 68.10 % 290.48 MB/s 0s     3.37 MB / 4.93 MB - [====================>---------] 68.25 % 290.49 MB/s 0s     3.38 MB / 4.93 MB \ [====================>---------] 68.41 % 290.47 MB/s 0s     3.38 MB / 4.93 MB | [====================>---------] 68.57 % 290.47 MB/s 0s     3.39 MB / 4.93 MB / [====================>---------] 68.73 % 290.51 MB/s 0s     3.40 MB / 4.93 MB - [====================>---------] 68.89 % 290.55 MB/s 0s     3.41 MB / 4.93 MB \ [====================>---------] 69.05 % 290.70 MB/s 0s     3.41 MB / 4.93 MB | [====================>---------] 69.20 % 290.89 MB/s 0s     3.42 MB / 4.93 MB / [====================>---------] 69.36 % 291.10 MB/s 0s     3.43 MB / 4.93 MB - [====================>---------] 69.52 % 291.23 MB/s 0s     3.44 MB / 4.93 MB \ [====================>---------] 69.68 % 290.99 MB/s 0s     3.45 MB / 4.93 MB | [====================>---------] 69.84 % 291.01 MB/s 0s     3.45 MB / 4.93 MB / [====================>---------] 70.00 % 291.04 MB/s 0s     3.46 MB / 4.93 MB - [=====================>--------] 70.15 % 291.06 MB/s 0s     3.47 MB / 4.93 MB \ [=====================>--------] 70.31 % 291.04 MB/s 0s     3.48 MB / 4.93 MB | [=====================>--------] 70.47 % 291.07 MB/s 0s     3.48 MB / 4.93 MB / [=====================>--------] 70.63 % 291.11 MB/s 0s     3.49 MB / 4.93 MB - [=====================>--------] 70.79 % 291.08 MB/s 0s     3.50 MB / 4.93 MB \ [=====================>--------] 70.95 % 291.11 MB/s 0s     3.51 MB / 4.93 MB | [=====================>--------] 71.10 % 291.09 MB/s 0s     3.52 MB / 4.93 MB / [=====================>--------] 71.26 % 291.10 MB/s 0s     3.52 MB / 4.93 MB - [=====================>--------] 71.42 % 291.12 MB/s 0s     3.53 MB / 4.93 MB \ [=====================>--------] 71.58 % 291.14 MB/s 0s     3.54 MB / 4.93 MB | [=====================>--------] 71.74 % 291.19 MB/s 0s     3.55 MB / 4.93 MB / [=====================>--------] 71.90 % 291.18 MB/s 0s     3.55 MB / 4.93 MB - [=====================>--------] 72.05 % 291.18 MB/s 0s     3.56 MB / 4.93 MB \ [=====================>--------] 72.21 % 291.22 MB/s 0s     3.57 MB / 4.93 MB | [=====================>--------] 72.37 % 291.17 MB/s 0s     3.58 MB / 4.93 MB / [=====================>--------] 72.53 % 291.20 MB/s 0s     3.59 MB / 4.93 MB - [=====================>--------] 72.69 % 291.21 MB/s 0s     3.59 MB / 4.93 MB \ [=====================>--------] 72.85 % 291.25 MB/s 0s     3.60 MB / 4.93 MB | [=====================>--------] 73.00 % 291.27 MB/s 0s     3.61 MB / 4.93 MB / [=====================>--------] 73.16 % 291.26 MB/s 0s     3.62 MB / 4.93 MB - [=====================>--------] 73.32 % 291.28 MB/s 0s     3.62 MB / 4.93 MB \ [======================>-------] 73.48 % 291.31 MB/s 0s     3.63 MB / 4.93 MB | [======================>-------] 73.64 % 291.32 MB/s 0s     3.64 MB / 4.93 MB / [======================>-------] 73.80 % 291.32 MB/s 0s     3.65 MB / 4.93 MB - [======================>-------] 73.95 % 287.54 MB/s 0s     3.66 MB / 4.93 MB \ [======================>-------] 74.11 % 287.42 MB/s 0s     3.66 MB / 4.93 MB | [======================>-------] 74.27 % 287.47 MB/s 0s     3.67 MB / 4.93 MB / [======================>-------] 74.43 % 287.53 MB/s 0s     3.68 MB / 4.93 MB - [======================>-------] 74.59 % 287.50 MB/s 0s     3.69 MB / 4.93 MB \ [======================>-------] 74.75 % 287.58 MB/s 0s     3.70 MB / 4.93 MB | [======================>-------] 74.90 % 287.64 MB/s 0s     3.70 MB / 4.93 MB / [======================>-------] 75.06 % 287.73 MB/s 0s     3.71 MB / 4.93 MB - [======================>-------] 75.22 % 287.82 MB/s 0s     3.72 MB / 4.93 MB \ [======================>-------] 75.38 % 287.90 MB/s 0s     3.73 MB / 4.93 MB | [======================>-------] 75.54 % 287.96 MB/s 0s     3.73 MB / 4.93 MB / [======================>-------] 75.70 % 288.04 MB/s 0s     3.74 MB / 4.93 MB - [======================>-------] 75.86 % 288.11 MB/s 0s     3.75 MB / 4.93 MB \ [======================>-------] 76.01 % 288.19 MB/s 0s     3.76 MB / 4.93 MB | [======================>-------] 76.17 % 288.27 MB/s 0s     3.77 MB / 4.93 MB / [======================>-------] 76.33 % 288.37 MB/s 0s     3.77 MB / 4.93 MB - [======================>-------] 76.49 % 288.47 MB/s 0s     3.78 MB / 4.93 MB \ [======================>-------] 76.65 % 288.57 MB/s 0s     3.79 MB / 4.93 MB | [=======================>------] 76.81 % 288.36 MB/s 0s     3.80 MB / 4.93 MB / [=======================>------] 76.96 % 288.33 MB/s 0s     3.80 MB / 4.93 MB - [=======================>------] 77.12 % 288.34 MB/s 0s     3.81 MB / 4.93 MB \ [=======================>------] 77.28 % 288.22 MB/s 0s     3.82 MB / 4.93 MB | [=======================>------] 77.44 % 287.33 MB/s 0s     3.83 MB / 4.93 MB / [=======================>------] 77.60 % 287.49 MB/s 0s     3.84 MB / 4.93 MB - [=======================>------] 77.76 % 287.67 MB/s 0s     3.84 MB / 4.93 MB \ [=======================>------] 77.91 % 287.77 MB/s 0s     3.85 MB / 4.93 MB | [=======================>------] 78.07 % 287.69 MB/s 0s     3.86 MB / 4.93 MB / [=======================>------] 78.23 % 287.90 MB/s 0s     3.87 MB / 4.93 MB - [=======================>------] 78.39 % 288.10 MB/s 0s     3.88 MB / 4.93 MB \ [=======================>------] 78.55 % 288.28 MB/s 0s     3.88 MB / 4.93 MB | [=======================>------] 78.71 % 288.01 MB/s 0s     3.89 MB / 4.93 MB / [=======================>------] 78.86 % 288.22 MB/s 0s     3.90 MB / 4.93 MB - [=======================>------] 79.02 % 288.39 MB/s 0s     3.91 MB / 4.93 MB \ [=======================>------] 79.18 % 288.27 MB/s 0s     3.91 MB / 4.93 MB | [=======================>------] 79.34 % 288.49 MB/s 0s     3.92 MB / 4.93 MB / [=======================>------] 79.50 % 288.66 MB/s 0s     3.93 MB / 4.93 MB - [=======================>------] 79.66 % 288.35 MB/s 0s     3.94 MB / 4.93 MB \ [=======================>------] 79.81 % 288.56 MB/s 0s     3.95 MB / 4.93 MB | [=======================>------] 79.97 % 288.74 MB/s 0s     3.95 MB / 4.93 MB / [========================>-----] 80.13 % 288.96 MB/s 0s     3.96 MB / 4.93 MB - [========================>-----] 80.29 % 289.14 MB/s 0s     3.97 MB / 4.93 MB \ [========================>-----] 80.45 % 288.69 MB/s 0s     3.98 MB / 4.93 MB | [========================>-----] 80.61 % 288.89 MB/s 0s     3.98 MB / 4.93 MB / [========================>-----] 80.76 % 289.06 MB/s 0s     3.99 MB / 4.93 MB - [========================>-----] 80.92 % 289.26 MB/s 0s     4.00 MB / 4.93 MB \ [========================>-----] 81.08 % 289.47 MB/s 0s     4.01 MB / 4.93 MB | [========================>-----] 81.24 % 289.64 MB/s 0s     4.02 MB / 4.93 MB / [========================>-----] 81.40 % 289.82 MB/s 0s     4.02 MB / 4.93 MB - [========================>-----] 81.56 % 289.95 MB/s 0s     4.03 MB / 4.93 MB \ [========================>-----] 81.71 % 290.03 MB/s 0s     4.04 MB / 4.93 MB | [========================>-----] 81.87 % 290.25 MB/s 0s     4.05 MB / 4.93 MB / [========================>-----] 82.03 % 290.42 MB/s 0s     4.05 MB / 4.93 MB - [========================>-----] 82.19 % 290.63 MB/s 0s     4.06 MB / 4.93 MB \ [========================>-----] 82.35 % 290.84 MB/s 0s     4.07 MB / 4.93 MB | [========================>-----] 82.51 % 290.85 MB/s 0s     4.08 MB / 4.93 MB / [========================>-----] 82.66 % 291.03 MB/s 0s     4.09 MB / 4.93 MB - [========================>-----] 82.82 % 291.21 MB/s 0s     4.09 MB / 4.93 MB \ [========================>-----] 82.98 % 291.42 MB/s 0s     4.10 MB / 4.93 MB | [========================>-----] 83.14 % 291.60 MB/s 0s     4.11 MB / 4.93 MB / [========================>-----] 83.30 % 291.81 MB/s 0s     4.12 MB / 4.93 MB - [=========================>----] 83.46 % 291.87 MB/s 0s     4.12 MB / 4.93 MB \ [=========================>----] 83.61 % 292.04 MB/s 0s     4.13 MB / 4.93 MB | [=========================>----] 83.77 % 292.05 MB/s 0s     4.14 MB / 4.93 MB / [=========================>----] 83.93 % 291.89 MB/s 0s     4.15 MB / 4.93 MB - [=========================>----] 84.09 % 291.84 MB/s 0s     4.16 MB / 4.93 MB \ [=========================>----] 84.25 % 291.77 MB/s 0s     4.16 MB / 4.93 MB | [=========================>----] 84.41 % 291.97 MB/s 0s     4.17 MB / 4.93 MB / [=========================>----] 84.56 % 291.99 MB/s 0s     4.18 MB / 4.93 MB - [=========================>----] 84.72 % 292.17 MB/s 0s     4.19 MB / 4.93 MB \ [=========================>----] 84.88 % 292.37 MB/s 0s     4.20 MB / 4.93 MB | [=========================>----] 85.04 % 292.10 MB/s 0s     4.20 MB / 4.93 MB / [=========================>----] 85.20 % 292.24 MB/s 0s     4.21 MB / 4.93 MB - [=========================>----] 85.36 % 292.43 MB/s 0s     4.22 MB / 4.93 MB \ [=========================>----] 85.52 % 292.64 MB/s 0s     4.23 MB / 4.93 MB | [=========================>----] 85.67 % 292.58 MB/s 0s     4.23 MB / 4.93 MB / [=========================>----] 85.83 % 292.78 MB/s 0s     4.24 MB / 4.93 MB - [=========================>----] 85.99 % 292.95 MB/s 0s     4.25 MB / 4.93 MB \ [=========================>----] 86.15 % 293.04 MB/s 0s     4.26 MB / 4.93 MB | [=========================>----] 86.31 % 293.18 MB/s 0s     4.27 MB / 4.93 MB / [=========================>----] 86.47 % 293.24 MB/s 0s     4.27 MB / 4.93 MB - [=========================>----] 86.62 % 293.40 MB/s 0s     4.28 MB / 4.93 MB \ [==========================>---] 86.78 % 292.62 MB/s 0s     4.29 MB / 4.93 MB | [==========================>---] 86.94 % 292.65 MB/s 0s     4.30 MB / 4.93 MB / [==========================>---] 87.10 % 292.71 MB/s 0s     4.30 MB / 4.93 MB - [==========================>---] 87.26 % 292.58 MB/s 0s     4.31 MB / 4.93 MB \ [==========================>---] 87.42 % 292.45 MB/s 0s     4.32 MB / 4.93 MB | [==========================>---] 87.57 % 292.34 MB/s 0s     4.33 MB / 4.93 MB / [==========================>---] 87.73 % 292.30 MB/s 0s     4.34 MB / 4.93 MB - [==========================>---] 87.89 % 292.25 MB/s 0s     4.34 MB / 4.93 MB \ [==========================>---] 88.05 % 292.18 MB/s 0s     4.35 MB / 4.93 MB | [==========================>---] 88.21 % 292.16 MB/s 0s     4.36 MB / 4.93 MB / [==========================>---] 88.37 % 292.23 MB/s 0s     4.37 MB / 4.93 MB - [==========================>---] 88.52 % 292.15 MB/s 0s     4.38 MB / 4.93 MB \ [==========================>---] 88.68 % 291.87 MB/s 0s     4.38 MB / 4.93 MB | [==========================>---] 88.84 % 291.61 MB/s 0s     4.39 MB / 4.93 MB / [==========================>---] 89.00 % 291.55 MB/s 0s     4.40 MB / 4.93 MB - [==========================>---] 89.16 % 291.54 MB/s 0s     4.41 MB / 4.93 MB \ [==========================>---] 89.32 % 291.68 MB/s 0s     4.41 MB / 4.93 MB | [==========================>---] 89.47 % 291.75 MB/s 0s     4.42 MB / 4.93 MB / [==========================>---] 89.63 % 291.81 MB/s 0s     4.43 MB / 4.93 MB - [==========================>---] 89.79 % 290.96 MB/s 0s     4.44 MB / 4.93 MB \ [==========================>---] 89.95 % 291.09 MB/s 0s     4.45 MB / 4.93 MB | [===========================>--] 90.11 % 291.27 MB/s 0s     4.45 MB / 4.93 MB / [===========================>--] 90.27 % 291.45 MB/s 0s     4.46 MB / 4.93 MB - [===========================>--] 90.42 % 291.64 MB/s 0s     4.47 MB / 4.93 MB \ [===========================>--] 90.58 % 291.74 MB/s 0s     4.48 MB / 4.93 MB | [===========================>--] 90.74 % 291.89 MB/s 0s     4.48 MB / 4.93 MB / [===========================>--] 90.90 % 292.07 MB/s 0s     4.49 MB / 4.93 MB - [===========================>--] 91.06 % 291.75 MB/s 0s     4.50 MB / 4.93 MB \ [===========================>--] 91.22 % 291.70 MB/s 0s     4.51 MB / 4.93 MB | [===========================>--] 91.37 % 291.73 MB/s 0s     4.52 MB / 4.93 MB / [===========================>--] 91.53 % 291.80 MB/s 0s     4.52 MB / 4.93 MB - [===========================>--] 91.69 % 291.87 MB/s 0s     4.53 MB / 4.93 MB \ [===========================>--] 91.85 % 291.93 MB/s 0s     4.54 MB / 4.93 MB | [===========================>--] 92.01 % 292.00 MB/s 0s     4.55 MB / 4.93 MB / [===========================>--] 92.17 % 292.03 MB/s 0s     4.55 MB / 4.93 MB - [===========================>--] 92.32 % 292.09 MB/s 0s     4.56 MB / 4.93 MB \ [===========================>--] 92.48 % 292.16 MB/s 0s     4.57 MB / 4.93 MB | [===========================>--] 92.64 % 292.23 MB/s 0s     4.58 MB / 4.93 MB / [===========================>--] 92.80 % 292.29 MB/s 0s     4.59 MB / 4.93 MB - [===========================>--] 92.96 % 292.37 MB/s 0s     4.59 MB / 4.93 MB \ [===========================>--] 93.12 % 292.44 MB/s 0s     4.60 MB / 4.93 MB | [===========================>--] 93.27 % 292.51 MB/s 0s     4.61 MB / 4.93 MB / [============================>-] 93.43 % 292.55 MB/s 0s     4.62 MB / 4.93 MB - [============================>-] 93.59 % 292.62 MB/s 0s     4.62 MB / 4.93 MB \ [============================>-] 93.75 % 292.67 MB/s 0s     4.63 MB / 4.93 MB | [============================>-] 93.91 % 292.71 MB/s 0s     4.64 MB / 4.93 MB / [============================>-] 94.07 % 292.79 MB/s 0s     4.65 MB / 4.93 MB - [============================>-] 94.22 % 292.87 MB/s 0s     4.66 MB / 4.93 MB \ [============================>-] 94.38 % 292.89 MB/s 0s     4.66 MB / 4.93 MB | [============================>-] 94.54 % 292.79 MB/s 0s     4.67 MB / 4.93 MB / [============================>-] 94.70 % 292.82 MB/s 0s     4.68 MB / 4.93 MB - [============================>-] 94.86 % 292.86 MB/s 0s     4.69 MB / 4.93 MB \ [============================>-] 95.02 % 292.90 MB/s 0s     4.70 MB / 4.93 MB | [============================>-] 95.18 % 292.93 MB/s 0s     4.70 MB / 4.93 MB / [============================>-] 95.33 % 292.97 MB/s 0s     4.71 MB / 4.93 MB - [============================>-] 95.49 % 293.01 MB/s 0s     4.72 MB / 4.93 MB \ [============================>-] 95.65 % 293.06 MB/s 0s     4.73 MB / 4.93 MB | [============================>-] 95.81 % 293.06 MB/s 0s     4.73 MB / 4.93 MB / [============================>-] 95.97 % 293.11 MB/s 0s     4.74 MB / 4.93 MB - [============================>-] 96.13 % 293.16 MB/s 0s     4.75 MB / 4.93 MB \ [============================>-] 96.28 % 293.21 MB/s 0s     4.76 MB / 4.93 MB | [============================>-] 96.44 % 293.24 MB/s 0s     4.77 MB / 4.93 MB / [============================>-] 96.60 % 293.30 MB/s 0s     4.77 MB / 4.93 MB - [==============================] 96.76 % 293.35 MB/s 0s     4.78 MB / 4.93 MB \ [==============================] 96.92 % 293.35 MB/s 0s     4.79 MB / 4.93 MB | [==============================] 97.08 % 293.39 MB/s 0s     4.80 MB / 4.93 MB / [==============================] 97.23 % 293.44 MB/s 0s     4.80 MB / 4.93 MB - [==============================] 97.39 % 293.49 MB/s 0s     4.81 MB / 4.93 MB \ [==============================] 97.55 % 293.53 MB/s 0s     4.82 MB / 4.93 MB | [==============================] 97.71 % 293.59 MB/s 0s     4.83 MB / 4.93 MB / [==============================] 97.87 % 293.63 MB/s 0s     4.84 MB / 4.93 MB - [==============================] 98.03 % 293.66 MB/s 0s     4.84 MB / 4.93 MB \ [==============================] 98.18 % 293.66 MB/s 0s     4.85 MB / 4.93 MB | [==============================] 98.34 % 293.45 MB/s 0s     4.86 MB / 4.93 MB / [==============================] 98.50 % 293.48 MB/s 0s     4.87 MB / 4.93 MB - [==============================] 98.66 % 293.52 MB/s 0s     4.88 MB / 4.93 MB \ [==============================] 98.82 % 293.57 MB/s 0s     4.88 MB / 4.93 MB | [==============================] 98.98 % 293.57 MB/s 0s     4.89 MB / 4.93 MB / [==============================] 99.13 % 293.60 MB/s 0s     4.90 MB / 4.93 MB - [==============================] 99.29 % 293.61 MB/s 0s     4.91 MB / 4.93 MB \ [==============================] 99.45 % 293.65 MB/s 0s     4.91 MB / 4.93 MB | [==============================] 99.61 % 293.58 MB/s 0s     4.92 MB / 4.93 MB / [==============================] 99.77 % 293.63 MB/s 0s     4.93 MB / 4.93 MB - [==============================] 99.93 % 293.67 MB/s 0s     4.93 MB / 4.93 MB \ [================================] 100.00 % 293.27 MB/s 
-[0m[0m[1m[32m☛ Verifying[0m core/hab-studio/1.6.521/20220603160937
-[0m[0m[1m[32m→ Using[0m core/hab-backline/1.6.521/20220603160815
-[0m[0m[1m[32m→ Using[0m core/hab-plan-build/1.6.521/20220603160622
-[0m[0m[1m[32m→ Using[0m core/diffutils/3.8/20220311104054
-[0m[0m[1m[32m→ Using[0m core/make/4.3/20220311105244
-[0m[0m[1m[32m→ Using[0m core/mg/20180927/20220311114614
-[0m[0m[1m[32m→ Using[0m core/util-linux/2.37/20220311105626
-[0m[0m[1m[32m→ Using[0m core/vim/8.2.2825/20220311114125
-[0m[0m[1m[32m→ Using[0m core/bash/5.1/20220311102415
-[0m[0m[1m[32m→ Using[0m core/binutils/2.37/20220311083411
-[0m[0m[1m[32m→ Using[0m core/coreutils/8.32/20220311101609
-[0m[0m[1m[32m→ Using[0m core/file/5.41/20220311083211
-[0m[0m[1m[32m→ Using[0m core/findutils/4.9.0/20220311104411
-[0m[0m[1m[32m→ Using[0m core/gawk/5.1.0/20220311102814
-[0m[0m[1m[32m→ Using[0m core/gzip/1.11/20220311105137
-[0m[0m[1m[32m→ Using[0m core/hab/1.6.521/20220603154827
-[0m[0m[1m[32m→ Using[0m core/rq/0.10.4/20220311112035
-[0m[0m[1m[32m→ Using[0m core/sed/4.8/20220311101151
-[0m[0m[1m[32m→ Using[0m core/tar/1.34/20220311102650
-[0m[0m[1m[32m→ Using[0m core/unzip/6.0/20220311111952
-[0m[0m[1m[32m→ Using[0m core/wget/1.21.2/20220311111811
-[0m[0m[1m[32m→ Using[0m core/xz/5.2.5/20220311104623
-[0m[0m[1m[32m→ Using[0m core/readline/8.1/20220311102318
-[0m[0m[1m[32m→ Using[0m core/libcap/2.60/20220311101102
-[0m[0m[1m[32m→ Using[0m core/mpfr/4.1.0/20220311084038
-[0m[0m[1m[32m→ Using[0m core/gmp/6.2.1/20220311083900
-[0m[0m[1m[32m→ Using[0m core/less/590/20220311103557
-[0m[0m[1m[32m→ Using[0m core/grep/3.7/20220311102158
-[0m[0m[1m[32m→ Using[0m core/bzip2/1.0.8/20220311100531
-[0m[0m[1m[32m→ Using[0m core/libidn2/2.3.2/20220311111710
-[0m[0m[1m[32m→ Using[0m core/openssl/1.0.2zb/20220311111046
-[0m[0m[1m[32m→ Using[0m core/libiconv/1.16/20220311111355
-[0m[0m[1m[32m→ Using[0m core/libunistring/0.9.10/20220311111450
-[0m[0m[1m[32m→ Using[0m core/cacerts/2021.10.26/20220311110931
-[0m[0m[1m[32m→ Using[0m core/openssl-fips/2.0.16/20220311110951
-[0m[0m[1m[32m→ Using[0m core/pcre/8.45/20220311102054
-[0m[0m[1m[32m→ Using[0m core/gcc-libs/9.4.0/20220311083308
-[0m[0m[1m[32m→ Using[0m core/libbsd/0.11.3/20220311114436
-[0m[0m[1m[32m→ Using[0m core/libmd/1.0.4/20220311114359
-[0m[0m[1m[32m→ Using[0m core/zlib/1.2.11/20220311082914
-[0m[0m[1m[32m→ Using[0m core/acl/2.3.1/20220311101006
-[0m[0m[1m[32m→ Using[0m core/ncurses/6.2/20220311100731
-[0m[0m[1m[32m→ Using[0m core/attr/2.5.1/20220311100918
-[0m[0m[1m[32m→ Using[0m core/glibc/2.34/20220311081742
-[0m[0m[1m[32m→ Using[0m core/linux-headers/4.20.17/20220311081613
-[0m[0m[1m[32m✓ Installed[0m core/hab-studio/1.6.521/20220603160937
-[0m[0m[1m[35m★ Install of core/hab-studio/1.6.521/20220603160937 complete with 1 new packages installed.[0m
-   [1;36mhab-studio: [1;37mDestroying Studio at /hab/studios/src (default)[0m
-   [1;36mhab-studio: [1;37mCreating Studio at /hab/studios/src (default)[0m
-   [1;36mhab-studio: [1;37mImporting 'jimbodragon' secret origin key[0m
-[0m[0m[1m[33m» Importing origin key from standard input[0m
-[0m[0m[1m[35m★ Imported secret origin key jimbodragon-20221104194800[0m
-   [1;36mhab-studio: [1;37mTried to import 'jimbodragon' public origin key, but key was not found[0m
-[0m[0m[1m[33m» Installing core/hab-backline/1.6.521/20220603160815[0m
-[0m[0m[1m[32m☛ Verifying[0m core/hab-backline/1.6.521/20220603160815
-[0m[0m[1m[32m↓ Downloading[0m core-20180119235000 public origin key
-    75 B / 75 B | [========================================] 100.00 % 1.28 MB/s 
-[0m[0m[1m[32m☑ Cached[0m core-20180119235000 public origin key
-[0m[0m[1m[32m☛ Verifying[0m core/hab-plan-build/1.6.521/20220603160622
-[0m[0m[1m[32m☛ Verifying[0m core/diffutils/3.8/20220311104054
-[0m[0m[1m[32m↓ Downloading[0m core-20220215190604 public origin key
-    75 B / 75 B | [========================================] 100.00 % 1.74 MB/s 
-[0m[0m[1m[32m☑ Cached[0m core-20220215190604 public origin key
-[0m[0m[1m[32m☛ Verifying[0m core/make/4.3/20220311105244
-[0m[0m[1m[32m☛ Verifying[0m core/mg/20180927/20220311114614
-[0m[0m[1m[32m☛ Verifying[0m core/util-linux/2.37/20220311105626
-[0m[0m[1m[32m☛ Verifying[0m core/vim/8.2.2825/20220311114125
-[0m[0m[1m[32m☛ Verifying[0m core/bash/5.1/20220311102415
-[0m[0m[1m[32m☛ Verifying[0m core/binutils/2.37/20220311083411
-[0m[0m[1m[32m☛ Verifying[0m core/coreutils/8.32/20220311101609
-[0m[0m[1m[32m☛ Verifying[0m core/file/5.41/20220311083211
-[0m[0m[1m[32m☛ Verifying[0m core/findutils/4.9.0/20220311104411
-[0m[0m[1m[32m☛ Verifying[0m core/gawk/5.1.0/20220311102814
-[0m[0m[1m[32m☛ Verifying[0m core/gzip/1.11/20220311105137
-[0m[0m[1m[32m☛ Verifying[0m core/hab/1.6.521/20220603154827
-[0m[0m[1m[32m☛ Verifying[0m core/rq/0.10.4/20220311112035
-[0m[0m[1m[32m☛ Verifying[0m core/sed/4.8/20220311101151
-[0m[0m[1m[32m☛ Verifying[0m core/tar/1.34/20220311102650
-[0m[0m[1m[32m☛ Verifying[0m core/unzip/6.0/20220311111952
-[0m[0m[1m[32m☛ Verifying[0m core/wget/1.21.2/20220311111811
-[0m[0m[1m[32m☛ Verifying[0m core/xz/5.2.5/20220311104623
-[0m[0m[1m[32m☛ Verifying[0m core/readline/8.1/20220311102318
-[0m[0m[1m[32m☛ Verifying[0m core/libcap/2.60/20220311101102
-[0m[0m[1m[32m☛ Verifying[0m core/mpfr/4.1.0/20220311084038
-[0m[0m[1m[32m☛ Verifying[0m core/gmp/6.2.1/20220311083900
-[0m[0m[1m[32m☛ Verifying[0m core/less/590/20220311103557
-[0m[0m[1m[32m☛ Verifying[0m core/grep/3.7/20220311102158
-[0m[0m[1m[32m☛ Verifying[0m core/bzip2/1.0.8/20220311100531
-[0m[0m[1m[32m☛ Verifying[0m core/libidn2/2.3.2/20220311111710
-[0m[0m[1m[32m☛ Verifying[0m core/openssl/1.0.2zb/20220311111046
-[0m[0m[1m[32m☛ Verifying[0m core/libiconv/1.16/20220311111355
-[0m[0m[1m[32m☛ Verifying[0m core/libunistring/0.9.10/20220311111450
-[0m[0m[1m[32m☛ Verifying[0m core/cacerts/2021.10.26/20220311110931
-[0m[0m[1m[32m☛ Verifying[0m core/openssl-fips/2.0.16/20220311110951
-[0m[0m[1m[32m☛ Verifying[0m core/pcre/8.45/20220311102054
-[0m[0m[1m[32m☛ Verifying[0m core/gcc-libs/9.4.0/20220311083308
-[0m[0m[1m[32m☛ Verifying[0m core/libbsd/0.11.3/20220311114436
-[0m[0m[1m[32m☛ Verifying[0m core/libmd/1.0.4/20220311114359
-[0m[0m[1m[32m☛ Verifying[0m core/zlib/1.2.11/20220311082914
-[0m[0m[1m[32m☛ Verifying[0m core/acl/2.3.1/20220311101006
-[0m[0m[1m[32m☛ Verifying[0m core/ncurses/6.2/20220311100731
-[0m[0m[1m[32m☛ Verifying[0m core/attr/2.5.1/20220311100918
-[0m[0m[1m[32m☛ Verifying[0m core/glibc/2.34/20220311081742
-[0m[0m[1m[32m☛ Verifying[0m core/linux-headers/4.20.17/20220311081613
-[0m[0m[1m[32m✓ Installed[0m core/hab-plan-build/1.6.521/20220603160622
-[0m[0m[1m[32m✓ Installed[0m core/diffutils/3.8/20220311104054
-[0m[0m[1m[32m✓ Installed[0m core/make/4.3/20220311105244
-[0m[0m[1m[32m✓ Installed[0m core/mg/20180927/20220311114614
-[0m[0m[1m[32m✓ Installed[0m core/util-linux/2.37/20220311105626
-[0m[0m[1m[32m✓ Installed[0m core/vim/8.2.2825/20220311114125
-[0m[0m[1m[32m✓ Installed[0m core/bash/5.1/20220311102415
-[0m[0m[1m[32m✓ Installed[0m core/binutils/2.37/20220311083411
-[0m[0m[1m[32m✓ Installed[0m core/coreutils/8.32/20220311101609
-[0m[0m[1m[32m✓ Installed[0m core/file/5.41/20220311083211
-[0m[0m[1m[32m✓ Installed[0m core/findutils/4.9.0/20220311104411
-[0m[0m[1m[32m✓ Installed[0m core/gawk/5.1.0/20220311102814
-[0m[0m[1m[32m✓ Installed[0m core/gzip/1.11/20220311105137
-[0m[0m[1m[32m✓ Installed[0m core/hab/1.6.521/20220603154827
-[0m[0m[1m[32m✓ Installed[0m core/rq/0.10.4/20220311112035
-[0m[0m[1m[32m✓ Installed[0m core/sed/4.8/20220311101151
-[0m[0m[1m[32m✓ Installed[0m core/tar/1.34/20220311102650
-[0m[0m[1m[32m✓ Installed[0m core/unzip/6.0/20220311111952
-[0m[0m[1m[32m✓ Installed[0m core/wget/1.21.2/20220311111811
-[0m[0m[1m[32m✓ Installed[0m core/xz/5.2.5/20220311104623
-[0m[0m[1m[32m✓ Installed[0m core/readline/8.1/20220311102318
-[0m[0m[1m[32m✓ Installed[0m core/libcap/2.60/20220311101102
-[0m[0m[1m[32m✓ Installed[0m core/mpfr/4.1.0/20220311084038
-[0m[0m[1m[32m✓ Installed[0m core/gmp/6.2.1/20220311083900
-[0m[0m[1m[32m✓ Installed[0m core/less/590/20220311103557
-[0m[0m[1m[32m✓ Installed[0m core/grep/3.7/20220311102158
-[0m[0m[1m[32m✓ Installed[0m core/bzip2/1.0.8/20220311100531
-[0m[0m[1m[32m✓ Installed[0m core/libidn2/2.3.2/20220311111710
-[0m[0m[1m[32m✓ Installed[0m core/openssl/1.0.2zb/20220311111046
-[0m[0m[1m[32m✓ Installed[0m core/libiconv/1.16/20220311111355
-[0m[0m[1m[32m✓ Installed[0m core/libunistring/0.9.10/20220311111450
-[0m[0m[1m[32m✓ Installed[0m core/cacerts/2021.10.26/20220311110931
-[0m[0m[1m[32m✓ Installed[0m core/openssl-fips/2.0.16/20220311110951
-[0m[0m[1m[32m✓ Installed[0m core/pcre/8.45/20220311102054
-[0m[0m[1m[32m✓ Installed[0m core/gcc-libs/9.4.0/20220311083308
-[0m[0m[1m[32m✓ Installed[0m core/libbsd/0.11.3/20220311114436
-[0m[0m[1m[32m✓ Installed[0m core/libmd/1.0.4/20220311114359
-[0m[0m[1m[32m✓ Installed[0m core/zlib/1.2.11/20220311082914
-[0m[0m[1m[32m✓ Installed[0m core/acl/2.3.1/20220311101006
-[0m[0m[1m[32m✓ Installed[0m core/ncurses/6.2/20220311100731
-[0m[0m[1m[32m✓ Installed[0m core/attr/2.5.1/20220311100918
-[0m[0m[1m[32m✓ Installed[0m core/glibc/2.34/20220311081742
-[0m[0m[1m[32m✓ Installed[0m core/linux-headers/4.20.17/20220311081613
-[0m[0m[1m[32m✓ Installed[0m core/hab-backline/1.6.521/20220603160815
-[0m[0m[1m[35m★ Install of core/hab-backline/1.6.521/20220603160815 complete with 44 new packages installed.[0m
-[0m[0m[1m[33m» Binlinking hab from core/hab into /hab/studios/src/hab/bin[0m
-[0m[0m[1m[35m★ Binlinked hab from core/hab/1.6.521/20220603154827 to /hab/studios/src/hab/bin/hab[0m
-[0m[0m[1m[33m» Binlinking bash from core/bash into /hab/studios/src/hab/bin[0m
-[0m[0m[1m[35m★ Binlinked bash from core/bash/5.1/20220311102415 to /hab/studios/src/hab/bin/bash[0m
-[0m[0m[1m[33m» Binlinking sh from core/bash into /hab/studios/src/hab/bin[0m
-[0m[0m[1m[35m★ Binlinked sh from core/bash/5.1/20220311102415 to /hab/studios/src/hab/bin/sh[0m
-   [1;36mhab-studio: [1;37mBuilding 'habitat/plan.sh' in Studio at /hab/studios/src (default)[0m
-   [1;36mhab-studio: [1;37mExported: HAB_AUTH_TOKEN=[redacted][0m
-   [1;36mhab-studio: [1;37mExported: HAB_ORIGIN=jimbodragon[0m
-   [1;36mhab-studio: [1;37mExported: HAB_BLDR_URL=https://bldr.habitat.sh[0m
-   [1;36mhab-studio: [1;37mExported: HAB_BLDR_CHANNEL=stable[0m
-   [1;36mhab-studio: [1;37mExported: HAB_STUDIO_SUP=false[0m
-   [1;36mhab-studio: [1;37mExported: HAB_STUDIO_HOST_ARCH=[redacted][0m
-Script started, output log file is '/src/results/logs/unknown.2023-10-07-175656.log'.
--c:  env -i 'DO_CHECK=true' 'HAB_STUDIO_HOST_ARCH=x86_64-linux' 'HAB_BLDR_URL=https://bldr.habitat.sh' 'HAB_BINLINK_DIR=/hab/bin' 'STUDIO_TYPE=default' 'PWD=/src' 'HOME=/root' 'LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:' 'HAB_AUTH_TOKEN=_Qk9YLTEKYmxkci0yMDE3MDkyNzAyMzcxNApibGRyLTIwMTcwOTI3MDIzNzE0CnRtKzRvN3YvbHFOdkgrSDExbkxCVzBUSFJDU2NmVFlNCjVUNmlmNzh4NUI4cE9CMnBONXBOdzZYRXlqcU95d0lQMVo2c0FBb1lkT3ErY3lNRA==' 'HAB_ORIGIN=jimbodragon' 'TERMINFO=/hab/pkgs/core/ncurses/6.2/20220311100731/share/terminfo' 'TERM=xterm-256color' 'SHLVL=0' 'HAB_LICENSE=accept-no-persist' 'LC_ALL=POSIX' 'HAB_STUDIO_SUP=false' 'PATH=/hab/bin:/hab/pkgs/core/hab-plan-build/1.6.521/20220603160622/bin:/hab/pkgs/core/diffutils/3.8/20220311104054/bin:/hab/pkgs/core/less/590/20220311103557/bin:/hab/pkgs/core/make/4.3/20220311105244/bin:/hab/pkgs/core/mg/20180927/20220311114614/bin:/hab/pkgs/core/util-linux/2.37/20220311105626/bin:/hab/pkgs/core/vim/8.2.2825/20220311114125/bin:/hab/pkgs/core/ncurses/6.2/20220311100731/bin:/hab/pkgs/core/bash/5.1/20220311102415/bin:/hab/pkgs/core/binutils/2.37/20220311083411/bin:/hab/pkgs/core/coreutils/8.32/20220311101609/bin:/hab/pkgs/core/file/5.41/20220311083211/bin:/hab/pkgs/core/findutils/4.9.0/20220311104411/bin:/hab/pkgs/core/gawk/5.1.0/20220311102814/bin:/hab/pkgs/core/gzip/1.11/20220311105137/bin:/hab/pkgs/core/hab/1.6.521/20220603154827/bin:/hab/pkgs/core/rq/0.10.4/20220311112035/bin:/hab/pkgs/core/sed/4.8/20220311101151/bin:/hab/pkgs/core/tar/1.34/20220311102650/bin:/hab/pkgs/core/unzip/6.0/20220311111952/bin:/hab/pkgs/core/wget/1.21.2/20220311111811/bin:/hab/pkgs/core/xz/5.2.5/20220311104623/bin:/hab/pkgs/core/libcap/2.60/20220311101102/bin:/hab/pkgs/core/grep/3.7/20220311102158/bin:/hab/pkgs/core/bzip2/1.0.8/20220311100531/bin:/hab/pkgs/core/libidn2/2.3.2/20220311111710/bin:/hab/pkgs/core/openssl/1.0.2zb/20220311111046/bin:/hab/pkgs/core/openssl-fips/2.0.16/20220311110951/bin:/hab/pkgs/core/pcre/8.45/20220311102054/bin:/hab/pkgs/core/libmd/1.0.4/20220311114359/bin:/hab/pkgs/core/acl/2.3.1/20220311101006/bin:/hab/pkgs/core/attr/2.5.1/20220311100918/bin:/hab/pkgs/core/glibc/2.34/20220311081742/bin:/hab/bin' 'HAB_BLDR_CHANNEL=stable' 'OLDPWD=/' '_=/hab/pkgs/core/coreutils/8.32/20220311101609/bin/env'  /hab/bin/build habitat/plan.sh: No such file or directory
-Script done.
-executed command bundle exec hab studio build habitat/plan.sh
-   [1;36mdeploy-context: [1;37mWriting configuration[0m
-   [1;36mdeploy-context: [1;37mWriting service management scripts[0m
-   [1;36mdeploy-context: [1;37mStripping unneeded symbols from binaries and libraries[0m
-Executing action do_strip at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_strip' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-executed command git pull origin master
-[33mDon't run Bundler as root. Bundler can ask for sudo if it is needed, and
-installing your bundle as root will break this application for all non-root
-users on this machine.[0m
-Resolving dependencies...Fetching gem metadata from https://rubygems.org/........
-............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
-[32mFetching rake 13.0.6[0m
-[32mInstalling rake 13.0.6[0m
-[32mFetching concurrent-ruby 1.2.2[0m
-[32mFetching connection_pool 2.4.1[0m
-[32mFetching ruby2_keywords 0.0.5[0m
-[32mFetching mutex_m 0.1.2[0m
-[32mFetching aws-partitions 1.834.0[0m
-[32mFetching aws-sigv2 1.1.0[0m
-[32mFetching base64 0.1.1[0m
-[32mFetching bigdecimal 3.1.4[0m
-[32mFetching minitest 5.20.0[0m
-[32mFetching ast 2.4.2[0m
-[32mFetching aws-eventstream 1.2.0[0m
-[32mFetching jmespath 1.6.2[0m
-[32mFetching faraday-excon 1.1.0[0m
-[32mFetching faraday-em_http 1.0.0[0m
-[32mFetching faraday-em_synchrony 1.0.0[0m
-[32mFetching public_suffix 5.0.3[0m
-[32mInstalling connection_pool 2.4.1[0m
-[32mInstalling ruby2_keywords 0.0.5[0m
-[32mInstalling base64 0.1.1[0m
-[32mInstalling mutex_m 0.1.2[0m
-[32mInstalling aws-sigv2 1.1.0[0m
-[32mInstalling faraday-em_synchrony 1.0.0[0m
-[32mInstalling aws-eventstream 1.2.0[0m
-[32mInstalling ast 2.4.2[0m
-[32mInstalling faraday-em_http 1.0.0[0m
-[32mInstalling faraday-excon 1.1.0[0m
-[32mInstalling jmespath 1.6.2[0m
-[32mFetching faraday-httpclient 1.0.1[0m
-[32mFetching multipart-post 2.3.0[0m
-[32mInstalling aws-partitions 1.834.0[0m
-[32mInstalling bigdecimal 3.1.4 with native extensions[0m
-[32mFetching faraday-net_http 1.0.1[0m
-[32mFetching faraday-patron 1.0.0[0m
-[32mInstalling concurrent-ruby 1.2.2[0m
-[32mFetching faraday-net_http_persistent 1.2.0[0m
-[32mFetching faraday-rack 1.0.0[0m
-[32mFetching faraday-retry 1.0.3[0m
-[32mInstalling faraday-httpclient 1.0.1[0m
-[32mInstalling minitest 5.20.0[0m
-[32mFetching timeliness 0.3.10[0m
-[32mFetching unf_ext 0.0.8.2[0m
-[32mFetching bcrypt_pbkdf 1.1.0[0m
-[32mInstalling faraday-net_http 1.0.1[0m
-[32mInstalling multipart-post 2.3.0[0m
-[32mInstalling faraday-rack 1.0.0[0m
-[32mInstalling faraday-patron 1.0.0[0m
-[32mInstalling faraday-net_http_persistent 1.2.0[0m
-[32mInstalling faraday-retry 1.0.3[0m
-[32mFetching bson 4.15.0[0m
-[32mInstalling public_suffix 5.0.3[0m
-[32mFetching builder 3.2.4[0m
-Using bundler 2.2.33
-[32mFetching fuzzyurl 0.9.0[0m
-[32mInstalling timeliness 0.3.10[0m
-[32mInstalling bcrypt_pbkdf 1.1.0 with native extensions[0m
-[32mFetching tomlrb 1.3.0[0m
-[32mFetching chef-vault 4.1.11[0m
-[32mFetching libyajl2 2.1.0[0m
-[32mFetching hashie 4.1.0[0m
-[32mFetching mixlib-log 3.0.9[0m
-[32mInstalling chef-vault 4.1.11[0m
-[32mInstalling builder 3.2.4[0m
-[32mInstalling tomlrb 1.3.0[0m
-[32mInstalling fuzzyurl 0.9.0[0m
-[32mFetching rack 2.2.8[0m
-[32mFetching uuidtools 2.2.0[0m
-[32mInstalling libyajl2 2.1.0 with native extensions[0m
-[32mFetching webrick 1.8.1[0m
-[32mInstalling mixlib-log 3.0.9[0m
-[32mInstalling hashie 4.1.0[0m
-[32mFetching ffi 1.16.3[0m
-[32mFetching diff-lcs 1.3[0m
-[32mFetching erubis 2.7.0[0m
-[32mFetching iniparse 1.5.0[0m
-[32mInstalling uuidtools 2.2.0[0m
-[32mInstalling bson 4.15.0 with native extensions[0m
-[32mInstalling unf_ext 0.0.8.2 with native extensions[0m
-[32mInstalling webrick 1.8.1[0m
-[32mFetching tty-color 0.6.0[0m
-[32mFetching strings-ansi 0.2.0[0m
-[32mInstalling iniparse 1.5.0[0m
-[32mFetching unicode-display_width 2.5.0[0m
-[32mInstalling rack 2.2.8[0m
-[32mInstalling diff-lcs 1.3[0m
-[32mInstalling tty-color 0.6.0[0m
-[32mInstalling strings-ansi 0.2.0[0m
-[32mFetching unicode_utils 1.4.0[0m
-[32mFetching tty-cursor 0.7.1[0m
-[32mInstalling unicode-display_width 2.5.0[0m
-[32mInstalling erubis 2.7.0[0m
-[32mFetching tty-screen 0.8.1[0m
-[32mFetching wisper 2.0.1[0m
-[32mFetching method_source 1.0.0[0m
-[32mFetching parallel 1.23.0[0m
-[32mInstalling tty-cursor 0.7.1[0m
-[32mInstalling tty-screen 0.8.1[0m
-[32mInstalling wisper 2.0.1[0m
-[32mInstalling method_source 1.0.0[0m
-[32mFetching parslet 1.8.2[0m
-[32mInstalling parallel 1.23.0[0m
-[32mFetching coderay 1.1.3[0m
-[32mFetching rspec-support 3.11.1[0m
-[32mFetching rubyzip 2.3.2[0m
-[32mFetching semverse 3.0.2[0m
-[32mFetching sslshake 1.3.1[0m
-[32mInstalling rspec-support 3.11.1[0m
-[32mInstalling rubyzip 2.3.2[0m
-[32mInstalling unicode_utils 1.4.0[0m
-[32mInstalling parslet 1.8.2[0m
-[32mInstalling coderay 1.1.3[0m
-[32mInstalling semverse 3.0.2[0m
-[32mFetching thor 1.2.2[0m
-[32mInstalling sslshake 1.3.1[0m
-[32mFetching json 2.6.3[0m
-[32mFetching net-ssh 7.2.0[0m
-[32mInstalling thor 1.2.2[0m
-[32mFetching mixlib-cli 2.1.8[0m
-[32mFetching mixlib-authentication 3.0.10[0m
-[32mInstalling json 2.6.3 with native extensions[0m
-[32mFetching timeout 0.4.0[0m
-[32mInstalling mixlib-cli 2.1.8[0m
-[32mFetching date 3.3.3[0m
-[32mInstalling ffi 1.16.3 with native extensions[0m
-[32mInstalling mixlib-authentication 3.0.10[0m
-[32mFetching ipaddress 0.8.3[0m
-[32mInstalling net-ssh 7.2.0[0m
-[32mInstalling timeout 0.4.0[0m
-[32mFetching plist 3.7.0[0m
-[32mInstalling date 3.3.3 with native extensions[0m
-[32mInstalling ipaddress 0.8.3[0m
-[32mFetching wmi-lite 1.0.7[0m
-[32mFetching proxifier 1.0.3[0m
-[32mInstalling plist 3.7.0[0m
-[32mFetching syslog-logger 1.6.8[0m
-[32mInstalling wmi-lite 1.0.7[0m
-[32mInstalling proxifier 1.0.3[0m
-[32mFetching http-accept 1.7.0[0m
-[32mInstalling syslog-logger 1.6.8[0m
-[32mFetching mime-types-data 3.2023.1003[0m
-[32mFetching netrc 0.11.0[0m
-[32mFetching erubi 1.12.0[0m
-[32mInstalling http-accept 1.7.0[0m
-[32mInstalling netrc 0.11.0[0m
-[32mFetching rexml 3.2.6[0m
-[32mFetching httpclient 2.8.3[0m
-[32mInstalling erubi 1.12.0[0m
-[32mInstalling mime-types-data 3.2023.1003[0m
-[32mFetching multi_json 1.15.0[0m
-[32mFetching little-plugger 1.1.4[0m
-[32mFetching nori 2.6.0[0m
-[32mInstalling rexml 3.2.6[0m
-[32mFetching rubyntlm 0.6.3[0m
-[32mInstalling multi_json 1.15.0[0m
-[32mInstalling little-plugger 1.1.4[0m
-[32mInstalling nori 2.6.0[0m
-[32mFetching minitar 0.9[0m
-[32mFetching molinillo 0.8.0[0m
-[32mInstalling httpclient 2.8.3[0m
-[32mInstalling rubyntlm 0.6.3[0m
-[32mFetching racc 1.7.1[0m
-[32mFetching rainbow 3.1.1[0m
-[32mInstalling minitar 0.9[0m
-[32mInstalling molinillo 0.8.0[0m
-[32mInstalling rainbow 3.1.1[0m
-[32mInstalling racc 1.7.1 with native extensions[0m
-[32mFetching regexp_parser 2.8.1[0m
-[32mFetching ruby-progressbar 1.13.0[0m
-[32mFetching middleware 0.1.0[0m
-[32mFetching thread_safe 0.3.6[0m
-[32mFetching cucumber-tag-expressions 2.0.4[0m
-[32mFetching cucumber-cucumber-expressions 10.3.0[0m
-[32mInstalling regexp_parser 2.8.1[0m
-[32mInstalling middleware 0.1.0[0m
-[32mFetching multi_test 0.1.2[0m
-[32mInstalling ruby-progressbar 1.13.0[0m
-[32mFetching declarative 0.0.20[0m
-[32mInstalling cucumber-tag-expressions 2.0.4[0m
-[32mFetching git-version-bump 0.19.1[0m
-[32mInstalling cucumber-cucumber-expressions 10.3.0[0m
-[32mInstalling multi_test 0.1.2[0m
-[32mInstalling declarative 0.0.20[0m
-[32mFetching highline 2.1.0[0m
-[32mFetching options 2.3.2[0m
-[32mFetching excon 0.104.0[0m
-[32mFetching jwt 2.7.1[0m
-[32mInstalling git-version-bump 0.19.1[0m
-[32mInstalling thread_safe 0.3.6[0m
-[32mInstalling options 2.3.2[0m
-[32mFetching memoist 0.16.2[0m
-[32mFetching os 1.1.4[0m
-[32mFetching mini_mime 1.1.5[0m
-[32mInstalling highline 2.1.0[0m
-[32mInstalling memoist 0.16.2[0m
-[32mFetching trailblazer-option 0.1.2[0m
-[32mFetching uber 0.1.0[0m
-[32mInstalling os 1.1.4[0m
-[32mFetching retriable 3.1.2[0m
-[32mInstalling jwt 2.7.1[0m
-[32mFetching inifile 3.0.0[0m
-[32mFetching train-habitat 0.2.22[0m
-[32mInstalling mini_mime 1.1.5[0m
-[32mInstalling trailblazer-option 0.1.2[0m
-[32mInstalling uber 0.1.0[0m
-[32mFetching zeitwerk 2.6.12[0m
-[32mInstalling retriable 3.1.2[0m
-[32mInstalling inifile 3.0.0[0m
-[32mInstalling excon 0.104.0[0m
-[32mInstalling train-habitat 0.2.22[0m
-[32mFetching dry-inflector 0.3.0[0m
-[32mFetching ice_nine 0.11.2[0m
-[32mFetching hashdiff 1.0.1[0m
-[32mInstalling zeitwerk 2.6.12[0m
-[32mFetching to_regexp 0.2.1[0m
-[32mFetching recursive-open-struct 1.1.3[0m
-[32mFetching yajl-ruby 1.4.3[0m
-[32mInstalling dry-inflector 0.3.0[0m
-[32mFetching yaml-safe_load_stream3 0.1.2[0m
-[32mInstalling ice_nine 0.11.2[0m
-[32mFetching lockfile 2.1.3[0m
-[32mInstalling to_regexp 0.2.1[0m
-[32mFetching ed25519 1.3.0[0m
-[32mInstalling hashdiff 1.0.1[0m
-[32mInstalling recursive-open-struct 1.1.3[0m
-[32mInstalling yaml-safe_load_stream3 0.1.2[0m
-[32mFetching mixlib-versioning 1.2.12[0m
-[32mFetching retryable 3.0.5[0m
-[32mFetching ruby-shadow 2.5.1[0m
-[32mInstalling lockfile 2.1.3[0m
-[32mInstalling mixlib-versioning 1.2.12[0m
-[32mInstalling retryable 3.0.5[0m
-[32mInstalling ruby-shadow 2.5.1 with native extensions[0m
-[32mInstalling ed25519 1.3.0 with native extensions[0m
-[32mFetching securerandom 0.2.2[0m
-[32mFetching docile 1.4.0[0m
-[32mFetching simplecov-html 0.12.3[0m
-[32mFetching unix-crypt 1.3.1[0m
-[32mFetching drb 2.1.1[0m
-[32mFetching aws-sigv4 1.6.0[0m
-[32mFetching simplecov_json_formatter 0.1.4[0m
-[32mFetching faraday-multipart 1.0.4[0m
-[32mInstalling yajl-ruby 1.4.3 with native extensions[0m
-[32mInstalling simplecov_json_formatter 0.1.4[0m
-[32mInstalling aws-sigv4 1.6.0[0m
-[32mInstalling securerandom 0.2.2[0m
-[32mInstalling unix-crypt 1.3.1[0m
-[32mInstalling faraday-multipart 1.0.4[0m
-[32mInstalling docile 1.4.0[0m
-[32mInstalling drb 2.1.1[0m
-[32mInstalling simplecov-html 0.12.3[0m
-[32mFetching addressable 2.8.5[0m
-[32mFetching mixlib-archive 1.1.7[0m
-[32mFetching pastel 0.8.0[0m
-[32mFetching mixlib-config 3.0.27[0m
-[32mFetching rspec-expectations 3.11.1[0m
-[32mFetching rspec-core 3.11.0[0m
-[32mFetching tty-reader 0.9.0[0m
-[32mFetching rspec-mocks 3.11.2[0m
-[32mInstalling pastel 0.8.0[0m
-[32mInstalling mixlib-archive 1.1.7[0m
-[32mInstalling addressable 2.8.5[0m
-[32mInstalling mixlib-config 3.0.27[0m
-[32mInstalling rspec-expectations 3.11.1[0m
-[32mInstalling tty-reader 0.9.0[0m
-[32mFetching tzinfo 2.0.6[0m
-[32mFetching i18n 1.14.1[0m
-[32mFetching chef-utils 18.0.185[0m
-[32mInstalling rspec-mocks 3.11.2[0m
-[32mFetching dry-container 0.11.0[0m
-[32mFetching net-protocol 0.2.1[0m
-[32mInstalling rspec-core 3.11.0[0m
-[32mFetching pry 0.14.2[0m
-[32mInstalling tzinfo 2.0.6[0m
-[32mInstalling chef-utils 18.0.185[0m
-[32mInstalling i18n 1.14.1[0m
-[32mInstalling net-protocol 0.2.1[0m
-[32mInstalling dry-container 0.11.0[0m
-[32mFetching strings 0.2.1[0m
-[32mFetching net-scp 4.0.0[0m
-[32mFetching net-sftp 4.0.0[0m
-[32mFetching net-ssh-gateway 2.0.0[0m
-[32mFetching logging 2.3.1[0m
-[32mFetching gyoku 1.4.0[0m
-[32mInstalling strings 0.2.1[0m
-[32mInstalling net-scp 4.0.0[0m
-[32mInstalling net-ssh-gateway 2.0.0[0m
-[32mFetching mime-types 3.5.1[0m
-[32mInstalling net-sftp 4.0.0[0m
-[32mInstalling pry 0.14.2[0m
-[32mInstalling gyoku 1.4.0[0m
-[32mFetching ffi-yajl 2.6.0[0m
-[32mInstalling logging 2.3.1[0m
-[32mFetching unf 0.1.4[0m
-[32mFetching solve 4.0.4[0m
-[32mFetching mongo 2.13.2[0m
-[32mInstalling mime-types 3.5.1[0m
-[32mFetching representable 3.2.0[0m
-[32mFetching progress_bar 1.3.3[0m
-[32mInstalling solve 4.0.4[0m
-[32mFetching jsonpath 0.9.9[0m
-[32mFetching dry-core 0.9.1[0m
-[32mInstalling representable 3.2.0[0m
-[32mInstalling unf 0.1.4[0m
-[32mInstalling ffi-yajl 2.6.0 with native extensions[0m
-[32mFetching docker-api 2.2.0[0m
-[32mFetching parser 3.2.2.4[0m
-[32mInstalling jsonpath 0.9.9[0m
-[32mInstalling dry-core 0.9.1[0m
-[32mInstalling progress_bar 1.3.3[0m
-[32mInstalling docker-api 2.2.0[0m
-[32mFetching aws-sdk-core 3.185.1[0m
-[32mFetching vault 0.18.1[0m
-[32mFetching faraday 1.10.3[0m
-[32mFetching cookbook-omnifetch 0.12.2[0m
-[32mFetching simplecov 0.22.0[0m
-[32mFetching tty-prompt 0.23.1[0m
-[32mFetching down 5.4.1[0m
-[32mInstalling faraday 1.10.3[0m
-[32mInstalling vault 0.18.1[0m
-[32mInstalling tty-prompt 0.23.1[0m
-[32mInstalling cookbook-omnifetch 0.12.2[0m
-[32mFetching mixlib-shellout 3.2.7[0m
-[32mFetching tty-box 0.7.0[0m
-[32mInstalling aws-sdk-core 3.185.1[0m
-[32mInstalling simplecov 0.22.0[0m
-[32mFetching tty-table 0.12.0[0m
-[32mInstalling down 5.4.1[0m
-[32mFetching rspec 3.11.0[0m
-[32mFetching rspec-its 1.3.0[0m
-[32mInstalling mongo 2.13.2[0m
-[32mInstalling tty-table 0.12.0[0m
-[32mInstalling tty-box 0.7.0[0m
-[32mInstalling mixlib-shellout 3.2.7[0m
-[32mInstalling rspec-its 1.3.0[0m
-[32mInstalling rspec 3.11.0[0m
-[32mFetching dry-configurable 0.13.0[0m
-[32mFetching dry-logic 1.3.0[0m
-[32mFetching domain_name 0.5.20190701[0m
-[32mFetching ms_rest 0.7.6[0m
-[32mFetching chef-config 18.0.185[0m
-[32mFetching faraday-follow_redirects 0.3.0[0m
-[32mFetching faraday_middleware 1.0.0[0m
-[32mInstalling domain_name 0.5.20190701[0m
-[32mInstalling dry-logic 1.3.0[0m
-[32mInstalling dry-configurable 0.13.0[0m
-[32mFetching signet 0.18.0[0m
-[32mInstalling faraday-follow_redirects 0.3.0[0m
-[32mInstalling faraday_middleware 1.0.0[0m
-[32mInstalling signet 0.18.0[0m
-[32mInstalling chef-config 18.0.185[0m
-[32mInstalling ms_rest 0.7.6[0m
-[32mInstalling parser 3.2.2.4[0m
-[32mFetching mixlib-install 3.12.27[0m
-[32mFetching license-acceptance 2.1.13[0m
-[32mFetching http-cookie 1.0.5[0m
-[32mFetching chef-telemetry 1.1.1[0m
-[32mFetching dry-types 1.6.1[0m
-[32mFetching googleauth 0.14.0[0m
-[32mInstalling mixlib-install 3.12.27[0m
-[32mInstalling license-acceptance 2.1.13[0m
-[32mInstalling http-cookie 1.0.5[0m
-[32mInstalling chef-telemetry 1.1.1[0m
-[32mInstalling dry-types 1.6.1[0m
-[32mInstalling googleauth 0.14.0[0m
-[32mFetching aws-sdk-account 1.18.0[0m
-[32mFetching aws-sdk-applicationautoscaling 1.51.0[0m
-[32mFetching aws-sdk-alexaforbusiness 1.65.0[0m
-[32mFetching aws-sdk-amplify 1.32.0[0m
-[32mFetching aws-sdk-apigateway 1.88.0[0m
-[32mFetching aws-sdk-apigatewayv2 1.51.0[0m
-[32mFetching aws-sdk-athena 1.75.0[0m
-[32mFetching aws-sdk-autoscaling 1.92.0[0m
-[32mFetching aws-sdk-batch 1.73.0[0m
-[32mInstalling aws-sdk-athena 1.75.0[0m
-[32mInstalling aws-sdk-account 1.18.0[0m
-[32mInstalling aws-sdk-alexaforbusiness 1.65.0[0m
-[32mInstalling aws-sdk-applicationautoscaling 1.51.0[0m
-[32mFetching aws-sdk-budgets 1.60.0[0m
-[32mInstalling aws-sdk-amplify 1.32.0[0m
-[32mInstalling aws-sdk-apigateway 1.88.0[0m
-[32mInstalling aws-sdk-apigatewayv2 1.51.0[0m
-[32mInstalling aws-sdk-autoscaling 1.92.0[0m
-[32mFetching aws-sdk-cloudformation 1.90.0[0m
-[32mFetching aws-sdk-cloudfront 1.83.0[0m
-[32mFetching aws-sdk-cloudhsmv2 1.51.0[0m
-[32mFetching aws-sdk-cloudhsm 1.48.0[0m
-[32mInstalling aws-sdk-batch 1.73.0[0m
-[32mInstalling aws-sdk-budgets 1.60.0[0m
-[32mInstalling aws-sdk-cloudhsmv2 1.51.0[0m
-[32mInstalling aws-sdk-cloudformation 1.90.0[0m
-[32mFetching aws-sdk-cloudtrail 1.69.0[0m
-[32mInstalling aws-sdk-cloudhsm 1.48.0[0m
-[32mFetching aws-sdk-cloudwatch 1.81.0[0m
-[32mFetching aws-sdk-cloudwatchevents 1.62.0[0m
-[32mFetching aws-sdk-cloudwatchlogs 1.71.0[0m
-[32mInstalling aws-sdk-cloudfront 1.83.0[0m
-[32mFetching aws-sdk-codecommit 1.60.0[0m
-[32mFetching aws-sdk-codedeploy 1.60.0[0m
-[32mFetching aws-sdk-codepipeline 1.62.0[0m
-[32mFetching aws-sdk-cognitoidentity 1.45.0[0m
-[32mFetching aws-sdk-cognitoidentityprovider 1.76.0[0m
-[32mInstalling aws-sdk-cloudwatchevents 1.62.0[0m
-[32mInstalling aws-sdk-cloudtrail 1.69.0[0m
-[32mInstalling aws-sdk-cloudwatchlogs 1.71.0[0m
-[32mInstalling aws-sdk-codedeploy 1.60.0[0m
-[32mInstalling aws-sdk-codepipeline 1.62.0[0m
-[32mInstalling aws-sdk-cloudwatch 1.81.0[0m
-[32mFetching aws-sdk-configservice 1.98.0[0m
-[32mInstalling aws-sdk-cognitoidentity 1.45.0[0m
-[32mInstalling aws-sdk-codecommit 1.60.0[0m
-[32mInstalling aws-sdk-cognitoidentityprovider 1.76.0[0m
-[32mFetching aws-sdk-costandusagereportservice 1.50.0[0m
-[32mFetching aws-sdk-dynamodb 1.95.0[0m
-[32mFetching aws-sdk-databasemigrationservice 1.80.0[0m
-[32mFetching aws-sdk-ec2 1.412.0[0m
-[32mFetching aws-sdk-ecr 1.65.0[0m
-[32mFetching aws-sdk-ecrpublic 1.23.0[0m
-[32mFetching aws-sdk-ecs 1.130.0[0m
-[32mInstalling aws-sdk-costandusagereportservice 1.50.0[0m
-[32mFetching aws-sdk-efs 1.67.0[0m
-[32mFetching aws-sdk-eks 1.90.0[0m
-[32mInstalling aws-sdk-ecr 1.65.0[0m
-[32mInstalling aws-sdk-configservice 1.98.0[0m
-[32mFetching aws-sdk-elasticache 1.92.0[0m
-[32mFetching aws-sdk-elasticloadbalancing 1.49.0[0m
-[32mFetching aws-sdk-elasticbeanstalk 1.61.0[0m
-[32mInstalling aws-sdk-ecrpublic 1.23.0[0m
-[32mFetching aws-sdk-elasticloadbalancingv2 1.92.0[0m
-[32mInstalling aws-sdk-databasemigrationservice 1.80.0[0m
-[32mInstalling aws-sdk-elasticloadbalancing 1.49.0[0m
-[32mInstalling aws-sdk-eks 1.90.0[0m
-[32mFetching aws-sdk-elasticsearchservice 1.77.0[0m
-[32mInstalling aws-sdk-efs 1.67.0[0m
-[32mInstalling aws-sdk-dynamodb 1.95.0[0m
-[32mInstalling aws-sdk-elasticbeanstalk 1.61.0[0m
-[32mFetching aws-sdk-emr 1.53.0[0m
-[32mInstalling aws-sdk-ecs 1.130.0[0m
-[32mInstalling aws-sdk-elasticache 1.92.0[0m
-[32mFetching aws-sdk-eventbridge 1.46.0[0m
-[32mInstalling aws-sdk-elasticsearchservice 1.77.0[0m
-[32mInstalling aws-sdk-elasticloadbalancingv2 1.92.0[0m
-[32mFetching aws-sdk-firehose 1.58.0[0m
-[32mFetching aws-sdk-glue 1.145.0[0m
-[32mFetching aws-sdk-guardduty 1.80.0[0m
-[32mInstalling aws-sdk-eventbridge 1.46.0[0m
-[32mInstalling aws-sdk-emr 1.53.0[0m
-[32mFetching aws-sdk-iam 1.87.0[0m
-[32mFetching aws-sdk-kinesis 1.52.0[0m
-[32mFetching aws-sdk-kafka 1.63.0[0m
-[32mFetching aws-sdk-kms 1.72.0[0m
-[32mFetching aws-sdk-lambda 1.105.0[0m
-[32mFetching aws-sdk-mq 1.40.0[0m
-[32mInstalling aws-sdk-firehose 1.58.0[0m
-[32mInstalling aws-sdk-kinesis 1.52.0[0m
-[32mInstalling aws-sdk-guardduty 1.80.0[0m
-[32mInstalling aws-sdk-iam 1.87.0[0m
-[32mInstalling aws-sdk-mq 1.40.0[0m
-[32mFetching aws-sdk-networkfirewall 1.35.0[0m
-[32mFetching aws-sdk-networkmanager 1.37.0[0m
-[32mInstalling aws-sdk-kafka 1.63.0[0m
-[32mFetching aws-sdk-organizations 1.77.0[0m
-[32mInstalling aws-sdk-glue 1.145.0[0m
-[32mInstalling aws-sdk-lambda 1.105.0[0m
-[32mFetching aws-sdk-ram 1.26.0[0m
-[32mFetching aws-sdk-rds 1.196.0[0m
-[32mInstalling aws-sdk-kms 1.72.0[0m
-[32mFetching aws-sdk-redshift 1.98.0[0m
-[32mInstalling aws-sdk-networkfirewall 1.35.0[0m
-[32mInstalling aws-sdk-organizations 1.77.0[0m
-[32mInstalling aws-sdk-networkmanager 1.37.0[0m
-[32mInstalling aws-sdk-ec2 1.412.0[0m
-[32mFetching aws-sdk-route53domains 1.52.0[0m
-[32mFetching aws-sdk-route53 1.80.0[0m
-[32mFetching aws-sdk-route53resolver 1.49.0[0m
-[32mInstalling aws-sdk-ram 1.26.0[0m
-[32mFetching aws-sdk-s3control 1.43.0[0m
-[32mFetching aws-sdk-secretsmanager 1.46.0[0m
-[32mFetching aws-sdk-securityhub 1.94.0[0m
-[32mFetching aws-sdk-servicecatalog 1.60.0[0m
-[32mInstalling aws-sdk-route53domains 1.52.0[0m
-[32mInstalling aws-sdk-redshift 1.98.0[0m
-[32mInstalling aws-sdk-route53resolver 1.49.0[0m
-[32mInstalling aws-sdk-s3control 1.43.0[0m
-[32mFetching aws-sdk-ses 1.41.0[0m
-[32mInstalling aws-sdk-route53 1.80.0[0m
-[32mInstalling aws-sdk-secretsmanager 1.46.0[0m
-[32mInstalling aws-sdk-rds 1.196.0[0m
-[32mInstalling aws-sdk-servicecatalog 1.60.0[0m
-[32mFetching aws-sdk-shield 1.58.0[0m
-[32mInstalling aws-sdk-securityhub 1.94.0[0m
-[32mFetching aws-sdk-signer 1.32.0[0m
-[32mFetching aws-sdk-simpledb 1.29.0[0m
-[32mFetching aws-sdk-sms 1.50.0[0m
-[32mFetching aws-sdk-sns 1.67.0[0m
-[32mFetching aws-sdk-sqs 1.64.0[0m
-[32mInstalling aws-sdk-ses 1.41.0[0m
-[32mInstalling aws-sdk-simpledb 1.29.0[0m
-[32mInstalling aws-sdk-sms 1.50.0[0m
-[32mInstalling aws-sdk-shield 1.58.0[0m
-[32mInstalling aws-sdk-signer 1.32.0[0m
-[32mFetching aws-sdk-ssm 1.158.0[0m
-[32mFetching aws-sdk-states 1.39.0[0m
-[32mInstalling aws-sdk-sns 1.67.0[0m
-[32mFetching aws-sdk-synthetics 1.19.0[0m
-[32mFetching aws-sdk-transfer 1.73.0[0m
-[32mFetching aws-sdk-waf 1.43.0[0m
-[32mFetching faraday-cookie_jar 0.0.7[0m
-[32mFetching rest-client 2.1.0[0m
-[32mInstalling aws-sdk-states 1.39.0[0m
-[32mInstalling aws-sdk-synthetics 1.19.0[0m
-[32mFetching activesupport 7.1.0[0m
-[32mInstalling aws-sdk-sqs 1.64.0[0m
-[32mInstalling faraday-cookie_jar 0.0.7[0m
-[32mFetching dry-struct 1.5.2[0m
-[32mFetching google-api-client 0.52.0[0m
-[32mInstalling aws-sdk-transfer 1.73.0[0m
-[32mFetching chef-zero 15.0.11[0m
-[32mInstalling rest-client 2.1.0[0m
-[32mInstalling dry-struct 1.5.2[0m
-[32mInstalling aws-sdk-waf 1.43.0[0m
-[32mInstalling aws-sdk-ssm 1.158.0[0m
-[32mFetching time 0.2.2[0m
-[32mFetching rubocop-ast 1.29.0[0m
-[32mFetching aws-sdk-s3 1.136.0[0m
-[32mInstalling time 0.2.2[0m
-[32mFetching ms_rest_azure 0.12.0[0m
-[32mFetching net-ftp 0.2.0[0m
-[32mFetching k8s-ruby 0.14.0[0m
-[32mInstalling chef-zero 15.0.11[0m
-[32mInstalling rubocop-ast 1.29.0[0m
-[32mInstalling activesupport 7.1.0[0m
-[32mInstalling ms_rest_azure 0.12.0[0m
-[32mInstalling net-ftp 0.2.0[0m
-[32mInstalling k8s-ruby 0.14.0[0m
-[32mFetching azure_graph_rbac 0.17.2[0m
-[32mFetching azure_mgmt_key_vault 0.17.7[0m
-[32mFetching azure_mgmt_resources 0.18.2[0m
-[32mFetching azure_mgmt_security 0.19.0[0m
-[32mFetching azure_mgmt_storage 0.23.0[0m
-[32mInstalling azure_graph_rbac 0.17.2[0m
-[32mInstalling azure_mgmt_key_vault 0.17.7[0m
-[32mInstalling aws-sdk-s3 1.136.0[0m
-[32mFetching rubocop 1.25.1[0m
-[32mInstalling azure_mgmt_security 0.19.0[0m
-[32mFetching cheffish 17.1.5[0m
-[32mInstalling azure_mgmt_resources 0.18.2[0m
-[32mInstalling azure_mgmt_storage 0.23.0[0m
-[32mInstalling cheffish 17.1.5[0m
-[32mInstalling rubocop 1.25.1[0m
-[32mFetching corefoundation 0.3.13[0m
-[32mFetching ffi-libarchive 1.1.13[0m
-[32mFetching train-core 3.10.8[0m
-[32mFetching gssapi 1.3.1[0m
-[32mFetching sys-uname 1.2.3[0m
-[32mFetching train-aws 0.2.36[0m
-[32mInstalling corefoundation 0.3.13[0m
-[32mInstalling ffi-libarchive 1.1.13[0m
-[32mInstalling gssapi 1.3.1[0m
-[32mInstalling train-core 3.10.8[0m
-[32mInstalling train-aws 0.2.36[0m
-[32mInstalling sys-uname 1.2.3[0m
-[32mFetching winrm 2.3.6[0m
-[32mInstalling winrm 2.3.6[0m
-[32mFetching inspec-core 5.22.3[0m
-[32mFetching train-rest 0.5.0[0m
-[32mFetching ohai 18.1.3[0m
-[32mFetching protobuf-cucumber 3.10.8[0m
-[32mInstalling train-rest 0.5.0[0m
-[32mInstalling ohai 18.1.3[0m
-[32mFetching winrm-fs 1.3.5[0m
-[32mInstalling protobuf-cucumber 3.10.8[0m
-[32mInstalling winrm-fs 1.3.5[0m
-[32mInstalling inspec-core 5.22.3[0m
-[32mFetching winrm-elevated 1.2.3[0m
-[32mInstalling winrm-elevated 1.2.3[0m
-[32mFetching train-winrm 0.2.13[0m
-[32mFetching test-kitchen 3.5.0[0m
-[32mInstalling train-winrm 0.2.13[0m
-[32mInstalling test-kitchen 3.5.0[0m
-[32mFetching kitchen-dokken 2.19.1[0m
-[32mFetching kitchen-ec2 3.17.0[0m
-[32mFetching kitchen-vagrant 1.14.1[0m
-[32mInstalling kitchen-ec2 3.17.0[0m
-[32mInstalling kitchen-dokken 2.19.1[0m
-[32mInstalling kitchen-vagrant 1.14.1[0m
-[32mFetching cucumber-messages 12.4.0[0m
-[32mInstalling cucumber-messages 12.4.0[0m
-[32mFetching cucumber-gherkin 14.2.0[0m
-[32mFetching cucumber-create-meta 1.0.0[0m
-[32mFetching cucumber-html-formatter 7.2.0[0m
-[32mInstalling cucumber-create-meta 1.0.0[0m
-[32mInstalling cucumber-gherkin 14.2.0[0m
-[32mInstalling cucumber-html-formatter 7.2.0[0m
-[32mFetching cucumber-core 7.1.0[0m
-[32mInstalling cucumber-core 7.1.0[0m
-[32mFetching cookstyle 7.32.2[0m
-[32mFetching chef 18.0.185[0m
-[32mFetching cucumber-wire 3.1.0[0m
-[32mInstalling cookstyle 7.32.2[0m
-[32mInstalling cucumber-wire 3.1.0[0m
-[32mFetching cucumber 4.1.0[0m
-[32mInstalling cucumber 4.1.0[0m
-[32mInstalling google-api-client 0.52.0[0m
-[32mInstalling chef 18.0.185[0m
-[32mFetching chef-cli 5.6.14[0m
-[32mFetching chef-bin 18.0.185[0m
-[32mInstalling chef-bin 18.0.185[0m
-[32mInstalling chef-cli 5.6.14[0m
-[32mFetching train 3.10.8[0m
-[32mInstalling train 3.10.8[0m
-[32mFetching train-kubernetes 0.1.12[0m
-[32mInstalling train-kubernetes 0.1.12[0m
-[32mFetching inspec 5.22.3[0m
-[32mInstalling inspec 5.22.3[0m
-Using deploy-context 2.13.0 from source at `.` and installing its executables
-[32mBundle complete! 1 Gemfile dependency, 309 gems now installed.[0m
-[32mUse `bundle info [gemname]` to see where a bundled gem is installed.[0m
-[32mPost-install message from rubyzip:[0m
-RubyZip 3.0 is coming!
-**********************
-
-The public API of some Rubyzip classes has been modernized to use named
-parameters for optional arguments. Please check your usage of the
-following classes:
-  * `Zip::File`
-  * `Zip::Entry`
-  * `Zip::InputStream`
-  * `Zip::OutputStream`
-
-Please ensure that your Gemfiles and .gemspecs are suitably restrictive
-to avoid an unexpected breakage when 3.0 is released (e.g. ~> 2.3.0).
-See https://github.com/rubyzip/rubyzip for details. The Changelog also
-lists other enhancements and bugfixes that have been implemented since
-version 2.3.0.
-[32mPost-install message from minitar:[0m
-The `minitar` executable is no longer bundled with `minitar`. If you are
-expecting this executable, make sure you also install `minitar-cli`.
-executed command git pull origin master
-executed command git pull origin master
-
-
-deploy-context WARNING: Unable to set the cookbook version as GVB is not defined
-
-context_version_file = /src/VERSION
-[31mbundler: command not found: chef[0m
-[33mInstall missing gem executables with `bundle install`[0m
-executed command bundle exec chef push deploy-context Policyfile.lock.json
-[31mbundler: command not found: chef[0m
-[33mInstall missing gem executables with `bundle install`[0m
-executed command bundle exec chef exec knife cookbook upload deploy-context --cookbook-path /
-[0m[0m[1m[31m✗✗✗[0m
-[0m[0m[1m[31m✗✗✗ [403 Forbidden][0m
-[0m[0m[1m[31m✗✗✗[0m
-/src/libraries/deploy-context/deploy/deployer.rb:59:in `execute_action': [1mundefined method `perform' for :do_install:Symbol ([1;4mNoMethodError[m[1m)[m
-	from /src/libraries/deploy-context/studio/deployer.rb:13:in `method_missing'
-	from /src/habitat/plan.sh/plan.rb:3:in `<top (required)>'
-	from plan.rb:3:in `require_relative'
-	from plan.rb:3:in `<main>'
-Ruby not avaialble yet
-   [1;36mdeploy-context: [1;37mBuilding package metadata[0m
-/hab/cache/src/deploy-context-2.13.0 /src/habitat/plan.sh/x86_64-linux
-   [1;36mdeploy-context: [1;37mGenerating blake2b hashes of all files in the package[0m
-   [1;36mdeploy-context: [1;37mGenerating signed metadata FILES[0m
-[0m[0m[1m[33m» Signing deploy-context_blake2bsums[0m
-[0m[0m[1m[36m☛ Signing[0m deploy-context_blake2bsums with jimbodragon-20221104194800 to create /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007175629/FILES
-[0m[0m[1m[35m★ Signed artifact /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007175629/FILES.[0m
-/src/habitat/plan.sh/x86_64-linux
-   [1;36mdeploy-context: [1;37mCreating manifest[0m
-   [1;36mdeploy-context: [1;37mGenerating package artifact[0m
-/hab/pkgs/core/tar/1.34/20220311102650/bin/tar: Removing leading `/' from member names
-/hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231007175629-x86_64-linux.tar (1/1)
-  100 %           6240 B / 30.0 KiB = 0.203                                    
-[0m[0m[1m[33m» Signing /hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231007175629-x86_64-linux.tar.xz[0m
-[0m[0m[1m[36m☛ Signing[0m /hab/cache/artifacts/.jimbodragon-deploy-context-2.13.0-20231007175629-x86_64-linux.tar.xz with jimbodragon-20221104194800 to create /hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231007175629-x86_64-linux.hart
-[0m[0m[1m[35m★ Signed artifact /hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231007175629-x86_64-linux.hart.[0m
-'/hab/cache/artifacts/jimbodragon-deploy-context-2.13.0-20231007175629-x86_64-linux.hart' -> '/src/results/jimbodragon-deploy-context-2.13.0-20231007175629-x86_64-linux.hart'
-   [1;36mdeploy-context: [1;37mhab-plan-build cleanup[0m
-Executing action do_end at version 2.13.0 in folder /src/habitat/plan.sh/x86_64-linux PLAN_CONTEXT = /src/habitat/plan.sh/x86_64-linux
-Is Default action 'do_end' permitted?
-The answer is true through '["do_begin", "do_download", "do_verify", "do_clean", "do_unpack", "do_prepare", "do_build", "do_check", "do_install", "do_strip", "do_end", "help", "do_cycle", "do_agent"]'
-executed command git pull origin master
-executed command git add .
-sh: line 1: git: command not found
-executed command git commit -m 'Create deploy-context automatic commit'
-executed command git pull origin master
-executed command rake release
-[31mbundler: command not found: chef-client[0m
-[33mInstall missing gem executables with `bundle install`[0m
-executed command bundle exec chef-client -o deploy-context
-Mix the cookbook deploy-context: FalseClass
-executed command git pull origin master
-executed command git pull origin master
-
-
-deploy-context WARNING: Unable to set the cookbook version as GVB is not defined
-
-context_version_file = /src/VERSION
-[31mbundler: command not found: chef[0m
-[33mInstall missing gem executables with `bundle install`[0m
-executed command bundle exec chef supermarket share deploy-context --cookbook-path /
-
-
-deploy-context ERROR: Promote context deploy-context impossible
-
-
-
-deploy-context ERROR: Promote context deploy-context impossible
-
-Ruby not avaialble yet
-   [1;36mdeploy-context: [1;37m[0m
-   [1;36mdeploy-context: [1;37mSource Path: /src/habitat/plan.sh[0m
-   [1;36mdeploy-context: [1;37mInstalled Path: /hab/pkgs/jimbodragon/deploy-context/2.13.0/20231007175629[0m
-   [1;36mdeploy-context: [1;37mArtifact: /src/results/jimbodragon-deploy-context-2.13.0-20231007175629-x86_64-linux.hart[0m
-   [1;36mdeploy-context: [1;37mBuild Report: /src/results/last_build.env[0m
-   [1;36mdeploy-context: [1;37mSHA256 Checksum: e5f0f610f4cf1de9621ae572c481f5a1fab10c85282ecacdd590596c57b93fbb[0m
-   [1;36mdeploy-context: [1;37mBlake2b Checksum: 6f3fe086f6a1994d6a7a3bfc205a862322000f2b451b3297f7d177aa987eebf5[0m
-   [1;36mdeploy-context: [1;37m[0m
-   [1;36mdeploy-context: [1;37mI love it when a plan.sh comes together.[0m
-   [1;36mdeploy-context: [1;37m[0m
-   [1;36mdeploy-context: [1;37mBuild time: 1m15s[0m
-
-Script done on 2023-10-07 17:57:44+00:00 [COMMAND_EXIT_CODE="0"]

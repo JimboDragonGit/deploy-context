@@ -113,3 +113,9 @@ UPGRADING*
 ###########
 .vagrant
 Vagrantfile
+
+workstation-space
+
+features/*
+habitat/*
+cucumber_test

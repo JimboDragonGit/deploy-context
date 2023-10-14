@@ -3,13 +3,14 @@ pkg_origin="jimbodragon"
 pkg_version=$(cat /src/VERSION)
 pkg_maintainer="Jimmy Provencher <jimmy.provencher@hotmail.ca>"
 pkg_license=("MIT")
-pkg_scaffolding=core/scaffolding-ruby
+# pkg_scaffolding=core/scaffolding-ruby
 # pkg_deps=(core/ruby)
-pkg_deps=(chef/chef-infra-client)
-# pkg_build_deps=(core/make core/gcc)
+# pkg_deps=(chef/chef-infra-client core/git core/bash)
+pkg_deps=(core/git core/bash core/scaffolding-ruby)
+pkg_build_deps=(core/make core/gcc)
 
 do_mix_cookbook(){
-  chef exec chef-client -z -o $1
+  chef-client -o $1
 }
 
 do_deploy_context_action(){
@@ -72,6 +73,30 @@ do_build() {
 
   # mkdir bin
   # cp /src/bin/deploy-context bin/
+
+  gem install cucumber
+
+  # cd /src
+
+  mkdir -p /etc/chef/
+
+  cp -r accepted_licenses /etc/chef
+
+  cp /src/workstation-space/user.pem /etc/chef
+  cp /src/workstation-space/client.rb /etc/chef
+
+#   cat <<EOF > "/usr/bin/env"
+
+# EOF
+
+#   chmod a+x /usr/bin/env
+
+  # ls -alh /hab/pkgs/chef/chef-infra-client/18.3.0/20230830115804/vendor/bin/
+
+  # chef-shell bash
+  
+  # do_mix_cookbook 'deploy-context::habitat'
+  echo $pkg_prefix
 }
 
 do_check() {
@@ -90,11 +115,14 @@ do_install() {
     do_default_install
   fi
   # gem push deploy-context.gem
+  ls -alh $pkg_prefix
   rake release
+  mv pkg/* $pkg_prefix
 }
 
 do_strip() {
   do_default_strip
+  rmdir ../pkg
 }
 
 do_end() {

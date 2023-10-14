@@ -1,0 +1,8 @@
+---
+id: chef-workstation
+name: Chef Workstation
+date_accepted: '2022-05-09T00:35:59-04:00'
+accepting_product: chef-workstation
+accepting_product_version: 3.0.33
+user: root
+file_format: 1

@@ -3,7 +3,7 @@ begin
 rescue Exception => e
   puts "Failed to load chef/knife module, loading a dummy module instead"
 
-  module Chef
+  class Chef
     class Knife
       def self.banner(banner_flags)
       end

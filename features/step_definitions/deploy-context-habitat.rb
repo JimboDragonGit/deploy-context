@@ -64,3 +64,7 @@ end
 Alors('enregistre le numéro de build') do
   write_build_id
 end
+
+Alors('nettoie le plan de travail') do
+  delete_file_only_if_exist(get_context_file(self, 'habitat/plan.sh/Gemfile.lock'))
+end

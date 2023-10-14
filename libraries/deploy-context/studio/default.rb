@@ -24,7 +24,7 @@ module Context
 
       def do_mix_cookbook
         cookbook_result = mix_run_list(self, context_name)
-        log "Mix the cookbook #{context_name}: #{cookbook_result.class}"
+        context_log "Mix the cookbook #{context_name}: #{cookbook_result.class}"
       end
 
       def do_agent

@@ -8,17 +8,9 @@ module Context
       Knife::DefaultKnifeContext.load_deps
     end
 
-    option :omg,
-      :short => '-O',
-      :long => '--omg',
-      :description => "I'm so excited! 9"
-
     def run
-      if config[:omg]
-        puts "OMG HELLO WORLD!!!9!!99"
-      else
-        puts "I am just a fucking example. 9"
-      end
+      context_log "name_args = #{name_args[2...]}"
+      habitat(self, %w(studio) + name_args[2...])
     end
     
     def do_clean

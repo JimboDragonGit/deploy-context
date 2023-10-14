@@ -5,23 +5,27 @@ module Context
     end
 
     def context_log(message)
+      return context_log message if respond_to? :log
       puts message
     end
 
     def debug_context_log(name, message)
+      return debug_log message if respond_to? :debug_log
       debug_message = "\n\n#{name} DEBUG: #{message}\n\n"
-      log debug_message if debug?
+      context_log debug_message if debug?
     end
 
     def warning_context_log(name, message)
+      return warning_log message if respond_to? :warning_log
       warning_message = "\n\n#{name} WARNING: #{message}\n\n"
-      log warning_message
+      context_log warning_message
     end
 
     def error_context_log(name, message)
+      return error_log message if respond_to? :error_log
       error_message = "\n\n#{name} ERROR: #{message}\n\n"
-      log error_message
-      log caller
+      context_log error_message
+      context_log caller
       abort(error_message)
       exit 1
     end

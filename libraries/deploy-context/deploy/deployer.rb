@@ -50,10 +50,10 @@ MESSAGE_END
       end
 
       def actions_permitted?(action)
-        log "Is Default action '#{action}' permitted?"
+        context_log "Is Default action '#{action}' permitted?"
         action_is_permit = actions_permitted.include?(action)
   
-        log "The answer is #{action_is_permit} through '#{actions_permitted}'"
+        context_log "The answer is #{action_is_permit} through '#{actions_permitted}'"
         action_is_permit
       end
 

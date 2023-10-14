@@ -6,13 +6,13 @@ module Context
       end
 
       def test
-        log "\nExecute tests\n"
-        log "\n\nTest result: #{test_context_successful?}\n"
+        context_log "\nExecute tests\n"
+        context_log "\n\nTest result: #{test_context_successful?}\n"
       end
     
       def version
         # do_prepare unless defined?(GitVersionBump)
-        # log "Getting version info for #{context_folder} and version should be #{GitVersionBump.version(true)}"
+        # context_log "Getting version info for #{context_folder} and version should be #{GitVersionBump.version(true)}"
         if defined?(GitVersionBump)
           Gem::Version.new(GitVersionBump.version(true))
         else
@@ -25,13 +25,13 @@ module Context
       end
 
       def test_context_successful?
-        log "Check if #{context_name} is install #{version}"
+        context_log "Check if #{context_name} is install #{version}"
         
         if cookbook_test_successful?(self) && cucumber_test_successful?(self) && current_version_installed?
-          log "Test context #{context_name} was successfully perform on version #{version}"
+          context_log "Test context #{context_name} was successfully perform on version #{version}"
           true
         else
-          log "Test context #{context_name} has failed to perform #{version}"
+          context_log "Test context #{context_name} has failed to perform #{version}"
           false
         end
       end
@@ -65,7 +65,7 @@ module Context
       # end
 
       # def release
-      #   log "\n\nRelease #{context_name} at version #{version}"
+      #   context_log "\n\nRelease #{context_name} at version #{version}"
       #   cookbook_push(self)
       #   ruby_release(self)
       #   git_release(self)
@@ -110,8 +110,8 @@ module Context
       end
 
       # def test
-      #   log "\nExecute tests\n"
-      #   log "\n\nTest result: #{test_context_successful?}\n"
+      #   context_log "\nExecute tests\n"
+      #   context_log "\n\nTest result: #{test_context_successful?}\n"
       # end
     end
   end

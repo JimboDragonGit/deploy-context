@@ -11,7 +11,7 @@
       Et enregistre le statut coutelleries_ok
 
     @planning
-    Scénario: Phase planning
+    Scénario: Phase planning knife
       Quand on peut lister les cookbooks
       Et un couteau context est accessible
       Étant donné le couteau context
@@ -28,7 +28,7 @@
       | cookbook_name |
       | deploy-context |
     
-    @testing
+    @testing_app
     Plan du Scénario: Phase testing knife
       Étant donné le couteau <knife_name>
       Et la commande couteau <command_name>
@@ -41,4 +41,21 @@
       | knife_name | command_name |
       | deploy | context |
       | default | studio |
+    
+    @testing_sub
+    Plan du Scénario: Phase testing knife
+      Étant donné le couteau <knife_name>
+      Et la commande couteau <command_name>
+      Quand un couteau <knife_name> est accessible
+      Alors je peux affiché l'aide du couteau
+      Et exécute la sous commande couteau <command_name> <sub_command>
+      Et enregistre le statut knife_sub_command_ok
+
+    Exemples:
+      | knife_name | command_name | sub_command |
+      | context | knife | context |
+      | context | cookbook | studio |
+      | context | cucumber | studio |
+      | context | habitat | studio |
+      | context | ruby | studio |
   
