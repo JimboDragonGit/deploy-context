@@ -23,6 +23,7 @@ Policyfile.lock.json
 
 .idea/
 
+deploy-status.json
 results
 results/*
 .kitchen
