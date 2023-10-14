@@ -1,7 +1,7 @@
 {
   "status_file": "deploy-status.json",
   "kitchen_suite": null,
-  "plan_path": null,
-  "branch_name": "master",
-  "status": "master_switch_issue"
+  "plan_path": "habitat/plan.sh",
+  "branch_name": null,
+  "status": "build_fail"
 }

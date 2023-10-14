@@ -9,8 +9,10 @@ module Context
     end
 
     def run
-      context_log "name_args = #{name_args[2...]}"
-      habitat(self, %w(studio) + name_args[2...])
+      if name_args.count > 2
+        context_log "name_args = #{name_args[2...]}"
+        habitat(self, %w(studio) + name_args[2...])
+      end
     end
     
     def do_clean
