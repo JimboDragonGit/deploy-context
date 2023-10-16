@@ -5,6 +5,7 @@ initialize: <%= default %> --tags @initialize
 planning: <%= default %> --tags @planning
 execution: <%= default %> --tags @execution
 closure: <%= default %> --tags @closure
+post_mortem: <%= default %> --tags @post_mortem
 strict: <%= common %>
 html_report: <%= default %> --exclude features_list/6.cucumber.feature --format html --out=features_report.html
 knife: <%= default %> --tags @knife
