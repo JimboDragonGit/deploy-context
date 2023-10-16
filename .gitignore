@@ -30,7 +30,7 @@ results/*
 respond.txt
 deploy-status.json
 
-workstation-space/*
+workstation-space
 
 habitat/plan.sh/pkg/
 habitat/plan.sh/x86_64-linux/lib/

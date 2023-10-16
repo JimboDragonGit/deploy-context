@@ -1,5 +1,6 @@
 
 require_relative 'deploy/context'
+require_relative 'deploy/chef'
 require_relative 'deploy/cookbook'
 require_relative 'deploy/cucumber'
 require_relative 'deploy/deployer'
@@ -12,14 +13,14 @@ module Context
   module CucumberSuiteHelper
     include Context::CommandHelper
     include DeployHelpers::DeployerHelper
-    include DeployHelpers::DeployerHelper
+    include DeployHelpers::ChefHelper
     include DeployHelpers::GitHelper
     include DeployHelpers::RubyHelper
     include DeployHelpers::ContextHelper
     include DeployHelpers::CookbookHelper
-    include DeployHelpers::RecipeHelper
     include DeployHelpers::HabitatHelper
     include DeployHelpers::CucumberHelper
+    
     include Studio::Base
     include Studio::Default
     include Steps::Deploy

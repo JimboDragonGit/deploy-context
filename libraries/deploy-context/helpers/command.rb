@@ -5,7 +5,7 @@ module Context
     end
 
     def context_log(message)
-      return context_log message if respond_to? :log
+      return log message if respond_to? :log
       puts message
     end
 

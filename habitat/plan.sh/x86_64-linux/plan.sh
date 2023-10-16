@@ -55,6 +55,28 @@ do_unpack() {
 
 do_prepare() {
   do_default_prepare
+
+  cp -r /src/workstation-space/chef-client /etc/chef
+
+  cp -r /src/workstation-space/gem ~/.gem
+  mkdir -p ~/.local/share/gem/
+  cp -r /src/workstation-space/gem_credentials ~/.local/share/gem/credentials
+
+  cp -r /src/workstation-space/ssh ~/.ssh
+  cp -r /src/workstation-space/gitconfig ~/.gitconfig
+
+  mkdir ~/.chef
+  cp -r /src/workstation-space/chef_credentials ~/.chef/credentials
+
+  for chef_key in $(grep client_key ~/.chef/credentials | cut -d '=' -f 2 | cut -d "'" -f 2)
+  do
+    file_name=$(basename $chef_key)
+    sed -i 's,'"$chef_key"',/src/workstation-space/chef_user_keys/'"$file_name"',' ~/.chef/credentials
+  done
+  cat ~/.local/share/gem/credentials
+  cat ~/.gitconfig
+  ls -alh ~/.gem/.gem/trust
+  echo $(realpath ~)
 }
 
 do_build() {
@@ -80,17 +102,11 @@ do_build() {
   # mkdir bin
   # cp /src/bin/deploy-context bin/
 
-  gem install cucumber
-
   # cd /src
 
-  mkdir -p /etc/chef/
+  # mkdir -p /etc/chef/
 
-  cp -r accepted_licenses /etc/chef
-
-  cp /src/workstation-space/user.pem /etc/chef
-  cp /src/workstation-space/client.rb /etc/chef
-
+  # cp -r accepted_licenses /etc/chef
 #   cat <<EOF > "/usr/bin/env"
 
 # EOF
@@ -103,6 +119,10 @@ do_build() {
   
   # do_mix_cookbook 'deploy-context::habitat'
   echo $pkg_prefix
+
+
+
+  gem install cucumber
 }
 
 do_check() {

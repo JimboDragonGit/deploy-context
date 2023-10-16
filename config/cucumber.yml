@@ -1,5 +1,6 @@
 ##YAML Template
 <% default = "--no-snippets --no-source --no-duration --publish-quiet" %>
+<% default = "--no-source --no-duration --publish-quiet" %>
 <% common = "#{default} --tags @wip --strict" %>
 initialize: <%= default %> --tags @initialize
 planning: <%= default %> --tags @planning

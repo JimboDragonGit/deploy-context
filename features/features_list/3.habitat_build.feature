@@ -9,6 +9,7 @@
       Quand le studio habitat est initialisé
       Alors nettoie le plan de travail
       Et enregistre la version et la date
+      Et prépare le plan de travail
       Et enregistre le statut habitat_ok
 
   
