@@ -24,7 +24,6 @@ do_begin() {
 
 do_download() {
   do_default_download
-  # git clone 'git@github.com:JimboDragonGit/deploy-context.git'
   if [ -d lib ]
   then
     rm -rf lib
@@ -58,7 +57,6 @@ do_prepare() {
 
   cp -r /src/workstation-space/chef-client /etc/chef
 
-  # cp -r /src/workstation-space/gem ~/.gem
   mkdir -p ~/.local/share/gem/
   cp -r /src/workstation-space/gem_credentials ~/.local/share/gem/credentials
 
@@ -73,10 +71,6 @@ do_prepare() {
     file_name=$(basename $chef_key)
     sed -i 's,'"$chef_key"',/src/workstation-space/chef_user_keys/'"$file_name"',' ~/.chef/credentials
   done
-  # cat ~/.local/share/gem/credentials
-  cat ~/.gitconfig
-  # ls -alh ~/.gem/
-  echo $(realpath ~)
 }
 
 do_build() {
@@ -85,43 +79,6 @@ do_build() {
   then
     do_default_build
   fi
-  # cd deploy-context
-  # gem build deploy-context.gemspec
-  
-  # gem pristine byebug --version 11.1.3
-  # gem pristine date --version 3.3.3
-  # gem pristine debug_inspector --version 1.1.0
-  # gem pristine ed25519 --version 1.3.0
-  # gem pristine ffi --version 1.15.5
-  # gem pristine ffi-yajl --version 2.6.0
-  # gem pristine json --version 2.6.3
-  # gem pristine libyajl2 --version 2.1.0
-  # gem pristine ruby-shadow --version 2.5.0
-  # gem pristine unf_ext --version 0.0.8.2
-
-  # mkdir bin
-  # cp /src/bin/deploy-context bin/
-
-  # cd /src
-
-  # mkdir -p /etc/chef/
-
-  # cp -r accepted_licenses /etc/chef
-#   cat <<EOF > "/usr/bin/env"
-
-# EOF
-
-#   chmod a+x /usr/bin/env
-
-  # ls -alh /hab/pkgs/chef/chef-infra-client/18.3.0/20230830115804/vendor/bin/
-
-  # chef-shell bash
-  
-  # do_mix_cookbook 'deploy-context::habitat'
-  echo $pkg_prefix
-
-
-
   gem install cucumber
 }
 
@@ -140,10 +97,9 @@ do_install() {
   then
     do_default_install
   fi
-  # gem push deploy-context.gem
-  ls -alh $pkg_prefix
   rake release --trace
   mv pkg/* $pkg_prefix
+  ls -alh $pkg_prefix
 }
 
 do_strip() {
