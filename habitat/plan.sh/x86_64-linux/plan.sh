@@ -25,6 +25,12 @@ do_begin() {
 do_download() {
   do_default_download
   # git clone 'git@github.com:JimboDragonGit/deploy-context.git'
+  if [ -d lib ]
+  then
+    rm -rf lib
+  fi
+  cp -r /src/libraries lib
+  cp -r /features/step_definitions lib/deploy-definitions
 }
 
 do_verify() {
@@ -123,6 +129,7 @@ do_install() {
 do_strip() {
   do_default_strip
   rmdir ../pkg
+  rmdir ../lib
 }
 
 do_end() {

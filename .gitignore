@@ -27,9 +27,10 @@ deploy-status.json
 results
 results/*
 .kitchen
-pkg/
 respond.txt
 deploy-status.json
 
 workstation-space/*
 
+habitat/lib/
+habitat/pkg/

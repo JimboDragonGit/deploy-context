@@ -1,7 +1,7 @@
 
 module Context
   module GemHelpers
-    def deploycontext_gem_specification(s)
+    def deploycontext_gem_specification(s, deploycontext_rootfolder, libraries_folder, steps_folder = '')
       s.name          = 'deploy-context'
       s.license       = 'MIT'
       s.authors       = ['Jimmy Provencher']
@@ -9,8 +9,6 @@ module Context
       s.homepage      = 'https://github.com/JimboDragonGit/deploy-context'
       s.summary       = 'A auto chef bootstrapper and wrapper cookbook to deploy code and context'
       s.description   = 'Using Chef cookbook style and force any script using it to switch to chef even if it is not install. It will install it tho ;)'
-
-      deploycontext_rootfolder = File.join(__dir__, '../../..')
 
       s.version = File.read(File.join(deploycontext_rootfolder, 'VERSION'))
       s.date    = File.read(File.join(deploycontext_rootfolder, 'DATE'))
@@ -26,9 +24,9 @@ module Context
 
       # s.extra_rdoc_files = ["README.md", 'VERSION', 'DATE']
       # s.files = `git ls-files`.split("\n")
-      libraries = Dir.glob(File.join(deploycontext_rootfolder, 'libraries/**/*'))
-      steps = Dir.glob(File.join(deploycontext_rootfolder, 'features/step_definitions/*'))
-      s.files = libraries + steps
+      libraries_glob = Dir.glob(File.join(libraries, '**/*'))
+      libraries_glob = libraries_glob + Dir.glob(File.join(steps, '*')) unless steps.empty?
+      s.files = libraries_glob
       s.executables   = [
         'deploy-context'
       ]
