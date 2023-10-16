@@ -149,7 +149,7 @@ do_install() {
 do_strip() {
   do_default_strip
   rmdir ../pkg
-  rmdir ../lib
+  rmdir lib
 }
 
 do_end() {
