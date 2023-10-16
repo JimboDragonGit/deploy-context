@@ -105,7 +105,7 @@ do_install() {
 do_strip() {
   do_default_strip
   rmdir ../pkg
-  rmdir lib
+  rm -rf lib
 }
 
 do_end() {
