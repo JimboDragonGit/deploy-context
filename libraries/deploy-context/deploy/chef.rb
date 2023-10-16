@@ -29,6 +29,7 @@ module Context
 
       def prepare_gem
         FileUtils.cp_r File.join(ENV['HOME'],'.gem'), 'workstation-space/gem'
+        FileUtils.rm_rf('workstation-space/gem/trust')
         FileUtils.cp File.join(ENV['HOME'],'.local/share/gem/credentials'), 'workstation-space/gem_credentials'
       end
 

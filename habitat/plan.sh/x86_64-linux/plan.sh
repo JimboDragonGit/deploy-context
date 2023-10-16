@@ -6,7 +6,7 @@ pkg_license=("MIT")
 # pkg_scaffolding=core/scaffolding-ruby
 # pkg_deps=(core/ruby)
 # pkg_deps=(chef/chef-infra-client core/git core/bash)
-pkg_deps=(core/git core/bash core/scaffolding-ruby)
+pkg_deps=(core/git core/bash core/bundler core/scaffolding-ruby)
 pkg_build_deps=(core/make core/gcc)
 
 do_mix_cookbook(){
@@ -58,9 +58,9 @@ do_prepare() {
 
   cp -r /src/workstation-space/chef-client /etc/chef
 
-  cp -r /src/workstation-space/gem ~/.gem
-  mkdir -p ~/.local/share/gem/
-  cp -r /src/workstation-space/gem_credentials ~/.local/share/gem/credentials
+  # cp -r /src/workstation-space/gem ~/.gem
+  # mkdir -p ~/.local/share/gem/
+  # cp -r /src/workstation-space/gem_credentials ~/.local/share/gem/credentials
 
   cp -r /src/workstation-space/ssh ~/.ssh
   cp -r /src/workstation-space/gitconfig ~/.gitconfig
@@ -73,9 +73,9 @@ do_prepare() {
     file_name=$(basename $chef_key)
     sed -i 's,'"$chef_key"',/src/workstation-space/chef_user_keys/'"$file_name"',' ~/.chef/credentials
   done
-  cat ~/.local/share/gem/credentials
+  # cat ~/.local/share/gem/credentials
   cat ~/.gitconfig
-  ls -alh ~/.gem/.gem/trust
+  # ls -alh ~/.gem/
   echo $(realpath ~)
 }
 
