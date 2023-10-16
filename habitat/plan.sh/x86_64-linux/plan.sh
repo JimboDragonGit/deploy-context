@@ -59,8 +59,8 @@ do_prepare() {
   cp -r /src/workstation-space/chef-client /etc/chef
 
   # cp -r /src/workstation-space/gem ~/.gem
-  # mkdir -p ~/.local/share/gem/
-  # cp -r /src/workstation-space/gem_credentials ~/.local/share/gem/credentials
+  mkdir -p ~/.local/share/gem/
+  cp -r /src/workstation-space/gem_credentials ~/.local/share/gem/credentials
 
   cp -r /src/workstation-space/ssh ~/.ssh
   cp -r /src/workstation-space/gitconfig ~/.gitconfig
