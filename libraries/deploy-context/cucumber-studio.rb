@@ -25,6 +25,7 @@ module Context
             cucumber(self, ['--profile', 'planning'] + additionnal_tag)
             cucumber(self, ['--profile', 'execution'] + additionnal_tag)
             cucumber(self, ['--profile', 'closure'] + additionnal_tag)
+            cucumber(self, ['--profile', 'post_mortem'] + additionnal_tag)
           else
             cucumber(self, ['--profile', name_args[0]] + additionnal_tag)
           end
