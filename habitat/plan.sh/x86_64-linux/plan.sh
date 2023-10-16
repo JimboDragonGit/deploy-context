@@ -30,7 +30,7 @@ do_download() {
     rm -rf lib
   fi
   cp -r /src/libraries lib
-  cp -r /features/step_definitions lib/deploy-definitions
+  cp -r /src/features/step_definitions lib/deploy-definitions
 }
 
 do_verify() {
@@ -122,7 +122,7 @@ do_install() {
   fi
   # gem push deploy-context.gem
   ls -alh $pkg_prefix
-  rake release
+  rake release --trace
   mv pkg/* $pkg_prefix
 }
 
