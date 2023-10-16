@@ -27,7 +27,7 @@ module Context
             cucumber(self, ['--profile', 'closure'] + additionnal_tag)
             cucumber(self, ['--profile', 'post_mortem'] + additionnal_tag)
           when 'bump'
-            execute_command(%w(git version-bump patch))
+            execute_command(%w(chef exec git version-bump patch))
           else
             cucumber(self, ['--profile', name_args[0]] + additionnal_tag)
           end
