@@ -17,7 +17,8 @@ default_source :supermarket do |market|
     "docker-ce",
     "docker",
     "apt",
-    "apache2"
+    "apache2",
+    "ssh_known_hosts"
   )
 end
 
@@ -45,3 +46,5 @@ named_run_list :workstation, ['recipe[deploy-context::workstation]']
 # named_run_list :docker, ['recipe[infra_chef::docker]']
 named_run_list :chefserver, ['recipe[chefserver]']
 # named_run_list :default, ['recipe[infra_chef::workstation]', 'recipe[infra_chef::virtualbox]', 'recipe[infra_chef::docker]', 'recipe[infra_chef::chefserver]']
+
+named_run_list :habitat, ['recipe[deploy-context::habitat]']

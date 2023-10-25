@@ -36,10 +36,16 @@ module Context
     end
 
     def verify_kitchen_status
-      context_suite.status = if kitchen_status['last_action'] == "verify" && kitchen_status['last_error'].nil?
-        :verified
+      context_suite.status = case kitchen_status['last_action']
+      when "verify"
+        kitchen_status['last_error'].nil? ? :verified : :verification_fail
+      when "converge"
+        kitchen_status['last_error'].nil? ? :converged : :converge_fail
+      when nil
+        :destroyed
       else
-        :verification_fail
+        warning_context_log("Kitchen status", kitchen_status['last_action'].inspect)
+        :unknown
       end
     end
 
@@ -73,6 +79,10 @@ module Context
 
     def verify_kitchen?
       system("kitchen verify #{context_suite.suite_kitchen}")
+    end
+
+    def verify_secret?(secret_key)
+      system("hab origin secret list | grep #{secret_key}")
     end
 
     def kitchen_converged_successfully?

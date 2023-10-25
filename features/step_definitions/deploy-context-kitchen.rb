@@ -30,9 +30,19 @@ Alors('enregistre le statut {word}') do |status|
   update_status(status)
 end
 
+Quand('la suite kitchen est détruit') do
+  verify_kitchen_status
+  stop_test("La suite #{context_suite.suite_kitchen} n'est pas détruit", context_suite.status) unless context_suite.status == :destroyed
+end
+
+Quand('la suite kitchen est convergée') do
+  verify_kitchen_status
+  stop_test("La suite #{context_suite.suite_kitchen} n'est pas convergée", context_suite.status) unless context_suite.status == :converged
+end
+
 Quand('la suite kitchen est vérifié') do
   verify_kitchen_status
-  stop_test("La suite #{context_suite.suite_kitchen} n'est pas vérifié", context_suite.status) if context_suite.status == :verification_fail
+  stop_test("La suite #{context_suite.suite_kitchen} n'est pas vérifiée", context_suite.status) unless context_suite.status == :verified
 end
 
 Quand('la suite kitchen n\'est pas vérifié') do

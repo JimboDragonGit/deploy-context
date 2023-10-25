@@ -16,6 +16,10 @@ Quand('le studio habitat est initialisé') do
   stop_test("Habitat plan #{context_suite.plan_path} unavailable", :no_studio) unless verify_habitat?
 end
 
+Quand('le secret {word} est disponible') do |secret_key|
+  stop_test("Habitat secrets #{context_suite.plan_path} not set", :no_secret) unless verify_secret?(secret_key)
+end
+
 Alors('construit selon le plan') do
   stop_test("Habitat plan #{context_suite.plan_path} unavailable", :build_fail) unless plan_build_successfully?
 end
@@ -58,7 +62,7 @@ Quand('la dernière tâche diffère') do
 end
 
 Quand('son status est Complete') do
-  stop_test("Même tâche que son origin #{context_suite.organisation_name}", :same_last_build) unless habitat_task_completed?
+  stop_test("Même tâche que son origin #{context_suite.organisation_name}", :build_completed) unless habitat_task_completed?
 end
 
 Alors('enregistre le numéro de build') do
@@ -70,5 +74,9 @@ Alors('nettoie le plan de travail') do
 end
 
 Alors('prépare le plan de travail') do
-  prepare_workplan
+  # prepare_workplan
+end
+
+Alors('afficher les variables usagers') do
+  generate_user_json
 end

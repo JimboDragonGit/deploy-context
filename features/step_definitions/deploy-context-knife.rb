@@ -18,11 +18,15 @@ Alors('je peux affiché l\'aide du couteau') do
 end
 
 Alors('publier le cookbook {word}') do |cookbook_name|
-  stop_test("le couteau ne peux publier le cookbook #{cookbook_name}", :no_sub_help) unless system("knife cookbook upload #{cookbook_name}")
+  stop_test("le couteau ne peux publier le cookbook #{cookbook_name}", :cookbook_publish_fail) unless system("knife cookbook upload #{cookbook_name}")
+end
+
+Alors('autodéployer le cookbook {word}') do |cookbook_name|
+  stop_test("chef ne peut déployer le cookbook #{cookbook_name}", :cookbook_deploy_fail) unless cookbook_push(self)
 end
 
 Alors('autopublier le cookbook {word}') do |cookbook_name|
-  stop_test("le couteau ne peux publier le cookbook #{cookbook_name}", :no_sub_help) unless system("knife cookbook upload #{cookbook_name} --cookbook-path #{::File.dirname(Dir.pwd)}")
+  stop_test("le couteau ne peux publier le cookbook #{cookbook_name}", :cookbook_autopublish_fail) unless system("knife cookbook upload #{cookbook_name} --cookbook-path #{::File.dirname(Dir.pwd)}")
 end
 
 Étantdonné('la commande couteau {word}') do |knife_command|

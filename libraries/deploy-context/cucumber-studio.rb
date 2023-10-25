@@ -21,6 +21,7 @@ module Context
           additionnal_tag = name_args[1].nil? ? [] : ['--tags', "@#{name_args[1]}"]
           case name_args[0]
           when 'cycle'
+            cucumber(self, ['--profile', 'preinit'] + additionnal_tag)
             cucumber(self, ['--profile', 'initialize'] + additionnal_tag)
             cucumber(self, ['--profile', 'planning'] + additionnal_tag)
             cucumber(self, ['--profile', 'execution'] + additionnal_tag)

@@ -38,6 +38,20 @@ module Context
       def prepare_git
         FileUtils.cp File.join(ENV['HOME'],'.gitconfig'), 'workstation-space/gitconfig'
       end
+
+      def generate_user_json
+        warning_context_log 'Habitat origin secrets', JSON.pretty_generate({
+          HAB_STUDIO_SECRET_CHEF_SERVER_URL: 'https://api.chef.io/organizations/jimbodragon',
+          HAB_STUDIO_SECRET_CHEFVALIDATORKEY: File.read('workstation-space/chef-client/validation.pem'),
+          HAB_STUDIO_SECRET_SSHPRIVATEKEY: File.read('workstation-space/ssh/id_rsa'),
+          HAB_STUDIO_SECRET_SSHPUBLICKEY: File.read('workstation-space/ssh/id_rsa.pub'),
+          HAB_STUDIO_SECRET_CLIENT_NAME: 'jprovencher',
+          HAB_STUDIO_SECRET_CLIENT_KEY: File.read('workstation-space/chef_user_keys/jprovencher.pem'),
+          HAB_STUDIO_SECRET_GEMAPI: File.read('workstation-space/gem_credentials'),
+          HAB_STUDIO_SECRET_EMAIL: 'jimmy.provencher@hotmail.ca',
+          HAB_STUDIO_SECRET_FULLNAME: 'Jimmy Provencher'
+        })
+      end
     end
   end
 end

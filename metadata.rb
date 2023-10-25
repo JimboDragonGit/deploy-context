@@ -24,6 +24,7 @@ chef_version '>= 16.0'
 
 # depends 'apt'
 depends 'chef-ingredient'
+depends 'ssh_known_hosts'
 
 # gem 'diff-lcs', '~> 1.5'
 # gem 'sys-uname', '1.2.3'

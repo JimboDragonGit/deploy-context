@@ -14,15 +14,16 @@
     @planning
     Scénario: Phase planning kitchen
       Étant donné la suite kitchen workstation-vb
-      Quand la suite kitchen n'est pas vérifié
+      Quand la suite kitchen est détruit
       Alors converge la suite kitchen
       Et enregistre le statut kitchen_plan_ok
 
     @execution
     Scénario: Phase executing kitchen
       Étant donné la suite kitchen workstation-vb
-      Quand la suite kitchen n'est pas vérifié
+      Quand la suite kitchen est convergée
       Alors vérifie la suite kitchen
+      Et autodéployer le cookbook deploy-context
       Et enregistre le statut kitchen_exec_ok
   
     @closure

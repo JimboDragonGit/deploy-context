@@ -1,6 +1,21 @@
 # language: fr
 @fr @deploycontext @habitat
   Fonctionnalité: Je suis le testeur du déployeur de deploy-context avec habitat
+
+    @preinit
+    Scénario: Phase pré initialiatique de habitat
+      Étant donné le plan habitat/plan.sh
+      Quand le studio habitat est initialisé
+      Et le secret CHEF_SERVER_URL est disponible
+      Et le secret CHEFVALIDATORKEY est disponible
+      Et le secret SSHPRIVATEKEY est disponible
+      Et le secret CLIENT_NAME est disponible
+      Et le secret CLIENT_KEY est disponible
+      Et le secret GEMAPI est disponible
+      Et le secret EMAIL est disponible
+      Et le secret FULLNAME est disponible
+      Et afficher les variables usagers
+      Et enregistre le statut habitat_secret_ok
   
     @initialize
     Scénario: Phase initialisation habitat
@@ -20,7 +35,6 @@
       Et l'application deploy-context
       Et le plan habitat/plan.sh
       Quand le studio habitat est initialisé
-      Alors autopublier le cookbook deploy-context
       Et construit selon le plan
       Et démarre une tâche pour construire
       Et enregistre le statut habitat_build_ok
