@@ -31,7 +31,7 @@ module Context
         'deploy-context'
       ]
 
-      s.cert_chain  = [File.join(ENV['HOME'], '.gem/gem-gem-public_cert.pem')]
+      s.cert_chain  = [File.join(ENV['HOME'], '.gem/gem-public_cert.pem')]
       s.signing_key = File.join(ENV['HOME'], '.gem/gem-private_key.pem') if $PROGRAM_NAME =~ /gem\z/
 
       s.metadata = {
