@@ -49,9 +49,25 @@ EOM
 log_level                :info
 node_name                $CLIENT_NAME
 chef_server_url          '$CHEF_SERVER_URL'
+secret_file              '/etc/chef/secret'
 data_bag_encrypt_version 3
 named_run_list 'deploy-context'
 EOM
+
+  cat > /etc/chef/secret <<EOM
+$CLIENT_KEY
+EOM
+
+  if [ ! -d ~/.local/share/gem ]
+  then
+    mkdir -p ~/.local/share/gem
+  fi
+
+  cat > ~/.local/share/gem/credentials <<EOM
+:rubygems_api_key: $GEMAPI
+EOM
+
+cat ~/.local/share/gem/credentials
 
 # cat > /usr/bin/env <<EOM
 # EOM
@@ -113,7 +129,7 @@ do_install() {
 
   which rake
 
-  rake release --trace
+  rake release --trace || echo
   mv pkg/* $pkg_prefix
   ls -alh $pkg_prefix
 }
