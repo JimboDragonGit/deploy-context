@@ -17,3 +17,4 @@ git: <%= default %> --tags @git
 habitat: <%= default %> --tags @habitat
 cucumber: <%= default %> --tags @cucumber
 cycle: <%= default %> --exclude features_list/6.cucumber.feature
+databags: <%= default %> --tags @databags
