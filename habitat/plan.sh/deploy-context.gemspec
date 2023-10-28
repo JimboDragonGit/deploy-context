@@ -5,6 +5,7 @@ require_relative '../../libraries/deploy-context/helpers/gemspec.rb'
   extend Context::GemHelpers
 
   deploycontext_rootfolder = __dir__
-  libraries = Dir.glob(File.join(deploycontext_rootfolder, 'x86_64-linux/lib/**/*'))
+  libraries = File.join(deploycontext_rootfolder, 'x86_64-linux/lib')
+  steps = File.join(deploycontext_rootfolder, 'x86_64-linux/lib/deploy-definitions')
   deploycontext_gem_specification(s, deploycontext_rootfolder, libraries)
 end

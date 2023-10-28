@@ -29,7 +29,6 @@
       Et le plan habitat/plan.sh
       Quand la suite kitchen est vérifié
       Et le studio habitat réussi
-      Alors récupère les dernières modifications
       Et actionne release avec rake
       Et enregistre le statut rake_bump_ok
 
