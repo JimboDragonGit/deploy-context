@@ -1,6 +1,7 @@
 ##YAML Template
 <% default = "--no-snippets --no-source --no-duration --publish-quiet" %>
 <% default = "--no-source --no-duration --publish-quiet" %>
+<% default = "--no-source --publish-quiet" %>
 <% common = "#{default} --exclude features_list/6.cucumber.feature" %>
 preinit: <%= default %> --tags @preinit
 initialize: <%= default %> --tags @initialize
@@ -8,7 +9,7 @@ planning: <%= default %> --tags @planning
 execution: <%= default %> --tags @execution
 closure: <%= default %> --tags @closure
 post_mortem: <%= default %> --tags @post_mortem
-wip: <%= default --tags @wip --strict %>
+wip: <%= default  %> --tags @wip --strict
 knife: <%= default %> --tags @knife
 kitchen: <%= default %> --tags @kitchen
 rake: <%= default %> --tags @rake
@@ -16,5 +17,5 @@ git: <%= default %> --tags @git
 habitat: <%= default %> --tags @habitat
 cucumber: <%= default %> --tags @cucumber
 cycle: <%= common %>
-strict: <%= common --strict %>
+strict: <%= common %> --strict
 html_report: <%= common %> --format html --out=features_report.html
