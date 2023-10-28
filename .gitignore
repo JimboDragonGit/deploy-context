@@ -23,12 +23,13 @@ Policyfile.lock.json
 
 .idea/
 
-deploy-status.json
+
 results
 results/*
 .kitchen
 respond.txt
 deploy-status.json
+features_report.html
 
 workstation-space
 
