@@ -8,7 +8,7 @@
     @execution
     Scénario: Phase execution cucumber
 
-    @closure
-    Scénario: Phase closure cucumber
+    @report
+    Scénario: Phase report cucumber
       Étant donné le profile html_report
       Alors émettre le rapport
