@@ -39,7 +39,7 @@
       Alors récupère les dernières modifications
       Quand le dépot est propre
       Alors fusionne le dépot avec la branche integrate_cucumber_into_recipe
-      Et déploi les modifications
+      Et déploi les courantes modifications
       Et enregistre le statut git_push_ok
 
     @post_mortem
