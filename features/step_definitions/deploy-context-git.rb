@@ -29,8 +29,12 @@ end
   stop_test("Issue switching to master", :master_switch_issue) unless system('git checkout master')
 end
 
-Alors('déploi les modifications') do
+Alors('déploi les courantes modifications') do
   stop_test("Le déploiment vers son origine lointaine à échouer", :git_push_issue) unless system('git push')
+end
+
+Alors('déploi les modifications de la branche {word}') do |branch_name|
+  stop_test("Le déploiment de la branch #{branch_name} vers son origine lointaine à échouer", :git_push_issue) unless system('git push')
 end
 
 Alors('va sur la branche non maîtresse {word}') do |branch_name|

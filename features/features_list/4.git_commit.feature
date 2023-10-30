@@ -22,7 +22,7 @@
       Quand le dépot est propre
       # Alors test la suite kitchen
       # Et construit selon le plan
-      Et déploi les modifications
+      Et déploi les courantes modifications
       Et enregistre le statut git_merge_ok
   
     @clean
@@ -48,5 +48,6 @@
       Alors récupère les dernières modifications
       Alors va sur la branche non maîtresse integrate_cucumber_into_recipe
       Et fusionne le dépot avec la branche master
-      Et déploi les modifications
+      Et déploi les courantes modifications
+      Et déploi les modifications de la branche integrate_cucumber_into_recipe
       Et enregistre le statut git_post_mortem_ok
