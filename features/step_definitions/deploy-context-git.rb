@@ -34,7 +34,7 @@ Alors('déploi les courantes modifications') do
 end
 
 Alors('déploi les modifications de la branche {word}') do |branch_name|
-  stop_test("Le déploiment de la branch #{branch_name} vers son origine lointaine à échouer", :git_push_issue) unless system('git push')
+  stop_test("Le déploiment de la branch #{branch_name} vers son origine lointaine à échouer", :git_push_branch_issue) unless system("git push --set-upstream origin #{branch_name}")
 end
 
 Alors('va sur la branche non maîtresse {word}') do |branch_name|
