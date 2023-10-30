@@ -6,7 +6,7 @@ pkg_license=("MIT")
 # pkg_scaffolding=core/scaffolding-ruby
 # pkg_deps=(core/ruby)
 # pkg_deps=(chef/chef-infra-client core/git core/bash)
-pkg_deps=(core/git core/bash core/bundler chef/chef-infra-client core/scaffolding-ruby core/coreutils)
+pkg_deps=(core/git core/bash core/bundler chef/chef-infra-client core/scaffolding-ruby core/coreutils core/shadow)
 pkg_build_deps=(core/make core/gcc)
 
 do_mix_cookbook(){
@@ -142,4 +142,5 @@ do_strip() {
 
 do_end() {
   do_default_end
+  gem install deploy-context
 }
