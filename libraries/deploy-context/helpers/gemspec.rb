@@ -26,6 +26,7 @@ module Context
       # s.files = `git ls-files`.split("\n")
       libraries_glob = Dir.glob(File.join(libraries_folder, '**/*'))
       libraries_glob = libraries_glob + Dir.glob(File.join(steps_folder, '*')) unless steps_folder.empty?
+      puts "libraries_glob = #{libraries_glob}"
       s.files = libraries_glob
       s.executables   = [
         'deploy-context'
