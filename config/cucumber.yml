@@ -17,6 +17,7 @@ git: <%= default %> --tags @git
 habitat: <%= default %> --tags @habitat
 cucumber: <%= default %> --tags @cucumber
 install: <%= default %> --tags @install
+supermarket: <%= default %> --tags @supermarket
 cycle: <%= common %>
 strict: <%= common %> --strict
 html_report: <%= common %> --format html --out=features_report.html
