@@ -34,16 +34,16 @@ end
 
 action :initialisation do
   load_dependencies
+  set_git
+  set_ssh_user
+  set_chef_user
+  set_gem_user
 end
 
 action :planning do
 end
 
 action :execution do
-  set_git
-  set_ssh_user
-  set_chef_user
-  set_gem_user
 end
 
 action :closure do

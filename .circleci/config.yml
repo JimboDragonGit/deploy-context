@@ -162,6 +162,7 @@ jobs:
       - checkout
       - run: |
             set -xu
+            gem install deploy-context
             ruby bin/deploy-context do_end
   initialize:
     docker:
@@ -176,6 +177,7 @@ jobs:
       - checkout
       - run: |
             set -xu
+            gem install deploy-context
             cucumber -t @initialize
   planning:
     docker:
@@ -190,6 +192,7 @@ jobs:
       - checkout
       - run: |
             set -xu
+            gem install deploy-context
             cucumber -t @initialize
             cucumber -t @planning
   execution:
@@ -205,6 +208,7 @@ jobs:
       - checkout
       - run: |
             set -xu
+            gem install deploy-context
             cucumber -t @initialize
             cucumber -t @planning
             cucumber -t @execution
@@ -221,6 +225,7 @@ jobs:
       - checkout
       - run: |
             set -xu
+            gem install deploy-context
             cucumber -t @initialize
             cucumber -t @planning
             cucumber -t @execution
