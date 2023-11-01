@@ -25,8 +25,9 @@ module Context
       # s.extra_rdoc_files = ["README.md", 'VERSION', 'DATE']
       # s.files = `git ls-files`.split("\n")
       libraries_glob = Dir.glob(File.join(libraries_folder, '**/*'))
+      puts "libraries_glob first = #{libraries_glob}"
       libraries_glob = libraries_glob + Dir.glob(File.join(steps_folder, '*')) unless steps_folder.empty?
-      puts "libraries_glob = #{libraries_glob}"
+      puts "libraries_glob second = #{libraries_glob}"
       s.files = libraries_glob
       s.executables   = [
         'deploy-context'
