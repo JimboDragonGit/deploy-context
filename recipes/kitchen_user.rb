@@ -26,3 +26,11 @@ git File.join('/home/vagrant', 'deploy-context') do
   revision 'master'
   action :sync
 end
+
+directory '/home/vagrant/.chef/plugins'
+
+link File.join('/home/vagrant', 'deploy-context') do
+  to '/home/vagrant/.chef/plugins/knife'
+  link_type :hard
+end
+
