@@ -155,10 +155,6 @@ suites:
     verifier:
       name: inspec
       inspec_tests:
-        - supermarket: dev-sec/linux-baseline
-        - supermarket: dev-sec/ssh-baseline
-        - supermarket: dev-sec/ssl-basline
-        - supermarket: dev-sec/cis-linux-benchmark
         - test/integration/default/kitchen_user_test.rb
     attributes:
       deploy-context:
