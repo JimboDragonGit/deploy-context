@@ -1,0 +1,8 @@
+name: deploy-context
+title: InSpec Profile for Deploy-Context
+maintainer: Jimmy Provencher
+copyright: JimboDragon
+copyright_email: jimmy.provencher@hotmail.ca
+license: Apache-2.0
+summary: An InSpec Compliance Profile for Deploy-Context
+version: 0.1.0

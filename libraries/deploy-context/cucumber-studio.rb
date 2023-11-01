@@ -32,8 +32,8 @@ module Context
           else
             cucumber(self, ['--profile', name_args[0]] + additionnal_tag)
           end
-        else
-          cucumber(self)
+        # else
+        #   cucumber(self)
         end
       end
     end

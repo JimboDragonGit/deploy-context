@@ -6,6 +6,17 @@ provisioner:
 
 verifier:
   name: inspec
+  title: InSpec Profile for Deploy-Context
+  maintainer: Jimmy Provencher
+  copyright: JimboDragon
+  copyright_email: jimmy.provencher@hotmail.ca
+  license: Apache-2.0
+  summary: An InSpec Compliance Profile for Deploy-Context
+  version: 0.1.0
+  depends:
+  - name: supermarket-profile
+    supermarket: dev-sec/linux-baseline
+
 
 platforms:
   - name: vb-deploy-context
@@ -140,7 +151,21 @@ suites:
       infra_chef:
         project_name: exemple
   - name: workstation
-    named_run_list: workstation
+    named_run_list: kitchen_user
+    verifier:
+      name: inspec
+      inspec_tests:
+        - supermarket: dev-sec/linux-baseline
+        - supermarket: dev-sec/ssh-baseline
+        - supermarket: dev-sec/ssl-basline
+        - supermarket: dev-sec/cis-linux-benchmark
+        - test/integration/default/kitchen_user_test.rb
     attributes:
+      deploy-context:
+        ssh_private_key: <%= ::File.read(::File.join(ENV['HOME'], '.ssh/id_rsa')).split("\n").join('\n') %>
+        ssh_public_key: <%= ::File.read(::File.join(ENV['HOME'], '.ssh/id_rsa.pub')) %>
+        gem_api: <%= ENV['GEMAPI'] %>
+        email: <%= ENV['EMAIL'] %>
+        full_name: <%= ENV['FULLNAME'] %>
     includes:
         - vb-workstation-context

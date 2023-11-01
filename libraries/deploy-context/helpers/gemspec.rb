@@ -69,7 +69,7 @@ module Context
       s.add_runtime_dependency('cucumber')
       s.add_runtime_dependency('down')
       s.add_runtime_dependency('unix-crypt')
-      s.add_runtime_dependency('ruby-shadow')
+      # s.add_runtime_dependency('ruby-shadow')
       s.add_runtime_dependency('securerandom')
       s.add_runtime_dependency('git-version-bump')
 

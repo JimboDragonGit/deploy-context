@@ -34,6 +34,8 @@ do_download() {
   fi
   cp -r /src/libraries lib
   cp -r /src/features/step_definitions lib/deploy-definitions
+
+  do_deploy_context_action fetch_secrets
 }
 
 do_verify() {
