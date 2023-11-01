@@ -151,11 +151,11 @@ suites:
       infra_chef:
         project_name: exemple
   - name: workstation
-    named_run_list: kitchen_user
+    named_run_list: deploy_context
     verifier:
       name: inspec
       inspec_tests:
-        - test/integration/default/kitchen_user_test.rb
+        - test/integration/default/deploy-context_test.rb
     attributes:
       deploy-context:
         ssh_private_key: <%= ::File.read(::File.join(ENV['HOME'], '.ssh/id_rsa')).split("\n").join('\n') %>

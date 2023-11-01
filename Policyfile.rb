@@ -43,6 +43,7 @@ cookbook 'deploy-context', path: '.'
 
 named_run_list :workstation, ['recipe[deploy-context::workstation]']
 named_run_list :kitchen_user, ['recipe[deploy-context::kitchen_user]']
+named_run_list :deploy_context, ['recipe[deploy-context::deploy-context]']
 # named_run_list :virtualbox, ['recipe[infra_chef::virtualbox]']
 # named_run_list :docker, ['recipe[infra_chef::docker]']
 named_run_list :chefserver, ['recipe[chefserver]']

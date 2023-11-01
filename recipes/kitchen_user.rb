@@ -29,8 +29,8 @@ end
 
 directory '/home/vagrant/.chef/plugins'
 
-link File.join('/home/vagrant', 'deploy-context') do
-  to '/home/vagrant/.chef/plugins/knife'
+link '/home/vagrant/.chef/plugins/knife' do
+  to File.join('/home/vagrant', 'deploy-context')
   link_type :hard
 end
 
