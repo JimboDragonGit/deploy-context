@@ -16,5 +16,5 @@ end
 
 Alors('partager le cookbook {word}') do |cookbook_to_install|
   context_suite.cookbook_to_install = cookbook_to_install
-  stop_test("Cookbook supermarket #{context_suite.cookbook_to_install} fail to share", :share_fail) unless system("knife supermarket share #{context_suite.cookbook_to_install}")
+  stop_test("Cookbook supermarket #{context_suite.cookbook_to_install} fail to share", :share_fail) unless system("knife supermarket share #{context_suite.cookbook_to_install} --cookbook-path ..")
 end
