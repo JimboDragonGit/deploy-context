@@ -1,32 +1,32 @@
 
 Quand('on peut lister les cookbooks') do
-  stop_test('knife n\'est pas disponible, veuillez installer Chef Workstation', :no_knife) unless system('knife cookbook list')
+  when_list_cookbooks
 end
 
 Quand('un couteau {word} est accessible') do |sub_knife|
-  stop_test("le couteau #{sub_knife} n\'est pas disponible", :no_sub_knife) unless command_available?(sub_knife, 'knife context')
+  when_knife_available(sub_knife)
 end
 
 Étantdonnéque('le couteau {word}') do |knife_name|
   context_suite.knife_context = knife_name
-  stop_test("Le couteau #{knife_name} n\'est pas disponible", :no_context_knife) unless command_available?(context_suite.knife_context, 'knife context')
+  context_suite.knife_name = knife_name
+  given_knife(context_suite)
 end
 
 Alors('je peux affiché l\'aide du couteau') do
-  # stop_test("le couteau #{context_suite.knife_context} ne peux afficher son aide", :no_sub_help) unless
-  system("knife #{context_suite.knife_context} #{context_suite.knife_command} --help")
+  then_show_help(context_suite)
 end
 
 Alors('publier le cookbook {word}') do |cookbook_name|
-  stop_test("le couteau ne peux publier le cookbook #{cookbook_name}", :cookbook_publish_fail) unless system("knife cookbook upload #{cookbook_name}")
+  then_publish_cookbook(cookbook_name)
 end
 
 Alors('autodéployer le cookbook {word}') do |cookbook_name|
-  stop_test("chef ne peut déployer le cookbook #{cookbook_name}", :cookbook_deploy_fail) unless cookbook_push(self)
+  then_deploy_cookbook(cookbook_name)
 end
 
 Alors('autopublier le cookbook {word}') do |cookbook_name|
-  stop_test("le couteau ne peux publier le cookbook #{cookbook_name}", :cookbook_autopublish_fail) unless system("knife cookbook upload #{cookbook_name} --cookbook-path #{::File.dirname(Dir.pwd)}")
+  then_autopublish_cookbook(cookbook_name)
 end
 
 Étantdonné('la commande couteau {word}') do |knife_command|
@@ -35,11 +35,11 @@ end
 
 Alors('exécute la commande couteau {word}') do |knife_command|
   context_suite.knife_command = knife_command
-  stop_test("le couteau #{context_suite.knife_context} ne peux executer la commande #{context_suite.knife_command}", :sub_knife_issue) unless system("knife #{context_suite.knife_context} #{context_suite.knife_command}")
+  then_execute_knife_command(context_suite)
 end
 
 Alors('exécute la sous commande couteau {word} {word}') do |knife_command, sub_knife_command|
   context_suite.knife_command = knife_command
   context_suite.sub_knife_command = sub_knife_command
-  stop_test("le couteau #{context_suite.knife_context} ne peux executer la commande #{context_suite.knife_command} #{context_suite.sub_knife_command}", :sub_knife_issue) unless system("knife #{context_suite.knife_context} #{context_suite.knife_command} #{context_suite.sub_knife_command}")
+  then_execute_sub_knife_command(context_suite)
 end

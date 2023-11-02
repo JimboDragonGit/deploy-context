@@ -14,7 +14,6 @@
     @planning
     Scénario: Phase planning kitchen
       Étant donné la suite kitchen workstation-vb
-      Quand la suite kitchen est détruit
       Alors converge la suite kitchen
       Et enregistre le statut kitchen_plan_ok
 

@@ -1,7 +1,7 @@
 
 Étantdonné('le plan {word}') do |habitat_plan|
   context_suite.plan_path = habitat_plan
-  stop_test("Habitat plan #{context_suite.plan_path} unavailable", :no_plan) unless Dir.exist?(context_suite.plan_path)
+  given_plan(context_suite)
 end
 
 Étantdonné('l\'organisation {word}') do |organisation_name|
@@ -13,56 +13,48 @@ end
 end
 
 Quand('le studio habitat est initialisé') do
-  stop_test("Habitat plan #{context_suite.plan_path} unavailable", :no_studio) unless verify_habitat?
+  when_initialize_habitat(context_suite)
 end
 
 Quand('le secret {word} est disponible') do |secret_key|
-  stop_test("Habitat secrets #{context_suite.plan_path} not set", :no_secret) unless verify_secret?(secret_key)
+  context_suite.secret_key = secret_key
+  when_secret_available(context_suite)
 end
 
 Alors('construit selon le plan') do
-  stop_test("Habitat plan #{context_suite.plan_path} unavailable", :build_fail) unless plan_build_successfully?
+  then_build_plan(context_suite)
 end
 
 Alors('démarre une tâche pour construire') do
-  stop_test("Habitat plan builder #{context_suite.plan_path} failed", :builder_fail) unless system("hab bldr job start #{context_suite.organisation_name}/#{context_suite.application_name} x86_64-linux")
+  then_start_job(context_suite)
 end
 
 Quand('le projet est terminé') do
-  stop_test("Le projet n'est pas compléter", :not_accepted) unless context_suite.status == :accepted
+  when_project_end(context_suite)
 end
 
 Quand('le studio habitat réussi') do
-  stop_test("Le studio est un échec", context_suite.status) unless context_suite.status != :ok
+  when_studio_success(context_suite)
 end
 
 Quand('une tâche est dispatché') do
-  stop_test("Aucun tâche de disponible sur l'origin #{context_suite.organisation_name}", :no_habitat_task_dispatched) unless habitat_new_task?
+  when_dispatch_job(context_suite)
 end
 
 Alors('attendre qu\'elle soit complété') do
-  second_pass = 0
-  while true do
-    if habitat_new_task?
-      puts "Waiting for task... #{second_pass} seconds"
-      sleep 1
-      second_pass += 1
-    else
-      break
-    end
-  end
+  then_wait_completion(context_suite)
 end
 
 Alors('promouvoir la dite tâche') do
-  stop_test("Promouvoir la tâche sur l'origin #{context_suite.organisation_name}", :habitat_promotion_fail) unless habitat_task_completed?
+  then_promote_job(context_suite)
 end
 
 Quand('la dernière tâche diffère') do
-  stop_test("Même tâche que son origin #{context_suite.organisation_name}", :same_last_build) unless habitat_task_different?
+  when_update_job(context_suite)
 end
 
 Quand('son status est Complete') do
-  stop_test("Même tâche que son origin #{context_suite.organisation_name}", :build_completed) unless habitat_task_completed?
+  when_job_completed(context_suite)
 end
 
 Alors('enregistre le numéro de build') do
@@ -70,7 +62,7 @@ Alors('enregistre le numéro de build') do
 end
 
 Alors('nettoie le plan de travail') do
-  delete_file_only_if_exist(get_context_file(self, 'habitat/plan.sh/Gemfile.lock'))
+  then_clean_project(context_suite)
 end
 
 Alors('prépare le plan de travail') do

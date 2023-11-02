@@ -20,17 +20,13 @@ end
 # chef_gem "ruby-shadow"
 # chef_gem 'deploy-context'
 
-git File.join('/home/vagrant', 'deploy-context') do
-  user 'vagrant'
-  repository 'git@github.com:JimboDragonGit/deploy-context.git'
-  revision 'master'
-  action :sync
-end
-
 directory '/home/vagrant/.chef/plugins'
 
-link '/home/vagrant/.chef/plugins/knife' do
-  to File.join('/home/vagrant', 'deploy-context')
-  link_type :hard
-end
+# link File.join('/home/vagrant', 'deploy-context') do
+#   to '/home/vagrant/.chef/plugins/knife'
+#   link_type :symbolic
+# end
 
+deploy_context 'vagrant' do
+  parent_path '/home/vagrant'
+end

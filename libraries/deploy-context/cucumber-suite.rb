@@ -9,6 +9,17 @@ require_relative 'deploy/habitat'
 require_relative 'deploy/ruby'
 require_relative 'deploy/vagrant'
 
+require_relative 'steps/cucumber'
+require_relative 'steps/git'
+require_relative 'steps/habitat'
+require_relative 'steps/kitchen'
+require_relative 'steps/knife'
+require_relative 'steps/rake'
+require_relative 'steps/ruby'
+require_relative 'steps/supermarket'
+
+require_relative 'steps/deploy'
+
 module Context
   module CucumberSuiteHelper
     include Context::CommandHelper
@@ -23,7 +34,16 @@ module Context
     
     include Studio::Base
     include Studio::Default
+    
     include Steps::Deploy
+    include Steps::CucumberSteps
+    include Steps::GitSteps
+    include Steps::HabitatSteps
+    include Steps::KitchenSteps
+    include Steps::KnifeSteps
+    include Steps::RakeSteps
+    include Steps::RubySteps
+    include Steps::SupermarketSteps
 
     def context_suite
       if @context_suite.nil?

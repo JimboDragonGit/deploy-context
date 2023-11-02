@@ -11,8 +11,6 @@ require_relative 'helpers/rake_tasks'
 require_relative 'studio/default'
 require_relative 'studio/deployer'
 
-require_relative 'steps/deploy'
-
 require_relative 'knife/default_knife_context'
 require_relative 'cucumber-suite'
 

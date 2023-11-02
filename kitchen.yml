@@ -151,10 +151,12 @@ suites:
       infra_chef:
         project_name: exemple
   - name: workstation
-    named_run_list: deploy_context
+    named_run_list: kitchen_user
     verifier:
       name: inspec
       inspec_tests:
+        - test/integration/default/workstation_test.rb
+        - test/integration/default/kitchen_user_test.rb
         - test/integration/default/deploy-context_test.rb
     attributes:
       deploy-context:
