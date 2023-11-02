@@ -9,8 +9,10 @@
 
     @planning
     Scénario: Phase planning de git
-      Étant donné la suite kitchen default-vb
-      Et le plan habitat/plan.sh
+      Étant donné la branche maîtresse
+      Alors récupère les dernières modifications
+      Étant donné la branche non maîtresse integrate_cucumber_into_recipe
+      Alors va sur la branche non maîtresse integrate_cucumber_into_recipe
       Quand le dépot est brouillonné
       Alors note les modifications au dépot
       Et interne les changements sur le dépot
