@@ -1,3 +1,17 @@
 #!/usr/bin/env ruby
 
-system("knife deploy context cucumber #{ARGV.join(' ')}")
+apps = %w(git kitchen knife git habitat git inspect supermarket git rake install git)
+steps = %w(initialize planning execution closure)
+
+%w(git kitchen knife habitat inspect supermarket rake install).each do |app|
+  system("knife deploy-context cucumber initialize #{app}")
+end
+
+%w(git kitchen knife git habitat git inspect supermarket git rake install git).each do |app|
+  system("knife deploy-context cucumber planning #{app}")
+  system("knife deploy-context cucumber execution #{app}")
+end
+
+%w(git kitchen knife habitat inspect supermarket rake install).each do |app|
+  system("knife deploy-context cucumber closure #{app}")
+end
