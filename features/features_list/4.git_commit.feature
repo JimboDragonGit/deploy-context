@@ -9,8 +9,8 @@
 
     @planning
     Scénario: Phase planning de git
-      Étant donné la suite kitchen default-vb
-      Et le plan habitat/plan.sh
+      Étant donné la branche non maîtresse integrate_cucumber_into_recipe
+      Alors va sur la branche non maîtresse integrate_cucumber_into_recipe
       Quand le dépot est brouillonné
       Alors note les modifications au dépot
       Et interne les changements sur le dépot
@@ -19,9 +19,8 @@
     @execution
     Scénario: Phase execution git
       Étant donné la branche non maîtresse integrate_cucumber_into_recipe
+      Alors va sur la branche non maîtresse integrate_cucumber_into_recipe
       Quand le dépot est propre
-      # Alors test la suite kitchen
-      # Et construit selon le plan
       Et déploi les courantes modifications
       Et enregistre le statut git_merge_ok
   

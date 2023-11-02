@@ -79,8 +79,8 @@ module Context
       system("git branch --list #{context_suite.branch_name}")
     end
 
-    def git_commit_successfully?
-      system("git commit -m 'Automatic cucumber commit on branch #{context_suite.branch_name}'")
+    def git_commit_successfully?(context_suite)
+      system("git commit --message 'Automatic cucumber commit on branch")
     end
 
     def merge_with_branch_successfull?(source_branch)
