@@ -8,7 +8,7 @@ require 'chefspec'
 require 'chefspec/berkshelf'
 
 
-describe 'deploy-context::deploy-context' do
+describe 'deploy-context::deploy_context' do
   context 'When all attributes are default, on Ubuntu 20.04' do
     # for a complete list of available platforms and versions see:
     # https://github.com/chefspec/fauxhai/blob/main/PLATFORMS.md
