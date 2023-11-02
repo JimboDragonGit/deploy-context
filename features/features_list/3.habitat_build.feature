@@ -19,8 +19,7 @@
   
     @initialize
     Scénario: Phase initialisation habitat
-      Étant donné la suite kitchen default-vb
-      Et le plan habitat/plan.sh
+      Étant donné le plan habitat/plan.sh
       Quand le studio habitat est initialisé
       Alors nettoie le plan de travail
       Et enregistre la version et la date
@@ -30,8 +29,7 @@
   
     @planning
     Scénario: Phase de planification habitat
-      Étant donné la suite kitchen default-vb
-      Et l'organisation jimbodragon
+      Étant donné l'organisation jimbodragon
       Et l'application deploy-context
       Et le plan habitat/plan.sh
       Quand le studio habitat est initialisé
@@ -41,8 +39,7 @@
   
     @execution
     Scénario: Phase exécutif habitat
-      Étant donné la suite kitchen default-vb
-      Et l'organisation jimbodragon
+      Étant donné l'organisation jimbodragon
       Et l'application deploy-context
       Et le plan habitat/plan.sh
       Quand une tâche est dispatché
@@ -52,8 +49,7 @@
   
     @closure
     Scénario: Phase closure habitat
-      Étant donné la suite kitchen default-vb
-      Et l'organisation jimbodragon
+      Étant donné l'organisation jimbodragon
       Et l'application deploy-context
       Et le plan habitat/plan.sh
       Quand son status est Complete

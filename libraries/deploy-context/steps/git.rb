@@ -19,7 +19,7 @@ module Context
       end
 
       def then_commit_internal(context_suite)
-        stop_test("Git branch #{context_suite.branch_name} commit issue", :commit_issue) unless git_commit_successfully?
+        stop_test("Git branch #{context_suite.branch_name} commit issue", :commit_issue) unless git_commit_successfully?(context_suite)
       end
 
       def then_merge_branch(context_suite)
