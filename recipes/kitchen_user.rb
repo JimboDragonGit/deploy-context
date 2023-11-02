@@ -4,8 +4,6 @@
 #
 # Copyright:: 2023, The Authors, All Rights Reserved.
 
-include_recipe '::workstation'
-
 user_deploy 'vagrant' do
   home '/home/vagrant'
   owner 'vagrant'
@@ -30,3 +28,5 @@ directory '/home/vagrant/.chef/plugins'
 deploy_context 'vagrant' do
   parent_path '/home/vagrant'
 end
+
+include_recipe '::workstation'
