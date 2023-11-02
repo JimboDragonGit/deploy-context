@@ -80,7 +80,7 @@ module Context
     end
 
     def git_commit_successfully?(context_suite)
-      system("git commit --message 'Automatic cucumber commit on branch")
+      system("git commit --message 'Automatic cucumber commit on branch #{context_suite.branch_name}'")
     end
 
     def merge_with_branch_successfull?(source_branch)
