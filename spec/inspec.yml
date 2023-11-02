@@ -6,3 +6,6 @@ copyright_email: jimmy.provencher@hotmail.ca
 license: Apache-2.0
 summary: An InSpec Compliance Profile for Deploy-Context
 version: 0.1.0
+depends:
+- name: supermarket-profile
+  supermarket: dev-sec/linux-baseline
