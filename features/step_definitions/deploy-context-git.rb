@@ -36,12 +36,12 @@ end
 
 Alors('déploi les modifications de la branche {word}') do |branch_name|
   context_suite.branch_name = branch_name
-  then_push_branch(context_suite, branch_name)
+  then_push_branch(context_suite)
 end
 
 Alors('va sur la branche non maîtresse {word}') do |branch_name|
   context_suite.branch_name = branch_name
-  then_checkout_branch(context_suite, branch_name)
+  then_checkout_branch(context_suite)
 end
 
 Alors('récupère les dernières modifications') do
