@@ -4,7 +4,8 @@
 #
 # Copyright:: 2023, The Authors, All Rights Reserved.
 
-require 'spec_helper'
+require 'chefspec'
+require 'chefspec/berkshelf'
 
 describe 'deploy-context::kitchen_user' do
   context 'When all attributes are default, on Ubuntu 20.04' do
