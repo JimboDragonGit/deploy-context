@@ -73,8 +73,8 @@ action :build_cucumber do
         ::Dir.chdir new_resource.application_name
         Chef::Log.warn "Now in #{::Dir.pwd}"
         system('ls -alh')
-        given_profile_name(new_resource)
-        report_the_report(new_resource)
+        # given_profile_name(new_resource)
+        # report_the_report(new_resource)
       end
       action :run
     end
