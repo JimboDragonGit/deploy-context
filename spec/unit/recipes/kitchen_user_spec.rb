@@ -57,4 +57,10 @@ describe 'deploy-context::kitchen_user' do
       expect { chef_run }.to_not raise_error
     end
   end
+
+  context 'When all attributes are default, on no platform for kitchen_user recipe' do
+    it 'converges successfully Windows 2019 for kitchen_user recipe' do
+      expect { chef_run }.to_not raise_error
+    end
+  end
 end

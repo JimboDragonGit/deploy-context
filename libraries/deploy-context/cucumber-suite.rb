@@ -130,7 +130,8 @@ module Context
     end
 
     def job_status_raw
-      `hab bldr job status --origin #{context_suite.organisation_name} | grep  #{context_suite.organisation_name}/#{context_suite.application_name}`
+      debug_context_log 'Habitat status', "Get job status for #{context_suite.organisation_name}/#{context_suite.application_name}"
+      `hab bldr job status --limit 1000 --origin #{context_suite.organisation_name} | grep  #{context_suite.organisation_name}/#{context_suite.application_name}`
     end
 
     def last_job_status

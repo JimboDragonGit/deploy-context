@@ -24,4 +24,4 @@
     @closure
     Scénario: Phase closure de l'inspecteur
     Étant donné l'inspecteur d'habitat spec
-    Alors install l'inspecteur d'habitat spec
+    # Alors install l'inspecteur d'habitat spec

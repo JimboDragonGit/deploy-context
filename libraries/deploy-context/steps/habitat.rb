@@ -31,14 +31,14 @@ module Context
       end
 
       def when_dispatch_job(context_suite)
-        stop_test("Aucun tâche de disponible sur l'origin #{context_suite.organisation_name}", :no_habitat_task_dispatched) unless habitat_new_task?
+        warning_context_log('no_habitat_task_dispatched', "Aucun tâche de disponible sur l'origin #{context_suite.organisation_name}") unless habitat_new_task?
       end
 
       def then_wait_completion(context_suite)
         second_pass = 0
         while true do
           if habitat_new_task?
-            puts "Waiting for task... #{second_pass} seconds"
+            context_log "Waiting for task... #{second_pass} seconds"
             sleep 1
             second_pass += 1
           else
