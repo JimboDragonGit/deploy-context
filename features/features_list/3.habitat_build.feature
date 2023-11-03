@@ -19,7 +19,6 @@
 
       Exemples:
         | habitat_plan |
-        | spec/habitat |
         | habitat/plan.sh |
   
     @initialize
