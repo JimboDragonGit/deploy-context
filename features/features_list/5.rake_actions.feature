@@ -41,9 +41,17 @@
       Et le studio habitat réussi
       Alors récupère les dernières modifications
       Et actionne release avec rake
-      Et bump la version
       Et enregistre la version et la date
-      Et enregistre le statut rake_bump_ok
+
+    @post_mortem @closure
+    Scénario: Phase post mortem git
+      Étant donné la branche maîtresse
+      Alors récupère les dernières modifications
+      Alors va sur la branche non maîtresse integrate_cucumber_into_recipe
+      Et fusionne le dépot avec la branche master
+      Et déploi les modifications de la branche integrate_cucumber_into_recipe
       Et nettoie le plan de travail
       Et note les modifications au dépot
       Et interne les changements sur le dépot
+      # Et bump la version
+
