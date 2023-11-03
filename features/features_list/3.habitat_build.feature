@@ -18,8 +18,9 @@
       Et enregistre le statut habitat_secret_ok
 
       Exemples:
-        | habitat_plan |
-        | habitat/plan.sh |
+        | habitat_plan | application_name |
+        | spec/habitat | inspec-profile-deploy-context |
+        | habitat/plan.sh | deploy-context |
   
     @initialize
     Plan du Scénario: Phase initialisation habitat
@@ -31,15 +32,14 @@
       Et enregistre le statut habitat_ok
 
       Exemples:
-        | habitat_plan |
-        | spec/habitat |
-        | habitat/plan.sh |
+      | habitat_plan | application_name |
+      | spec/habitat | inspec-profile-deploy-context |
+      | habitat/plan.sh | deploy-context |
 
-  
     @planning
     Plan du Scénario: Phase de planification habitat
       Étant donné l'organisation jimbodragon
-      Et l'application deploy-context
+      Et l'application <application_name>
       Et le plan <habitat_plan>
       Quand le studio habitat est initialisé
       Et construit selon le plan
@@ -47,14 +47,14 @@
       Et enregistre le statut habitat_build_ok
 
       Exemples:
-        | habitat_plan |
-        | spec/habitat |
-        | habitat/plan.sh |
+      | habitat_plan | application_name |
+      | spec/habitat | inspec-profile-deploy-context |
+      | habitat/plan.sh | deploy-context |
   
     @execution
     Plan du Scénario: Phase exécutif habitat
       Étant donné l'organisation jimbodragon
-      Et l'application deploy-context
+      Et l'application <application_name>
       Et le plan <habitat_plan>
       Quand une tâche est dispatché
       Alors attendre qu'elle soit complété
@@ -62,14 +62,14 @@
       Et enregistre le statut habitat_promote_ok
 
       Exemples:
-        | habitat_plan |
-        | spec/habitat |
-        | habitat/plan.sh |
+      | habitat_plan | application_name |
+      | spec/habitat | inspec-profile-deploy-context |
+      | habitat/plan.sh | deploy-context |
   
     @closure
     Plan du Scénario: Phase closure habitat
       Étant donné l'organisation jimbodragon
-      Et l'application deploy-context
+      Et l'application <application_name>
       Et le plan <habitat_plan>
       Quand son status est Complete
       Alors promouvoir la dite tâche
@@ -77,6 +77,6 @@
       Et enregistre le statut habitat_promote_ok
 
     Exemples:
-      | habitat_plan |
-      | spec/habitat |
-      | habitat/plan.sh |
+    | habitat_plan | application_name |
+    | spec/habitat | inspec-profile-deploy-context |
+    | habitat/plan.sh | deploy-context |

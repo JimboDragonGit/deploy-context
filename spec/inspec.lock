@@ -6,8 +6,7 @@ depends:
     url: https://github.com/dev-sec/linux-baseline/archive/master.tar.gz
     sha256: 50d929b1bae90e4bebf32d34bc5ce4cf2edd4870f5477cb20d95186b82cbdfe2
   version_constraints: []
-- name: deploy_context
+- name: deploy_context_recipes
   resolved_source:
-    path: "/home/jimboadmin/deploy-context/spec/unit/recipes/deploy-context_spec.rb"
-    sha256: 0d27a600de0d9dc7b7e10ffbce53faad08b53099b92eae298214674947fffcbe
+    path: "/home/jimboadmin/deploy-context/spec/unit/recipes"
   version_constraints: []
