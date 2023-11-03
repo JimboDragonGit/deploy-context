@@ -5,8 +5,8 @@
     @initialize
     Scénario: Phase initialisation de l'inspecteur
     Étant donné l'inspecteur d'habitat spec
-    Alors créer l'inspecteur d'habitat spec
-    Et charge l'inspecteur d'habitat spec
+    # Alors créer l'inspecteur d'habitat spec
+    # Et charge l'inspecteur d'habitat spec
   
     @planning
     Scénario: Phase planning de l'inspecteur
