@@ -30,28 +30,19 @@ do_prepare() {
 }
 
 do_build() {
-  use_make=false
-  if [ "$use_make" == "true" ]
-  then
-    do_default_build
-  fi
+  do_default_build
 }
 
 do_check() {
-  do_default_exist=false
-  if [ "$do_default_exist" == "true" ]
-  then
-    do_default_exist
-  fi
-  return 0
+  # do_default_check
+  echo "Locating somewhere"
+  echo $(pwd)
+  echo "Il faut bien commencer à quelque part de très loin"
 }
 
 do_install() {
-  do_rules_ready=false
-  if [ "$do_rules_ready" == "true" ]
-  then
-    do_default_install
-  fi
+  do_default_install
+  ls -alh $PREFIX
 }
 
 do_strip() {

@@ -12,4 +12,4 @@ depends:
 - name: deploy_context_unit
   path: unit/recipes
 - name: deploy_context_integration
-  path: ../test/integration/default
+  path: integration
