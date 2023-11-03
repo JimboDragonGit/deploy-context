@@ -7,7 +7,7 @@
       Étant donné la suite kitchen workstation-vb
       Quand on initialise le projet
       Alors détruire la suite kitchen
-      Et nettoyer le fichiers vérouillés
+      Et nettoyer les fichiers vérouillés
       Et enregistre la version et la date
       Et enregistre le statut kitchen_init_ok
   

@@ -21,6 +21,10 @@ module Context
       def exec_inspec_habitat(context_suite)
         system("inspec exec #{context_suite.habitat_name}")
       end
+
+      def inspect_vendor(context_suite)
+        system("inspec vendor --overwrite")
+      end
     end
   end
 end

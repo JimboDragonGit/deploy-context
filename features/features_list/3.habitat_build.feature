@@ -3,8 +3,8 @@
   Fonctionnalité: Je suis le testeur du déployeur de deploy-context avec habitat
 
     @preinit
-    Scénario: Phase pré initialiatique de habitat
-      Étant donné le plan habitat/plan.sh
+    Plan du Scénario: Phase pré initialiatique de habitat
+      Étant donné le plan <habitat_plan>
       Quand le studio habitat est initialisé
       Et le secret CHEF_SERVER_URL est disponible
       Et le secret CHEFVALIDATORKEY est disponible
@@ -16,44 +16,68 @@
       Et le secret FULLNAME est disponible
       Et afficher les variables usagers
       Et enregistre le statut habitat_secret_ok
+
+      Exemples:
+        | habitat_plan |
+        | spec/habitat |
+        | habitat/plan.sh |
   
     @initialize
-    Scénario: Phase initialisation habitat
-      Étant donné le plan habitat/plan.sh
+    Plan du Scénario: Phase initialisation habitat
+      Étant donné le plan <habitat_plan>
       Quand le studio habitat est initialisé
       Alors nettoie le plan de travail
       Et enregistre la version et la date
       Et prépare le plan de travail
       Et enregistre le statut habitat_ok
 
+      Exemples:
+        | habitat_plan |
+        | spec/habitat |
+        | habitat/plan.sh |
+
   
     @planning
-    Scénario: Phase de planification habitat
+    Plan du Scénario: Phase de planification habitat
       Étant donné l'organisation jimbodragon
       Et l'application deploy-context
-      Et le plan habitat/plan.sh
+      Et le plan <habitat_plan>
       Quand le studio habitat est initialisé
       Et construit selon le plan
       Et démarre une tâche pour construire
       Et enregistre le statut habitat_build_ok
+
+      Exemples:
+        | habitat_plan |
+        | spec/habitat |
+        | habitat/plan.sh |
   
     @execution
-    Scénario: Phase exécutif habitat
+    Plan du Scénario: Phase exécutif habitat
       Étant donné l'organisation jimbodragon
       Et l'application deploy-context
-      Et le plan habitat/plan.sh
+      Et le plan <habitat_plan>
       Quand une tâche est dispatché
       Alors attendre qu'elle soit complété
       Et promouvoir la dite tâche
       Et enregistre le statut habitat_promote_ok
+
+      Exemples:
+        | habitat_plan |
+        | spec/habitat |
+        | habitat/plan.sh |
   
     @closure
-    Scénario: Phase closure habitat
+    Plan du Scénario: Phase closure habitat
       Étant donné l'organisation jimbodragon
       Et l'application deploy-context
-      Et le plan habitat/plan.sh
+      Et le plan <habitat_plan>
       Quand son status est Complete
       Alors promouvoir la dite tâche
       Et enregistre le numéro de build
       Et enregistre le statut habitat_promote_ok
-  
+
+    Exemples:
+      | habitat_plan |
+      | spec/habitat |
+      | habitat/plan.sh |

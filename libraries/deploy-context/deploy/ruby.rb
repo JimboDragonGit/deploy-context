@@ -47,7 +47,7 @@ module Context
       end
 
       def ruby_clean(context)
-        context.bundle_gem('cleanup')
+        context.bundle_gem(context, %w(cleanup))
         context.clean_folder(context, 'pkg')
       end
 

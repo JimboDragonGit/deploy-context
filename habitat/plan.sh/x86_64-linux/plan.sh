@@ -3,11 +3,11 @@ pkg_origin="jimbodragon"
 pkg_version=$(cat /src/VERSION)
 pkg_maintainer="Jimmy Provencher <jimmy.provencher@hotmail.ca>"
 pkg_license=("MIT")
-# pkg_scaffolding=core/scaffolding-ruby
+pkg_scaffolding=jimbodragon/inspec-profile-deploy-context
 # pkg_deps=(core/ruby)
 # pkg_deps=(chef/chef-infra-client core/git core/bash)
-pkg_deps=(core/git core/bash core/bundler chef/chef-infra-client core/scaffolding-ruby core/coreutils core/shadow)
-pkg_build_deps=(core/make core/gcc)
+# pkg_deps=(core/git core/bash core/bundler chef/chef-infra-client core/scaffolding-ruby core/coreutils core/shadow)
+# pkg_build_deps=(core/make core/gcc)
 
 do_mix_cookbook(){
   chef-client --override-runlist $1
@@ -87,6 +87,7 @@ do_clean() {
   then
     rmdir bin
   fi
+  find /src --iname *.lock --delete
 }
 
 do_unpack() {
@@ -115,6 +116,7 @@ do_check() {
     do_default_exist
   fi
   return 0
+  cucumber --profile inspec
 }
 
 do_install() {
@@ -144,5 +146,4 @@ do_strip() {
 
 do_end() {
   do_default_end
-  gem install deploy-context
 }

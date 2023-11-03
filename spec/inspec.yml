@@ -9,3 +9,5 @@ version: 0.1.0
 depends:
 - name: supermarket-profile
   supermarket: dev-sec/linux-baseline
+- name: deploy_context_recipes
+  path: unit/recipes

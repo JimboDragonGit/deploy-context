@@ -90,6 +90,9 @@ module Context
         context.cookbook_build(context)
         context.debug_context_log context.context_name, "\n\nCleaning cookbook in folder #{Dir.pwd}\nAnd context #{context.context_name} is created in folder #{context.context_folder} at version #{context.version}"
         context.clean_file(context, 'Policyfile.lock.json')
+        context.clean_file(context, 'Berksfile.lock')
+        context.clean_file(context, 'spec/inspec.lock')
+        context.clean_file(context, 'spec/unit/recipes/inspec.lock')
       end
 
       def mix_run_list(context, run_list)

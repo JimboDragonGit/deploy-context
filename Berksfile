@@ -18,4 +18,4 @@ source 'https://supermarket.chef.io'
 # cookbook 'virtualbox', '~> 4.0.0', path: "/usr/local/chef/repo/Example/cookbooks/virtualbox"
 # cookbook 'chef_workstation_initialize', '~> 0.1.0', path: "/usr/local/chef/repo/Example/cookbooks/chef_workstation_initialize.git"
 
-cookbook 'deploy-context'
+cookbook 'deploy-context', path: __dir__

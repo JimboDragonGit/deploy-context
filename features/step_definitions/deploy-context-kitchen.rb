@@ -54,6 +54,7 @@ Alors('test la suite kitchen') do
   then_test_kitchen(context_suite)
 end
 
-Alors("nettoyer le fichiers vérouillés") do
-  cookbook_clean(self)
+Alors("nettoyer les fichiers vérouillés") do
+  cookbook_clean(context_suite)
+  ruby_clean(context_suite)
 end

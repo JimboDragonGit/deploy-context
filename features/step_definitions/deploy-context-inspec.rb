@@ -27,3 +27,7 @@ Alors('exécuter l\'inspection {word}') do |habitat_name|
   context_suite.habitat_name = habitat_name
   exec_inspec_habitat(context_suite)
 end
+
+Alors('achète l\'inspecteur') do
+  inspect_vendor(context_suite)
+end
