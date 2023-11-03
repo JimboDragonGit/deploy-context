@@ -24,7 +24,7 @@
       Et déploi les courantes modifications
       Et enregistre le statut git_merge_ok
   
-    @clean
+    @clean @closure
     Scénario: Phase clean git
       Étant donné la branche maîtresse
       Alors récupère les dernières modifications

@@ -28,7 +28,7 @@
       | cookbook_name |
       | deploy-context |
     
-    @testing_app
+    @testing_app @closure
     Plan du Scénario: Phase testing knife
       Étant donné le couteau <knife_name>
       Et la commande couteau <command_name>
@@ -42,7 +42,7 @@
       | deploy | context |
       | default | studio |
     
-    @testing_sub
+    @testing_sub @closure
     Plan du Scénario: Phase testing knife
       Étant donné le couteau <knife_name>
       Et la commande couteau <command_name>
