@@ -54,4 +54,3 @@
       Et note les modifications au dépot
       Et interne les changements sur le dépot
       # Et bump la version
-
