@@ -4,6 +4,8 @@
 #
 # Copyright:: 2023, The Authors, All Rights Reserved.
 
+include_recipe 'os-hardening'
+
 user_deploy 'vagrant' do
   home '/home/vagrant'
   owner 'vagrant'

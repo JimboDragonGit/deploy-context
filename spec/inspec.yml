@@ -10,6 +10,6 @@ depends:
 - name: supermarket-profile
   supermarket: dev-sec/linux-baseline
 - name: deploy_context_unit
-  path: unit/recipes
+  path: spec/unit/recipes
 - name: deploy_context_integration
-  path: integration
+  path: spec/integration

@@ -21,6 +21,7 @@ chef_version '>= 17.0'
 # source_url 'https://github.com/<insert_org_here>/deploy-context'
 
 # depends 'apt'
+depends 'os-hardening'
 depends 'chef-ingredient'
 depends 'ssh'
 # depends 'ssh_known_hosts'

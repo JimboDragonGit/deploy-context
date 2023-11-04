@@ -19,7 +19,8 @@ default_source :supermarket do |market|
     "apt",
     "apache2",
     "ssh_known_hosts",
-    "ssh"
+    "ssh",
+    "os-hardening"
   )
 end
 
