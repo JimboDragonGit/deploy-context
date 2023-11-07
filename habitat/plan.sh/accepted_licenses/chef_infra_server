@@ -1,8 +1,0 @@
----
-id: infra-server
-name: Chef Infra Server
-date_accepted: '2022-10-05T03:51:24-04:00'
-accepting_product: infra-server
-accepting_product_version: 0.6.10
-user: root
-file_format: 1

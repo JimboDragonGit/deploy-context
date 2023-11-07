@@ -1,8 +1,0 @@
----
-id: infra-client
-name: Chef Infra Client
-date_accepted: '2022-05-09T00:35:40-04:00'
-accepting_product: infra-client
-accepting_product_version: 16.6.14
-user: root
-file_format: 1

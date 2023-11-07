@@ -4,85 +4,24 @@ pkg_version=$(cat /src/VERSION)
 pkg_maintainer="Jimmy Provencher <jimmy.provencher@hotmail.ca>"
 pkg_license=("MIT")
 pkg_scaffolding=jimbodragon/inspec-profile-deploy-context
-# pkg_deps=(core/ruby)
-# pkg_deps=(chef/chef-infra-client core/git core/bash)
-# pkg_deps=(core/git core/bash core/bundler chef/chef-infra-client core/scaffolding-ruby core/coreutils core/shadow)
-# pkg_build_deps=(core/make core/gcc)
 
-do_mix_cookbook(){
-  chef-client --override-runlist $1
+show_current_folder() {
+  echo "Showing current folder in $1 step"
+  echo $(pwd)
+  ls -alh
 }
 
-do_mix_named_cookbook(){
-  chef-client --chef-license accept --named-run-list $1
-}
-
-do_deploy_context_action(){
-  echo "Executing action $1 at version $pkg_version in folder $(pwd) PLAN_CONTEXT = $PLAN_CONTEXT"
-  ruby plan.rb $1 || echo  "Ruby not avaialble yet"
-}
-
-do_begin() {
-  echo "/hab/pkgs/jimbodragon/inspec-profile-deploy-context :"
-  ls -alh /hab/pkgs/jimbodragon/
-  do_default_begin
-  echo "/hab/pkgs/jimbodragon/inspec-profile-deploy-context 2:"
-  ls -alh /hab/pkgs/jimbodragon/
-}
-
-do_download() {
-  do_default_download
+clean_deploy() {
   if [ -d lib ]
   then
     rm -rf lib
   fi
-  cp -r /src/libraries lib
-  cp -r /src/features/step_definitions lib/deploy-definitions
 
-  do_deploy_context_action fetch_secrets
-}
-
-do_verify() {
-  do_default_verify
-
-  mkdir -p /etc/chef
-
-  cat > /etc/chef/client.pem <<EOM
-$CLIENT_KEY
-EOM
-
-  cat > /etc/chef/client.rb <<EOM
-log_level                :info
-node_name                $CLIENT_NAME
-chef_server_url          '$CHEF_SERVER_URL'
-secret_file              '/etc/chef/secret'
-data_bag_encrypt_version 3
-named_run_list 'deploy-context'
-EOM
-
-  cat > /etc/chef/secret <<EOM
-$CLIENT_KEY
-EOM
-
-  if [ ! -d ~/.local/share/gem ]
+  if [ -d pkg ]
   then
-    mkdir -p ~/.local/share/gem
+    rm -rf pkg
   fi
 
-  cat > ~/.local/share/gem/credentials <<EOM
-:rubygems_api_key: $GEMAPI
-EOM
-
-cat ~/.local/share/gem/credentials
-
-# cat > /usr/bin/env <<EOM
-# EOM
-# chmod a+x /usr/bin/env
-# cp $(which irb) /usr/bin/env
-}
-
-do_clean() {
-  do_default_clean
   if [ -f Gemfile.lock ]
   then
     rm Gemfile.lock
@@ -94,60 +33,78 @@ do_clean() {
   find /src --iname *.lock --delete
 }
 
+do_begin() {
+  show_current_folder 'begin in platform context'
+  do_default_begin
+}
+
+do_download() {
+  show_current_folder 'download in platform context'
+  do_default_download
+}
+
+do_verify() {
+  show_current_folder 'verify in platform context'
+  do_default_verify
+}
+
+do_clean() {
+  show_current_folder 'clean in platform context'
+  do_default_clean
+  clean_deploy
+}
+
 do_unpack() {
+  show_current_folder 'unpack in platform context'
   do_default_unpack
+
+  cp -r /src/libraries lib
+  cp -r /src/features/step_definitions lib/deploy-definitions
 }
 
 do_prepare() {
+  show_current_folder 'prepare in plan context'
   do_default_prepare
-
-  # do_mix_named_cookbook 'deploy-context'
+  clean_deploy
 }
 
 do_build() {
+  show_current_folder 'build in plan context'
   use_make=false
   if [ "$use_make" == "true" ]
   then
     do_default_build
   fi
-  echo "The secret is $AWS_ACCESS_KEY_ID"
 }
 
 do_check() {
+  show_current_folder 'check in plan context'
   do_default_exist=false
   if [ "$do_default_exist" == "true" ]
   then
-    do_default_exist
+    do_default_check
   fi
-  return 0
-  cucumber --profile inspec
 }
 
 do_install() {
+  show_current_folder 'install in plan context'
   do_rules_ready=false
   if [ "$do_rules_ready" == "true" ]
   then
     do_default_install
   fi
-  
-  # ls -alh /usr/bin/env
-  # cat /usr/bin/env
-
   fix_interpreter $(which rake) core/coreutils bin/env
-
-  which rake
-
   rake release --trace || echo
-  mv pkg/* $pkg_prefix
-  ls -alh $pkg_prefix
+  clean_deploy
 }
 
 do_strip() {
+  show_current_folder 'strip in platform context'
   do_default_strip
-  rmdir ../pkg
-  rm -rf lib
+  clean_deploy
 }
 
 do_end() {
+  show_current_folder 'end in platform context'
   do_default_end
 }
