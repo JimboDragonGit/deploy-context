@@ -23,7 +23,11 @@ do_deploy_context_action(){
 }
 
 do_begin() {
+  echo "/hab/pkgs/jimbodragon/inspec-profile-deploy-context :"
+  ls -alh /hab/pkgs/jimbodragon/
   do_default_begin
+  echo "/hab/pkgs/jimbodragon/inspec-profile-deploy-context 2:"
+  ls -alh /hab/pkgs/jimbodragon/
 }
 
 do_download() {

@@ -30,8 +30,6 @@ do_prepare() {
 }
 
 do_build() {
-  env
-  ls -alh /hab/cache/src/inspec-profile-deploy-context-$pkg_version
   do_default_build
 }
 
@@ -44,6 +42,7 @@ do_check() {
 
 do_install() {
   do_default_install
+  cp -r /src/lib/ $PREFIX
   ls -alh $PREFIX
 }
 
