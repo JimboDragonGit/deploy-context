@@ -31,6 +31,7 @@ do_prepare() {
 
 do_build() {
   env
+  ls -alh /hab/cache/src/inspec-profile-deploy-context-$pkg_version
   do_default_build
 }
 
