@@ -30,6 +30,7 @@ do_prepare() {
 }
 
 do_build() {
+  env
   do_default_build
 }
 

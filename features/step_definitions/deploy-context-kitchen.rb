@@ -58,3 +58,9 @@ Alors("nettoyer les fichiers vérouillés") do
   cookbook_clean(context_suite)
   ruby_clean(context_suite)
 end
+
+Alors('enregistre le data bag usager {word}') do |context_user|
+  context_suite.context_user = context_user
+  context_suite.kitchen_user = ENV['KITCHEN_USER']
+  set_users_databags(context_suite)
+end

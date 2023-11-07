@@ -16,16 +16,10 @@ provides :user_deploy
 property :owner, String, name_property: true
 property :home, String
 property :group, String
-property :ssh_private_key, String
-property :ssh_public_key, String
-property :client_name, String
-property :client_key, String
-property :chef_server_url, String
-property :gem_api, String
-property :email, String
-property :full_name, String
+property :context_databag, String
+property :secret_key, String
 
-default_action :execution
+default_action :setup
 
 # use_inline_resources
 unified_mode true
@@ -33,24 +27,106 @@ unified_mode true
 load_current_value do |current_resource|
 end
 
-action :initialisation do
+action :setup do
   load_dependencies
-  set_git(new_resource.owner, new_resource.home, new_resource.group, new_resource.email, new_resource.full_name)
-  set_ssh_user(new_resource.owner, new_resource.home, new_resource.group, new_resource.ssh_private_key, new_resource.ssh_public_key)
-  set_chef_user(new_resource.owner, new_resource.home, new_resource.group, new_resource.client_name, new_resource.chef_server_url, new_resource.client_key)
-  set_gem_user(new_resource.owner, new_resource.home, new_resource.group, new_resource.gem_api)
+  @secret_info = set_secret(new_resource.owner, new_resource.home, new_resource.group, new_resource.secret_key)
 end
 
 action :planning do
-  action_initialisation
+  action_setup
 end
 
-action :execution do
+action :deploy_git_user do
   action_planning
+  git_user_deploy new_resource.owner do
+    home new_resource.home
+    group new_resource.group
+    email secret_info['email']
+    fullname secret_info['fullname']
+  end
 end
 
-action :closure do
-  action_execution
+action :deploy_ssh_user do
+  action_planning
+  ssh_user_deploy new_resource.owner do
+    home new_resource.home
+    group new_resource.group
+    github_ssh_private_key secret_info['github_ssh_private_key']
+    github_ssh_private_key secret_info['github_ssh_private_key']
+  end
+end
+
+action :deploy_chef_user do
+  action_planning
+  chef_user_deploy new_resource.owner do
+    home new_resource.home
+    group new_resource.group
+    deploy_client_name secret_info['chef_client_name']
+    deploy_server_url secret_info['chef_server_url']
+    deploy_client_key secret_info['chef_client_key']
+  end
+end
+
+action :deploy_gem_user do
+  action_planning
+  gem_user_deploy new_resource.owner do
+    home new_resource.home
+    group new_resource.group
+    rubygems_api_key secret_info['rubygems_api_key']
+  end
+end
+
+action :deploy_habitat_user do
+  action_planning
+  habitat_user_deploy new_resource.owner do
+    home new_resource.home
+    group new_resource.group
+    hab_auth_token secret_info['hab_auth_token']
+    hab_origin secret_info['hab_origin']
+    hab_license secret_info['hab_license']
+  end
+end
+
+action :deploy_circleci_user do
+  action_planning
+  circleci_user_deploy new_resource.owner do
+    home new_resource.home
+    group new_resource.group
+    circleci_token secret_info['circleci_token']
+    circleci_api_token secret_info['circleci_api_token']
+    circleci_org_optin secret_info['circleci_org_optin']
+  end
+end
+
+action :deploy_docker_user do
+  action_planning
+  docker_user_deploy new_resource.owner do
+    home new_resource.home
+    group new_resource.group
+    dockerhub_user secret_info['dockerhub_user']
+    dockerhub_password secret_info['dockerhub_password']
+  end
+end
+
+action :deploy_aws_user do
+  action_planning
+  aws_user_deploy new_resource.owner do
+    home new_resource.home
+    group new_resource.group
+    aws_access_key_id secret_info['aws_access_key_id']
+    aws_secret_access_key secret_info['aws_secret_access_key']
+  end
+end
+
+action :deploy_cucumber_user do
+  action_planning
+  cucumber_user_deploy new_resource.owner do
+    home new_resource.home
+    group new_resource.group
+    cucumber_publish_enabled secret_info['cucumber_publish_enabled']
+    cucumber_publish_quiet secret_info['cucumber_publish_quiet']
+    cucumber_publish_token secret_info['cucumber_publish_token']
+  end
 end
 
 action_class do
@@ -67,112 +143,45 @@ action_class do
     extend Context::Steps::Deploy
   end
 
-  def set_git(owner, home, group, email, full_name)
-    converge_by("Setting git config for #{owner} in #{home}") do
-      template ::File.join(home, '.gitconfig') do
-        source 'gitconfig.erb'
-        owner owner
-        group group
-        mode '0600'
-        action :create
-        variables email: email,
-        full_name: full_name
-      end
+  def secret_info
+    get_secret(new_resource.owner, new_resource.home, new_resource.context_databag)
+  end
+
+  def get_secret(owner, home, context_databag)
+    case ChefVault::Item.data_bag_item_type(context_databag, owner)
+    when :normal
+      data_bag_item(context_databag, owner).to_h
+    when :encrypted
+      data_bag_item(context_databag, owner).to_h
+    when :vault
+      ChefVault::Item.load(context_databag, owner).to_h
     end
   end
 
-  def set_chef_user(owner, home, group, client_name, chef_server_url, raw_client_key)
-    converge_by("Setting Chef config for #{owner} in #{home}") do
+  def set_secret(owner, home, group, secret_key)
+    converge_by("Setting secret config for #{owner} in #{home}") do
       directory ::File.join(home, '.chef') do
         owner owner
         group group
-        mode '0600'
+        mode '0700'
         action :create
       end
-      
-      template ::File.join(home, '.chef/credentials') do
-        source 'chef_credentials.erb'
+    
+      file '/tmp/kitchen/encrypted_data_bag_secret' do
+        content secret_key
+        owner owner
+        group group
+        mode '0666'
+        action :create
+      end
+    
+      file ::File.join(home, '.chef/secret') do
+        content secret_key
         owner owner
         group group
         mode '0600'
         action :create
-        variables client_name: client_name,
-        client_key: ::File.join(home, '.chef/client_key.pem'),
-        chef_server_url: chef_server_url
       end
-      
-      file ::File.join(home, '.chef/client_key.pem') do
-        user owner
-        group group
-        mode '0600'
-        content raw_client_key
-      end
-    end
-  end
-
-  def set_gem_user(owner, home, group, gemapi)
-    converge_by("Setting gem config for #{owner} in #{home}") do
-      local_gem_folder = ::File.join(home, '.local/share/gem')
-      directory local_gem_folder do
-        owner owner
-        group group
-        mode '0600'
-        action :create
-        recursive true
-      end
-      template ::File.join(local_gem_folder, 'credentials') do
-        source 'gem_credentials.erb'
-        owner owner
-        group group
-        mode '0600'
-        action :create
-        variables gemapi: gemapi
-      end
-    end
-  end
-
-  def set_ssh_user(owner, home, group, ssh_private_key, ssh_public_key)
-    converge_by("Setting SSH config for #{owner} in #{home}") do
-      ssh_config = <<EOM
-Host github.com
-  HostName github.com
-  VerifyHostKeyDNS=yes
-  StrictHostKeyChecking=no
-EOM
-
-      file ::File.join(home, '.ssh/id_rsa') do
-        user owner
-        group group
-        mode '0600'
-        content ssh_private_key + "\n"
-      end
-      
-      file ::File.join(home, '.ssh/id_rsa.pub') do
-        user owner
-        group group
-        mode '0644'
-        content ssh_public_key
-      end
-      
-      file ::File.join(home, '.ssh/config') do
-        user owner
-        group group
-        mode '0644'
-        content ssh_config
-      end
-
-      ssh_known_hosts_entry 'github.com' do
-        owner owner
-        group group
-      end
-
-      # ssh_authorized_keys "for remote access" do
-      #   options { 'cert-authority' => nil, :command => '/usr/bin/startup' }
-      #   user new_resource.owner
-      #   key 
-      #   type 'ssh-rsa'
-      #   comment 'gdidy@coolman.com'
-      # end
     end
   end
 end ## end action_class

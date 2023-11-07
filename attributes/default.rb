@@ -1,4 +1,4 @@
-default['audit']['compliance_phase'] = true
+default['audit']['compliance_phase'] = false
 
 # Set profile location
 default['audit']['profiles']['linux-baseline'] = {

@@ -9,12 +9,15 @@
       Alors détruire la suite kitchen
       Et nettoyer les fichiers vérouillés
       Et enregistre la version et la date
+      Et enregistre le data bag usager vagrant
       Et enregistre le statut kitchen_init_ok
   
     @planning
     Scénario: Phase planning kitchen
       Étant donné la suite kitchen workstation-vb
-      Alors converge la suite kitchen
+      Alors enregistre le data bag usager root
+      Et enregistre le data bag usager vagrant
+      Et converge la suite kitchen
       Et enregistre le statut kitchen_plan_ok
 
     @execution

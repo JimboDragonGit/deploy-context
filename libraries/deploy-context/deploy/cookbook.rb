@@ -119,6 +119,10 @@ module Context
           context.warning_context_log(context.context_name, "Unable to set the cookbook version as GVB is not defined")
         end
       end
+      
+      def set_users_databags(context_suite)
+        system("knife data bag show default_context #{context_suite.kitchen_user} --format json > ~/.chef/databags/default_context/#{context_suite.context_user}.json")
+      end
     end
   end
 end

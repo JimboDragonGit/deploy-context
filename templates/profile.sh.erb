@@ -1,0 +1,4 @@
+<%= @deploy_config.map do |key, value|
+  "export #{key.upcase}='#{value}'"
+end
+%>

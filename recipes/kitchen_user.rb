@@ -6,29 +6,28 @@
 
 include_recipe 'os-hardening'
 
+platform_deploy 'system' do
+  context_databag node[cookbook_name]['context_databag']
+  secret_key node[cookbook_name]['secret_key']
+  chef_accept node[cookbook_name]['chef_accept']
+  action %w(setup) + node[cookbook_name]['system']['deploy'].map {|set_user| "deploy_#{set_user}_user"}
+end
+
 user_deploy 'vagrant' do
   home '/home/vagrant'
   owner 'vagrant'
   group 'vagrant'
-  ssh_private_key node[cookbook_name]['ssh_private_key'].split('\\n').join("\n")
-  ssh_public_key node[cookbook_name]['ssh_public_key']
-  gem_api node[cookbook_name]['gem_api']
-  email node[cookbook_name]['email']
-  full_name node[cookbook_name]['full_name']
-end
-
-# chef_gem "ruby-shadow"
-# chef_gem 'deploy-context'
-
-directory '/home/vagrant/.chef/plugins'
-
-# link File.join('/home/vagrant', 'deploy-context') do
-#   to '/home/vagrant/.chef/plugins/knife'
-#   link_type :symbolic
-# end
-
-deploy_context 'vagrant' do
-  parent_path '/home/vagrant'
+  context_databag node[cookbook_name]['context_databag']
+  secret_key node[cookbook_name]['secret_key']
+  action %w(setup) + node[cookbook_name]['user']['deploy'].map {|set_user| "deploy_#{set_user}_user"}
 end
 
 include_recipe '::workstation'
+
+# deploy_context 'vagrant' do
+#   parent_path '/home/vagrant'
+#   action [:build_habitat, :build_kitchen, :build_cucumber, :build_inspec]
+#   skip_failure true
+#   chef_repo_name node[cookbook_name]['chef_repo_name']
+#   chef_repo_git node[cookbook_name]['chef_repo_git']
+# end

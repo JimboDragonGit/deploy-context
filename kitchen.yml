@@ -3,6 +3,7 @@ provisioner:
   name: chef_infra
   always_update_cookbooks: true
   kitchen_root: <%= ::Dir.pwd %>
+  data_bags_path: <%= ::File.join(ENV['HOME'], '.chef/databags') %>
 
 verifier:
   name: inspec
@@ -16,7 +17,6 @@ verifier:
   depends:
   - name: supermarket-profile
     supermarket: dev-sec/linux-baseline
-
 
 platforms:
   - name: vb-deploy-context
@@ -159,11 +159,37 @@ suites:
         - test/integration/default/kitchen_user_test.rb
         - test/integration/default/deploy-context_test.rb
     attributes:
+      audit:
+        compliance_phase: true
+      os-hardening:
+        components:
+          auditd: true
       deploy-context:
-        ssh_private_key: <%= ::File.read(::File.join(ENV['HOME'], '.ssh/id_rsa')).split("\n").join('\n') %>
-        ssh_public_key: <%= ::File.read(::File.join(ENV['HOME'], '.ssh/id_rsa.pub')) %>
-        gem_api: <%= ENV['GEMAPI'] %>
-        email: <%= ENV['EMAIL'] %>
-        full_name: <%= ENV['FULLNAME'] %>
+        context_databag: default_context
+        secret_key: "<%= ::File.read(::File.join(ENV['HOME'], '.chef/secret')) %>"
+        chef_repo_name: <%= ENV['CHEF_REPO_NAME'] %>
+        chef_repo_git: <%= ENV['CHEF_REPO_GIT'] %>
+        chef_accept:
+          chef_infra_client: "<%= ::File.read('/etc/chef/accepted_licenses/chef_infra_client').split("\n").join('\n') %>"
+          chef_infra_server: "<%= ::File.read('/etc/chef/accepted_licenses/chef_infra_server').split("\n").join('\n') %>"
+          chef_workstation: "<%= ::File.read('/etc/chef/accepted_licenses/chef_workstation').split("\n").join('\n') %>"
+          inspec: "<%= ::File.read('/etc/chef/accepted_licenses/inspec').split("\n").join('\n') %>"
+        user:
+          deploy:
+          - git
+          - ssh
+          - chef
+          - gem
+        system:
+          deploy:
+          - git
+          - ssh
+          - chef
+          - cucumber
+          - habitat
+          - gem
+          - docker
+          - aws
+          - circleci
     includes:
-        - vb-workstation-context
+        - <%= ENV['KITCHEN_WORKSTATION'] %>
