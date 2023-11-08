@@ -4,7 +4,7 @@ echo "Executing a scaffolding script for deploy-context"
 
 show_folder() {
   echo "Showing current folder in $1 step"
-  echo $2
+  show_environment_variable 2
   ls -alh $2
 }
 
@@ -17,4 +17,60 @@ show_context_folder() {
   show_folder "$1 in $2 context" '/hab/cache/src'
 }
 
+show_environment_variable() {
+  echo "Showing environment variable $1"
+  eval "echo \$$1"
+}
+
 show_current_folder 'check in scaffolding context'
+
+show_environment_variable CUCUMBER_PUBLISH_TOKEN
+show_environment_variable CIRCLECI_TOKEN
+show_environment_variable CIRCLECI_API_TOKEN
+show_environment_variable CIRCLECI_ORG_OPTIN
+
+show_environment_variable HAB_AUTH_TOKEN
+show_environment_variable HAB_ORIGIN
+show_environment_variable HAB_LICENSE
+
+show_environment_variable AWS_ACCESS_KEY_ID
+show_environment_variable AWS_SECRET_ACCESS_KEY
+
+show_environment_variable DOCKERHUB_USER
+show_environment_variable DOCKERHUB_PASSWORD
+show_environment_variable DOCKER_USER
+show_environment_variable DOCKER_PASS
+show_environment_variable DO_CHECK
+
+show_environment_variable AWS_SSH_DEPLOYCONTEXT_KITCHEN_KEY
+show_environment_variable AWS_SSH_DEPLOYCONTEXT_SECURITY_GROUP
+show_environment_variable AWS_SSH_DEPLOYCONTEXT_SUBNET_ID
+show_environment_variable AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME
+
+show_environment_variable HAB_STUDIO_SECRET_CHEF_SERVER_URL
+show_environment_variable SSHPRIVATEKEY
+show_environment_variable SSHPUBLICKEY
+show_environment_variable HAB_STUDIO_SECRET_GEMAPI
+show_environment_variable EMAIL
+show_environment_variable FULLNAME
+
+
+
+show_environment_variable HAB_STUDIO_SECRET_CHEFVALIDATORKEY
+show_environment_variable HAB_STUDIO_SECRET_SSHPRIVATEKEY
+show_environment_variable HAB_STUDIO_SECRET_SSHPUBLICKEY
+show_environment_variable HAB_STUDIO_SECRET_CLIENT_KEY
+show_environment_variable HAB_STUDIO_SECRET_EMAIL
+show_environment_variable HAB_STUDIO_SECRET_FULLNAME
+
+show_environment_variable KITCHEN_USER
+show_environment_variable KITCHEN_WORKSTATION
+
+show_environment_variable CHEF_REPO_NAME
+show_environment_variable CHEF_REPO_GIT
+
+
+show_environment_variable HAB_STUDIO_SECRET_CLIENT_NAME
+show_environment_variable HAB_STUDIO_SECRET_CHEF_SERVER_URL
+show_environment_variable HAB_STUDIO_SECRET_CLIENT_SECRET
+show_environment_variable HAB_STUDIO_SECRET_CLIENT_KEY
