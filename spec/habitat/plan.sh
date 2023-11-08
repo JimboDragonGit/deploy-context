@@ -5,10 +5,19 @@ pkg_svc_user=root
 pkg_license='Apache-2.0'
 pkg_scaffolding="chef/scaffolding-chef-inspec"
 
-show_current_folder() {
+show_folder() {
   echo "Showing current folder in $1 step"
-  echo $(pwd)
-  ls -alh
+  echo $2
+  ls -alh $2
+}
+
+show_current_folder() {
+  show_folder "$1" "$(pwd)"
+}
+
+show_context_folder() {
+  show_current_folder "$1 in $2 context"
+  show_folder "$1 in $2 context" '/hab/cache/src'
 }
 
 do_begin() {
@@ -17,22 +26,22 @@ do_begin() {
 }
 
 do_download() {
-  show_current_folder 'download in platform context'
+  show_context_folder 'download' 'platform'
   do_default_download
 }
 
 do_verify() {
-  show_current_folder 'verify in platform context'
+  show_context_folder 'verify' 'platform'
   do_default_verify
 }
 
 do_clean() {
-  show_current_folder 'clean in platform context'
+  show_context_folder 'clean' 'platform'
   do_default_clean
 }
 
 do_unpack() {
-  show_current_folder 'unpack in platform context'
+  show_context_folder 'unpack' 'platform'
   do_default_unpack
 }
 

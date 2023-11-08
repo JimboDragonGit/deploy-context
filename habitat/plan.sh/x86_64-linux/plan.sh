@@ -4,6 +4,7 @@ pkg_version=$(cat /src/VERSION)
 pkg_maintainer="Jimmy Provencher <jimmy.provencher@hotmail.ca>"
 pkg_license=("MIT")
 pkg_scaffolding=jimbodragon/inspec-profile-deploy-context
+pkg_deps=(core/git core/bash core/bundler chef/chef-infra-client core/coreutils core/shadow)
 
 clean_deploy() {
   if [ -d lib ]
@@ -20,11 +21,13 @@ clean_deploy() {
   then
     rm Gemfile.lock
   fi
+
   if [ -d bin ]
   then
-    rmdir bin
+    echo "Fake bin removal"
+    # rmdir bin
   fi
-  find /src -iname *.lock -delete
+  find $(pwd) -iname *.lock -type f -delete
 }
 
 do_begin() {
@@ -62,6 +65,27 @@ do_build() {
   then
     do_default_build
   fi
+  mkdir -p /etc/chef
+
+  cat > /etc/chef/client.pem <<EOM
+-----BEGIN RSA PRIVATE KEY-----
+$(echo $CLIENT_KEY | sed 's|\\n|\n|g')
+-----END RSA PRIVATE KEY-----
+EOM
+
+  cat > /etc/chef/client.rb <<EOM
+log_level                :info
+node_name                $CLIENT_NAME
+chef_server_url          '$CHEF_SERVER_URL'
+secret_file              '/etc/chef/secret'
+data_bag_encrypt_version 3
+named_run_list 'deploy-context'
+EOM
+
+  cat > /etc/chef/secret <<EOM
+$CLIENT_secret
+
+EOM
 }
 
 do_check() {
@@ -79,16 +103,17 @@ do_install() {
     do_default_install
   fi
   fix_interpreter $(which rake) core/coreutils bin/env
-  rake release --trace || echo
+
+  chef-client --chef-license accept || echo
   clean_deploy
 }
 
 do_strip() {
   do_default_strip
+  rake release --trace || echo
   clean_deploy
 }
 
 do_end() {
-  show_current_folder 'end in platform context'
   do_default_end
 }

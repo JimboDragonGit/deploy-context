@@ -15,3 +15,5 @@ default['audit']['profiles']['linux-baseline'] = {
 
 # Fetch additional profiles
 default['audit']['fetcher'] = 'chef-server'
+
+default['chef_client']['chef_license'] = 'accept'
