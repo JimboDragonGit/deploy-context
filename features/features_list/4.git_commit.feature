@@ -40,6 +40,15 @@
       Alors fusionne le dépot avec la branche integrate_cucumber_into_recipe
       Et déploi les courantes modifications
       Et enregistre le statut git_push_ok
+  
+    @closure
+    Scénario: Phase closure git
+      Étant donné la branche maîtresse
+      Alors récupère les dernières modifications
+      Quand le dépot est brouillonné
+      Alors fusionne le dépot avec la branche integrate_cucumber_into_recipe
+      Et déploi les courantes modifications
+      Et enregistre le statut git_push_ok
 
     @post_mortem
     Scénario: Phase post mortem git
