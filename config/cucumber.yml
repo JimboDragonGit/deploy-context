@@ -6,24 +6,19 @@
 <% common = "#{default} --exclude features_list/9.cucumber.feature" %>
 <% html_report = "#{common} --format html" %>
 <% json_report = "#{common} --format json" %>
-<% default_html = html_report %>
-preinit: <%= html_report %> --out=logs/html/preinit_features_report.html --tags @preinit
-initialize: <%= html_report %> --out=logs/html/initialize_features_report.html --tags @initialize
-planning: <%= html_report %> --out=logs/html/planning_features_report.html --tags @planning
-execution: <%= html_report %> --out=logs/html/execution_features_report.html --tags @execution
-closure: <%= html_report %> --out=logs/html/closure_features_report.html --tags @closure
-post_mortem: <%= html_report %> --out=logs/html/post_mortem_features_report.html --tags @post_mortem
-wip: <%= html_report  %> --out=logs/html/wip_features_report.html --tags @wip --strict
-knife: <%= html_report %> --out=logs/html/knife_features_report.html --tags @knife
-kitchen: <%= html_report %> --out=logs/html/kitchen_features_report.html --tags @kitchen
-rake: <%= html_report %> --out=logs/html/rake_features_report.html --tags @rake
-git: <%= html_report %> --out=logs/html/git_features_report.html --tags @git
-habitat: <%= html_report %> --out=logs/html/habitat_features_report.html --tags @habitat
-cucumber: <%= html_report %> --out=logs/html/cucumber_features_report.html --tags @cucumber
-install: <%= html_report %> --out=logs/html/install_features_report.html --tags @install
-inspec: <%= html_report %> --out=logs/html/inspec_features_report.html --tags @inspec
-supermarket: <%= html_report %> --out=logs/html/supermarket_features_report.html --tags @supermarket
-cycle: <%= common %>
-strict: <%= common %> --strict
-html_report: <%= html_report %> --out=logs/html/features_report.html
-project: <%= html_report %> --out=logs/html/project_features_report.html --tags @project
+<%= %w(kitchen knife habitat git rake inspec install supermarket).map do |application|
+  (
+    [
+      ["#{application}:", default, "--tags @#{application}"].join(' '),
+      ["#{application}_html:", html_report, "--out=logs/html/#{application}_features_report.html", "--tags @#{application}"].join(' '),
+      ["#{application}_json:", json_report, "--out=logs/json/#{application}_features_report.json", "--tags @#{application}"].join(' ')
+    ] + %w(preinit initialize planning exsecution closure post_mortem).map do |step|
+      [
+        ["#{application}_#{step}:", default, "--tags @#{application}"].join(' '),
+        ["#{application}_#{step}_html:", html_report, "--out=logs/html/#{application}_features_report.html", "--tags @#{application}", "--tags @#{step}"].join(' '),
+        ["#{application}_#{step}_json:", json_report, "--out=logs/json/#{application}_features_report.json", "--tags @#{application}", "--tags @#{step}"].join(' ')
+      ]
+    end
+  ).join("\n")
+  end.join("\n")
+%>
