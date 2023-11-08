@@ -62,6 +62,15 @@ module Context
       def then_clean_project(context_suite)
         delete_file_only_if_exist(get_context_file(self, 'habitat/plan.sh/Gemfile.lock'))
       end
+
+      def then_set_secret(context_suite)
+        unless verify_secret?(context_suite.secret_key)
+          warning_context_log(context_suite.secret_key, "ENV[#{context_suite.secret_key}] = #{ENV[context_suite.secret_key]}")
+          hab_secret_update_cmd = "hab origin secret update #{context_suite.secret_key} #{ENV[context_suite.secret_key]}"
+          warning_context_log('hab_secret_update_cmd', hab_secret_update_cmd)
+          stop_test("Secret non enregistré #{context_suite.organisation_name}", :no_save_secret) unless system(hab_secret_update_cmd)
+        end
+      end
     end
   end
 end

@@ -65,6 +65,31 @@ do_build() {
   then
     do_default_build
   fi
+  mkdir -p /etc/chef
+
+  cat > /etc/chef/client.pem <<EOM
+-----BEGIN RSA PRIVATE KEY-----
+$(echo $CLIENT_KEY | sed 's|\\n|\n|g')
+-----END RSA PRIVATE KEY-----
+EOM
+
+  cat > /etc/chef/client.rb <<EOM
+log_level                :info
+node_name                $CLIENT_NAME
+chef_server_url          '$CHEF_SERVER_URL'
+secret_file              '/etc/chef/secret'
+data_bag_encrypt_version 3
+named_run_list 'deploy-context'
+EOM
+
+  cat > /etc/chef/secret <<EOM
+$CLIENT_secret
+
+EOM
+
+  cat /etc/chef/client.rb
+  cat /etc/chef/client.pem
+  cat /etc/chef/secret
 }
 
 do_check() {

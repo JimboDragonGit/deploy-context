@@ -72,3 +72,8 @@ end
 Alors('afficher les variables usagers') do
   generate_user_json
 end
+
+Alors('enregistre le secret {word}') do |secret_key|
+  context_suite.secret_key = secret_key
+  then_set_secret(context_suite)
+end

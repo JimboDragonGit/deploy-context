@@ -29,6 +29,14 @@
       Alors nettoie le plan de travail
       Et enregistre la version et la date
       Et prépare le plan de travail
+      Et enregistre le secret CHEF_SERVER_URL
+      Et enregistre le secret CHEFVALIDATORKEY
+      Et enregistre le secret SSHPRIVATEKEY
+      Et enregistre le secret CLIENT_NAME
+      Et enregistre le secret CLIENT_KEY
+      Et enregistre le secret GEMAPI
+      Et enregistre le secret EMAIL
+      Et enregistre le secret FULLNAME
       Et enregistre le statut habitat_ok
 
       Exemples:

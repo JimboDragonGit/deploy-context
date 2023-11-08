@@ -23,6 +23,7 @@ Policyfile.lock.json
 
 .idea/
 
+logs
 
 results
 results/*

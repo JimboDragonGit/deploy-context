@@ -2,25 +2,28 @@
 <% default = "--no-snippets --no-source --no-duration --publish-quiet" %>
 <% default = "--no-source --no-duration --publish-quiet" %>
 <% default = "--no-source --publish-quiet" %>
+<% default = "--publish-quiet" %>
 <% common = "#{default} --exclude features_list/9.cucumber.feature" %>
-<% html_report = "#{default} --exclude features_list/9.cucumber.feature" %>
-preinit: <%= default %> --tags @preinit
-initialize: <%= default %> --tags @initialize
-planning: <%= default %> --tags @planning
-execution: <%= default %> --tags @execution
-closure: <%= default %> --tags @closure
-post_mortem: <%= default %> --tags @post_mortem
-wip: <%= default  %> --tags @wip --strict
-knife: <%= default %> --tags @knife
-kitchen: <%= default %> --tags @kitchen
-rake: <%= default %> --tags @rake
-git: <%= default %> --tags @git
-habitat: <%= default %> --tags @habitat
-cucumber: <%= default %> --tags @cucumber
-install: <%= default %> --tags @install
-inspec: <%= default %> --tags @inspec
-supermarket: <%= default %> --tags @supermarket
+<% html_report = "#{common} --format html" %>
+<% json_report = "#{common} --format json" %>
+<% default_html = html_report %>
+preinit: <%= html_report %> --out=logs/html/preinit_features_report.html --tags @preinit
+initialize: <%= html_report %> --out=logs/html/initialize_features_report.html --tags @initialize
+planning: <%= html_report %> --out=logs/html/planning_features_report.html --tags @planning
+execution: <%= html_report %> --out=logs/html/execution_features_report.html --tags @execution
+closure: <%= html_report %> --out=logs/html/closure_features_report.html --tags @closure
+post_mortem: <%= html_report %> --out=logs/html/post_mortem_features_report.html --tags @post_mortem
+wip: <%= html_report  %> --out=logs/html/wip_features_report.html --tags @wip --strict
+knife: <%= html_report %> --out=logs/html/knife_features_report.html --tags @knife
+kitchen: <%= html_report %> --out=logs/html/kitchen_features_report.html --tags @kitchen
+rake: <%= html_report %> --out=logs/html/rake_features_report.html --tags @rake
+git: <%= html_report %> --out=logs/html/git_features_report.html --tags @git
+habitat: <%= html_report %> --out=logs/html/habitat_features_report.html --tags @habitat
+cucumber: <%= html_report %> --out=logs/html/cucumber_features_report.html --tags @cucumber
+install: <%= html_report %> --out=logs/html/install_features_report.html --tags @install
+inspec: <%= html_report %> --out=logs/html/inspec_features_report.html --tags @inspec
+supermarket: <%= html_report %> --out=logs/html/supermarket_features_report.html --tags @supermarket
 cycle: <%= common %>
 strict: <%= common %> --strict
-html_report: <%= html_report %>
-project: <%= html_report %> --tags @project
+html_report: <%= html_report %> --out=logs/html/features_report.html
+project: <%= html_report %> --out=logs/html/project_features_report.html --tags @project
