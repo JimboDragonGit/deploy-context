@@ -22,3 +22,5 @@
   ).join("\n")
   end.join("\n")
 %>
+
+html_report: <%= html_report%> --out=logs/html/features_report.html
