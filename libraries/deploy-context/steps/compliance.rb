@@ -3,7 +3,7 @@ module Context
   module Steps
     module ComplianceSteps
       def when_report_succeeded(context_suite)
-        stop_test("Cucumber #{context_suite.profile_name} is unavailable", :no_profile) unless execute_command("knife deploy context cucumber #{context_suite.rapport_name}_json")
+        stop_test("Cucumber #{context_suite.profile_name} is unavailable", :no_profile) unless execute_command(%w(knife deploy context cucumber) + ["#{context_suite.rapport_name}_json"])
 
         results = JSON.parse(::File.read(::File.join('logs/json', "#{context_suite.rapport_name}_features_report.json")))
 
@@ -36,6 +36,7 @@ module Context
         warning_context_log "step_total_counter", "Nombre d'étape parcouru: #{step_total_counter}"
         warning_context_log "step_unknown_counter", "Nombre d'étape parcouru: #{step_unknown_counter}"
 
+        stop_test("Cucumber #{context_suite.profile_name} is unavailable", :no_profile) if context_suite.require_inspec_success > step_success_counter
         stop_test("Cucumber #{context_suite.profile_name} is unavailable", :no_profile) if context_suite.require_inspec_success > step_success_counter
       end
     end
