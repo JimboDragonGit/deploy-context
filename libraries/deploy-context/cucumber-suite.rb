@@ -22,6 +22,8 @@ require_relative 'steps/supermarket'
 
 require_relative 'steps/deploy'
 
+require_relative 'controls/deploy-context'
+
 module Context
   module CucumberSuiteHelper
     include Context::CommandHelper
@@ -48,6 +50,8 @@ module Context
     include Steps::RakeSteps
     include Steps::RubySteps
     include Steps::SupermarketSteps
+
+    include ControlsHelpers::DeployContextControlsHelper
 
     def context_suite
       if @context_suite.nil?
