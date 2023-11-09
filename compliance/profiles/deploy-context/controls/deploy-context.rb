@@ -5,9 +5,9 @@
 
 require_relative '../../../../libraries/deploy-context'
 
-extend Context::InspecHelpers::DeployProcess
+extend Context::CucumberSuiteHelper
 
-title 'deploy-context cucumber status control'
+title 'deploy-context control'
 
 control 'deploy-context-01' do
   impact 0.7

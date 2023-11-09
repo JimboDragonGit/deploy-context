@@ -5,20 +5,7 @@
 
 require_relative '../../../../libraries/deploy-context'
 
-extend Context::InspecHelpers::DeployProcess
+extend Context::CucumberSuiteHelper
 
-[
-  'git_json',
-  'knife_json',
-  'planning_json',
-  'kitchen_json planning',
-  'kitchen_json execution',
-  'habitat_json',
-  'rake_json',
-  'supermarket_json',
-  'install_json',
-  'compliance_json',
-  'git_json',
-].each do |command_to_perform|
-  control_cucumber_command("knife deploy context cucumber #{command_to_perform}", command_to_perform)
-end
+title 'deploy-context cucumber json status control'
+control_json_report

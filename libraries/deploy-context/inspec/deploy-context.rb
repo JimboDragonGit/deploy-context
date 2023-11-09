@@ -3,7 +3,7 @@
 # The Chef InSpec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec/resources/
 module Context
-  module ControlsHelpers
+  module InspecHelpers
     module DeployContextControlsHelper
       def control_deployer_command
         %w(kitchen knife habitat inspec compliance rake install supermarket ).each do |app_name|

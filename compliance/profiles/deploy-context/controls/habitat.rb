@@ -5,7 +5,9 @@
 
 require_relative '../../../../libraries/deploy-context'
 
-extend Context::InspecHelpers::DeployProcess
+extend Context::CucumberSuiteHelper
+
+title 'deploy-context using habitat control'
 
 control 'public-habitat-01' do
   impact 0.7

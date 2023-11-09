@@ -1,8 +1,6 @@
 module Context
   module InspecHelpers
     module DeployProcess
-      include Context::DeployKnifeConstant
-
       def get_control_name(control_name, control_number)
         [control_name, control_number.to_s.rjust(2,'0')].join('-')
       end

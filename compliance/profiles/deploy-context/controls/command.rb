@@ -5,13 +5,7 @@
 
 require_relative '../../../../libraries/deploy-context'
 
-extend Context::InspecHelpers::DeployProcess
+extend Context::CucumberSuiteHelper
 
-title 'deploy-context cucumber status control'
-
-%w(kitchen knife habitat inspec compliance rake install supermarket ).each do |app_name|
-  initial_counter = 0
-  control_app(app_name, initial_counter, 'knife')
-  control_app(app_name, initial_counter, 'cucumber')
-  control_app(app_name, initial_counter, 'inspec')
-end
+title 'deploy-context cucumber command control'
+control_deployer_command
