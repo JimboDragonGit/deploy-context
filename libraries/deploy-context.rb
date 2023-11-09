@@ -3,6 +3,8 @@ require_relative 'context-knife-context'
 
 module Context
   module DeployKnifeConstant
+    extend Context::CucumberSuiteHelper
+
     def organisation_name
       'deploy-context'
     end

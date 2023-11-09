@@ -6,7 +6,7 @@
 <% common = "#{default} --exclude features_list/9.cucumber.feature" %>
 <% html_report = "#{common} --format html" %>
 <% json_report = "#{common} --format json" %>
-<%= %w(kitchen knife habitat git rake inspec install supermarket).map do |application|
+<%= %w(kitchen knife habitat git rake inspec install supermarket compliance).map do |application|
   (
     [
       ["#{application}:", default, "--tags @#{application}"].join(' '),

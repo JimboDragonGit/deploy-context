@@ -8,6 +8,6 @@
 # deployer.cucumber
 
 
-include_recipe '::kitchen_user'
+# include_recipe '::kitchen_user'
 # include_recipe '::knife-test'
 # include_recipe '::cucumber-test'

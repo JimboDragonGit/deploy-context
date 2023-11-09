@@ -17,6 +17,7 @@ property :platform_name, String, name_property: true
 property :context_databag, String
 property :secret_key, String
 property :chef_accept, Hash, default: Hash.new
+property :kitchen_workstation, String
 
 default_action :setup
 
@@ -89,8 +90,9 @@ action_class do
       home '/root'
       owner 'root'
       group 'root'
-      context_databag node[cookbook_name]['context_databag']
-      secret_key node[cookbook_name]['secret_key']
+      context_databag new_resource.context_databag
+      secret_key new_resource.secret_key
+      kitchen_workstation new_resource.kitchen_workstation
       action action
     end
   end

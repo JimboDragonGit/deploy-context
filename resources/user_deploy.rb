@@ -18,6 +18,8 @@ property :home, String
 property :group, String
 property :context_databag, String
 property :secret_key, String
+property :kitchen_workstation, String
+
 
 default_action :setup
 
@@ -52,7 +54,7 @@ action :deploy_ssh_user do
     home new_resource.home
     group new_resource.group
     github_ssh_private_key secret_info['github_ssh_private_key']
-    github_ssh_private_key secret_info['github_ssh_private_key']
+    github_ssh_public_key secret_info['github_ssh_public_key']
   end
 end
 
@@ -81,6 +83,7 @@ action :deploy_habitat_user do
   habitat_user_deploy new_resource.owner do
     home new_resource.home
     group new_resource.group
+    kitchen_workstation new_resource.kitchen_workstation
     hab_auth_token secret_info['hab_auth_token']
     hab_origin secret_info['hab_origin']
     hab_license secret_info['hab_license']

@@ -3,10 +3,12 @@
 # The Chef InSpec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec/resources/
 
-control 'example_control' do
+title 'deploy-context cucumber status control'
+
+control 'deploy-context-01' do
   impact 0.7
-  title 'Example Control'
-  desc 'This is an example control.  Replace with real test content.'
+  title 'deploy-context Control'
+  desc 'This is the deploy-context control.'
 
   describe user('root') do
     it { should exist }

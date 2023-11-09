@@ -1,4 +1,4 @@
 <%= @deploy_config.map do |key, value|
-  "export #{key.upcase}='#{value}'"
-end
+  ["export #{key.upcase}='#{value}'", "export HAB_STUDIO_SECRET_#{key.upcase}='#{value}'"].join("\n")
+end.join("\n")
 %>

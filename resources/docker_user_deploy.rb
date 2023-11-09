@@ -39,7 +39,7 @@ action_class do
         source 'profile.sh.erb'
         owner owner
         group group
-        mode '0600'
+        mode '0755'
         action :create
         variables deploy_config: {
           dockerhub_user: dockerhub_user,

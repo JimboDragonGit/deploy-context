@@ -22,8 +22,10 @@ property :organisation_name, String
 property :application_name, String, default: 'deploy-context'
 property :chef_repo_name, String
 property :chef_repo_git, String
+property :plan_path, String, default: 'habitat/plan.sh'
+property :suite_kitchen, String, default: 'default'
 
-default_action :build_cucumber
+default_action :planning
 
 # use_inline_resources
 unified_mode true
@@ -35,6 +37,9 @@ action :planning do
   converge_by("Planning #{new_resource.parent_path} finished correctly") do
     sync_chef_repo_git(new_resource.owner, new_resource.parent_path, 'deploy-context', 'git@github.com:JimboDragonGit/deploy-context.git')
     sync_chef_repo_git(new_resource.owner, new_resource.parent_path, new_resource.chef_repo_name, new_resource.chef_repo_git)
+    execute "ls -alh /var/chef/compliance_reports/" do
+      returns [0, 1, 2] if new_resource.skip_failure
+    end
   end
 end
 
@@ -48,7 +53,7 @@ action :build_habitat do
         ::Dir.chdir new_resource.parent_path
         ::Dir.chdir new_resource.application_name
         Chef::Log.warn "Now in #{::Dir.pwd}"
-        # then_build_plan(new_resource)
+        then_build_plan(new_resource)
       end
       action :run
     end
@@ -65,7 +70,7 @@ action :build_kitchen do
         ::Dir.chdir new_resource.parent_path
         ::Dir.chdir new_resource.application_name
         Chef::Log.warn "Now in #{::Dir.pwd}"
-        # when_converge_kitchen(new_resource)
+        then_converge(new_resource)
       end
       action :run
     end
@@ -76,8 +81,9 @@ action :build_cucumber do
   converge_by("Deploying deploy-context with cucumber") do
     action_planning
 
-    build_cucumber(new_resource.parent_path, new_resource.application_name, new_resource.skip_failure)
-    build_cucumber(new_resource.parent_path, new_resource.chef_repo_name, new_resource.skip_failure)
+    profile_name = 'html_report'
+    build_cucumber(new_resource.parent_path, new_resource.application_name, profile_name, new_resource.skip_failure)
+    build_cucumber(new_resource.parent_path, new_resource.chef_repo_name, profile_name, new_resource.skip_failure)
 
     # ruby_block 'build cucumber report' do
     #   block do
@@ -98,9 +104,11 @@ end
 action :build_inspec do
   converge_by("Deploying deploy-context with inspec") do
     action_planning
-    execute 'inspec spec' do
+    execute 'inspec check spec' do
       cwd ::File.join(new_resource.parent_path, new_resource.application_name)
+      return [0, 1] if new_resource.skip_failure
     end
+    build_cucumber(new_resource.parent_path, new_resource.chef_repo_name, 'inspec', new_resource.skip_failure)
   end
 end
 
@@ -114,9 +122,10 @@ action_class do
     end
   end
 
-  def build_cucumber(parent_path, application_name, skip_failure)
-    execute 'chef exec cucumber --profile html_report' do
+  def build_cucumber(parent_path, application_name, profile_name, skip_failure)
+    execute "cucumber --profile #{profile_name}" do
       cwd ::File.join(parent_path, application_name)
+      return [0, 1] if skip_failure
     end
   end
 end ## end action_class

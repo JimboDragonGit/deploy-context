@@ -37,3 +37,8 @@ workstation-space
 habitat/plan.sh/*.gem
 habitat/plan.sh/pkg/
 habitat/plan.sh/x86_64-linux/lib/
+
+spec/vendor
+spec/inspec.lock
+test/integration/default/inspec.lock
+test/integration/default/vendor

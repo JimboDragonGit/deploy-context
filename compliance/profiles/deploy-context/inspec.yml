@@ -4,14 +4,18 @@
 # The Chef InSpec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec/profiles/
 
-name: deploy-contexty
-title: deploy-contexty
+name: deploy-context
+title: deploy-context
 maintainer: The Authors
 copyright: The Authors
 copyright_email: you@example.com
 license: All Rights Reserved
-summary: A Chef InSpec Compliance Profile
+summary: deploy-context Code inspection
 version: 0.1.0
+supports:
+- platform: linux
+- platform: docker
+- platform: aws
 depends:
 - name: supermarket-profile
   supermarket: dev-sec/linux-baseline

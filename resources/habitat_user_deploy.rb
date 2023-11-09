@@ -20,6 +20,7 @@ property :group, String
 property :hab_auth_token, String
 property :hab_origin, String
 property :hab_license, String
+property :kitchen_workstation, String
 
 default_action :setup
 
@@ -30,22 +31,31 @@ load_current_value do |current_resource|
 end
 
 action :setup do
-  set_habitat_user(new_resource.owner, new_resource.home, new_resource.group, new_resource.hab_auth_token, new_resource.hab_origin, new_resource.hab_license)
+  set_habitat_user(new_resource.owner, new_resource.home, new_resource.group, new_resource.hab_auth_token, new_resource.hab_origin, new_resource.hab_license, new_resource.kitchen_workstation)
+  execute 'accept habitat license' do
+    command 'hab license accept'
+    action :run
+  end
+  execute 'setup habitat cli' do
+    command 'hab cli setup'
+    action :run
+  end
 end
 
 action_class do
-  def set_habitat_user(owner, home, group, hab_auth_token, hab_origin, hab_license)
+  def set_habitat_user(owner, home, group, hab_auth_token, hab_origin, hab_license, kitchen_workstation)
     converge_by("Setting Chef Habitat config for #{owner} in #{home}") do
       template '/etc/profile.d/habitat.sh' do
         source 'profile.sh.erb'
         owner owner
         group group
-        mode '0600'
+        mode '0755'
         action :create
         variables deploy_config: {
           hab_auth_token: hab_auth_token,
           hab_origin: hab_origin,
-          hab_license: hab_license
+          hab_license: hab_license,
+          kitchen_workstation: kitchen_workstation
         }
       end
     end

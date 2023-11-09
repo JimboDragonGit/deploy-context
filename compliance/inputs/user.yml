@@ -4,5 +4,50 @@
 # Additional information can be found on the Chef InSpec Documentation site https://docs.chef.io/inspec/inputs/
 
 # Example Syntax:
-input_a_name: input_a_value
-input_b_name: input_b_value
+
+sshprivatekey: <%= ENV['SSHPRIVATEKEY'] %>
+sshpublickey: <%= ENV['SSHPUBLICKEY'] %>
+email: <%= ENV['EMAIL'] %>
+fullname: "<%= ENV['FULLNAME'] %>"
+client_name: <%= ENV['CLIENT_NAME'] %>
+
+kitchen_user: <%= ENV['KITCHEN_USER'] %>
+kitchen_workstation: <%= ENV['KITCHEN_WORKSTATION'] %>
+
+chef_repo_name: <%= ENV['CHEF_REPO_NAME'] %>
+chef_repo_git: <%= ENV['CHEF_REPO_GIT'] %>
+chef_organisation_name: <%= ENV['CHEF_ORGANISATION_NAME'] %>
+application_name: <%= ENV['APPLICATION_NAME'] %>
+
+cucumber_publish_token: <%= ENV['CUCUMBER_PUBLISH_TOKEN'] %>
+circleci_token: <%= ENV['CIRCLECI_TOKEN'] %>
+circleci_api_token: <%= ENV['CIRCLECI_API_TOKEN'] %>
+circleci_org_optin: <%= ENV['CIRCLECI_ORG_OPTIN'] %>
+
+hab_auth_token: <%= ENV['HAB_AUTH_TOKEN'] %>
+hab_origin: <%= ENV['HAB_ORIGIN'] %>
+hab_license: <%= ENV['HAB_LICENSE'] %>
+
+aws_access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+aws_secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+
+dockerhub_user: <%= ENV['DOCKERHUB_USER'] %>
+dockerhub_password: <%= ENV['DOCKERHUB_PASSWORD'] %>
+do_check: <%= ENV['DO_CHECK'] %>
+
+aws_ssh_deploycontext_kitchen_key: "<%= ENV['AWS_SSH_DEPLOYCONTEXT_KITCHEN_KEY'] %>"
+aws_ssh_deploycontext_security_group: "<%= ENV['AWS_SSH_DEPLOYCONTEXT_SECURITY_GROUP'] %>"
+aws_ssh_deploycontext_subnet_id: "<%= ENV['AWS_SSH_DEPLOYCONTEXT_SUBNET_ID'] %>"
+aws_ssh_deploycontext_domain_name: "<%= ENV['AWS_SSH_DEPLOYCONTEXT_DOMAIN_NAME'] %>"
+
+hab_studio_secret_chef_server_url: <%= ENV['HAB_STUDIO_SECRET_CHEF_SERVER_URL'] %>
+hab_studio_secret_chefvalidatorkey: <%= ENV['HAB_STUDIO_SECRET_CHEFVALIDATORKEY'] %>
+hab_studio_secret_sshprivatekey: <%= ENV['HAB_STUDIO_SECRET_SSHPRIVATEKEY'] %>
+hab_studio_secret_sshpublickey: <%= ENV['HAB_STUDIO_SECRET_SSHPUBLICKEY'] %>
+hab_studio_secret_client_name: <%= ENV['HAB_STUDIO_SECRET_CLIENT_NAME'] %>
+hab_studio_secret_client_key: <%= ENV['HAB_STUDIO_SECRET_CLIENT_KEY'] %>
+hab_studio_secret_gemapi: <%= ENV['HAB_STUDIO_SECRET_GEMAPI'] %>
+hab_studio_secret_email: <%= ENV['HAB_STUDIO_SECRET_EMAIL'] %>
+hab_studio_secret_fullname: <%= ENV['HAB_STUDIO_SECRET_FULLNAME'] %>
+hab_studio_secret_client_secret: <%= ENV['HAB_STUDIO_SECRET_CLIENT_SECRET'] %>
+

@@ -4,6 +4,7 @@ provisioner:
   always_update_cookbooks: true
   kitchen_root: <%= ::Dir.pwd %>
   data_bags_path: <%= ::File.join(ENV['HOME'], '.chef/databags') %>
+  log_level: auto
 
 verifier:
   name: inspec
@@ -169,11 +170,17 @@ suites:
         secret_key: "<%= ::File.read(::File.join(ENV['HOME'], '.chef/secret')) %>"
         chef_repo_name: <%= ENV['CHEF_REPO_NAME'] %>
         chef_repo_git: <%= ENV['CHEF_REPO_GIT'] %>
+        organisation_name: <%= ENV['CHEF_ORGANISATION_NAME'] %>
+        application_name: <%= ENV['APPLICATION_NAME'] %>
+        suite_kitchen: docker
         chef_accept:
           chef_infra_client: "<%= ::File.read('/etc/chef/accepted_licenses/chef_infra_client').split("\n").join('\n') %>"
           chef_infra_server: "<%= ::File.read('/etc/chef/accepted_licenses/chef_infra_server').split("\n").join('\n') %>"
           chef_workstation: "<%= ::File.read('/etc/chef/accepted_licenses/chef_workstation').split("\n").join('\n') %>"
           inspec: "<%= ::File.read('/etc/chef/accepted_licenses/inspec').split("\n").join('\n') %>"
+        plans:
+        - spec/habitat
+        - habitat
         user:
           deploy:
           - git
