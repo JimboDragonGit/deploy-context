@@ -57,6 +57,7 @@ only_once = 0
       # it_behaves_like variable_name
       # it_should_behaves_like variable_name
       it do
+        should_not be_empty
         should_not include 'ENV['
       end
     end
@@ -72,6 +73,7 @@ only_once = 0
       # it_behaves_like variable_name
       # it_should_behaves_like variable_name
       it do
+        should_not be_empty
         should_not include 'ENV['
       end
     end
