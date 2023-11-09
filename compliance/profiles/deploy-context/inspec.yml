@@ -16,6 +16,9 @@ supports:
 - platform: linux
 - platform: docker
 - platform: aws
+gem_dependencies:
+  - name: "deploy-context"
 depends:
 - name: supermarket-profile
   supermarket: dev-sec/linux-baseline
+inspec_version: "~> 4"

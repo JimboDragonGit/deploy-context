@@ -1,12 +1,9 @@
 
 require_relative '../../../../libraries/deploy-context'
 
-extend Context::CucumberSuiteHelper
-extend Context::DeployKnifeConstant
+extend Context::InspecHelpers::DeployProcess
 
 title 'deploy-context environment variables control'
-
-only_once = 0
 
 %w(
   sshprivatekey
@@ -47,35 +44,5 @@ only_once = 0
   hab_studio_secret_fullname
   hab_studio_secret_client_secret
 ).each do |variable_name|
-  control [variable_name, '01'].join('-') do
-    impact 0.7
-    title "#{variable_name} environment variable with inspec"
-    desc "This is the #{variable_name} control for deploy-context environment variable."
-
-    describe ENV[variable_name.upcase] do
-      extend Context::DeployKnifeConstant
-      # it_behaves_like variable_name
-      # it_should_behaves_like variable_name
-      it do
-        should_not be_empty
-        should_not include 'ENV['
-      end
-    end
-  end
-
-  control [variable_name, '02'].join('-') do
-    impact 0.7
-    title "#{variable_name} input variable with inspec"
-    desc "This is the #{variable_name} control for deploy-context environment variable."
-
-    describe input(variable_name), :skip do
-      extend Context::DeployKnifeConstant
-      # it_behaves_like variable_name
-      # it_should_behaves_like variable_name
-      it do
-        should_not be_empty
-        should_not include 'ENV['
-      end
-    end
-  end
+  control_env_var variable_name
 end

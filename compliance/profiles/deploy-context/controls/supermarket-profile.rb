@@ -3,10 +3,10 @@
 # The Chef InSpec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec/resources/
 
+require_relative '../../../../libraries/deploy-context'
+
 include_controls "supermarket-profile" do
-  def get_control_name(control_name, control_number)
-      [control_name, control_number.to_s.rjust(2,'0')].join('-')
-  end
+  extend Context::InspecHelpers::DeployProcess
 
   17.times do |control_number|
     skip_control get_control_name('os', control_number)

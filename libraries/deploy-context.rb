@@ -4,6 +4,7 @@ require_relative 'context-knife-context'
 module Context
   module DeployKnifeConstant
     extend Context::CucumberSuiteHelper
+    require_relative 'deploy-context/inspec/deploy-process'
 
     def organisation_name
       'deploy-context'

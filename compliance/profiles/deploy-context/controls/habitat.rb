@@ -3,6 +3,10 @@
 # The Chef InSpec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec/resources/
 
+require_relative '../../../../libraries/deploy-context'
+
+extend Context::InspecHelpers::DeployProcess
+
 control 'public-habitat-01' do
   impact 0.7
   title 'Habitat inspection for deploy-context'

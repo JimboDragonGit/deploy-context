@@ -3,6 +3,10 @@
 # The Chef InSpec reference, with examples and extensive documentation, can be
 # found at https://docs.chef.io/inspec/resources/
 
+require_relative '../../../../libraries/deploy-context'
+
+extend Context::InspecHelpers::DeployProcess
+
 title 'deploy-context cucumber status control'
 
 control 'deploy-context-01' do
