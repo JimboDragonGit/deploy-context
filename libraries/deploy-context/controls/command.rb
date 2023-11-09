@@ -49,7 +49,7 @@ module Context
           end
         end
 
-        def control_environment_variables
+        def control_deploy_context_environment_variables
           %w(
             sshprivatekey
             sshpublickey
