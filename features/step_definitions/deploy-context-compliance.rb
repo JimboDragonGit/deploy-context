@@ -27,3 +27,13 @@ Alors('avec l\'aide de {word} et les données {word}, exécuter l\'inspection {w
   context_suite.input_file = input_file
   exec_inspec_habitat_with_help(context_suite)
 end
+
+Quand('le rapport {word} a atteint {int} succès') do |rapport_name, require_inspec_success|
+  context_suite.rapport_name = rapport_name
+  context_suite.require_inspec_success = require_inspec_success
+  when_report_succeeded(context_suite)
+end
+
+Alors('écrire la prochaine version') do
+  pending # Write code here that turns the phrase above into concrete actions
+end

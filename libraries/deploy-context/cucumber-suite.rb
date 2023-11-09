@@ -9,6 +9,7 @@ require_relative 'deploy/habitat'
 require_relative 'deploy/ruby'
 require_relative 'deploy/vagrant'
 
+require_relative 'steps/compliance'
 require_relative 'steps/cucumber'
 require_relative 'steps/git'
 require_relative 'steps/habitat'
@@ -36,6 +37,7 @@ module Context
     include Studio::Base
     include Studio::Default
 
+    include Steps::ComplianceSteps
     include Steps::Deploy
     include Steps::CucumberSteps
     include Steps::GitSteps
