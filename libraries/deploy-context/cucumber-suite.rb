@@ -188,7 +188,7 @@ module Context
     def stop_test(message, status)
       wrap_message = "#{status}:: #{message}"
       update_status status
-      abort(wrap_message)
+      error_context_log("Test Stopped", wrap_message)
     end
 
     def update_status(new_status)

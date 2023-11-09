@@ -7,25 +7,30 @@ module Context
     def context_log(message)
       return log message if respond_to? :log
       puts message
+      message
+    end
+
+    def levelling_log(level, name, message, parent_log, debug_flag = false)
+      return send(parent_log, message) if respond_to? parent_log
+      level_message = "\n\n#{name} #{level}: #{message}\n\n"
+      context_log level_message if debug_flag
+    end
+
+    def info_context_log(name, message)
+      levelling_log('INFO', name, message, :info_log)
     end
 
     def debug_context_log(name, message)
-      return debug_log message if respond_to? :debug_log
-      debug_message = "\n\n#{name} DEBUG: #{message}\n\n"
-      context_log debug_message if debug?
+      levelling_log('DEBUG', name, message, :debug_log, debug?)
     end
 
     def warning_context_log(name, message)
-      return warning_log message if respond_to? :warning_log
-      warning_message = "\n\n#{name} WARNING: #{message}\n\n"
-      context_log warning_message
+      levelling_log('WARNING', name, message, :warning_log)
     end
 
     def error_context_log(name, message)
-      return error_log message if respond_to? :error_log
-      error_message = "\n\n#{name} ERROR: #{message}\n\n"
-      context_log error_message
-      context_log caller
+      error_message = levelling_log('ERROR', name, message, :error_log)
+      levelling_log('CALLER', name, caller, :caller_log)
       abort(error_message)
       exit 1
     end
