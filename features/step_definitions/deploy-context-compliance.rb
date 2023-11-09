@@ -13,11 +13,13 @@ end
 
 Quand('démaré l\'habitat d\'inspection {word}') do |spec_path|
   context_suite.spec_path = spec_path
+  context_suite.spec_path = plan_path
   inspec_habitat(context_suite)
 end
 
 Quand('démarré l\'habitat de cuisine {word}') do |spec_path|
   context_suite.spec_path = spec_path
+  context_suite.spec_path = plan_path
   inspec_habitat(context_suite)
 end
 

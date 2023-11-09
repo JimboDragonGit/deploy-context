@@ -3,11 +3,11 @@ module Context
   module Steps
     module HabitatSteps
       def given_plan(context_suite)
-        stop_test("Habitat plan #{context_suite.plan_path} unavailable", :no_plan) unless Dir.exist?(context_suite.plan_path)
+        stop_test("Habitat plan #{context_suite.plan_path} not given", :no_plan) unless Dir.exist?(context_suite.plan_path)
       end
 
       def when_initialize_habitat(context_suite)
-        stop_test("Habitat plan #{context_suite.plan_path} unavailable", :no_studio) unless verify_habitat?
+        stop_test("Habitat plan #{context_suite.plan_path} not initialized", :no_studio) unless verify_habitat?
       end
 
       def when_secret_available(context_suite)
@@ -15,7 +15,7 @@ module Context
       end
 
       def then_build_plan(context_suite)
-        stop_test("Habitat plan #{context_suite.plan_path} unavailable", :build_fail) unless plan_build_successfully?
+        stop_test("Habitat plan #{context_suite.plan_path} build fail", :build_fail) unless plan_build_successfully?
       end
 
       def then_start_job(context_suite)
