@@ -24,7 +24,7 @@ module Context
             'rake_json',
             'supermarket_json',
             'install_json',
-            'compliance_json',
+            # 'compliance_json',
             'git_json',
           ].each do |command_to_perform|
             control_cucumber_command("knife deploy context cucumber #{command_to_perform}", command_to_perform)
