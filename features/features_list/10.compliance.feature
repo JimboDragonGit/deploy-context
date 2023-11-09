@@ -53,4 +53,3 @@
       Exemples:
         |              idea              | habitat_plan |        application_name       |             spec_path              |               waiver_file             |          input_file        |
         | integrate_cucumber_into_recipe | spec/habitat | inspec-profile-deploy-context | compliance/profiles/deploy-context | compliance/waivers/deploy-context.yml | compliance/inputs/user.yml |
-  
