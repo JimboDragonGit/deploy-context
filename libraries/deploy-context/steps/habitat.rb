@@ -61,7 +61,6 @@ module Context
 
       def then_clean_project(context_suite)
         delete_file_only_if_exist(get_context_file(self, 'habitat/plan.sh/Gemfile.lock'))
-        
       end
 
       def then_set_secret(context_suite)
