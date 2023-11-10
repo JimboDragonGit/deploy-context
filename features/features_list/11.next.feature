@@ -20,7 +20,7 @@
       Et le rapport rake à au moins 22 succès, au plus 3 erreurs et au plus 12 passer
       Et le rapport install à au moins 35 succès, au plus 0 erreurs et au plus 0 passer
       Et le rapport compliance à au moins 8 succès, au plus 0 erreurs et au plus 0 passer
-      Et le rapport git à au moins 1000 25, au plus 3 erreurs et au plus 8 passer
+      Et le rapport git à au moins 25 succès, au plus 3 erreurs et au plus 8 passer
       Alors écrire la prochaine version
       Et récupère les dernières modifications
       Et va sur la branche non maîtresse <idea>
