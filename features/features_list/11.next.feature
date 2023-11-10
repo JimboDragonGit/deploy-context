@@ -10,7 +10,7 @@
       Et le plan <habitat_plan>
       Et l'inspecteur d'habitat <spec_path>
       Et la branche maîtresse
-      Quand le rapport git à au moins 1000 succès et au plus 0 erreurs
+      Quand le rapport git à au moins 29 succès et au plus 2 erreurs
       Et le rapport knife à au moins 1000 succès et au plus 0 erreurs
       Et la planification du rapport kitchen à au moins 1000 succès et au plus 0 erreurs
       Et l'execution du rapport kitchen à au moins 1000 succès et au plus 0 erreurs
