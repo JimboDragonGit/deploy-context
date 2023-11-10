@@ -4,7 +4,7 @@ module Context
     module ComplianceSteps
       def when_report_succeeded(context_suite)
         extend_command = ["#{context_suite.rapport_name}_json"]
-        extend_command << context_suite.specific_step if context_suite.respond_to? 'specific_step'
+        extend_command << context_suite.specific_step unless context_suite.specific_step
         stop_test("Cucumber Report #{context_suite.rapport_name} is unavailable", :no_report) unless execute_command(%w(knife deploy context cucumber) + extend_command)
 
         results = JSON.parse(::File.read(::File.join('logs/json', "#{context_suite.rapport_name}_features_report.json")))

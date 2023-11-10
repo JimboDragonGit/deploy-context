@@ -5,13 +5,13 @@ module Context
     end
 
     def context_log(message)
-      # return log message if respond_to? :log
+      return log message if respond_to? :log
       puts message
       message
     end
 
     def levelling_log(level, name, message, parent_log, debug_flag = false)
-      # return send(parent_log, message) if respond_to? parent_log
+      return send(parent_log, message) if respond_to? parent_log
       level_message = "\n\n#{name} #{level}: #{message}\n\n"
       context_log level_message if debug_flag
     end

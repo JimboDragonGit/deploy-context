@@ -1,7 +1,7 @@
 ##YAML Template
-<% default = "--no-snippets --no-source --no-duration --publish-quiet" %>
-<% default = "--no-source --no-duration --publish-quiet" %>
-<% default = "--no-source --publish-quiet" %>
+# <% default = "--no-snippets --no-source --no-duration --publish-quiet" %>
+# <% default = "--no-source --no-duration --publish-quiet" %>
+# <% default = "--no-source --publish-quiet" %>
 <% default = "--publish-quiet" %>
 <% common = "#{default} --exclude features_list/9.cucumber.feature" %>
 <% html_report = "#{common} --format html" %>

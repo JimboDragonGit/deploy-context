@@ -46,6 +46,7 @@ Quand('le rapport {word} à au moins {int} succès, au plus {int} erreurs et au 
   context_suite.require_inspec_success = require_inspec_success
   context_suite.maximum_inspec_failure = maximum_inspec_failure
   context_suite.maximum_inspec_skipped = maximum_inspec_skipped
+  context_suite.specific_step = ''
   info_context_log "When report succeed context_suite.spec_path", context_suite.spec_path
   info_context_log "When report succeed context_suite.plan_path", context_suite.plan_path
   info_context_log "When report succeed context_suite.waiver_file", context_suite.waiver_file
