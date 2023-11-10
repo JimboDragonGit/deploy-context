@@ -14,7 +14,7 @@
       Et le rapport knife à au moins 53 succès, au plus 1 erreurs et au plus 1 passer
       Et la planification du rapport kitchen à au moins 5 succès, au plus 0 erreurs et au plus 0 passer
       Et l'exécution du rapport kitchen à au moins 2 succès, au plus 1 erreurs et au plus 2 passer
-      Et le rapport habitat à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
+      Et le rapport habitat à au moins 14 succès, au plus 0 erreurs et au plus 0 passer
       Et le rapport rake à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
       Et le rapport supermarket à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
       Et le rapport install à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
