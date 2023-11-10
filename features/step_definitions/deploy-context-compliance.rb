@@ -55,6 +55,14 @@ Quand('le rapport {word} à au moins {int} succès et au plus {int} erreurs') do
   when_report_succeeded(context_suite)
 end
 
+Quand('la planification du rapport {word} à au moins {int} succès et au plus {int} erreurs') do |rapport_name, require_inspec_success, maximum_inspec_failure|
+  context_suite.rapport_name = rapport_name
+  context_suite.require_inspec_success = require_inspec_success
+  context_suite.maximum_inspec_failure = maximum_inspec_failure
+  context_suite.specific_step = 'planning'
+  when_report_succeeded(context_suite)
+end
+
 Alors('écrire la prochaine version') do
   info_context_log "Then write the new version", context_suite.spec_path
   pending # Write code here that turns the phrase above into concrete actions

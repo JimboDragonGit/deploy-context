@@ -18,7 +18,7 @@
       Et le rapport rake à au moins 1000 succès et au plus 0 erreurs
       Et le rapport supermarket à au moins 1000 succès et au plus 0 erreurs
       Et le rapport install à au moins 1000 succès et au plus 0 erreurs
-      Et le rapport compliance au moins 8 succès et au plus 0 erreurs
+      Et le rapport compliance à au moins 8 succès et au plus 0 erreurs
       Et le rapport git à au moins 1000 succès et au plus 0 erreurs
       Alors écrire la prochaine version
       Et récupère les dernières modifications
