@@ -6,12 +6,12 @@ module Context
         extend_command = ["#{context_suite.rapport_name}_json"]
         extend_command << context_suite.specific_step unless context_suite.specific_step
         is_step_kitchen_command = if context_suite.rapport_name.include?('kitchen')
-          context_suite.specific_step.kind_of? String && ! context_suite.specific_step.empty?
+          true
         else
           false
         end
 
-        stop_test("La commande kitchen ne contien pas d'étape", :no_kitchen_step) if is_step_kitchen_command
+        stop_test("La commande kitchen ne contien pas d'étape '#{extend_command}'", :no_kitchen_step) if is_step_kitchen_command
         stop_test("Cucumber Report #{context_suite.rapport_name} is unavailable", :no_report) unless execute_command(%w(knife deploy context cucumber) + extend_command)
 
         results = JSON.parse(::File.read(::File.join('logs/json', "#{context_suite.rapport_name}_features_report.json")))
