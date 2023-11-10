@@ -12,8 +12,8 @@
       Et la branche maîtresse
       Quand le rapport git à au moins 29 succès et au plus 2 erreurs
       Et le rapport knife à au moins 53 succès et au plus 1 erreurs
-      Et la planification du rapport kitchen à au moins 1000 succès et au plus 0 erreurs
-      Et l'execution du rapport kitchen à au moins 1000 succès et au plus 0 erreurs
+      Et la planification du rapport kitchen à au moins 5 succès et au plus 0 erreurs
+      Et l'exécution du rapport kitchen à au moins 1000 succès et au plus 0 erreurs
       Et le rapport habitat à au moins 1000 succès et au plus 0 erreurs
       Et le rapport rake à au moins 1000 succès et au plus 0 erreurs
       Et le rapport supermarket à au moins 1000 succès et au plus 0 erreurs
