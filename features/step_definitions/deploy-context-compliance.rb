@@ -41,7 +41,7 @@ Alors('avec l\'aide de {word} et les données {word}, exécuter l\'inspection {w
   exec_inspec_habitat_with_help(context_suite)
 end
 
-Quand('le rapport {word} au moin {int} succès et au plus {int} erreurs') do |rapport_name, require_inspec_success, maximum_inspec_failure|
+Quand('le rapport {word} à au moins {int} succès et au plus {int} erreurs') do |rapport_name, require_inspec_success, maximum_inspec_failure|
   context_suite.rapport_name = rapport_name
   context_suite.require_inspec_success = require_inspec_success
   context_suite.maximum_inspec_failure = maximum_inspec_failure

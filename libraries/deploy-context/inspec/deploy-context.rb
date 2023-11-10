@@ -17,7 +17,6 @@ module Context
           [
             'git_json',
             'knife_json',
-            'planning_json',
             'kitchen_json planning',
             'kitchen_json execution',
             'habitat_json',
