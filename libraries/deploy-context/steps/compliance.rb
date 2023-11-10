@@ -37,7 +37,7 @@ module Context
         warning_context_log "step_total_counter", "Nombre d'étape parcouru: #{step_total_counter}"
         warning_context_log "step_unknown_counter", "Nombre d'étape parcouru: #{step_unknown_counter}"
 
-        message_helper = "(Success: #{step_success_counter} | Failed: #{step_fail_counter} | Unknown: #{step_unknown_counter} | Total #{step_total_counter})\n\nMissing status: #{JSON.generate_pretty(unknown_status)}"
+        message_helper = "(Success: #{step_success_counter} | Failed: #{step_fail_counter} | Unknown: #{step_unknown_counter} | Total #{step_total_counter})\n\nMissing status: #{JSON.pretty_generate(unknown_status)}"
         stop_test("Le rapport #{context_suite.rapport_name} n'a pas atteint son objectif #{message_helper}", :not_enough_success) if context_suite.require_inspec_success > step_success_counter
         stop_test("Le rapport #{context_suite.rapport_name} a trop de défaillance #{message_helper}", :no_profile) if context_suite.maximum_inspec_failure >= step_fail_counter
       end
