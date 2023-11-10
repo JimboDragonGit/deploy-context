@@ -5,6 +5,13 @@ module Context
       def when_report_succeeded(context_suite)
         extend_command = ["#{context_suite.rapport_name}_json"]
         extend_command << context_suite.specific_step unless context_suite.specific_step
+        is_step_kitchen_command = if context_suite.rapport_name.include?('kitchen')
+          context_suite.specific_step.kind_of? String && ! context_suite.specific_step.empty?
+        else
+          false
+        end
+
+        stop_test("La commande kitchen ne contien pas d'étape", :no_kitchen_step) if is_step_kitchen_command
         stop_test("Cucumber Report #{context_suite.rapport_name} is unavailable", :no_report) unless execute_command(%w(knife deploy context cucumber) + extend_command)
 
         results = JSON.parse(::File.read(::File.join('logs/json', "#{context_suite.rapport_name}_features_report.json")))
@@ -54,13 +61,13 @@ module Context
           step_unknown_counter > 0 ? "Missing status: #{JSON.pretty_generate(unknown_status)}" : ""
         ].join("\n\n")
 
-        report_helper = "#{context_suite.rapport_name}::#{context_suite.specific_step}"
+        report_helper = "#{context_suite.rapport_name}::#{context_suite.specific_step} => '#{extend_command}'"
 
-        has_enough_success = context_suite.require_inspec_success > step_success_counter
+        has_not_enough_success = context_suite.require_inspec_success > step_success_counter
         has_too_much_failure = context_suite.maximum_inspec_failure < step_fail_counter
         has_too_much_skipped = context_suite.maximum_inspec_skipped < step_skip_counter
 
-        stop_test("Le rapport #{report_helper} n'a pas atteint son objectif (#{status_helper})", :not_enough_success) if has_enough_success
+        stop_test("Le rapport #{report_helper} n'a pas atteint son objectif (#{status_helper})", :not_enough_success) if has_not_enough_success
         stop_test("Le rapport #{report_helper} a trop de défaillance (#{status_helper})", :too_much_failure) if has_too_much_failure
         stop_test("Le rapport #{report_helper} a trop d'élément non analysé (#{status_helper})", :too_much_skip) if has_too_much_skipped
       end
