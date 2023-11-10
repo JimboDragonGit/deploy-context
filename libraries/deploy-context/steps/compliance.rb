@@ -56,9 +56,13 @@ module Context
 
         report_helper = "#{context_suite.rapport_name}::#{context_suite.specific_step}"
 
-        stop_test("Le rapport #{context_suite.rapport_name} n'a pas atteint son objectif (#{status_helper})", :not_enough_success) if context_suite.require_inspec_success > step_success_counter
-        stop_test("Le rapport #{context_suite.rapport_name} a trop de défaillance (#{status_helper})", :too_much_failure) if context_suite.maximum_inspec_failure < step_fail_counter
-        stop_test("Le rapport #{context_suite.rapport_name} a trop d'élément non analysé (#{status_helper})", :too_much_skip) if context_suite.maximum_inspec_skipped < step_skip_counter
+        has_enough_success = context_suite.require_inspec_success > step_success_counter
+        has_too_much_failure = context_suite.maximum_inspec_failure < step_fail_counter
+        has_too_much_skipped = context_suite.maximum_inspec_skipped < step_skip_counter
+
+        stop_test("Le rapport #{report_helper} n'a pas atteint son objectif (#{status_helper})", :not_enough_success) if has_enough_success
+        stop_test("Le rapport #{report_helper} a trop de défaillance (#{status_helper})", :too_much_failure) if has_too_much_failure
+        stop_test("Le rapport #{report_helper} a trop d'élément non analysé (#{status_helper})", :too_much_skip) if has_too_much_skipped
       end
     end
   end
