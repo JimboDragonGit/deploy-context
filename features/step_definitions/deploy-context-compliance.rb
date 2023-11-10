@@ -56,7 +56,7 @@ Quand('le rapport {word} à au moins {int} succès, au plus {int} erreurs et au 
   when_report_succeeded(context_suite)
 end
 
-Quand('la planification du rapport {word} à au moins {int} succès, au plus {int} erreurs et au plus {int} passer') do |rapport_name, require_inspec_success, maximum_inspec_skipped|
+Quand('la planification du rapport {word} à au moins {int} succès, au plus {int} erreurs et au plus {int} passer') do |rapport_name, require_inspec_success, maximum_inspec_failure, maximum_inspec_skipped|
   context_suite.rapport_name = rapport_name
   context_suite.require_inspec_success = require_inspec_success
   context_suite.maximum_inspec_failure = maximum_inspec_failure
@@ -65,7 +65,7 @@ Quand('la planification du rapport {word} à au moins {int} succès, au plus {in
   when_report_succeeded(context_suite)
 end
 
-Quand('l\'exécution du rapport {word} à au moins {int} succès, au plus {int} erreurs et au plus {int} passer') do |rapport_name, require_inspec_success, maximum_inspec_skipped|
+Quand('l\'exécution du rapport {word} à au moins {int} succès, au plus {int} erreurs et au plus {int} passer') do |rapport_name, require_inspec_success, maximum_inspec_failure, maximum_inspec_skipped|
   context_suite.rapport_name = rapport_name
   context_suite.require_inspec_success = require_inspec_success
   context_suite.maximum_inspec_failure = maximum_inspec_failure
