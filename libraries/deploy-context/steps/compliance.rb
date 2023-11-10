@@ -4,11 +4,9 @@ module Context
     module ComplianceSteps
       def when_report_succeeded(context_suite)
         extend_command = ["#{context_suite.rapport_name}_json"]
-        extend_command << context_suite.specific_step unless context_suite.specific_step
-        is_step_kitchen_command = if context_suite.rapport_name.include?('kitchen')
-          true
-        else
-          false
+        if context_suite.rapport_name.include?('kitchen')
+          is_step_kitchen_command = true
+          extend_command << context_suite.specific_step
         end
 
         stop_test("La commande kitchen ne contien pas d'étape '#{extend_command}'", :no_kitchen_step) if is_step_kitchen_command
