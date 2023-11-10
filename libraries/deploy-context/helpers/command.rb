@@ -31,7 +31,7 @@ module Context
     def error_context_log(name, message)
       error_message = levelling_log('ERROR', name, message, :error_log)
       levelling_log('CALLER', name, caller, :caller_log)
-      abort(error_message)
+      abort(error_message.nil? ? message : error_message)
       exit 1
     end
 
