@@ -41,15 +41,17 @@ Alors('avec l\'aide de {word} et les données {word}, exécuter l\'inspection {w
   exec_inspec_habitat_with_help(context_suite)
 end
 
-Quand('le rapport {word} a atteint {int} succès') do |rapport_name, require_inspec_success|
+Quand('le rapport {word} au moin {int} succès et au plus {int} erreurs') do |rapport_name, require_inspec_success, maximum_inspec_failure|
   context_suite.rapport_name = rapport_name
   context_suite.require_inspec_success = require_inspec_success
+  context_suite.maximum_inspec_failure = maximum_inspec_failure
   info_context_log "When report succeed context_suite.spec_path", context_suite.spec_path
   info_context_log "When report succeed context_suite.plan_path", context_suite.plan_path
   info_context_log "When report succeed context_suite.waiver_file", context_suite.waiver_file
   info_context_log "When report succeed context_suite.input_file", context_suite.input_file
   info_context_log "When report succeed context_suite.rapport_name", context_suite.rapport_name
   info_context_log "When report succeed context_suite.require_inspec_success", context_suite.require_inspec_success
+  info_context_log "When report succeed context_suite.maximum_inspec_failure", context_suite.maximum_inspec_failure
   when_report_succeeded(context_suite)
 end
 

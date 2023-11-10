@@ -10,7 +10,7 @@
       Et le plan <habitat_plan>
       Et l'inspecteur d'habitat <spec_path>
       Et la branche maîtresse
-      Quand le rapport compliance a atteint 20 succès
+      Quand le rapport compliance au moin 20 succès et au plus 39 erreurs
       Alors écrire la prochaine version
       Et récupère les dernières modifications
       Et va sur la branche non maîtresse <idea>
