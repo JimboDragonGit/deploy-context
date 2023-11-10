@@ -86,7 +86,7 @@ module Context
     end
 
     def delete_folder_only_if_exist(folder)
-      FileUtils.rm_dir folder if File.exist? folder
+      FileUtils.rm_r folder if File.exist? folder
     end
 
     def is_binary_available?(binary_name)
