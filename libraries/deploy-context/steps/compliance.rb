@@ -37,6 +37,7 @@ module Context
 
         warning_context_log "step_success_counter", "Nombre d'étape parcouru: #{step_success_counter}"
         warning_context_log "step_fail_counter", "Nombre d'étape parcouru: #{step_fail_counter}"
+        warning_context_log "step_skip_counter", "Nombre d'étape parcouru: #{step_skip_counter}"
         warning_context_log "step_total_counter", "Nombre d'étape parcouru: #{step_total_counter}"
         warning_context_log "step_unknown_counter", "Nombre d'étape parcouru: #{step_unknown_counter}"
 
@@ -44,10 +45,11 @@ module Context
           [
             "Success: #{step_success_counter}",
             "Failed: #{step_fail_counter}",
+            "Skipped: #{step_skip_counter}",
             "Unknown: #{step_unknown_counter}",
             "Total #{step_total_counter}",
           ].join(' | '),
-          "Missing status: #{JSON.pretty_generate(unknown_status)}"
+          step_unknown_counter > 0 ? "Missing status: #{JSON.pretty_generate(unknown_status)}" : ""
         ].join("\n\n")
 
         stop_test("Le rapport #{context_suite.rapport_name} n'a pas atteint son objectif (#{message_helper})", :not_enough_success) if context_suite.require_inspec_success > step_success_counter
