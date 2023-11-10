@@ -14,7 +14,7 @@
       Quand le rapport git à au moins 25 succès, au plus 3 erreurs et au plus 8 passer
       Et le rapport knife à au moins 53 succès, au plus 1 erreurs et au plus 1 passer
       Et la planification du rapport kitchen à au moins 15 succès, au plus 2 erreurs et au plus 5 passer
-      Et l'exécution du rapport kitchen à au moins 2 succès, au plus 1 erreurs et au plus 2 passer
+      Et l'exécution du rapport kitchen à au moins 15 succès, au plus 2 erreurs et au plus 5 passer
       Et le rapport habitat à au moins 14 succès, au plus 0 erreurs et au plus 0 passer
       Et le rapport supermarket à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
       Et le rapport rake à au moins 3 succès, au plus 1 erreurs et au plus 3 passer
