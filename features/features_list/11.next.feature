@@ -10,16 +10,16 @@
       Et le plan <habitat_plan>
       Et l'inspecteur d'habitat <spec_path>
       Et la branche maîtresse
-      Quand le rapport git à au moins 29 succès et au plus 2 erreurs
-      Et le rapport knife à au moins 53 succès et au plus 1 erreurs
-      Et la planification du rapport kitchen à au moins 5 succès et au plus 0 erreurs
-      Et l'exécution du rapport kitchen à au moins 1000 succès et au plus 0 erreurs
-      Et le rapport habitat à au moins 1000 succès et au plus 0 erreurs
-      Et le rapport rake à au moins 1000 succès et au plus 0 erreurs
-      Et le rapport supermarket à au moins 1000 succès et au plus 0 erreurs
-      Et le rapport install à au moins 1000 succès et au plus 0 erreurs
-      Et le rapport compliance à au moins 8 succès et au plus 0 erreurs
-      Et le rapport git à au moins 1000 succès et au plus 0 erreurs
+      Quand le rapport git à au moins 29 succès, au plus 2 erreurs et au plus 0 passer
+      Et le rapport knife à au moins 53 succès, au plus 1 erreurs et au plus 0 passer
+      Et la planification du rapport kitchen à au moins 5 succès, au plus 0 erreurs et au plus 0 passer
+      Et l'exécution du rapport kitchen à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
+      Et le rapport habitat à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
+      Et le rapport rake à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
+      Et le rapport supermarket à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
+      Et le rapport install à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
+      Et le rapport compliance à au moins 8 succès, au plus 0 erreurs et au plus 0 passer
+      Et le rapport git à au moins 1000 succès, au plus 0 erreurs et au plus 0 passer
       Alors écrire la prochaine version
       Et récupère les dernières modifications
       Et va sur la branche non maîtresse <idea>

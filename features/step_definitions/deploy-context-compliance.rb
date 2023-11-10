@@ -41,10 +41,11 @@ Alors('avec l\'aide de {word} et les données {word}, exécuter l\'inspection {w
   exec_inspec_habitat_with_help(context_suite)
 end
 
-Quand('le rapport {word} à au moins {int} succès et au plus {int} erreurs') do |rapport_name, require_inspec_success, maximum_inspec_failure|
+Quand('le rapport {word} à au moins {int} succès, au plus {int} erreurs et au plus {int} passer') do |rapport_name, require_inspec_success, maximum_inspec_failure, maximum_inspec_skipped|
   context_suite.rapport_name = rapport_name
   context_suite.require_inspec_success = require_inspec_success
   context_suite.maximum_inspec_failure = maximum_inspec_failure
+  context_suite.maximum_inspec_skipped = maximum_inspec_skipped
   info_context_log "When report succeed context_suite.spec_path", context_suite.spec_path
   info_context_log "When report succeed context_suite.plan_path", context_suite.plan_path
   info_context_log "When report succeed context_suite.waiver_file", context_suite.waiver_file
@@ -55,18 +56,20 @@ Quand('le rapport {word} à au moins {int} succès et au plus {int} erreurs') do
   when_report_succeeded(context_suite)
 end
 
-Quand('la planification du rapport {word} à au moins {int} succès et au plus {int} erreurs') do |rapport_name, require_inspec_success, maximum_inspec_failure|
+Quand('la planification du rapport {word} à au moins {int} succès, au plus {int} erreurs et au plus {int} passer') do |rapport_name, require_inspec_success, maximum_inspec_skipped|
   context_suite.rapport_name = rapport_name
   context_suite.require_inspec_success = require_inspec_success
   context_suite.maximum_inspec_failure = maximum_inspec_failure
+  context_suite.maximum_inspec_skipped = maximum_inspec_skipped
   context_suite.specific_step = 'planning'
   when_report_succeeded(context_suite)
 end
 
-Quand('l\'exécution du rapport {word} à au moins {int} succès et au plus {int} erreurs') do |rapport_name, require_inspec_success, maximum_inspec_failure|
+Quand('l\'exécution du rapport {word} à au moins {int} succès, au plus {int} erreurs et au plus {int} passer') do |rapport_name, require_inspec_success, maximum_inspec_skipped|
   context_suite.rapport_name = rapport_name
   context_suite.require_inspec_success = require_inspec_success
   context_suite.maximum_inspec_failure = maximum_inspec_failure
+  context_suite.maximum_inspec_skipped = maximum_inspec_skipped
   context_suite.specific_step = 'execution'
   when_report_succeeded(context_suite)
 end
