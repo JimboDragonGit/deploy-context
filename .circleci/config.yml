@@ -178,7 +178,7 @@ jobs:
       - run: |
             set -xu
             gem install deploy-context
-            cucumber -t @initialize
+            deploy-context initialize
   planning:
     docker:
       - image: cimg/ruby:3.1.2
@@ -193,8 +193,8 @@ jobs:
       - run: |
             set -xu
             gem install deploy-context
-            cucumber -t @initialize
-            cucumber -t @planning
+            deploy-context initialize
+            deploy-context planning
   execution:
     docker:
       - image: cimg/ruby:3.1.2
@@ -209,9 +209,9 @@ jobs:
       - run: |
             set -xu
             gem install deploy-context
-            cucumber -t @initialize
-            cucumber -t @planning
-            cucumber -t @execution
+            deploy-context initialize
+            deploy-context planning
+            deploy-context execution
   closure:
     docker:
       - image: cimg/ruby:3.1.2
@@ -226,10 +226,10 @@ jobs:
       - run: |
             set -xu
             gem install deploy-context
-            cucumber -t @initialize
-            cucumber -t @planning
-            cucumber -t @execution
-            cucumber -t @closure
+            deploy-context initialize
+            deploy-context planning
+            deploy-context execution
+            deploy-context closure
 #...
 workflows:
   version: 2
