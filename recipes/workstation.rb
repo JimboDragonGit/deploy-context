@@ -35,6 +35,7 @@ chef_gem 'knife-ec2'
 chef_gem 'kitchen-vagrant'
 chef_gem 'kitchen-dokken'
 chef_gem 'kitchen-ec2'
+chef_gem 'kitchen-habitat'
 chef_gem 'ruby-shadow'
 
 chef_gem 'deploy-context'

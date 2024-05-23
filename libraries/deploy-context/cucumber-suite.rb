@@ -1,4 +1,6 @@
 
+require 'ostruct'
+
 require_relative 'deploy/context'
 require_relative 'deploy/chef'
 require_relative 'deploy/cookbook'
